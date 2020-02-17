@@ -54,7 +54,15 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      // fonts
+      {
+        test: /\.woff|ttf|svg$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      }, 
     ]
   },
 
