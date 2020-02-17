@@ -1,0 +1,60 @@
+.text-examples {
+  width: 336px;
+
+  .text-example {
+    position: relative;
+    margin-bottom: 50px;
+
+    &::before {
+      font-family: 'Montserrat-Regular';
+      color: rgba(31, 32, 65, .25);
+    }
+
+    &.text-example__main-header {
+      font-family: 'Quicksand-Bold';
+      font-weight: bold;    
+      font-size: 24px;
+    }
+
+    &.text-example__mid-header {
+      font-family: 'Quicksand-Bold';
+      font-weight: bold;  
+      font-size: 19px;  
+    }
+
+    &.text-example__small-header {
+      font-family: 'Montserrat-Bold';
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    &.text-example__body-text {
+      font-family: 'Montserrat-Regular';
+      font-size: 14px;
+    }
+
+    &.text-example__main-header::before {
+      position: absolute;
+      left: -55px;
+      content: 'H1';
+    }
+
+    &.text-example__mid-header::before {
+      position: absolute;
+      left: -55px;
+      content: 'H2';
+    }
+
+    &.text-example__small-header::before {
+      position: absolute;
+      left: -54px;
+      content: 'H3';
+    }
+
+    &.text-example__body-text::before {
+      position: absolute;
+      left: -65px;
+      content: 'Body';
+    }
+  }  
+}

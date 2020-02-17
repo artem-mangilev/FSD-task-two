@@ -1,3 +1,6 @@
+include components/color/color
+include components/text-examples/text-examples
+
 doctype html
 html(lang="en")
   head
@@ -5,4 +8,47 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Document
   body
-    h1 Test page
+    - 
+      var colors = [ 
+        {
+          name: 'Dark Shade 100%',
+          className: '__dark_shade_100',
+          code: '#1F2041'
+        },
+        {
+          name: 'Dark Shade 75%',
+          className: '__dark_shade_75',
+          code: '#1F2041'
+        },
+        {
+          name: 'Dark Shade 50%',
+          className: '__dark_shade_50',
+          code: '#1F2041'
+        },
+        {
+          name: 'Dark Shade 25%',
+          className: '__dark_shade_25',
+          code: '#1F2041'
+        },
+        {
+          name: 'Dark Shade 5%',
+          className: '__dark_shade_5',
+          code: '#1F2041'
+        },
+        {
+          name: 'Purple',
+          className: '__purple',
+          code: '#BC9CFF'
+        },
+        {
+          name: 'Green',
+          className: '__green',
+          code: '#6FCF97'
+        },
+      ]
+    
+    .wrapper
+      each color in colors
+        +color(color.name, color.code, color.className)
+      +text-examples
+      

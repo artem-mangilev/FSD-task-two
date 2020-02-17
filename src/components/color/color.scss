@@ -1,0 +1,56 @@
+.color {
+  width: 270px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Quicksand-Regular';
+
+  &__preview {
+    height: 70px;
+    width: 70px;
+    margin-right: 40px;
+    border-radius: 6px;
+  }
+
+  &__info {
+    font-size: 19px;
+    line-height: 29px;
+  }
+
+  &__name {
+    font-family: 'Quicksand-Bold';
+    font-weight: bold;
+  }
+
+  &__dark_shade_100 {
+    background-color: rgba(31, 32, 65, 1);
+  }
+
+  &__dark_shade_75 {
+    background-color: rgba(31, 32, 65, .75);
+
+  }
+
+  &__dark_shade_50 {
+    background-color: rgba(31, 32, 65, .50);
+
+  }
+
+  &__dark_shade_25 {
+    background-color: rgba(31, 32, 65, .25);
+
+  }
+
+  &__dark_shade_5 {
+    background-color: rgba(31, 32, 65, .05);
+
+  }
+
+  &__purple {
+    background-color: #BC9CFF;
+  }
+
+  &__green {
+    background-color: #6FCF97;
+  }
+}
