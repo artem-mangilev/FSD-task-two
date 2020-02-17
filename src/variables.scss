@@ -1,0 +1,19 @@
+// colors
+@function dark-shade($alpha) {
+  @return rgba(31, 32, 65, $alpha);
+}
+
+$dark_shade_100_color: dark-shade(1);
+$dark_shade_75_color: dark-shade(.75);
+$dark_shade_50_color: dark-shade(.50);
+$dark_shade_25_color: dark-shade(.25);
+$dark_shade_5_color: dark-shade(.05);
+
+$primary_color: #BC9CFF;
+$secondary_color: #6FCF97;
+
+// fonts
+$big_header_font: bold 24px 'Quicksand-Bold';
+$medium_header_font: bold 19px 'Quicksand-Bold';
+$small_header_font: bold 12px 'Montserrat-Bold';
+$body_text_font: normal 14px 'Montserrat-Regular';
