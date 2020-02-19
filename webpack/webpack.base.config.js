@@ -1,10 +1,23 @@
 const path = require('path')
+const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
+}
+
+const PAGES_FOLDER = path.join(PATHS.src, '/pages')
+
+const createHtmlWebpackPlugins = pagesFolder => {
+  const pugFilesRegex = /\.pug$/ 
+  const pages = fs.readdirSync(pagesFolder).filter(file => pugFilesRegex.test(file))
+  
+  return pages.map(page => new HtmlWebpackPlugin({
+      template: path.join(pagesFolder, page),
+      filename: page.replace('.pug', '.html')
+    }))
 }
 
 module.exports = {
@@ -70,8 +83,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
-    new HtmlWebpackPlugin({
-      template: PATHS.src + '/index.pug'
-    })
+    ...createHtmlWebpackPlugins(PAGES_FOLDER)
   ]
 }
