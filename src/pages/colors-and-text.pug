@@ -43,7 +43,9 @@ include ../components/text-examples/text-examples
       },
     ]
 
-  .wrapper
+  .container
+    .container__content
     each color in colors
       +color(color.name, color.code, color.className)
+    .container__content
     +text-examples
