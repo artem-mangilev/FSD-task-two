@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -75,7 +76,16 @@ module.exports = {
         options: {
           name: '[name].[ext]'
         }
-      }, 
+      },
+      // images
+      // {
+      //   test: /\.(png|jpg|gif|svg)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: '[name].[ext]',
+      //     outputPath: '/'
+      //   }
+      // }
     ]
   },
 
@@ -83,6 +93,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.join(PATHS.src + '/images'),
+        to: PATHS.dist
+      }
+    ]),
     ...createHtmlWebpackPlugins(PAGES_FOLDER)
   ]
 }
