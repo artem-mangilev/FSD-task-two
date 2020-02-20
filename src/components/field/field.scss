@@ -1,0 +1,59 @@
+@import '../../variables.scss';
+
+.field {
+  font: $body_text_font;
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_name {
+    font: $small_header_font;
+    text-transform: uppercase;
+  }
+
+
+  &_state {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark_shade_50_color;
+  }
+
+  &_input {
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding-left: 15px;
+    height: 44px;
+    width: 100%;
+    border: 1px solid $dark_shade_25_color;
+    border-radius: 4px;
+    color: $dark_shade_75_color;
+
+    &::placeholder {
+      font-size: 14px;
+      color: $dark_shade_25_color;
+    }
+
+    &:hover {
+      border: 1px solid $dark_shade_50_color;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $dark_shade_50_color;
+    }
+  }
+
+  &__long {
+    width: $long_input_width;
+  }
+
+  &__medium {
+    width: $medium_input_width;
+  }
+
+  &__short {
+    width: $short_input_width;
+  }
+}

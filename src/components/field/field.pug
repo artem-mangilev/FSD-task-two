@@ -1,0 +1,14 @@
+mixin field(name, id, size, placeholder, ui_kit_state)
+  - 
+    var prefix = 'field__'
+    var size_classes = {
+      long: `${prefix}long`,
+      medium: `${prefix}medium`,
+      short: `${prefix}short`
+    }
+
+  .field(class= size_classes[size])
+    .field_info
+      label.field_name(for= id)= name
+      .field_state= ui_kit_state
+    input.field_input(type='text' id= id placeholder= placeholder)
