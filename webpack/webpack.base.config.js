@@ -76,16 +76,7 @@ module.exports = {
         options: {
           name: '[name].[ext]'
         }
-      },
-      // images
-      // {
-      //   test: /\.(png|jpg|gif|svg)$/,
-      //   loader: 'file-loader',
-      //   options: {
-      //     name: '[name].[ext]',
-      //     outputPath: '/'
-      //   }
-      // }
+      }
     ]
   },
 
