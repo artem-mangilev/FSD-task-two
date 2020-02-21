@@ -3,13 +3,25 @@ include ../layout/base
 include ../components/text-field/text-field
 
 - 
-  let fieldSettings = {
-    label: 'text field',
-    id: 'text_field',
-    placeholder: 'Email',
-    size: 'long',
-    ui_kit_state: 'default'
-  }
+  const settings = {
+    defaultTextField: {
+      label: 'text field',
+      size: 'long',
+      id: 'text_field',
+      ui_kit_state: 'default',
+      placeholder: 'Email'
+    },
+    activeTextField: {
+      label: 'text field',
+      size: 'long',
+      id: 'active_text_field',
+      ui_kit_state: 'hover / focus',
+      ui_kit_isActive: true,  
+      value: 'This is pretty awesome'
+    }
+  } 
 
 +base
-  +text-field(fieldSettings)
+  +text-field(settings.defaultTextField)
+  +text-field(settings.activeTextField)
+
