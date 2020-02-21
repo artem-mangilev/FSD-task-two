@@ -30,6 +30,10 @@
     border-radius: 4px;
     color: $dark_shade_75_color;
 
+    &__active {
+      border: 1px solid $dark_shade_50_color;
+    }
+
     &::placeholder {
       font-size: 14px;
       color: $dark_shade_25_color;
