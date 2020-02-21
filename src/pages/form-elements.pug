@@ -2,6 +2,8 @@ include ../layout/base
 
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
+include ../components/masked-text-field/masked-text-field
+
 
 - 
   const settings = {
@@ -27,6 +29,13 @@ include ../components/dropdown/dropdown
       ui_kit_state: 'default',
       value: 'Сколько гостей',
       icon_name: 'expand_more'
+    },
+    maskedTextField: {
+      label: 'masked text field',
+      size: 'long',
+      id: 'masked_text_field',
+      ui_kit_state: 'default',
+      placeholder: 'ДД.ММ.ГГГГ'
     }
   } 
 
@@ -34,3 +43,4 @@ include ../components/dropdown/dropdown
   +text-field(settings.defaultTextField)
   +text-field(settings.activeTextField)
   +dropdown(settings.dropdown)
+  +masked-text-field(settings.maskedTextField)
