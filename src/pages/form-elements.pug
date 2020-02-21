@@ -1,6 +1,7 @@
 include ../layout/base
 
 include ../components/text-field/text-field
+include ../components/dropdown/dropdown
 
 - 
   const settings = {
@@ -18,10 +19,18 @@ include ../components/text-field/text-field
       ui_kit_state: 'hover / focus',
       ui_kit_isActive: true,  
       value: 'This is pretty awesome'
+    },
+    dropdown: {
+      label: 'dropdown',
+      size: 'long',
+      id: 'dropdown',
+      ui_kit_state: 'default',
+      value: 'Сколько гостей',
+      icon_name: 'expand_more'
     }
   } 
 
 +base
   +text-field(settings.defaultTextField)
   +text-field(settings.activeTextField)
-
+  +dropdown(settings.dropdown)

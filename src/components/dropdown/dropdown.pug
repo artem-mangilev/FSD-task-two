@@ -1,0 +1,4 @@
+include ../field/field
+
+mixin dropdown({ label, value, id, size, placeholder, icon_name, is_icon_colored, ui_kit_state })
+  +field({ label, value, id, size, placeholder, icon_name, is_icon_colored, ui_kit_state, is_disabled: true})
