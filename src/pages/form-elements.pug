@@ -4,6 +4,7 @@ include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/masked-text-field/masked-text-field
 include ../components/date-dropdown/date-dropdown
+include ../components/filter-date-dropdown/filter-date-dropdown
 
 
 - 
@@ -47,6 +48,11 @@ include ../components/date-dropdown/date-dropdown
       label: 'date dropdown',
       value: '19.08.2019',
       id: 'date_dropdown'
+    },
+    filterDateDropdown: {
+      label: 'filter date dropdown',
+      value: '19 авг - 23 авг',
+      id: 'filter_date_dropdown'
     }
   } 
 
@@ -57,4 +63,5 @@ include ../components/date-dropdown/date-dropdown
   +masked-text-field(settings.maskedTextField)
   +date-dropdown(settings.dateDropdownLeft)
   +date-dropdown(settings.dateDropdownRight)
+  +filter-date-dropdown(settings.filterDateDropdown)
 
