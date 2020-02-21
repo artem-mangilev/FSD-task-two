@@ -12,6 +12,8 @@ $dark_shade_5_color: dark-shade(.05);
 $primary_color: #BC9CFF;
 $secondary_color: #6FCF97;
 
+$primary_gradient: linear-gradient(180deg, $primary_color 0%, #8BA4F9 100%);
+
 // fonts
 $big_header_font: bold 24px 'Quicksand-Bold';
 $medium_header_font: bold 19px 'Quicksand-Bold';
