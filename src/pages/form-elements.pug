@@ -2,5 +2,14 @@ include ../layout/base
 
 include ../components/field/field
 
+- 
+  let fieldSettings = {
+    label: 'text field',
+    id: 'text_field',
+    placeholder: 'Email',
+    size: 'long',
+    ui_kit_state: 'default'
+  }
+
 +base
-  +field('text field', 'text_field', 'long', 'Email', 'default')
+  +field(fieldSettings)
