@@ -13,22 +13,41 @@
     text-transform: uppercase;
   }
 
-
   &_state {
     font-size: 12px;
     text-transform: uppercase;
     color: $dark_shade_50_color;
   }
 
+  &_input-wrapper {
+    position: relative;
+    margin-top: 5px;
+  }
+
   &_input {
     box-sizing: border-box;
-    margin-top: 5px;
     padding-left: 15px;
     height: 44px;
     width: 100%;
     border: 1px solid $dark_shade_25_color;
     border-radius: 4px;
     color: $dark_shade_75_color;
+
+    &_icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      padding-right: 10px;
+      display: flex;
+      align-items: center;
+      color: $dark_shade_50_color;
+
+      &__colored {
+        // TODO: fix applying gradient for icon
+        color: $primary_gradient;
+      }
+    }
 
     &__active {
       border: 1px solid $dark_shade_50_color;
