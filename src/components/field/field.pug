@@ -1,4 +1,4 @@
-mixin field({ label, id, size, placeholder, ui_kit_isActive = false, ui_kit_state })
+mixin field({ label, value= '', id, size, placeholder, ui_kit_isActive = false, ui_kit_state })
   - 
     var prefix = 'field__'
     var size_classes = {
@@ -11,4 +11,8 @@ mixin field({ label, id, size, placeholder, ui_kit_isActive = false, ui_kit_stat
     .field_info
       label.field_name(for= id)= label
       .field_state= ui_kit_state
-    input.field_input(class= ui_kit_isActive ? 'field_input__active' : '' type='text' id= id placeholder= placeholder)
+    input.field_input(class= ui_kit_isActive ? 'field_input__active' : ''
+                      placeholder= placeholder
+                      value= value
+                      type= 'text' 
+                      id= id)
