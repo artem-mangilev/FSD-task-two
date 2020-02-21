@@ -66,6 +66,10 @@
       outline: none;
       border: 1px solid $dark_shade_50_color;
     }
+
+    &:disabled {
+      background-color: inherit;
+    }
   }
 
   &__long {
