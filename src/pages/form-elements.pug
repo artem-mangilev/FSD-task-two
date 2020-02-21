@@ -3,6 +3,7 @@ include ../layout/base
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/masked-text-field/masked-text-field
+include ../components/date-dropdown/date-dropdown
 
 
 - 
@@ -36,6 +37,16 @@ include ../components/masked-text-field/masked-text-field
       id: 'masked_text_field',
       ui_kit_state: 'default',
       placeholder: 'ДД.ММ.ГГГГ'
+    },
+    dateDropdownLeft: {
+      label: 'date dropdown',
+      value: 'ДД.ММ.ГГГГ',
+      id: 'date_dropdown'
+    },
+    dateDropdownRight: {
+      label: 'date dropdown',
+      value: '19.08.2019',
+      id: 'date_dropdown'
     }
   } 
 
@@ -44,3 +55,6 @@ include ../components/masked-text-field/masked-text-field
   +text-field(settings.activeTextField)
   +dropdown(settings.dropdown)
   +masked-text-field(settings.maskedTextField)
+  +date-dropdown(settings.dateDropdownLeft)
+  +date-dropdown(settings.dateDropdownRight)
+
