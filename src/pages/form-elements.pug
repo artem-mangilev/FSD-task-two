@@ -5,6 +5,7 @@ include ../components/dropdown/dropdown
 include ../components/masked-text-field/masked-text-field
 include ../components/date-dropdown/date-dropdown
 include ../components/filter-date-dropdown/filter-date-dropdown
+include ../components/subscription-text-field/subscription-text-field
 
 
 - 
@@ -53,6 +54,11 @@ include ../components/filter-date-dropdown/filter-date-dropdown
       label: 'filter date dropdown',
       value: '19 авг - 23 авг',
       id: 'filter_date_dropdown'
+    },
+    subscriptionTextField: {
+      label: 'subscription text field',
+      placeholder: 'Email',
+      id: 'subscription_text_field'
     }
   } 
 
@@ -64,4 +70,5 @@ include ../components/filter-date-dropdown/filter-date-dropdown
   +date-dropdown(settings.dateDropdownLeft)
   +date-dropdown(settings.dateDropdownRight)
   +filter-date-dropdown(settings.filterDateDropdown)
+  +subscription-text-field(settings.subscriptionTextField)
 
