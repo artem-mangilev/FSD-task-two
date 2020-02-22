@@ -2,55 +2,47 @@ include ../layout/base
 
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
-include ../components/masked-text-field/masked-text-field
-include ../components/date-dropdown/date-dropdown
-include ../components/filter-date-dropdown/filter-date-dropdown
-include ../components/subscription-text-field/subscription-text-field
+//- include ../components/date-dropdown/date-dropdown
+//- include ../components/filter-date-dropdown/filter-date-dropdown
+include ../components/input/input
 
 
 - 
   const settings = {
     defaultTextField: {
       label: 'text field',
-      size: 'long',
       id: 'text_field',
       ui_kit_state: 'default',
       placeholder: 'Email'
     },
     activeTextField: {
       label: 'text field',
-      size: 'long',
       id: 'active_text_field',
       ui_kit_state: 'hover / focus',
-      ui_kit_isActive: true,  
+      ui_kit_is_active: true,  
       value: 'This is pretty awesome'
     },
     dropdown: {
+      type: 'applied-options',
       label: 'dropdown',
-      size: 'long',
       id: 'dropdown',
       ui_kit_state: 'default',
       value: 'Сколько гостей',
-      icon_name: 'expand_more'
     },
     maskedTextField: {
       label: 'masked text field',
-      size: 'long',
       id: 'masked_text_field',
+      is_masked: true,
       ui_kit_state: 'default',
       placeholder: 'ДД.ММ.ГГГГ'
     },
-    dateDropdownLeft: {
-      label: 'date dropdown',
-      value: 'ДД.ММ.ГГГГ',
-      id: 'date_dropdown'
+    multifieldDateDropdown: {
+      type: 'miltifield-date-filter',
+      label: ['date_dropdown', 'date_dropdown'],
+      value: ['ДД.ММ.ГГГГ', '19.08.2019']
     },
-    dateDropdownRight: {
-      label: 'date dropdown',
-      value: '19.08.2019',
-      id: 'date_dropdown'
-    },
-    filterDateDropdown: {
+    singlefieldDateDropdown: {
+      type: 'singlefield-date-filter',
       label: 'filter date dropdown',
       value: '19 авг - 23 авг',
       id: 'filter_date_dropdown'
@@ -58,7 +50,8 @@ include ../components/subscription-text-field/subscription-text-field
     subscriptionTextField: {
       label: 'subscription text field',
       placeholder: 'Email',
-      id: 'subscription_text_field'
+      id: 'subscription_text_field',
+      is_subscription: true
     }
   } 
 
@@ -66,9 +59,8 @@ include ../components/subscription-text-field/subscription-text-field
   +text-field(settings.defaultTextField)
   +text-field(settings.activeTextField)
   +dropdown(settings.dropdown)
-  +masked-text-field(settings.maskedTextField)
-  +date-dropdown(settings.dateDropdownLeft)
-  +date-dropdown(settings.dateDropdownRight)
-  +filter-date-dropdown(settings.filterDateDropdown)
-  +subscription-text-field(settings.subscriptionTextField)
+  +text-field(settings.maskedTextField)
+  +dropdown(settings.multifieldDateDropdown)
+  +dropdown(settings.singlefieldDateDropdown)
+  +text-field(settings.subscriptionTextField)
 
