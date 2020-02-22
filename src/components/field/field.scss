@@ -44,8 +44,11 @@
       color: $dark_shade_50_color;
 
       &__colored {
-        // TODO: fix applying gradient for icon
-        color: $primary_gradient;
+        // thanks to: https://cssgradient.io/blog/css-gradient-text/
+        background: $primary_gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
