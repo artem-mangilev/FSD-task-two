@@ -1,21 +1,6 @@
-mixin field({ label, value= '', id, size, placeholder, icon_name= '', is_icon_colored= false, is_disabled= false, ui_kit_isActive = false, ui_kit_state })
-  - 
-    var prefix = 'field__'
-    var size_classes = {
-      long: `${prefix}long`,
-      medium: `${prefix}medium`,
-      short: `${prefix}short`
-    }
-
-  .field(class= size_classes[size])
+mixin field({ label, id, ui_kit_state = '' })
+  .field
     .field_info
       label.field_name(for= id)= label
       .field_state= ui_kit_state
-    .field_input-wrapper
-      input.field_input(class= ui_kit_isActive ? 'field_input__active' : ''
-                        placeholder= placeholder
-                        disabled= is_disabled
-                        value= value
-                        type= 'text'
-                        id= id)
-      i.field_input_icon.material-icons(class= is_icon_colored ? 'field_input_icon__colored' : '')= icon_name
+    block
