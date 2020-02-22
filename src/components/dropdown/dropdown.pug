@@ -1,4 +1,71 @@
 include ../field/field
+include ../input/input
 
-mixin dropdown({ label, value, id, size, placeholder, icon_name, is_icon_colored, ui_kit_state })
-  +field({ label, value, id, size, placeholder, icon_name, is_icon_colored, ui_kit_state, is_disabled: true})
+//- types:
+//-   applied-options
+//-   options
+//-   miltifield-date-filter
+//-   singlefield-date-filter
+mixin dropdown({ type, label, value, id, placeholder, ui_kit_state })
+  - 
+    const settings = {
+      applied_options: {
+        field: {
+          label,
+          id,
+          ui_kit_state
+        },
+        input: {
+          icon_name: 'expand_more'
+        }
+      },
+      muiltifield_date_filter: {
+        fields: [
+          {
+            label: label[0],
+          },
+          {
+            label: label[1]
+          }
+        ],
+        input: {
+          size: 'short',
+          icon_name: 'expand_more'
+        }
+      },
+      singlefield_date_filter: {
+        field: {
+          label,
+          id
+        },
+        input: {
+          size: 'medium',
+          icon_name: 'expand_more'
+        }
+      }
+    }
+
+  case type
+    when 'applied-options'
+      +field(settings.applied_options.field)
+        +input(settings.applied_options.input)(
+          value= value
+          id = id
+        )
+    when 'miltifield-date-filter'
+      .dropdown
+        +field(settings.muiltifield_date_filter.fields[0])
+          +input(settings.muiltifield_date_filter.input)(
+            value= value[0]
+          )
+        +field(settings.muiltifield_date_filter.fields[1])
+          +input(settings.muiltifield_date_filter.input)(
+            value= value[1]
+          )
+    when 'singlefield-date-filter'
+      +field(settings.singlefield_date_filter.field)
+        +input(settings.singlefield_date_filter.input)(
+          value= value
+          id = id
+        )     
+    
