@@ -1,4 +1,19 @@
 include ../field/field
+include ../input/input
 
-mixin text-field({ label, value, id, size, placeholder, ui_kit_isActive, ui_kit_state })
-  +field({ label, value, id, size, placeholder, ui_kit_isActive, ui_kit_state })
+mixin text-field({ label, value, id, placeholder, is_masked, is_subscription= false, ui_kit_is_active= false, ui_kit_state })
+  - 
+    const settings = {
+      size: is_subscription ? 'medium' : 'long',
+      icon_name: is_subscription ? 'arrow_forward': '',
+      is_icon_colored: is_subscription ? true : false,
+      is_masked,
+      ui_kit_is_active
+    }
+
+  +field({ label, id, ui_kit_state })
+    +input(settings)(
+      placeholder= placeholder
+      value= value
+      id = id
+    )
