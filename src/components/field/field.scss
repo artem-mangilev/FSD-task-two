@@ -4,18 +4,18 @@
   width: max-content;
   font: $body_text_font;
 
-  &_info {
+  &__info {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
   }
 
-  &_name {
+  &__name {
     font: $small_header_font;
     text-transform: uppercase;
   }
 
-  &_state {
+  &__state {
     font-size: 12px;
     text-transform: uppercase;
     color: $dark_shade_50_color;
