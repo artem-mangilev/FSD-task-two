@@ -9,6 +9,7 @@ mixin input({ size= 'long', icon_name= '', is_icon_colored= false, is_masked= fa
 
   .input
     input.input__field(class= size_classes[size]
-                       class= ui_kit_is_active ? `${prefix}active`: '')&attributes(attributes)
+                       class= ui_kit_is_active ? `${prefix}active`: ''
+                       class= is_masked ? `${prefix}masked` : '')&attributes(attributes)
     i.input__icon(class= 'material-icons', 
                   class= is_icon_colored ? 'input__icon_colored' : '')= icon_name
