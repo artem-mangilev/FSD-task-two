@@ -36,11 +36,13 @@
       position: absolute;
       top: 4px; left: 6px; 
       @include size(6px, 8px);
-
-      border: solid;
-      border-width: 0 2px 2px 0;
-      border-image: $primary_gradient;
-      border-image-slice: 1;
+      
+      border: {
+        width: 0 2px 2px 0;
+        style: solid;
+        image: $primary_gradient;
+        image-slice: 1;
+      };
       transform: rotate(45deg);
     }
 
