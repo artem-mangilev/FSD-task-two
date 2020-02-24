@@ -3,8 +3,7 @@ include ../layout/base
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/input/input
-include ../components/checkbox/checkbox
-
+include ../components/checkbox-group/checkbox-group
 
 - 
   const settings = {
@@ -52,9 +51,19 @@ include ../components/checkbox/checkbox
       id: 'subscription_text_field',
       is_subscription: true
     },
-
-    checkbox: {
-      content: 'test data'
+    checkboxGroup: {
+      title: 'Checkbox buttons',
+      checkboxes: [
+        {
+          content: 'Можно курить'
+        },
+        {
+          content: 'Можно с питомцами'
+        },
+        {
+          content: 'Можно пригласить гостей (до 10 человек)'
+        }
+      ]
     }
   } 
 
@@ -66,4 +75,4 @@ include ../components/checkbox/checkbox
   +dropdown(settings.multifieldDateDropdown)
   +dropdown(settings.singlefieldDateDropdown)
   +text-field(settings.subscriptionTextField)
-  +checkbox(settings.checkbox)
+  +checkbox-group(settings.checkboxGroup)
