@@ -1,0 +1,81 @@
+@import '../../variables.scss';
+
+.checkbox-container {
+  display: block;
+  position: relative;
+
+  $checkbox_width: 20px;
+  $checkbox_height: 20px;
+
+  height: $checkbox_height;
+
+  &__checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+
+    position: absolute;
+    box-sizing: border-box;
+    height: inherit;
+    width: $checkbox_width;
+
+    $border: 1px;
+    border: $border solid transparent;
+    border-radius: 4px;
+    background-color: #fff;
+    background-clip: padding-box;
+
+    // checkbox border styles
+    // gradient border works thanks to: https://css-tricks.com/gradient-borders-in-css/
+    &::before {
+      content: '';
+
+      display: inline-block;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+
+      z-index: -1;
+      margin: -$border;
+
+      border-radius: inherit;
+      background: $dark_shade_25_color;
+    }
+
+    // checkmark styles
+    &::after {
+      content: '';
+
+      display: none;
+      box-sizing: border-box;
+      position: absolute;
+      top: 4px; left: 6px; width: 6px; height: 8px;
+
+      border: solid;
+      border-width: 0 2px 2px 0;
+      border-image: $primary_gradient;
+      border-image-slice: 1;
+      transform: rotate(45deg);
+    }
+
+    // show checkmark when checkbox is checked
+    &:checked::after {
+      display: inline-block;
+    }
+
+    // make checkbox border colored when checkbox is checked
+    &:checked::before {
+      background: $primary_gradient;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__content {
+    padding-left: $checkbox_width + 10px;
+    
+    font: $body_text_font;
+    color: $dark_shade_50_color;
+  }
+}
