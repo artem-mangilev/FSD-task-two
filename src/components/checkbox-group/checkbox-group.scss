@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.checkbox-group {
+  width: $medium_input_width;
+
+  &__title {
+    margin-bottom: 16px;
+    font: $small_header_font;
+    text-transform: uppercase;
+  }
+
+  &__checkbox {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

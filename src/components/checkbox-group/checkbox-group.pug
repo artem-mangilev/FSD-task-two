@@ -1,0 +1,10 @@
+include ../checkbox/checkbox
+
+mixin checkbox-group({ title, checkboxes })
+  .checkbox-group
+    h3.checkbox-group__title= title
+    each checkbox in checkboxes
+      +checkbox(checkbox.content)(
+        class='checkbox-group__checkbox'
+      )
+    
