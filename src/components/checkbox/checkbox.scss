@@ -17,8 +17,7 @@
 
     position: absolute;
     box-sizing: border-box;
-    height: inherit;
-    width: $checkbox_width;
+    @include size($checkbox_width, inherit);
 
     background-color: #fff;
 
@@ -36,7 +35,7 @@
       position: absolute;
       top: 4px; left: 6px; 
       @include size(6px, 8px);
-      
+
       border: {
         width: 0 2px 2px 0;
         style: solid;
