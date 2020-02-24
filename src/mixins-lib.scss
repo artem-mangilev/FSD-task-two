@@ -1,0 +1,47 @@
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+/* 
+  Extends border possibilities, at this moment it can:
+    - set gradient color to rounded border (thanks to: https://css-tricks.com/gradient-borders-in-css/)
+
+  Before use this mixin please make sure current element is positioned.
+*/
+@mixin extended_border($width, $radius, $border_color) {
+  & {
+    border: $width solid transparent;
+    border-radius: $radius;
+    background-clip: padding-box;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      @include position(0px, 0px, 0px, 0px);
+      z-index: -1;
+      margin: -$width;
+      border-radius: inherit;
+      background: $border_color;
+    }
+  }
+}
+
+/* 
+  Changes border color when pseudo-class was applied.
+*/
+@mixin extended_border_color_on($pseudo_class, $color) {
+  @if $pseudo_class == 'checked' {
+    &:checked::before {
+      background: $color;
+    }    
+  }
+}
