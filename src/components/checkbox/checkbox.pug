@@ -1,4 +1,8 @@
-mixin checkbox({ content })
-  label.checkbox-container
-    input.checkbox-container__checkbox(type= 'checkbox')&attributes()
-    span.checkbox-container__content= content
+mixin checkbox(content)
+  label.checkbox-container(class!=attributes.class)
+    input.checkbox-container__checkbox(type= 'checkbox')(
+      id!=attributes.id
+      name!=attributes.name
+      value!=attributes.value
+    )
+    .checkbox-container__content= content
