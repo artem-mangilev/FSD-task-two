@@ -4,6 +4,7 @@ include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/input/input
 include ../components/checkbox-group/checkbox-group
+include ../components/radio/radio
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -69,7 +70,8 @@ block body
             content: 'Можно пригласить гостей (до 10 человек)'
           }
         ]
-      }
+      },
+      radio: 'Мужчина'
     } 
 
   +text-field(settings.defaultTextField)
@@ -80,3 +82,4 @@ block body
   +dropdown(settings.singlefieldDateDropdown)
   +text-field(settings.subscriptionTextField)
   +checkbox-group(settings.checkboxGroup)
+  +radio(settings.radio)
