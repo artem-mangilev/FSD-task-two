@@ -8,7 +8,7 @@
   $checkbox_width: 20px;
   $checkbox_height: 20px;
 
-  height: $checkbox_height;
+  height: max-content;
 
   &__checkbox {
     -webkit-appearance: none;
@@ -17,7 +17,8 @@
 
     position: absolute;
     box-sizing: border-box;
-    @include size($checkbox_width, inherit);
+
+    @include size($checkbox_width, $checkbox_height);
 
     background-color: #fff;
 
