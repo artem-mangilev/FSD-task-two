@@ -1,73 +1,77 @@
-include ../layout/base
+extends ../layout/base
 
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/input/input
 include ../components/checkbox-group/checkbox-group
 
-- 
-  const settings = {
-    defaultTextField: {
-      label: 'text field',
-      id: 'text_field',
-      ui_kit_state: 'default',
-      placeholder: 'Email'
-    },
-    activeTextField: {
-      label: 'text field',
-      id: 'active_text_field',
-      ui_kit_state: 'hover / focus',
-      ui_kit_is_active: true,  
-      value: 'This is pretty awesome'
-    },
-    dropdown: {
-      type: 'applied-options',
-      label: 'dropdown',
-      id: 'dropdown',
-      ui_kit_state: 'default',
-      value: 'Сколько гостей',
-    },
-    maskedTextField: {
-      label: 'masked text field',
-      id: 'masked_text_field',
-      is_masked: true,
-      ui_kit_state: 'default',
-      placeholder: 'ДД.ММ.ГГГГ'
-    },
-    multifieldDateDropdown: {
-      type: 'miltifield-date-filter',
-      label: ['date_dropdown', 'date_dropdown'],
-      value: ['ДД.ММ.ГГГГ', '19.08.2019']
-    },
-    singlefieldDateDropdown: {
-      type: 'singlefield-date-filter',
-      label: 'filter date dropdown',
-      value: '19 авг - 23 авг',
-      id: 'filter_date_dropdown'
-    },
-    subscriptionTextField: {
-      label: 'subscription text field',
-      placeholder: 'Email',
-      id: 'subscription_text_field',
-      is_subscription: true
-    },
-    checkboxGroup: {
-      title: 'Checkbox buttons',
-      checkboxes: [
-        {
-          content: 'Можно курить'
-        },
-        {
-          content: 'Можно с питомцами'
-        },
-        {
-          content: 'Можно пригласить гостей (до 10 человек)'
-        }
-      ]
-    }
-  } 
+block head
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  title Form elements
 
-+base
+block body
+  - 
+    const settings = {
+      defaultTextField: {
+        label: 'text field',
+        id: 'text_field',
+        ui_kit_state: 'default',
+        placeholder: 'Email'
+      },
+      activeTextField: {
+        label: 'text field',
+        id: 'active_text_field',
+        ui_kit_state: 'hover / focus',
+        ui_kit_is_active: true,  
+        value: 'This is pretty awesome'
+      },
+      dropdown: {
+        type: 'applied-options',
+        label: 'dropdown',
+        id: 'dropdown',
+        ui_kit_state: 'default',
+        value: 'Сколько гостей',
+      },
+      maskedTextField: {
+        label: 'masked text field',
+        id: 'masked_text_field',
+        is_masked: true,
+        ui_kit_state: 'default',
+        placeholder: 'ДД.ММ.ГГГГ'
+      },
+      multifieldDateDropdown: {
+        type: 'miltifield-date-filter',
+        label: ['date_dropdown', 'date_dropdown'],
+        value: ['ДД.ММ.ГГГГ', '19.08.2019']
+      },
+      singlefieldDateDropdown: {
+        type: 'singlefield-date-filter',
+        label: 'filter date dropdown',
+        value: '19 авг - 23 авг',
+        id: 'filter_date_dropdown'
+      },
+      subscriptionTextField: {
+        label: 'subscription text field',
+        placeholder: 'Email',
+        id: 'subscription_text_field',
+        is_subscription: true
+      },
+      checkboxGroup: {
+        title: 'Checkbox buttons',
+        checkboxes: [
+          {
+            content: 'Можно курить'
+          },
+          {
+            content: 'Можно с питомцами'
+          },
+          {
+            content: 'Можно пригласить гостей (до 10 человек)'
+          }
+        ]
+      }
+    } 
+
   +text-field(settings.defaultTextField)
   +text-field(settings.activeTextField)
   +dropdown(settings.dropdown)
