@@ -1,0 +1,12 @@
+include ../radio/radio
+
+mixin radio-group({ title, name, radio_buttons })
+  .radio-group
+    h3.radio-group__title= title
+    .radio-group__radio-buttons
+      each button in radio_buttons
+        +radio(button.content)(
+          name=name
+          value=button.value
+        )
+
