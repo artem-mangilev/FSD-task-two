@@ -36,6 +36,15 @@
 }
 
 /* 
+  Could be used to change the color that already set.
+*/
+@mixin extended_border_color($color) {
+  &::before {
+    background: $color;
+  } 
+}
+
+/* 
   Changes border color when pseudo-class was applied.
 */
 @mixin extended_border_color_on($pseudo_class, $color) {
