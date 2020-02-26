@@ -1,4 +1,4 @@
 mixin toggle(content)
-  label.toggle
-    input.toggle__button(type='checkbox')&attributes(attributes)
+  label.toggle(class!=attributes.class)
+    input.toggle__button(type='checkbox' name!=attributes.name value!=attributes.value checked!=attributes.checked)
     span.toggle__content= content
