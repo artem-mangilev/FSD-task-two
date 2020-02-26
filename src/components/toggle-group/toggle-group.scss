@@ -1,0 +1,13 @@
+.toggle-group {
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__toggle {
+    margin-bottom: 14px;
+  }
+
+  &__toggle:last-of-type {
+    margin-bottom: 0;
+  }
+}
