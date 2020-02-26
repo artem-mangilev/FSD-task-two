@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @font-face {
   font-family: "Montserrat-Bold";
   src: url('./fonts/Montserrat/Montserrat-Bold.svg') format('svg'),
@@ -32,6 +34,10 @@ body {
 
 h1, h2, h3 {
   margin: 0;
+}
+
+h3 {
+  font: $small_header_font;
 }
 
 .container {
