@@ -4,7 +4,7 @@ include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/input/input
 include ../components/checkbox-group/checkbox-group
-include ../components/radio/radio
+include ../components/radio-group/radio-group
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -71,7 +71,20 @@ block body
           }
         ]
       },
-      radio: 'Мужчина'
+      radioGroup: {
+        title: 'Radio Buttons',
+        name: 'sex',
+        radio_buttons: [
+          {
+            content: 'Мужчина',
+            value: 'man'
+          },
+          {
+            content: 'Женщина',
+            content: 'women'
+          }
+        ]
+      }
     } 
 
   +text-field(settings.defaultTextField)
@@ -82,4 +95,4 @@ block body
   +dropdown(settings.singlefieldDateDropdown)
   +text-field(settings.subscriptionTextField)
   +checkbox-group(settings.checkboxGroup)
-  +radio(settings.radio)
+  +radio-group(settings.radioGroup)
