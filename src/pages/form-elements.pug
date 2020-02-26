@@ -5,6 +5,7 @@ include ../components/dropdown/dropdown
 include ../components/input/input
 include ../components/checkbox-group/checkbox-group
 include ../components/radio-group/radio-group
+include ../components/toggle/toggle
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -84,7 +85,8 @@ block body
             content: 'women'
           }
         ]
-      }
+      },
+      toggle: 'Получать спецпредложения'
     } 
 
   +text-field(settings.defaultTextField)
@@ -96,3 +98,4 @@ block body
   +text-field(settings.subscriptionTextField)
   +checkbox-group(settings.checkboxGroup)
   +radio-group(settings.radioGroup)
+  +toggle(settings.toggle)
