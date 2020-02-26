@@ -6,6 +6,7 @@ include ../components/input/input
 include ../components/checkbox-group/checkbox-group
 include ../components/radio-group/radio-group
 include ../components/toggle-group/toggle-group
+include ../components/like-button/like-button
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -97,6 +98,10 @@ block body
             content: 'Получать спецпредложения'
           }
         ]
+      },
+      likeButton: {
+        is_liked: true,
+        likes_number: 2
       }
     } 
 
@@ -111,3 +116,4 @@ block body
   +radio-group(settings.radioGroup)
   +toggle(settings.toggle)
   +toggle-group(settings.toggleGroup)
+  +like-button(settings.likeButton)
