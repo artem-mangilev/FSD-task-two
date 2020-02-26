@@ -30,6 +30,8 @@
 
 body {
   margin: 0;
+  font: $body_text_font;
+  color: $dark_shade_75_color;
 }
 
 h1, h2, h3 {
