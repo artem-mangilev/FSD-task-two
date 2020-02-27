@@ -10,6 +10,7 @@ import '../components/like-button/like-button'
 import '../components/like-group/like-group'
 import '../components/rate-button/rate-button'
 import '../components/rate-group/rate-group'
+import '../components/range-slider/range-slider'
 
 import '../variables.scss'
 import '../style.scss'

@@ -10,6 +10,7 @@ include ../components/like-button/like-button
 include ../components/like-group/like-group
 include ../components/rate-button/rate-button
 include ../components/rate-group/rate-group
+include ../components/range-slider/range-slider
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -126,6 +127,13 @@ block body
       rateGroup: {
         title: 'rate button',
         rates: [4, 5]
+      },
+      rangeSlider: {
+        title: 'range slider',
+        min: 0,
+        max: 15000,
+        from: 5000,
+        to: 10000
       }
     } 
 
@@ -143,3 +151,4 @@ block body
   +like-group(settings.likeGroup)
   +rate-button(settings.rateButton)
   +rate-group(settings.rateGroup)
+  +range-slider(settings.rangeSlider)

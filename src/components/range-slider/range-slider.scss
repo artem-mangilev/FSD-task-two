@@ -1,0 +1,65 @@
+@import '../../variables.scss';
+
+.range-slider {
+  position: relative;
+  width: $medium_input_width;
+
+  &__title {
+    position: absolute;
+    top: -6px;
+  }
+}
+
+// override default ion-rangeslider plugin's styles
+.irs {
+  font: $body_text_font !important;
+  font-size: 12px !important;
+
+  &-from, &-to {
+    display: none !important;
+  }
+
+  &-single {
+    visibility: visible !important;
+    display: inline-block !important;
+    padding: 0 !important;
+
+    // probably is not a reliable solution because this element could
+    // visually collide with other elements.
+    left: auto !important;
+    right: 0 !important;
+    top: -5px !important;
+
+    background-color: #fff !important;
+    color: $dark_shade_50_color !important;
+
+    &::before {
+      display: none !important;
+    }
+  }
+
+  &-line {
+    box-sizing: border-box !important;
+    height: 6px !important;
+    background-color: #fff !important;
+    border: 1px solid $dark_shade_25_color !important;
+    border-radius: 3px !important;
+  }
+
+  &-bar {
+    height: 6px !important;
+    background-image: $secondary_gradient !important;
+  }
+
+  &-handle {
+    width: 12px !important;
+    height: 12px !important;
+    background-image: $secondary_gradient !important;
+    border: 1px solid #fff !important;
+    border-radius: 10px !important;
+
+    & i {
+      display: none !important;
+    }
+  }
+}
