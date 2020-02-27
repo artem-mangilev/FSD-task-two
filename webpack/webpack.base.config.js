@@ -69,6 +69,20 @@ module.exports = {
           }
         ]
       },
+      // css
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      },
       // fonts
       {
         test: /\.woff|ttf|svg$/,
