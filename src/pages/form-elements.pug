@@ -7,6 +7,7 @@ include ../components/checkbox-group/checkbox-group
 include ../components/radio-group/radio-group
 include ../components/toggle-group/toggle-group
 include ../components/like-button/like-button
+include ../components/like-group/like-group
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -105,6 +106,19 @@ block body
       likeButton: {
         is_liked: true,
         likes_number: 2
+      },
+      likeGroup: {
+        title: 'like button',
+        likes: [
+          {
+            is_liked: false,
+            likes_number: 2
+          },
+          {
+            is_liked: true,
+            likes_number: 12
+          }
+        ]
       }
     } 
 
@@ -119,3 +133,4 @@ block body
   +radio-group(settings.radioGroup)
   +toggle-group(settings.toggleGroup)
   +like-button(settings.likeButton)
+  +like-group(settings.likeGroup)

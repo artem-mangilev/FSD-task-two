@@ -1,0 +1,13 @@
+.like-group {
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__like {
+    margin-right: 10px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
