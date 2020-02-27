@@ -1,0 +1,10 @@
+@import '../../variables.scss';
+
+.rate-button {
+  &__icon {
+    background: $primary_gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,9 @@
+mixin rate-button(rating)
+  - 
+    const nOfIcons = 5
+    let current = 0
+
+  .rate-button
+    while current < nOfIcons
+      i.rate-button__icon.material-icons= current < rating ? 'star' : 'star_border'
+      - current++

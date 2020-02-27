@@ -8,6 +8,7 @@ include ../components/radio-group/radio-group
 include ../components/toggle-group/toggle-group
 include ../components/like-button/like-button
 include ../components/like-group/like-group
+include ../components/rate-button/rate-button
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -119,7 +120,8 @@ block body
             likes_number: 12
           }
         ]
-      }
+      },
+      rateButton: 4
     } 
 
   +text-field(settings.defaultTextField)
@@ -134,3 +136,4 @@ block body
   +toggle-group(settings.toggleGroup)
   +like-button(settings.likeButton)
   +like-group(settings.likeGroup)
+  +rate-button(settings.rateButton)
