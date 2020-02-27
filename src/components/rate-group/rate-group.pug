@@ -1,0 +1,9 @@
+include ../rate-button/rate-button
+
+mixin rate-group({ title, rates })
+  h3.rate-group__title= title
+  .rate-group__rates
+    each rate in rates
+      +rate-button(rate)(
+        class='rate-group__rate-button'
+      )

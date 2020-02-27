@@ -9,6 +9,7 @@ include ../components/toggle-group/toggle-group
 include ../components/like-button/like-button
 include ../components/like-group/like-group
 include ../components/rate-button/rate-button
+include ../components/rate-group/rate-group
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -121,7 +122,11 @@ block body
           }
         ]
       },
-      rateButton: 4
+      rateButton: 4,
+      rateGroup: {
+        title: 'rate button',
+        rates: [4, 5]
+      }
     } 
 
   +text-field(settings.defaultTextField)
@@ -137,3 +142,4 @@ block body
   +like-button(settings.likeButton)
   +like-group(settings.likeGroup)
   +rate-button(settings.rateButton)
+  +rate-group(settings.rateGroup)

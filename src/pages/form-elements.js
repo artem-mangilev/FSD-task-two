@@ -9,6 +9,7 @@ import '../components/toggle-group/toggle-group'
 import '../components/like-button/like-button'
 import '../components/like-group/like-group'
 import '../components/rate-button/rate-button'
+import '../components/rate-group/rate-group'
 
 import '../variables.scss'
 import '../style.scss'
