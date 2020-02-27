@@ -1,6 +1,6 @@
 include ../radio/radio
 
-mixin radio-group({ title, name, radio_buttons })
+mixin radio-group({ title, name, selected, radio_buttons })
   .radio-group
     h3.radio-group__title= title
     .radio-group__radio-buttons
@@ -8,5 +8,6 @@ mixin radio-group({ title, name, radio_buttons })
         +radio(button.content)(
           name=name
           value=button.value
+          checked=selected === button.value
         )
 

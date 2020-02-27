@@ -6,5 +6,6 @@ mixin checkbox-group({ title, checkboxes })
     each checkbox in checkboxes
       +checkbox(checkbox.content)(
         class='checkbox-group__checkbox'
+        checked=checkbox.isChecked
       )
     
