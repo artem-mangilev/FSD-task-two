@@ -22,10 +22,27 @@
 
     background-color: #fff;
 
-    // checkbox border
-    @include extended_border(1px, 4px, $dark_shade_25_color);
-    // checkbox border color on checked
-    @include extended_border_color_on('checked', $primary_gradient);
+    // checkbox border styles
+    &::before {
+      content: '';
+
+      display: inline-block;
+      box-sizing: border-box;
+
+      @include size(inherit, inherit);
+
+      border: {
+        width: 1px;
+        style: solid;
+        color: $dark_shade_25_color;
+        radius: 4px;
+      }
+      
+    }
+
+    &:checked::before {
+      border-color: $primary_color;
+    }
 
     // checkmark styles
     &::after {
@@ -34,7 +51,7 @@
       display: none;
       box-sizing: border-box;
       position: absolute;
-      top: 4px; left: 6px; 
+      top: 5px; left: 7px; 
       @include size(6px, 8px);
 
       border: {
