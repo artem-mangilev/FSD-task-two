@@ -1,4 +1,5 @@
 @import '../../variables.scss';
+@import '../../mixins-lib.scss';
 
 .range-slider {
   position: relative;
@@ -10,56 +11,135 @@
   }
 }
 
-// override default ion-rangeslider plugin's styles
+/**
+Ion.RangeSlider, 2.3.1
+© Denis Ineshin, 2010 - 2019, IonDen.com
+Build date: 2019-12-19 16:51:02
+*/
 .irs {
-  font: $body_text_font !important;
-  font-size: 12px !important;
+  // old
+  position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-  &-from, &-to {
-    display: none !important;
-  }
-
-  &-single {
-    visibility: visible !important;
-    display: inline-block !important;
-    padding: 0 !important;
-
-    // probably is not a reliable solution because this element could
-    // visually collide with other elements.
-    left: auto !important;
-    right: 0 !important;
-    top: -5px !important;
-
-    background-color: #fff !important;
-    color: $dark_shade_50_color !important;
-
-    &::before {
-      display: none !important;
-    }
-  }
+  // new
+  margin-top: 3px;
+  font: $body_text_font;
+  font-size: 12px;
+  text-align: right;
 
   &-line {
-    box-sizing: border-box !important;
-    height: 6px !important;
-    background-color: #fff !important;
-    border: 1px solid $dark_shade_25_color !important;
-    border-radius: 3px !important;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    outline: none;
   }
-
+  
   &-bar {
-    height: 6px !important;
-    background-image: $secondary_gradient !important;
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 0;
   }
 
   &-handle {
-    width: 12px !important;
-    height: 12px !important;
-    background-image: $secondary_gradient !important;
-    border: 1px solid #fff !important;
-    border-radius: 10px !important;
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    cursor: default;
+    z-index: 1;
+  }
 
-    & i {
-      display: none !important;
+  &-single {
+    // old
+    display: block;
+    top: 0;
+    left: 0;
+    cursor: default;
+    white-space: nowrap;
+
+    // new
+    visibility: visible !important;
+  }
+
+  &-hidden-input {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    z-index: -9999;
+    background: none;
+    border-style: solid;
+    border-color: transparent;
+  }
+
+  &--flat {
+    height: 40px;
+  }
+  &--flat &-line {
+    // old
+    top: 25px;
+
+    // new
+    box-sizing: border-box;
+    height: 6px;
+    background-color: #fff;
+    border: {
+      width: 1px;
+      style: solid;
+      color: $dark_shade_25_color;
+      radius: 3px;
     }
   }
+  &--flat &-bar {
+    // old
+    top: 25px;
+
+    // new
+    height: 6px;
+    background-image: $secondary_gradient;
+  }
+  &--flat &-handle {
+    // old
+    top: 22px;
+
+    // new
+    @include size(12px, 12px);
+    background-image: $secondary_gradient;
+    border: {
+      width: 1px;
+      style: solid;
+      color: #fff;
+      radius: 10px;
+    }
+  }
+  // new
+  &--flat &-from, &--flat &-to {
+    display: none;
+  }
+
+  &--flat &-single {
+    // new
+    position: absolute;
+    top: -6px; right: 0px;
+    color: $dark_shade_50_color;
+  }  
 }
+
+
+
+
+
