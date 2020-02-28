@@ -11,6 +11,7 @@ include ../components/like-group/like-group
 include ../components/rate-button/rate-button
 include ../components/rate-group/rate-group
 include ../components/range-slider/range-slider
+include ../components/button/button
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -134,7 +135,9 @@ block body
         max: 15000,
         from: 5000,
         to: 10000
-      }
+      },
+      button: {
+        content: 'click me'      }
     } 
 
   +text-field(settings.defaultTextField)
@@ -152,3 +155,4 @@ block body
   +rate-button(settings.rateButton)
   +rate-group(settings.rateGroup)
   +range-slider(settings.rangeSlider)
+  +button(settings.button)(disabled)
