@@ -29,6 +29,10 @@
   &_outlined {
     @include extended_border(2px, 22px, $primary_gradient);
     background-color: #fff;
+
+    &:disabled {
+      @include extended_border_opaticy(.5);
+    }
   }
 
   &_primary-string, &_string {
