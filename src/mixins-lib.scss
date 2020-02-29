@@ -44,6 +44,15 @@
   } 
 }
 
+/*
+  Could change border
+*/
+@mixin extended_border_opaticy($opacity) {
+  &::before {
+      opacity: $opacity;
+  }    
+}
+
 /* 
   Changes border color when pseudo-class was applied.
 */
