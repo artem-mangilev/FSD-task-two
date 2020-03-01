@@ -3,15 +3,9 @@ extends ../layout/base
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
 include ../components/input/input
-include ../components/checkbox-group/checkbox-group
-include ../components/radio-group/radio-group
-include ../components/toggle-group/toggle-group
-include ../components/like-button/like-button
-include ../components/like-group/like-group
-include ../components/rate-button/rate-button
-include ../components/rate-group/rate-group
 include ../components/range-slider/range-slider
 include ../components/button/button
+include ../components/input-group/input-group
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -65,8 +59,9 @@ block body
         is_subscription: true
       },
       checkboxGroup: {
-        title: 'Checkbox buttons',
-        checkboxes: [
+        name: 'Checkbox buttons',
+        type: 'checkbox',
+        group: [
           {
             content: 'Можно курить'
           },
@@ -81,10 +76,13 @@ block body
         ]
       },
       radioGroup: {
-        title: 'Radio Buttons',
-        name: 'sex',
-        selected: 'man',
-        radio_buttons: [
+        name: 'Radio Buttons',
+        type: 'radio',
+        meta: {
+          name: 'sex',
+          selected: 'man'
+        },
+        group: [
           {
             content: 'Мужчина',
             value: 'man'
@@ -96,8 +94,9 @@ block body
         ]
       },
       toggleGroup: {
-        title: 'toggle',
-        toggles: [
+        name: 'toggle',
+        type: 'toggle',
+        group: [
           {
             content: 'Получать спецпредложения',
             isChecked: true
@@ -107,27 +106,31 @@ block body
           }
         ]
       },
-      likeButton: {
-        is_liked: true,
-        likes_number: 2
-      },
       likeGroup: {
-        title: 'like button',
-        likes: [
+        name: 'like button',
+        type: 'like',
+        group: [
           {
-            is_liked: false,
-            likes_number: 2
+            likesNumber: 2,
+            isLiked: false
           },
           {
-            is_liked: true,
-            likes_number: 12
+            likesNumber: 12,
+            isLiked: true
           }
         ]
       },
-      rateButton: 4,
       rateGroup: {
-        title: 'rate button',
-        rates: [4, 5]
+        name: 'rate button',
+        type: 'rate',
+        group: [
+          {
+            rating: 4
+          },
+          {
+            rating: 5
+          }
+        ]
       },
       rangeSlider: {
         title: 'range slider',
@@ -149,12 +152,10 @@ block body
   +dropdown(settings.multifieldDateDropdown)
   +dropdown(settings.singlefieldDateDropdown)
   +text-field(settings.subscriptionTextField)
-  +checkbox-group(settings.checkboxGroup)
-  +radio-group(settings.radioGroup)
-  +toggle-group(settings.toggleGroup)
-  +like-button(settings.likeButton)
-  +like-group(settings.likeGroup)
-  +rate-button(settings.rateButton)
-  +rate-group(settings.rateGroup)
+  +input-group(settings.checkboxGroup)
+  +input-group(settings.radioGroup)
+  +input-group(settings.toggleGroup)
+  +input-group(settings.likeGroup)
+  +input-group(settings.rateGroup)
   +range-slider(settings.rangeSlider)
   +button(settings.button)(disabled)
