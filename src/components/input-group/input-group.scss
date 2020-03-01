@@ -1,0 +1,29 @@
+.input-group {
+  &__name {
+    margin-bottom: 16px;
+  }
+
+  &__checkbox {
+    margin-bottom: 10px;
+  }
+
+  &__radio {
+    margin-right: 20px;
+  }
+
+  &__toggle {
+    margin-bottom: 14px;
+  }
+
+  &__like-button {
+    margin-right: 10px;
+  }
+
+  &__rate-button {
+    margin-right: 20px;
+  }
+
+  &__members > :nth-child(1n):last-of-type {
+    margin: 0;
+  }
+}

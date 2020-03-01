@@ -1,0 +1,102 @@
+include ../checkbox/checkbox
+include ../radio/radio
+include ../toggle/toggle
+include ../rate-button/rate-button
+include ../like-button/like-button
+
+//- types:
+//- - checkbox
+//- - checkbox-expandable
+//- - radio
+//- - toggle
+//- - like
+//- - rate
+//- - button
+
+//- If type === 'checkbox' or 'toggle', then group is array which elements
+//- follows this scheme:
+//- {
+//-   content,  // string
+//-   name,     // string
+//-   value,    // string
+//-   isChecked // bool
+//- }
+
+//- If type === 'radio', then meta is object that represents the data related to 
+//- all radio buttons and follows this structure:
+//- {
+//-   name,    // string. Name for all buttons in this group.
+//-   selected // string. value that selected by default, should be matched with one of the values from list below.
+//- }
+//- and group is array and follows this structure:
+//- [
+//-   {
+//-     content, // string. Appears beside the button in the page.
+//-     value    // string
+//-   },
+//-   ...
+//- ]
+
+//- If type === 'rate', then group is array that which elements
+//- follows this scheme:
+//- [
+//-   {
+//-     rating // number from 0 to 5  
+//-   },
+//-   ...
+//- ]
+
+//- If type === 'like', then group is array that which elements
+//- follows this scheme:
+//- [
+//-   {
+//-     likesNumber,
+//-     isLiked
+//-   },
+//-   ...
+//- ]
+
+mixin input-group({ name, type, meta, group })
+  .input-group
+    h3.input-group__name= name
+    .input-group__members
+      for member in group
+        case type
+          when 'checkbox'
+            +checkbox(member.content)(
+              name=member.name
+              value=member.value
+              checked=member.isChecked
+              class='input-group__checkbox'
+            )
+          when 'toggle'
+            +toggle(member.content)(
+              name=member.name
+              value=member.value
+              checked=member.isChecked
+              class='input-group__toggle'
+            )
+          when 'radio'
+            +radio(member.content)(
+              name=meta.name
+              value=member.value
+              checked=meta.selected === member.value
+              class='input-group__radio'
+            )
+          when 'rate'
+            +rate-button(member.rating)(
+              class='input-group__rate-button'
+            )
+          when 'like'
+            +like-button(member.likesNumber, member.isLiked)(
+              class='input-group__like-button'
+            )
+          
+          
+
+
+
+          
+
+
+
