@@ -1,4 +1,4 @@
 mixin radio(content)
-  label.radio
-    input.radio__button(type='radio')&attributes(attributes)
+  label.radio(class!=attributes.class)
+    input.radio__button(type='radio' name!=attributes.name value!=attributes.value checked!=attributes.checked)
     .radio__content= content
