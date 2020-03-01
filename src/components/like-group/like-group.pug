@@ -1,7 +1,0 @@
-include ../like-button/like-button
-
-mixin like-group({ title, likes })
-  h3.like-group__title= title
-  .like-group__likes
-    each like in likes
-      +like-button(like)(class='like-group__like')
