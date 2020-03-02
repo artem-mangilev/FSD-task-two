@@ -139,9 +139,41 @@ block body
         from: 5000,
         to: 10000
       },
-      button: {
-        content: 'click me',
-        type: 'outlined'
+      buttonGroup: {
+        name: 'buttons',
+        type: 'button',
+        group: [
+          {
+            type: 'primary',
+            content: 'click me'
+          },
+          {
+            type: 'primary',
+            content: 'click me',
+            isDisabled: true
+          },
+          {
+            type: 'outlined',
+            content: 'click me'
+          },
+          {
+            type: 'outlined',
+            content: 'click me',
+            isDisabled: true
+          },
+          {
+            type: 'primary-string',
+            content: 'click me'
+          },
+          {
+            type: 'string',
+            content: 'click me'
+          },
+          {
+            type: 'action',
+            content: 'перейти к оплате'
+          }
+        ]
       }
     } 
 
@@ -158,4 +190,4 @@ block body
   +input-group(settings.likeGroup)
   +input-group(settings.rateGroup)
   +range-slider(settings.rangeSlider)
-  +button(settings.button)(disabled)
+  +input-group(settings.buttonGroup)

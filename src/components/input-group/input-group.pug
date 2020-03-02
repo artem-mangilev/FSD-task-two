@@ -3,6 +3,7 @@ include ../radio/radio
 include ../toggle/toggle
 include ../rate-button/rate-button
 include ../like-button/like-button
+include ../button/button
 
 //- types:
 //- - checkbox
@@ -56,6 +57,17 @@ include ../like-button/like-button
 //-   ...
 //- ]
 
+//- If type === 'button', then group is array which elements
+//- follows this scheme:
+//- [
+//-   {
+//-     type,      // button type
+//-     content,   // text inside the button
+//-     isDisabled // clickable or not
+//-   },
+//-   ...
+//- ]
+
 mixin input-group({ name, type, meta, group })
   .input-group
     h3.input-group__name= name
@@ -90,6 +102,11 @@ mixin input-group({ name, type, meta, group })
           when 'like'
             +like-button(member.likesNumber, member.isLiked)(
               class='input-group__like-button'
+            )
+          when 'button'
+            +button(member.type, member.content)(
+              disabled=member.isDisabled
+              class='input-group__button'
             )
           
           
