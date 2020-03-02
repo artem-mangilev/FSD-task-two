@@ -34,6 +34,7 @@
   "dependencies": {
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "paginationjs": "^2.1.5"
   }
 }

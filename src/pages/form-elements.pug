@@ -6,6 +6,7 @@ include ../components/input/input
 include ../components/range-slider/range-slider
 include ../components/button/button
 include ../components/input-group/input-group
+include ../components/pagination/pagination
 
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -174,6 +175,16 @@ block body
             content: 'перейти к оплате'
           }
         ]
+      },
+      paginationGroup: {
+        name: 'pagination',
+        type: 'pagination',
+        group: [
+          {
+            description: '1 – 12 из 100+ вариантов аренды',
+            testMode: true
+          }
+        ]
       }
     } 
 
@@ -191,3 +202,4 @@ block body
   +input-group(settings.rateGroup)
   +range-slider(settings.rangeSlider)
   +input-group(settings.buttonGroup)
+  +input-group(settings.paginationGroup)

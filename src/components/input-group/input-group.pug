@@ -4,6 +4,7 @@ include ../toggle/toggle
 include ../rate-button/rate-button
 include ../like-button/like-button
 include ../button/button
+include ../pagination/pagination
 
 //- types:
 //- - checkbox
@@ -108,12 +109,14 @@ mixin input-group({ name, type, meta, group })
               disabled=member.isDisabled
               class='input-group__button'
             )
-          
-          
+          when 'pagination'
+            +pagination(member.description, member.testMode)
 
 
 
-          
+
+
+
 
 
 

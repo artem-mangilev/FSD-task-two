@@ -1,0 +1,75 @@
+@import '../../variables.scss';
+
+.pagination {
+  width: max-content;
+
+  &__description {
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+// paginationjs styles
+.paginationjs {
+  font-weight: bold;
+  font-size: 12px;
+  box-sizing: initial;
+
+  &:after {
+    display: table;
+    content: ' ';
+    clear: both;
+  }
+  & &-pages {
+    float: left;
+  }
+  & &-pages ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+  & &-pages li {
+    float: left;
+    border-right: none;
+    list-style: none;
+
+    // new
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+  & &-pages li > a {
+    display: block;
+    text-decoration: none;
+
+    // new
+    margin: auto;
+  }
+
+  & &-page a,
+  & &-ellipsis {
+    color: $dark_shade_50_color;
+  }
+
+  & &-pages li.active {
+    // new
+    background: $primary_gradient;
+    border-radius: 22px;
+  }
+  & &-pages li.active > a {
+    color: #fff;
+  }
+  & &-next {
+    background: $secondary_gradient;
+    border-radius: 22px;
+  }
+
+  & &-next a {
+    color: #fff;
+  }
+
+  & &-next a .material-icons {
+    display: block;
+  }
+}
