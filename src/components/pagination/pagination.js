@@ -1,7 +1,6 @@
 import './pagination.scss'
 
 import 'paginationjs/dist/pagination'
-// import 'paginationjs/dist/pagination.css'
 
 $(document).ready(() => {
   const $pagination = $('.pagination__container')
