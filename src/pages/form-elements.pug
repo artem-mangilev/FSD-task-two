@@ -28,13 +28,9 @@ block body
         ui_kit_is_active: true,  
         value: 'This is pretty awesome'
       },
-      dropdown: {
-        type: 'applied-options',
-        label: 'dropdown',
-        id: 'dropdown',
-        ui_kit_state: 'default',
-        value: 'Сколько гостей',
-      },
+      //- dropdown: {
+      //-   type: 'applied-options',
+      //- },
       maskedTextField: {
         label: 'masked text field',
         id: 'masked_text_field',
@@ -42,17 +38,17 @@ block body
         ui_kit_state: 'default',
         placeholder: 'ДД.ММ.ГГГГ'
       },
-      multifieldDateDropdown: {
-        type: 'miltifield-date-filter',
-        label: ['date_dropdown', 'date_dropdown'],
-        value: ['ДД.ММ.ГГГГ', '19.08.2019']
-      },
-      singlefieldDateDropdown: {
-        type: 'singlefield-date-filter',
-        label: 'filter date dropdown',
-        value: '19 авг - 23 авг',
-        id: 'filter_date_dropdown'
-      },
+      //- multifieldDateDropdown: {
+      //-   type: 'miltifield-date-filter',
+      //-   label: ['date_dropdown', 'date_dropdown'],
+      //-   value: ['ДД.ММ.ГГГГ', '19.08.2019']
+      //- },
+      //- singlefieldDateDropdown: {
+      //-   type: 'singlefield-date-filter',
+      //-   label: 'filter date dropdown',
+      //-   value: '19 авг - 23 авг',
+      //-   id: 'filter_date_dropdown'
+      //- },
       subscriptionTextField: {
         label: 'subscription text field',
         placeholder: 'Email',
@@ -185,15 +181,44 @@ block body
             testMode: true
           }
         ]
+      },
+      roomsDropdown: {
+        type: 'item-quantity',
+        items: [
+          {
+            nameForms: [
+              'спальня',           
+              'спальни',
+              'спален',
+            ],
+            quantity: 2
+          },
+          {
+            nameForms: [
+              'кровать',        
+              'кровати',
+              'кроватей'
+            ],
+            quantity: 2
+          },
+          {
+            nameForms: [
+              'ванная комната',
+              'ванные комнаты',
+              'ванных комнат'
+            ],
+            quantity: 0
+          }
+        ]
       }
     } 
 
   +text-field(settings.defaultTextField)
   +text-field(settings.activeTextField)
-  +dropdown(settings.dropdown)
+  //- +dropdown()
   +text-field(settings.maskedTextField)
-  +dropdown(settings.multifieldDateDropdown)
-  +dropdown(settings.singlefieldDateDropdown)
+  //- +dropdown(settings.multifieldDateDropdown)
+  //- +dropdown(settings.singlefieldDateDropdown)
   +text-field(settings.subscriptionTextField)
   +input-group(settings.checkboxGroup)
   +input-group(settings.radioGroup)
@@ -203,3 +228,4 @@ block body
   +range-slider(settings.rangeSlider)
   +input-group(settings.buttonGroup)
   +input-group(settings.paginationGroup)
+  +dropdown(settings.roomsDropdown.type, settings.roomsDropdown.items)

@@ -1,66 +1,26 @@
 include ../field/field
 include ../input/input
 
-mixin dropdown({ type, label, value, id, placeholder, ui_kit_state })
-  - 
-    const settings = {
-      applied_options: {
-        field: {
-          label,
-          id,
-          ui_kit_state
-        },
-        input: {
-          icon_name: 'expand_more'
-        }
-      },
-      muiltifield_date_filter: {
-        fields: [
-          {
-            label: label[0],
-          },
-          {
-            label: label[1]
-          }
-        ],
-        input: {
-          size: 'short',
-          icon_name: 'expand_more'
-        }
-      },
-      singlefield_date_filter: {
-        field: {
-          label,
-          id
-        },
-        input: {
-          size: 'medium',
-          icon_name: 'expand_more'
-        }
-      }
-    }
+//- dropdown types:
+//- - item-quantity
+//- - item-quantity-applied
 
-  case type
-    when 'applied-options'
-      +field(settings.applied_options.field)
-        +input(settings.applied_options.input)(
-          value= value
-          id = id
-        )
-    when 'miltifield-date-filter'
-      .dropdown
-        +field(settings.muiltifield_date_filter.fields[0])
-          +input(settings.muiltifield_date_filter.input)(
-            value= value[0]
-          )
-        +field(settings.muiltifield_date_filter.fields[1])
-          +input(settings.muiltifield_date_filter.input)(
-            value= value[1]
-          )
-    when 'singlefield-date-filter'
-      +field(settings.singlefield_date_filter.field)
-        +input(settings.singlefield_date_filter.input)(
-          value= value
-          id = id
-        )     
-    
+//- If types === item-quantity
+//- items:
+//- [
+//-   {
+//-     nameForms, // array of forms
+//-     quantity
+//-   }
+//- ]
+
+mixin dropdown(dropdownType, items)
+  .dropdown
+    .iqdropdown(data-type=dropdownType data-items=items)
+      p.iqdropdown-selection
+      .iqdropdown-menu
+        each item, index in items
+          .iqdropdown-menu-option(data-id=index data-defaultcount=item.quantity)
+            div
+              p.iqdropdown-item= item.nameForms[1]
+
