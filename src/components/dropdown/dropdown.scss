@@ -89,6 +89,11 @@
     color: $dark_shade_50_color;
   }
 
+  & .button-decrement:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+
   & .button-decrement .icon-decrement::before {
     content: '-';
   }

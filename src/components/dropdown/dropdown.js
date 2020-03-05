@@ -22,7 +22,32 @@ $(document).ready(() => {
         let selectionText = pluralizedItems.slice(0, 2).join(', ') + '...'
 
         return selectionText
+      },
+      beforeDecrement: (id, itemCount) => {
+        const $decrementBth = $dropdown.find(
+          `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
+        )
+
+        if (itemCount[id] <= 1) {
+          $decrementBth.prop('disabled', true)
+        }
+
+        return true
+      },
+      beforeIncrement: id => {
+        const $decrementBth = $dropdown.find(
+          `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
+        )
+
+        $decrementBth.prop('disabled', false)
+
+        return true
       }
     })
+
+    $dropdown
+      .find('.button-decrement')
+      .filter(index => items[index].quantity === 0)
+      .prop('disabled', true)
   }
 })
