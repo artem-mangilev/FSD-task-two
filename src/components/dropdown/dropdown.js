@@ -7,6 +7,35 @@ import plural from 'plural-ru'
 $(document).ready(() => {
   const $dropdowns = $('.iqdropdown')
 
+  const onBeforeDecrement = function(id, itemCount) {
+    const $decrementBth = $(this).find(
+      `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
+    )
+
+    if (itemCount[id] <= 1) {
+      $decrementBth.prop('disabled', true)
+    }
+
+    return true
+  }
+
+  const onBeforeIncrement = function(id) {
+    const $decrementBth = $(this).find(
+      `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
+    )
+
+    $decrementBth.prop('disabled', false)
+
+    return true
+  }
+
+  const commonSettings = context => {
+    return {
+      beforeDecrement: onBeforeDecrement.bind(context),
+      beforeIncrement: onBeforeIncrement.bind(context)
+    }
+  }
+
   $dropdowns.each(function() {
     const $this = $(this)
     const { type, selectionTextForms } = $this.data('meta')
@@ -26,52 +55,14 @@ $(document).ready(() => {
 
           return selectionText
         },
-        beforeDecrement: (id, itemCount) => {
-          const $decrementBth = $this.find(
-            `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
-          )
-
-          if (itemCount[id] <= 1) {
-            $decrementBth.prop('disabled', true)
-          }
-
-          return true
-        },
-        beforeIncrement: id => {
-          const $decrementBth = $this.find(
-            `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
-          )
-
-          $decrementBth.prop('disabled', false)
-
-          return true
-        }
+        ...commonSettings(this)
       })
     } else if (type === 'item-quantity-applied') {
       $this.iqDropdown({
         setSelectionText: (itemCount, totalItems) => {
           return `${totalItems} ${plural(totalItems, ...selectionTextForms)}`
         },
-        beforeDecrement: (id, itemCount) => {
-          const $decrementBth = $this.find(
-            `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
-          )
-
-          if (itemCount[id] <= 1) {
-            $decrementBth.prop('disabled', true)
-          }
-
-          return true
-        },
-        beforeIncrement: id => {
-          const $decrementBth = $this.find(
-            `.iqdropdown-menu-option[data-id="${id}"] .button-decrement`
-          )
-
-          $decrementBth.prop('disabled', false)
-
-          return true
-        }
+        ...commonSettings(this)
       })
     }
 
