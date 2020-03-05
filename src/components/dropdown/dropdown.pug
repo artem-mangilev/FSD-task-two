@@ -24,7 +24,7 @@ mixin dropdown(meta, items)
         each item, index in items
           .iqdropdown-menu-option(data-id=index data-defaultcount=item.quantity)
             div
-              p.iqdropdown-item= meta.type === 'item-quantity' ? item.nameForms[1] : item.nameForms[0]
+              p.iqdropdown-item= item.name
         if meta.type === 'item-quantity-applied'
           +button('string', 'очистить')
           +button('primary-string', 'применить')
