@@ -183,7 +183,9 @@ block body
         ]
       },
       roomsDropdown: {
-        type: 'item-quantity',
+        meta: {
+          type: 'item-quantity' 
+        },
         items: [
           {
             nameForms: [
@@ -210,6 +212,36 @@ block body
             quantity: 0
           }
         ]
+      },
+      guestsDropdown: {
+        meta: {
+          type: 'item-quantity-applied',
+          selectionTextForms: [
+            'гость',
+            'гостя',
+            'гостей'
+          ]
+        },
+        items: [
+          {
+            nameForms: [
+              'взрослые'
+            ],
+            quantity: 2            
+          },
+          {
+            nameForms: [
+              'дети'
+            ],
+            quantity: 1
+          },
+          {
+            nameForms: [
+              'младенцы'
+            ],
+            quantity: 0
+          }
+        ]
       }
     } 
 
@@ -228,4 +260,5 @@ block body
   +range-slider(settings.rangeSlider)
   +input-group(settings.buttonGroup)
   +input-group(settings.paginationGroup)
-  +dropdown(settings.roomsDropdown.type, settings.roomsDropdown.items)
+  +dropdown(settings.roomsDropdown.meta, settings.roomsDropdown.items)
+  +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)

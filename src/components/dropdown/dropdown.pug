@@ -1,6 +1,8 @@
 include ../field/field
 include ../input/input
 
+include ../button/button
+
 //- dropdown types:
 //- - item-quantity
 //- - item-quantity-applied
@@ -14,13 +16,17 @@ include ../input/input
 //-   }
 //- ]
 
-mixin dropdown(dropdownType, items)
+mixin dropdown(meta, items)
   .dropdown
-    .iqdropdown(data-type=dropdownType data-items=items)
+    .iqdropdown(data-meta=meta data-items=items)
       p.iqdropdown-selection
       .iqdropdown-menu
         each item, index in items
           .iqdropdown-menu-option(data-id=index data-defaultcount=item.quantity)
             div
-              p.iqdropdown-item= item.nameForms[1]
+              p.iqdropdown-item= meta.type === 'item-quantity' ? item.nameForms[1] : item.nameForms[0]
+        if meta.type === 'item-quantity-applied'
+          +button('string', 'очистить')
+          +button('primary-string', 'применить')
+
 
