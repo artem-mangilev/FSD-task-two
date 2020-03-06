@@ -2,9 +2,105 @@
 @import '../../mixins-lib.scss';
 
 .dropdown {
-  display: flex;
-  justify-content: space-between;
-  width: $medium_input_width;
+  position: relative;
+  box-sizing: border-box;
+  @include size($medium_input_width, 44px);
+  border: {
+    width: 1px;
+    style: solid;
+    color: $dark_shade_50_color;
+    radius: 2px;
+  }
+  cursor: pointer;
+
+  &_bottom-borderless {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &__selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-left: 13px;
+    padding-right: 16px;
+
+    &::after {
+      content: '';
+
+      box-sizing: border-box;
+      display: inline-block;
+      @include size(8.5px, 8.5px);
+      border-left: 2px solid $dark_shade_75_color;
+      border-bottom: 2px solid $dark_shade_75_color;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__selection-text {
+    margin: 0;
+  }
+
+  &__menu {
+    z-index: 2;
+    box-sizing: border-box;
+    position: absolute;
+    top: 44px;
+    margin: -1px 0 0 -1px;
+    width: inherit;
+    border: inherit;
+    border-top: none;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    cursor: default;
+
+    &_hide {
+      display: none;
+    }
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 0;
+    margin-left: 15px;
+    margin-right: 7px;
+  }
+
+  &__item-name {
+    color: $dark_shade_100_color;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    @include size(30px, 30px);
+    border: {
+      width: 1px;
+      style: solid;
+      color: $dark_shade_25_color;
+      radius: 25px;
+    }
+    background-color: #fff;
+    font: $body_text_font;
+    font-size: 18px;
+    color: $dark_shade_50_color;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__quantity {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+    color: $dark_shade_100_color;
+    font-size: 12px;
+  }
 }
 
 .iqdropdown {

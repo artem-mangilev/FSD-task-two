@@ -34,7 +34,6 @@
   "dependencies": {
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
-    "item-quantity-dropdown": "^2.1.0",
     "jquery": "^3.4.1",
     "paginationjs": "^2.1.5",
     "plural-ru": "^2.0.2"
