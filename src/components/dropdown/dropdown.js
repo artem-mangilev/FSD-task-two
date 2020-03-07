@@ -7,6 +7,7 @@ $(document).ready(() => {
   const dropdownBottonBorderlessModifierClass =
     dropdownBlockClass + '_bottom-borderless'
   const menuElementClass = dropdownBlockClass + '__menu'
+  const menuHideModifierClass = menuElementClass + '_hide'
   const optionClass = dropdownBlockClass + '__option'
   const selectionClass = dropdownBlockClass + '__selection'
   const selectionTextClass = dropdownBlockClass + '__selection-text'
@@ -100,7 +101,7 @@ $(document).ready(() => {
     })
 
     $selection.click(() => {
-      $menu.toggleClass(menuElementClass + '_hide')
+      $menu.toggleClass(menuHideModifierClass)
       $dropdown.toggleClass(dropdownBottonBorderlessModifierClass)
     })
   })
