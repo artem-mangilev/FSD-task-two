@@ -19,14 +19,12 @@ $(document).ready(() => {
   const $selectionText = $selection.find(`.${selectionTextClass}`)
   const $menu = $dropdown.find(`.${menuElementClass}`)
   const $options = $menu.find(`.${optionClass}`)
-  // const $incrementBtn = $dropdown.find(`${incrementBtnClass}`)
-  // const $decrementBtn = $dropdown.find(`${decrementBtnClass}`)
 
   const itemsState = $dropdown.data('items')
 
   const renderItems = () => {
-    $options.each(function(index) {
-      const $quantity = $(this).find(`.${quantityClass}`)
+    $options.each((index, el) => {
+      const $quantity = $(el).find(`.${quantityClass}`)
       $quantity.html(`${itemsState[index].quantity}`)
     })
   }
@@ -43,10 +41,26 @@ $(document).ready(() => {
     $selectionText.html(selectionText)
   }
 
+  const renderDecrementButtons = () => {
+    $options.each((index, option) => {
+      $(option)
+        .find(`.${decrementBtnClass}`)
+        .prop('disabled', itemsState[index].quantity === 0)
+    })
+  }
+
   const render = () => {
     renderItems()
+    renderDecrementButtons()
     renderSelectionText()
   }
+
+  const init = () => {
+    renderSelectionText()
+    renderDecrementButtons()
+  }
+
+  init()
 
   $options.click(function({ target: { classList } }) {
     const optionId = $(this).data('id')

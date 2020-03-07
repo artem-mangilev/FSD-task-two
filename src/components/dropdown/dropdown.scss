@@ -92,6 +92,11 @@
     color: $dark_shade_50_color;
     cursor: pointer;
     outline: none;
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: default;
+    }
   }
 
   &__quantity {
