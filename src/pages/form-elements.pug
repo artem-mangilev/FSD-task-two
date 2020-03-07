@@ -184,7 +184,8 @@ block body
       },
       roomsDropdown: {
         meta: {
-          type: 'item-quantity' 
+          type: 'item-quantity' ,
+          open: false
         },
         items: [
           {
@@ -219,6 +220,7 @@ block body
       guestsDropdown: {
         meta: {
           type: 'item-quantity-applied',
+          open: false
           selectionTextForms: [
             'гость',
             'гостя',
@@ -258,4 +260,4 @@ block body
   +input-group(settings.buttonGroup)
   +input-group(settings.paginationGroup)
   +dropdown(settings.roomsDropdown.meta, settings.roomsDropdown.items)
-  //- +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)
+  +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)

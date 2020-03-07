@@ -20,8 +20,8 @@ include ../button/button
 mixin dropdown(meta, items)
   .dropdown.dropdown_bottom-borderles(data-items=items)
     .dropdown__selection
-      p.dropdown__selection-text Placeholder
-    .dropdown__menu
+      p.dropdown__selection-text
+    .dropdown__menu(class=meta.open ? '' : 'dropdown__menu_hide')
       each item, index in items
         .dropdown__option(data-id=index)
           h3.dropdown__item-name= item.name
