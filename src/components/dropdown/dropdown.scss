@@ -13,6 +13,10 @@
   }
   cursor: pointer;
 
+  &_applied {
+    width: $long_input_width;
+  }
+
   &_bottom-borderless {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;

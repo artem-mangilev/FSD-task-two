@@ -59,10 +59,14 @@ $(document).ready(() => {
           .join(', ')
           .concat('...')
       } else if (type === 'item-quantity-applied') {
-        const { selectionTextForms } = $dropdown.data('meta')
+        const { selectionTextForms, placeholder } = $dropdown.data('meta')
         const total = totalItems()
 
-        selectionText = `${total} ${plural(total, ...selectionTextForms)}`
+        if (total === 0) {
+          selectionText = placeholder
+        } else {
+          selectionText = `${total} ${plural(total, ...selectionTextForms)}`
+        }
       }
 
       $selectionText.html(selectionText)
