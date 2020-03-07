@@ -15,6 +15,9 @@ $(document).ready(() => {
   const incrementBtnClass = dropdownBlockClass + '__increment-button'
   const decrementBtnClass = dropdownBlockClass + '__decrement-button'
   const quantityClass = dropdownBlockClass + '__quantity'
+  const applyBtnClass = dropdownBlockClass + '__apply-button'
+  const cleatBtnClass = dropdownBlockClass + '__clear-button'
+  const clearBtnHideClass = cleatBtnClass + '_hide'
 
   const $dropdowns = $(`.${dropdownBlockClass}`)
 
@@ -24,12 +27,18 @@ $(document).ready(() => {
     const $selectionText = $selection.find(`.${selectionTextClass}`)
     const $menu = $dropdown.find(`.${menuElementClass}`)
     const $options = $menu.find(`.${optionClass}`)
+    const $applyBtn = $dropdown.find(`.${applyBtnClass}`)
+    const $clearBtn = $dropdown.find(`.${cleatBtnClass}`)
 
     const itemsState = $dropdown.data('items')
     const { type } = $dropdown.data('meta')
 
     const totalItems = () =>
       itemsState.reduce((accum, currentItem) => accum + currentItem.quantity, 0)
+
+    const resetItems = () => {
+      itemsState.forEach(item => (item.quantity = 0))
+    }
 
     const renderItems = () => {
       $options.each((index, el) => {
@@ -67,15 +76,21 @@ $(document).ready(() => {
       })
     }
 
+    const renderClearButton = () => {
+      $clearBtn.toggleClass(clearBtnHideClass, totalItems() === 0)
+    }
+
     const render = () => {
       renderItems()
       renderDecrementButtons()
       renderSelectionText()
+      renderClearButton()
     }
 
     const init = () => {
       renderSelectionText()
       renderDecrementButtons()
+      renderClearButton()
     }
 
     init()
@@ -100,9 +115,16 @@ $(document).ready(() => {
       }
     })
 
-    $selection.click(() => {
+    const hideMenu = () => {
       $menu.toggleClass(menuHideModifierClass)
       $dropdown.toggleClass(dropdownBottonBorderlessModifierClass)
+    }
+    $selection.click(hideMenu)
+    $applyBtn.click(hideMenu)
+
+    $clearBtn.click(() => {
+      resetItems()
+      render()
     })
   })
 })
