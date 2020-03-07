@@ -10,6 +10,7 @@ $(document).ready(() => {
   const optionClass = dropdownBlockClass + '__option'
   const selectionClass = dropdownBlockClass + '__selection'
   const selectionTextClass = dropdownBlockClass + '__selection-text'
+  const btnClass = dropdownBlockClass + '__button'
   const incrementBtnClass = dropdownBlockClass + '__increment-button'
   const decrementBtnClass = dropdownBlockClass + '__decrement-button'
   const quantityClass = dropdownBlockClass + '__quantity'
@@ -67,16 +68,19 @@ $(document).ready(() => {
 
     const targetItem = itemsState[optionId]
 
-    const isIncrementBtn = classList.contains(incrementBtnClass)
-    const isDecrementBtn = classList.contains(decrementBtnClass)
-    if (isIncrementBtn) {
-      targetItem.quantity += 1
-    } else if (isDecrementBtn) {
-      if (targetItem.quantity > 0) targetItem.quantity -= 1
-      else return
-    }
+    const isButton = classList.contains(btnClass)
+    if (isButton) {
+      const isIncrementBtn = classList.contains(incrementBtnClass)
+      const isDecrementBtn = classList.contains(decrementBtnClass)
+      if (isIncrementBtn) {
+        targetItem.quantity += 1
+      } else if (isDecrementBtn) {
+        if (targetItem.quantity > 0) targetItem.quantity -= 1
+        else return
+      }
 
-    render()
+      render()
+    }
   })
 
   $selection.click(() => {
