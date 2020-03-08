@@ -1,31 +1,31 @@
 @import './variables.scss';
 
 @font-face {
-  font-family: "Montserrat-Bold";
+  font-family: 'Montserrat-Bold';
   src: url('./fonts/Montserrat/Montserrat-Bold.svg') format('svg'),
-       url('./fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
-       url('./fonts/Montserrat/Montserrat-Bold.woff') format('woff');
+    url('./fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('./fonts/Montserrat/Montserrat-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Montserrat-Regular";
+  font-family: 'Montserrat-Regular';
   src: url('./fonts/Montserrat/Montserrat-Regular.svg') format('svg'),
-       url('./fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
-       url('./fonts/Montserrat/Montserrat-Regular.woff') format('woff');
+    url('./fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('./fonts/Montserrat/Montserrat-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Quicksand-Bold";
+  font-family: 'Quicksand-Bold';
   src: url('./fonts/Quicksand/Quicksand-Bold.svg') format('svg'),
-       url('./fonts/Quicksand/Quicksand-Bold.ttf') format('truetype'),
-       url('./fonts/Quicksand/Quicksand-Bold.woff') format('woff');
+    url('./fonts/Quicksand/Quicksand-Bold.ttf') format('truetype'),
+    url('./fonts/Quicksand/Quicksand-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Quicksand-Regular";
+  font-family: 'Quicksand-Regular';
   src: url('./fonts/Quicksand/Quicksand-Regular.svg') format('svg'),
-       url('./fonts/Quicksand/Quicksand-Regular.ttf') format('truetype'),
-       url('./fonts/Quicksand/Quicksand-Regular.woff') format('woff');
+    url('./fonts/Quicksand/Quicksand-Regular.ttf') format('truetype'),
+    url('./fonts/Quicksand/Quicksand-Regular.woff') format('woff');
 }
 
 body {
@@ -34,13 +34,19 @@ body {
   color: $dark_shade_75_color;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
 h3 {
   font: $small_header_font;
   text-transform: uppercase;
+}
+
+p {
+  margin: 0;
 }
 
 .container {
