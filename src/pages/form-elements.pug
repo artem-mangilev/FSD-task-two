@@ -88,6 +88,40 @@ block body
           }
         ]
       },
+      expandableCheckboxGroup: {
+        name: 'expandable checkbox list',
+        type: 'checkbox-expandable',
+        open: true,
+        group: [
+          {
+            content: 'Завтрак'
+          },
+          {
+            content: 'Письменный стол',
+            isChecked: true
+          },
+          {
+            content: 'Стул для кормления',
+            isChecked: true
+          },
+          {
+            content: 'Кроватка',
+            isChecked: true
+          },
+          {
+            content: 'Телевизор'
+          },
+          {
+            content: 'Шампунь'
+          },
+          {
+            content: 'Телевизор'
+          },
+          {
+            content: 'Шампунь'
+          },
+        ]
+      },
       radioGroup: {
         name: 'Radio Buttons',
         type: 'radio',
@@ -284,3 +318,4 @@ block body
   +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)
   //- +checkbox(settings.richCheckbox.content, settings.richCheckbox.description)
   +input-group(settings.richCheckboxGroup)
+  +input-group(settings.expandableCheckboxGroup)

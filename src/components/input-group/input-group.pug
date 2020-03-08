@@ -69,14 +69,17 @@ include ../pagination/pagination
 //-   ...
 //- ]
 
-mixin input-group({ name, type, meta, group })
-  .input-group
-    h3.input-group__name= name
+mixin input-group({ name, type, open, meta, group })
+  .input-group(data-type=type)
+    h3.input-group__name(class=(type === 'checkbox-expandable' && 'input-group__name_expandable'))= name
+      if (type === 'checkbox-expandable')
+        i.input-group__expand-icon(class=open && 'input-group__expand-icon_rotated')
     .input-group__members
       for member in group
         case type
           when 'checkbox'
-            +checkbox(member.content)(
+          when 'checkbox-expandable'
+            +checkbox(member.content, member.description)(
               name=member.name
               value=member.value
               checked=member.isChecked

@@ -1,6 +1,38 @@
+@import '../../mixins-lib.scss';
+@import '../../variables.scss';
+
 .input-group {
+  $block: '.input-group';
+
   &__name {
+    width: $medium_input_width;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 16px;
+    padding-right: 16px;
+
+    &_expandable {
+      cursor: pointer;
+    }
+  }
+
+  &__expand-icon {
+    content: '';
+
+    box-sizing: border-box;
+    display: inline-block;
+    @include size(8.5px, 8.5px);
+    border-left: 2px solid $dark_shade_75_color;
+    border-bottom: 2px solid $dark_shade_75_color;
+    transform: rotate(-45deg);
+
+    &_rotated {
+      transform: rotate(135deg);
+      position: relative;
+      top: 3px;
+    }
   }
 
   &__checkbox {
@@ -27,7 +59,13 @@
     margin-right: 20px;
   }
 
-  &__members > :nth-child(1n):last-of-type {
-    margin: 0;
+  &__members {
+    &_hide {
+      display: none;
+    }
+
+    & > :nth-child(1n):last-of-type {
+      margin: 0;
+    }
   }
 }
