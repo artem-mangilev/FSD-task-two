@@ -74,9 +74,19 @@ block body
           }
         ]
       },
-      richCheckbox: {
-        content: 'Широкий коридор',
-        description: 'Ширина коридоров в номере не менее 91 см.'
+      richCheckboxGroup: {
+        name: 'rich checkbox buttons',
+        type: 'checkbox',
+        group: [
+          {
+            content: 'Широкий коридор',
+            description: 'Ширина коридоров в номере не менее 91 см.'
+          },
+          {
+            content: 'Помощник для инвалидов',
+            description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+          }
+        ]
       },
       radioGroup: {
         name: 'Radio Buttons',
@@ -272,4 +282,5 @@ block body
   +input-group(settings.paginationGroup)
   +dropdown(settings.roomsDropdown.meta, settings.roomsDropdown.items)
   +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)
-  +checkbox(settings.richCheckbox.content, settings.richCheckbox.description)
+  //- +checkbox(settings.richCheckbox.content, settings.richCheckbox.description)
+  +input-group(settings.richCheckboxGroup)
