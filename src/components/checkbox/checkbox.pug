@@ -1,4 +1,4 @@
-mixin checkbox(content)
+mixin checkbox(text, description)
   label.checkbox-container(class!=attributes.class)
     input.checkbox-container__checkbox(type= 'checkbox')(
       id!=attributes.id
@@ -6,4 +6,7 @@ mixin checkbox(content)
       value!=attributes.value
       checked!=attributes.checked
     )
-    .checkbox-container__content= content
+    .checkbox-container__content
+      p.checkbox-container__text(class=description && 'checkbox-container__text_bold')= text
+      if description
+        p.checkbox-container__description= description

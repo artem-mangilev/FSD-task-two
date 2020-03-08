@@ -37,7 +37,6 @@
         color: $dark_shade_25_color;
         radius: 4px;
       }
-      
     }
 
     &:checked::before {
@@ -51,7 +50,8 @@
       display: none;
       box-sizing: border-box;
       position: absolute;
-      top: 5px; left: 7px; 
+      top: 5px;
+      left: 7px;
       @include size(6px, 8px);
 
       border: {
@@ -59,7 +59,7 @@
         style: solid;
         image: $primary_gradient;
         image-slice: 1;
-      };
+      }
       transform: rotate(45deg);
     }
 
@@ -78,5 +78,17 @@
 
     font: $body_text_font;
     color: $dark_shade_50_color;
+  }
+
+  &__text {
+    &_bold {
+      font-weight: bold;
+      color: $dark_shade_75_color;
+    }
+  }
+
+  &__description {
+    margin-top: 5px;
+    font-size: 12px;
   }
 }

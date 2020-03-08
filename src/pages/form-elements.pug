@@ -8,6 +8,8 @@ include ../components/button/button
 include ../components/input-group/input-group
 include ../components/pagination/pagination
 
+include ../components/checkbox/checkbox
+
 block head
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
   title Form elements
@@ -71,6 +73,10 @@ block body
             isChecked: true
           }
         ]
+      },
+      richCheckbox: {
+        content: 'Широкий коридор',
+        description: 'Ширина коридоров в номере не менее 91 см.'
       },
       radioGroup: {
         name: 'Radio Buttons',
@@ -266,3 +272,4 @@ block body
   +input-group(settings.paginationGroup)
   +dropdown(settings.roomsDropdown.meta, settings.roomsDropdown.items)
   +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)
+  +checkbox(settings.richCheckbox.content, settings.richCheckbox.description)
