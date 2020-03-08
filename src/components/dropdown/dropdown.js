@@ -5,8 +5,8 @@ import plural from 'plural-ru'
 $(document).ready(() => {
   const dropdownBlockClass = 'dropdown'
   const dropdownContainer = dropdownBlockClass + '__container'
-  const dropdownBottonBorderlessModifierClass =
-    dropdownBlockClass + '_bottom-borderless'
+  const dropdownBottonBorderRadiuslessClass =
+    dropdownContainer + '_bottom-borderless'
   const menuElementClass = dropdownBlockClass + '__menu'
   const menuHideModifierClass = menuElementClass + '_hide'
   const optionClass = dropdownBlockClass + '__option'
@@ -39,6 +39,13 @@ $(document).ready(() => {
 
     const resetItems = () => {
       itemsState.forEach(item => (item.quantity = 0))
+    }
+
+    const updateMenuBottomBorderRadius = () => {
+      $dropdown.toggleClass(
+        dropdownBottonBorderRadiuslessClass,
+        !$menu.hasClass(menuHideModifierClass)
+      )
     }
 
     const renderItems = () => {
@@ -96,6 +103,8 @@ $(document).ready(() => {
       renderSelectionText()
       renderDecrementButtons()
       renderClearButton()
+
+      updateMenuBottomBorderRadius()
     }
 
     init()
@@ -120,12 +129,12 @@ $(document).ready(() => {
       }
     })
 
-    const hideMenu = () => {
+    const toggleMenu = () => {
       $menu.toggleClass(menuHideModifierClass)
-      $dropdown.toggleClass(dropdownBottonBorderlessModifierClass)
+      updateMenuBottomBorderRadius()
     }
-    $selection.click(hideMenu)
-    $applyBtn.click(hideMenu)
+    $selection.click(toggleMenu)
+    $applyBtn.click(toggleMenu)
 
     $clearBtn.click(() => {
       resetItems()
