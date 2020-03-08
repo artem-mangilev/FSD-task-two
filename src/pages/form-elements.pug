@@ -184,8 +184,10 @@ block body
       },
       roomsDropdown: {
         meta: {
-          type: 'item-quantity' ,
-          open: false
+          type: 'item-quantity',
+          name: 'dropdown',
+          open: false,
+          uiKitMode: true
         },
         items: [
           {
@@ -220,7 +222,9 @@ block body
       guestsDropdown: {
         meta: {
           type: 'item-quantity-applied',
-          open: false,
+          name: 'dropdown',
+          uiKitMode: true,
+          open: true,
           selectionTextForms: [
             'гость',
             'гостя',

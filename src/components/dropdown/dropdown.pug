@@ -18,23 +18,28 @@ include ../button/button
 //- ]
 
 mixin dropdown(meta, items)
-  .dropdown.dropdown_bottom-borderles(class=(meta.type === 'item-quantity-applied' ? 'dropdown_applied' : '') data-meta=meta data-items=items)
-    .dropdown__selection
-      p.dropdown__selection-text
-    .dropdown__menu(class=meta.open ? '' : 'dropdown__menu_hide')
-      .dropdown__options
-        each item, index in items
-          .dropdown__option(data-id=index)
-            h3.dropdown__item-name= item.name
-            .dropdown__control
-              button.dropdown__button.dropdown__decrement-button -
-              .dropdown__quantity= item.quantity
-              button.dropdown__button.dropdown__increment-button +
-      if meta.type === 'item-quantity-applied'      
-        .dropdown__menu-buttons
-          +button('string', 'очистить')(
-            class='dropdown__clear-button'
-          )
-          +button('primary-string', 'применить')(
-            class='dropdown__apply-button'
-          )
+  .dropdown
+    .dropdown__info
+      h3.dropdown__name= meta.name
+      if meta.uiKitMode
+        p.dropdown__uikit-state= meta.open ? 'expanded' : 'default'
+    .dropdown__container.dropdown_bottom-borderles(class=(meta.type === 'item-quantity-applied' ? 'dropdown__container_applied' : '') data-meta=meta data-items=items)
+      .dropdown__selection
+        p.dropdown__selection-text
+      .dropdown__menu(class=meta.open ? '' : 'dropdown__menu_hide')
+        .dropdown__options
+          each item, index in items
+            .dropdown__option(data-id=index)
+              h3.dropdown__item-name= item.name
+              .dropdown__control
+                button.dropdown__button.dropdown__decrement-button -
+                .dropdown__quantity= item.quantity
+                button.dropdown__button.dropdown__increment-button +
+        if meta.type === 'item-quantity-applied'      
+          .dropdown__menu-buttons
+            +button('string', 'очистить')(
+              class='dropdown__clear-button'
+            )
+            +button('primary-string', 'применить')(
+              class='dropdown__apply-button'
+            )

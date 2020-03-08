@@ -4,6 +4,7 @@ import plural from 'plural-ru'
 
 $(document).ready(() => {
   const dropdownBlockClass = 'dropdown'
+  const dropdownContainer = dropdownBlockClass + '__container'
   const dropdownBottonBorderlessModifierClass =
     dropdownBlockClass + '_bottom-borderless'
   const menuElementClass = dropdownBlockClass + '__menu'
@@ -19,7 +20,7 @@ $(document).ready(() => {
   const cleatBtnClass = dropdownBlockClass + '__clear-button'
   const clearBtnHideClass = cleatBtnClass + '_hide'
 
-  const $dropdowns = $(`.${dropdownBlockClass}`)
+  const $dropdowns = $(`.${dropdownContainer}`)
 
   $dropdowns.each((index, dropdown) => {
     const $dropdown = $(dropdown)
