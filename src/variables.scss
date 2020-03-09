@@ -4,16 +4,17 @@
 }
 
 $dark_shade_100_color: dark-shade(1);
-$dark_shade_75_color: dark-shade(.75);
-$dark_shade_50_color: dark-shade(.50);
-$dark_shade_25_color: dark-shade(.25);
-$dark_shade_5_color: dark-shade(.05);
+$dark_shade_75_color: dark-shade(0.75);
+$dark_shade_50_color: dark-shade(0.5);
+$dark_shade_25_color: dark-shade(0.25);
+$dark_shade_10_color: dark-shade(0.1);
+$dark_shade_5_color: dark-shade(0.05);
 
-$primary_color: #BC9CFF;
-$secondary_color: #6FCF97;
+$primary_color: #bc9cff;
+$secondary_color: #6fcf97;
 
-$primary_gradient: linear-gradient(180deg, $primary_color 0%, #8BA4F9 100%);
-$secondary_gradient: linear-gradient(180deg, $secondary_color 0%, #66D2EA 100%);
+$primary_gradient: linear-gradient(180deg, $primary_color 0%, #8ba4f9 100%);
+$secondary_gradient: linear-gradient(180deg, $secondary_color 0%, #66d2ea 100%);
 
 // fonts
 $big_header_font: bold 24px 'Quicksand-Bold';

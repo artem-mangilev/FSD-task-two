@@ -10,6 +10,7 @@ import '../components/button/button'
 import '../components/input-group/input-group'
 import '../components/pagination/pagination'
 import '../components/bullet-list/bullet-list'
+import '../components/features/features'
 
 import '../variables.scss'
 import '../style.scss'
