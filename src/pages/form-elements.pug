@@ -9,6 +9,7 @@ include ../components/input-group/input-group
 include ../components/pagination/pagination
 include ../components/bullet-list/bullet-list
 include ../components/features/features
+include ../components/comment/comment
 
 include ../components/checkbox/checkbox
 
@@ -318,8 +319,16 @@ block body
           description: 'Окно в каждой из спален',
           icon: 'location_city'
         }
-      ] 
-    } 
+      ],
+      comment: {
+        authorName: 'Мурад Сарафанов',
+        publishedDate: '5 дней назад',
+        avatarUrl: '/avatar.png',
+        likes: 12,
+        isLiked: true,
+        commentText: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+      }
+    }
 
   +text-field(settings.defaultTextField)
   +text-field(settings.activeTextField)
@@ -343,3 +352,4 @@ block body
   +input-group(settings.expandableCheckboxGroup)
   +bullet-list(settings.bulletList.items, settings.bulletList.name)
   +features(settings.features)
+  +comment(settings.comment)

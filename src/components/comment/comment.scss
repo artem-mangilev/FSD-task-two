@@ -1,0 +1,34 @@
+@import '../../mixins-lib.scss';
+
+.comment {
+  &__author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__author-info {
+    margin-left: 10px;
+  }
+
+  &__avatar {
+    @include size(48px, 48px);
+  }
+
+  &__author-name {
+    display: block;
+    font-weight: bold;
+  }
+
+  &__comment-info {
+    display: flex;
+  }
+
+  &__text {
+    margin-left: 10px;
+  }
+
+  &__like-button {
+    margin-left: 4px;
+  }
+}
