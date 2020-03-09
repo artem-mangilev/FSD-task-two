@@ -12,12 +12,14 @@
   }
 
   &__item {
+    position: relative;
     margin-bottom: 10px;
 
     &::before {
       content: '';
 
-      display: inline-block;
+      position: absolute;
+      top: 4px;
       @include size(10px, 10px);
       margin-right: 10px;
       background-image: url(../../images/bullet.svg);
@@ -26,5 +28,9 @@
     &:last-of-type {
       margin: 0;
     }
+  }
+
+  &__item-text {
+    padding-left: 20px;
   }
 }
