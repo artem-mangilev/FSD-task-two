@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
     padding-right: 16px;
 
     &_expandable {
@@ -24,15 +23,20 @@
     box-sizing: border-box;
     display: inline-block;
     @include size(8.5px, 8.5px);
-    border-left: 2px solid $dark_shade_75_color;
-    border-bottom: 2px solid $dark_shade_75_color;
+    position: relative;
+    top: -2px;
+    border-left: 2px solid $dark_shade_50_color;
+    border-bottom: 2px solid $dark_shade_50_color;
     transform: rotate(-45deg);
 
     &_rotated {
       transform: rotate(135deg);
-      position: relative;
       top: 3px;
     }
+  }
+
+  &__members {
+    margin-top: 16px;
   }
 
   &__checkbox {
