@@ -1,0 +1,30 @@
+@import '../../mixins-lib.scss';
+
+.bullet-list {
+  &__bullet-container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__name {
+    margin-bottom: 16px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    &::before {
+      content: '';
+
+      display: inline-block;
+      @include size(10px, 10px);
+      margin-right: 10px;
+      background-image: url(../../images/bullet.svg);
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

@@ -7,6 +7,7 @@ include ../components/range-slider/range-slider
 include ../components/button/button
 include ../components/input-group/input-group
 include ../components/pagination/pagination
+include ../components/bullet-list/bullet-list
 
 include ../components/checkbox/checkbox
 
@@ -296,6 +297,14 @@ block body
             quantity: 0
           }
         ]
+      },
+      bulletList: {
+        name: 'bullet list',
+        items: [
+          'Нельзя с питомцами',
+          'Без вечеринок и мероприятий',
+          'Время прибытия — после 13:00, а выезд до 12:00'          
+        ]
       }
     } 
 
@@ -319,3 +328,4 @@ block body
   //- +checkbox(settings.richCheckbox.content, settings.richCheckbox.description)
   +input-group(settings.richCheckboxGroup)
   +input-group(settings.expandableCheckboxGroup)
+  +bullet-list(settings.bulletList.items, settings.bulletList.name)
