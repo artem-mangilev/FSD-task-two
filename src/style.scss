@@ -49,6 +49,10 @@ p {
   margin: 0;
 }
 
+.material-icons {
+  user-select: none;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
