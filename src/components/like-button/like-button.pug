@@ -1,4 +1,4 @@
 mixin like-button(likesNumber, isLiked)
-  button.like-button(class= isLiked ? 'like-button_active': '' class!=attributes.class)
+  button.like-button(data-likes=likesNumber data-is-liked=isLiked class= isLiked ? 'like-button_active': '' class!=attributes.class)
     i.material-icons.like-button__icon= isLiked ? 'favorite' : 'favorite_border'
     span.like-button__likes_number= likesNumber
