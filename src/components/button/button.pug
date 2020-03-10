@@ -1,10 +1,11 @@
 //- types:
 //-   primary
-//-   outlined
+//-   secondary
 //-   primary-string
-//-   string
+//-   secondary-string
 //-   action
 
 mixin button(type='primary', content)
-  button.button(class=`button_${type}` disabled!=attributes.disabled class!=attributes.class)= content
-    i.button__icon.material-icons= type === 'action' ? 'arrow_forward' : ''
+  button.button(class=`button_${type}`)&attributes(attributes)= content
+    if (type === 'action')
+      i.button__icon.material-icons arrow_forward
