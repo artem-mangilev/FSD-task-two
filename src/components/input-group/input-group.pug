@@ -1,7 +1,7 @@
 include ../checkbox/checkbox
 include ../radio/radio
 include ../toggle/toggle
-include ../rate-button/rate-button
+include ../rating/rating
 include ../like-button/like-button
 include ../button/button
 include ../pagination/pagination
@@ -100,8 +100,8 @@ mixin input-group({ name, type, open, meta, group })
               class='input-group__radio'
             )
           when 'rate'
-            +rate-button(member.rating)(
-              class='input-group__rate-button'
+            +rating(member.rating)(
+              class='input-group__rating'
             )
           when 'like'
             +like-button(member.likesNumber, member.isLiked)(

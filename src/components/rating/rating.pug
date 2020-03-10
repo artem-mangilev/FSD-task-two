@@ -1,0 +1,9 @@
+mixin rating(rating)
+  - 
+    const nOfIcons = 5
+    let current = 0
+
+  .rating&attributes(attributes)
+    while current < nOfIcons
+      i.rating__icon.material-icons= current < rating ? 'star' : 'star_border'
+      - current++
