@@ -12,7 +12,8 @@
   justify-content: space-between;
   position: relative;
 
-  @include size(40px, 20px);
+  min-width: 40px;
+  height: 20px;
   font: $body_text_font;
   font-size: 10px;
 
