@@ -2,23 +2,18 @@
 @import '../../mixins-lib.scss';
 
 .checkbox-container {
-  display: block;
+  display: flex;
   position: relative;
-
-  $checkbox_width: 20px;
-  $checkbox_height: 20px;
-
-  height: max-content;
 
   &__checkbox {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     margin: 0;
 
-    position: absolute;
     box-sizing: border-box;
 
-    @include size($checkbox_width, $checkbox_height);
+    @include size(20px, 20px);
 
     background-color: #fff;
 
@@ -74,7 +69,7 @@
   }
 
   &__content {
-    padding-left: $checkbox_width + 10px;
+    padding-left: 10px;
 
     font: $body_text_font;
     color: $dark_shade_50_color;
