@@ -1,37 +1,28 @@
 @import '../../variables.scss';
 @import '../../mixins-lib.scss';
 
-.checkbox-container {
+.checkbox {
   display: flex;
   position: relative;
 
-  &__checkbox {
+  &__button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0;
-
     box-sizing: border-box;
-
+    margin: 0;
     @include size(20px, 20px);
-
     background-color: #fff;
 
     // checkbox border styles
     &::before {
       content: '';
 
-      display: inline-block;
+      display: block;
       box-sizing: border-box;
-
-      @include size(inherit, inherit);
-
-      border: {
-        width: 1px;
-        style: solid;
-        color: $dark_shade_25_color;
-        radius: 4px;
-      }
+      height: inherit;
+      border: 1px solid $dark_shade_25_color;
+      border-radius: 4px;
     }
 
     &:checked::before {
@@ -70,8 +61,6 @@
 
   &__content {
     padding-left: 10px;
-
-    font: $body_text_font;
     color: $dark_shade_50_color;
   }
 
