@@ -1,19 +1,14 @@
-include ../field/field
-include ../input/input
+//- types:
+//-   - default
+//-   - masked-date
+//-   - subscription
 
-mixin text-field({ label, value, id, placeholder, is_masked, is_subscription= false, ui_kit_is_active= false, ui_kit_state })
-  - 
-    const settings = {
-      size: is_subscription ? 'medium' : 'long',
-      icon_name: is_subscription ? 'arrow_forward': '',
-      is_icon_colored: is_subscription ? true : false,
-      is_masked,
-      ui_kit_is_active
-    }
-
-  +field({ label, id, ui_kit_state })
-    +input(settings)(
-      placeholder= placeholder
-      value= value
-      id = id
-    )
+mixin text-field({ label = null, type = 'default', uikitMode = null })
+  label.text-field(class=`text-field_${type}`)
+    if label
+      h3.text-field__label= label
+    if uikitMode
+      span.text-field__uikit-state= attributes.autofocus ? 'hover / focus' : 'default'
+    input.text-field__input(type='text' data-mask-placeholder= (type === 'masked-date' && attributes.placeholder))&attributes(attributes)
+    if (type === 'subscription')
+      i.text-field__icon.material-icons arrow_forward

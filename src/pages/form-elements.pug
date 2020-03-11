@@ -2,7 +2,6 @@ extends ../layout/base
 
 include ../components/text-field/text-field
 include ../components/dropdown/dropdown
-include ../components/input/input
 include ../components/range-slider/range-slider
 include ../components/button/button
 include ../components/input-group/input-group
@@ -22,25 +21,22 @@ block body
     const settings = {
       defaultTextField: {
         label: 'text field',
-        id: 'text_field',
-        ui_kit_state: 'default',
+        uikitMode: true,
         placeholder: 'Email'
       },
-      activeTextField: {
+      focusedTextField: {
         label: 'text field',
-        id: 'active_text_field',
-        ui_kit_state: 'hover / focus',
-        ui_kit_is_active: true,  
-        value: 'This is pretty awesome'
+        value: 'This is pretty awesome',
+        uikitMode: true,
+        autofocus: true
       },
       //- dropdown: {
       //-   type: 'applied-options',
       //- },
       maskedTextField: {
         label: 'masked text field',
-        id: 'masked_text_field',
-        is_masked: true,
-        ui_kit_state: 'default',
+        type: 'masked-date',
+        uikitMode: true,
         placeholder: 'ДД.ММ.ГГГГ'
       },
       //- multifieldDateDropdown: {
@@ -56,9 +52,8 @@ block body
       //- },
       subscriptionTextField: {
         label: 'subscription text field',
-        placeholder: 'Email',
-        id: 'subscription_text_field',
-        is_subscription: true
+        type: 'subscription',
+        placeholder: 'Email'
       },
       checkboxGroup: {
         name: 'Checkbox buttons',
@@ -330,13 +325,22 @@ block body
       }
     }
 
-  +text-field(settings.defaultTextField)
-  +text-field(settings.activeTextField)
+  +text-field(settings.defaultTextField)(
+    placeholder=settings.defaultTextField.placeholder
+  )
+  +text-field(settings.focusedTextField)(
+    value=settings.focusedTextField.value
+    autofocus=settings.focusedTextField.autofocus
+  )
   //- +dropdown()
-  +text-field(settings.maskedTextField)
+  +text-field(settings.maskedTextField)(
+    placeholder=settings.maskedTextField.placeholder
+  )
   //- +dropdown(settings.multifieldDateDropdown)
   //- +dropdown(settings.singlefieldDateDropdown)
-  +text-field(settings.subscriptionTextField)
+  +text-field(settings.subscriptionTextField)(
+    placeholder=settings.subscriptionTextField.placeholder
+  )
   +input-group(settings.checkboxGroup)
   +input-group(settings.radioGroup)
   +input-group(settings.toggleGroup)

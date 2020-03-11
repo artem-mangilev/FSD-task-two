@@ -1,7 +1,6 @@
 import '../layout/base'
 
-import '../components/field/field'
-import '../components/input/input'
+import '../components/text-field/text-field'
 import '../components/dropdown/dropdown'
 import '../components/like-button/like-button'
 import '../components/rating/rating'
