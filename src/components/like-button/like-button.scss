@@ -29,4 +29,8 @@
   &__icon {
     font-size: 10px;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
