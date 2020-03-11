@@ -1,10 +1,13 @@
 @import '../../mixins-lib.scss';
 
 .bullet-list {
+  $container-left-padding: 20px;
+
   &__bullet-container {
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-left: $container-left-padding;
   }
 
   &__name {
@@ -15,11 +18,12 @@
     position: relative;
     margin-bottom: 10px;
 
+    text-indent: -$container-left-padding;
+
     &::before {
       content: '';
 
-      position: absolute;
-      top: 4px;
+      display: inline-block;
       @include size(10px, 10px);
       margin-right: 10px;
       background-image: url(../../images/bullet.svg);
@@ -28,9 +32,5 @@
     &:last-of-type {
       margin: 0;
     }
-  }
-
-  &__item-text {
-    padding-left: 20px;
   }
 }
