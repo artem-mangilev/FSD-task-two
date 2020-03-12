@@ -37,6 +37,8 @@ module.exports = {
     paths: PATHS
   },
 
+  context: path.resolve(__dirname, 'src'),
+
   entry: {
     app: `${PATHS.src}/index.js`
   },
@@ -108,7 +110,9 @@ module.exports = {
         test: /\.woff|ttf|svg$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
+          name: '[name].[ext]',
+          context: 'fonts',
+          outputPath: 'fonts'
         }
       }
     ]
