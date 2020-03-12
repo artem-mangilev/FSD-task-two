@@ -12,5 +12,5 @@ import '../../components/bullet-list/bullet-list'
 import '../../components/features/features'
 import '../../components/comment/comment'
 
-import '../../variables.scss'
-import '../../style.scss'
+import '../../scss/variables.scss'
+import '../../scss/style.scss'

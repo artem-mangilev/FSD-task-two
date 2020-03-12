@@ -1,5 +1,3 @@
-@import '../../variables';
-
 .color {
   width: 270px;
   margin-bottom: 20px;
@@ -20,7 +18,7 @@
   }
 
   &__name {
-    font: $medium_header_font
+    font: $medium_header_font;
   }
 
   &__dark_shade_100 {
@@ -33,17 +31,14 @@
 
   &__dark_shade_50 {
     background-color: $dark_shade_50_color;
-
   }
 
   &__dark_shade_25 {
     background-color: $dark_shade_25_color;
-
   }
 
   &__dark_shade_5 {
     background-color: $dark_shade_5_color;
-
   }
 
   &__purple {
