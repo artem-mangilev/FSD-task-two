@@ -7,19 +7,29 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
+  dist: path.join(__dirname, '../dist')
 }
 
 const PAGES_FOLDER = path.join(PATHS.src, '/pages')
 
-const createHtmlWebpackPlugins = pagesFolder => {
-  const pugFilesRegex = /\.pug$/ 
-  const pages = fs.readdirSync(pagesFolder).filter(file => pugFilesRegex.test(file))
-  
-  return pages.map(page => new HtmlWebpackPlugin({
-      template: path.join(pagesFolder, page),
-      filename: page.replace('.pug', '.html')
-    }))
+const createHtmlWebpackPlugins = pagesFolderPath => {
+  const pugFilesRegex = /\.pug$/
+  const pagesFolder = fs.readdirSync(pagesFolderPath)
+  const pages = pagesFolder
+    .map(pageFolder => {
+      const pageFolderPath = path.join(pagesFolderPath, pageFolder)
+      return fs.readdirSync(pageFolderPath)
+    })
+    .flat()
+    .filter(file => pugFilesRegex.test(file))
+
+  return pages.map(
+    page =>
+      new HtmlWebpackPlugin({
+        template: path.join(pagesFolderPath, page.replace('.pug', ''), page),
+        filename: `/pages/${page.replace('.pug', '.html')}`
+      })
+  )
 }
 
 module.exports = {
@@ -44,7 +54,7 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader'
       },
-      // babel      
+      // babel
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -54,7 +64,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
