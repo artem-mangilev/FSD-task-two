@@ -111,7 +111,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          context: 'fonts',
+          context: 'fonts/',
           outputPath: 'fonts'
         }
       }
@@ -130,8 +130,12 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: path.join(PATHS.src + '/images'),
-        to: PATHS.dist
+        from: path.join(PATHS.src, '/images'),
+        to: path.join(PATHS.dist, '/images')
+      },
+      {
+        from: path.join(PATHS.src, '/uploads'),
+        to: path.join(PATHS.dist, '/images')
       }
     ]),
     ...createHtmlWebpackPlugins(PAGES_FOLDER)
