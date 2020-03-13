@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Dark Shade 100%",
+    "className": "__dark_shade_100",
+    "code": "#1F2041"
+  },
+  {
+    "name": "Dark Shade 75%",
+    "className": "__dark_shade_75",
+    "code": "#1F2041"
+  },
+  {
+    "name": "Dark Shade 50%",
+    "className": "__dark_shade_50",
+    "code": "#1F2041"
+  },
+  {
+    "name": "Dark Shade 25%",
+    "className": "__dark_shade_25",
+    "code": "#1F2041"
+  },
+  {
+    "name": "Dark Shade 5%",
+    "className": "__dark_shade_5",
+    "code": "#1F2041"
+  },
+  {
+    "name": "Purple",
+    "className": "__purple",
+    "code": "#BC9CFF"
+  },
+  {
+    "name": "Green",
+    "className": "__green",
+    "code": "#6FCF97"
+  }
+]
