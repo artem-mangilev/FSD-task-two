@@ -1,0 +1,15 @@
+include ../checkbox/checkbox
+
+mixin checkbox-list(title, checkboxes, expanded)
+  .checkbox-list(class=(expanded !== undefined) && 'checkbox-list_expandable')
+    - const titleCl = 'checkbox-list__title'
+    h3.checkbox-list__title(class=((expanded !== undefined) && (expanded ? `${titleCl}_expanded` : `${titleCl}_hidden`)))= title
+    .checkbox-list__checkboxes
+      each checkbox in checkboxes
+        +checkbox(checkbox.text, checkbox.description)(
+          name=checkbox.name
+          value=checkbox.value
+          checked=checkbox.checked
+          class='checkbox-list__checkbox'        
+        )
+

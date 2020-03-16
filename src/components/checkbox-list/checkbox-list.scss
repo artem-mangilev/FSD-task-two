@@ -1,0 +1,46 @@
+@import '../../scss/material-icons.scss';
+
+.checkbox-list {
+  &__title {
+    width: $medium_input_width;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8px;
+
+    &_expanded,
+    &_hidden {
+      cursor: pointer;
+      &::after {
+        @extend .material-icons;
+        color: $dark_shade_50_color;
+      }
+    }
+
+    &_expanded {
+      &::after {
+        content: 'expand_more';
+        transform: rotate(180deg);
+      }
+    }
+
+    &_hidden {
+      &::after {
+        content: 'expand_more';
+      }
+    }
+  }
+
+  &__checkboxes {
+    margin-top: 16px;
+  }
+
+  &__checkbox {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

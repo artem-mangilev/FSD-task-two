@@ -21,70 +21,67 @@
     "type": "subscription",
     "placeholder": "Email"
   },
-  "checkboxGroup": {
-    "name": "Checkbox buttons",
-    "type": "checkbox",
-    "group": [
+  "checkboxList": {
+    "title": "Checkbox buttons",
+    "checkboxes": [
       {
-        "content": "Можно курить"
+        "text": "Можно курить"
       },
       {
-        "content": "Можно с питомцами",
-        "isChecked": true
+        "text": "Можно с питомцами",
+        "checked": true
       },
       {
-        "content": "Можно пригласить гостей (до 10 человек)",
-        "isChecked": true
+        "text": "Можно пригласить гостей (до 10 человек)",
+        "checked": true
       }
     ]
   },
-  "richCheckboxGroup": {
-    "name": "rich checkbox buttons",
-    "type": "checkbox",
-    "group": [
+  "richCheckboxList": {
+    "title": "rich checkbox buttons",
+    "checkboxes": [
       {
-        "content": "Широкий коридор",
+        "text": "Широкий коридор",
         "description": "Ширина коридоров в номере не менее 91 см."
       },
       {
-        "content": "Помощник для инвалидов",
+        "text": "Помощник для инвалидов",
         "description": "На 1 этаже вас встретит специалист и проводит до номера."
       }
     ]
   },
-  "expandableCheckboxGroup": {
-    "name": "expandable checkbox list",
-    "type": "checkbox-expandable",
-    "open": true,
-    "group": [
+  "expandableCheckboxList": {
+    "title": "expandable checkbox list",
+    "checkboxes": [
       {
-        "content": "Завтрак"
+        "text": "Завтрак"
       },
       {
-        "content": "Письменный стол",
-        "isChecked": true
+        "text": "Письменный стол",
+        "checked": true
       },
       {
-        "content": "Стул для кормления",
-        "isChecked": true
+        "text": "Стул для кормления",
+        "checked": true
       },
       {
-        "content": "Кроватка",
-        "isChecked": true
+        "text": "Кроватка",
+        "checked": true
       },
       {
-        "content": "Телевизор"
+        "text": "Телевизор"
       },
       {
-        "content": "Шампунь"
+        "text": "Шампунь"
       },
       {
-        "content": "Телевизор"
+        "text": "Телевизор"
       },
       {
-        "content": "Шампунь"
+        "text": "Шампунь"
       }
-    ]
+    ],
+    "expanded": true
   },
   "radioGroup": {
     "name": "Radio Buttons",

@@ -5,6 +5,7 @@ include ../../components/dropdown/dropdown
 include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/input-group/input-group
+include ../../components/checkbox-list/checkbox-list
 include ../../components/pagination/pagination
 include ../../components/bullet-list/bullet-list
 include ../../components/features/features
@@ -35,7 +36,7 @@ block body
   +text-field(settings.subscriptionTextField)(
     placeholder=settings.subscriptionTextField.placeholder
   )
-  +input-group(settings.checkboxGroup)
+  +checkbox-list(settings.checkboxList.title, settings.checkboxList.checkboxes, settings.checkboxList.expanded)
   +input-group(settings.radioGroup)
   +input-group(settings.toggleGroup)
   +input-group(settings.likeGroup)
@@ -45,9 +46,8 @@ block body
   +input-group(settings.paginationGroup)
   +dropdown(settings.roomsDropdown.meta, settings.roomsDropdown.items)
   +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)
-  //- +checkbox(settings.richCheckbox.content, settings.richCheckbox.description)
-  +input-group(settings.richCheckboxGroup)
-  +input-group(settings.expandableCheckboxGroup)
+  +checkbox-list(settings.richCheckboxList.title, settings.richCheckboxList.checkboxes)
+  +checkbox-list(settings.expandableCheckboxList.title, settings.expandableCheckboxList.checkboxes, settings.expandableCheckboxList.expanded)
   +bullet-list(settings.bulletList.items, settings.bulletList.name)
   +features(settings.features)
   +comment(settings.comment)
