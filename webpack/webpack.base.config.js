@@ -27,7 +27,7 @@ const createHtmlWebpackPlugins = pagesFolderPath => {
     page =>
       new HtmlWebpackPlugin({
         template: path.join(pagesFolderPath, page.replace('.pug', ''), page),
-        filename: `/pages/${page.replace('.pug', '.html')}`
+        filename: page.replace('.pug', '.html')
       })
   )
 }
