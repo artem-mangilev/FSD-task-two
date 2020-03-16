@@ -1,10 +1,12 @@
 .radio {
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: $dark_shade_50_color;
-
   &__button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: $dark_shade_50_color;
+  }
+
+  &__input {
     -webkit-appearance: none;
     -moz-appearance: none;
     box-sizing: border-box;
@@ -35,7 +37,7 @@
     }
 
     // TODO: find better selector
-    &:checked + .radio__content {
+    &:checked + .radio__text {
       color: $dark_shade_75_color;
     }
 
@@ -44,7 +46,7 @@
     }
   }
 
-  &__content {
+  &__text {
     margin-left: 10px;
   }
 }

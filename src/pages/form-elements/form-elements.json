@@ -83,23 +83,19 @@
     ],
     "expanded": true
   },
-  "radioGroup": {
-    "name": "Radio Buttons",
-    "type": "radio",
-    "meta": {
-      "name": "sex",
-      "selected": "man"
-    },
-    "group": [
+  "radio": {
+    "name": "sex",
+    "buttons": [
       {
-        "content": "Мужчина",
+        "text": "Мужчина",
         "value": "man"
       },
       {
-        "content": "Женщина",
+        "text": "Женщина",
         "value": "woman"
       }
-    ]
+    ],
+    "checked": "woman"
   },
   "toggleGroup": {
     "name": "toggle",
