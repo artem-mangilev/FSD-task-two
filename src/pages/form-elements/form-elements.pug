@@ -5,6 +5,7 @@ include ../../components/dropdown/dropdown
 include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/input-group/input-group
+include ../../components/toggle/toggle
 include ../../components/checkbox-list/checkbox-list
 include ../../components/pagination/pagination
 include ../../components/bullet-list/bullet-list
@@ -38,7 +39,11 @@ block body
   )
   +checkbox-list(settings.checkboxList.title, settings.checkboxList.checkboxes, settings.checkboxList.expanded)
   +radio(settings.radio.name, settings.radio.buttons, settings.radio.checked)
-  +input-group(settings.toggleGroup)
+
+  each toggle in settings.toggles
+    +toggle(toggle.content)(
+      checked=toggle.checked
+    )
   +input-group(settings.likeGroup)
   +input-group(settings.rateGroup)
   +range-slider(settings.rangeSlider)

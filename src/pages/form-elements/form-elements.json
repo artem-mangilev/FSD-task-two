@@ -97,19 +97,15 @@
     ],
     "checked": "woman"
   },
-  "toggleGroup": {
-    "name": "toggle",
-    "type": "toggle",
-    "group": [
-      {
-        "content": "Получать спецпредложения",
-        "isChecked": true
-      },
-      {
-        "content": "Получать спецпредложения"
-      }
-    ]
-  },
+  "toggles": [
+    {
+      "content": "Получать спецпредложения",
+      "checked": true
+    },
+    {
+      "content": "Получать спецпредложения"
+    }
+  ],
   "likeGroup": {
     "name": "like button",
     "type": "like",
