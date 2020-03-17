@@ -1,3 +1,5 @@
+@import '../../scss/material-icons.scss';
+
 .text-field {
   $input_height: 44px;
 
@@ -13,6 +15,23 @@
 
   &_subscription {
     width: $medium_input_width;
+
+    &::after {
+      @extend .material-icons;
+      content: 'arrow_forward';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include size($input_height, $input_height);
+      // thanks to: https://cssgradient.io/blog/css-gradient-text/
+      background: $primary_gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   &__label,
@@ -27,6 +46,7 @@
   }
 
   &__input {
+    position: relative;
     box-sizing: border-box;
     flex-basis: 100%;
     height: $input_height;
@@ -46,20 +66,5 @@
       outline: none;
       border: 1px solid $dark_shade_50_color;
     }
-  }
-
-  &__icon {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include size($input_height, $input_height);
-    // thanks to: https://cssgradient.io/blog/css-gradient-text/
-    background: $primary_gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }

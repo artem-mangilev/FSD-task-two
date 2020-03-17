@@ -10,5 +10,3 @@ mixin text-field({ label = null, type = 'default', uikitMode = null })
     if uikitMode
       span.text-field__uikit-state= attributes.autofocus ? 'hover / focus' : 'default'
     input.text-field__input(type='text' data-mask-placeholder= (type === 'masked-date' && attributes.placeholder))&attributes(attributes)
-    if (type === 'subscription')
-      i.text-field__icon.material-icons arrow_forward
