@@ -22,50 +22,80 @@ block head
   title Form elements
 
 block body
-  - const settings = require('./form-elements.json')
+  - 
+    const { 
+      expandableCheckboxList,
+      subscriptionTextField,
+      defaultTextField,
+      focusedTextField,
+      richCheckboxList,
+      maskedTextField,
+      guestsDropdown,
+      roomsDropdown,
+      checkboxList,
+      rangeSlider,
+      buttonList,
+      pagination,
+      bulletList,
+      ratingList,
+      features,
+      toggles,
+      comment,
+      radio,
+      likes  
+    } = require('./form-elements.json')
 
-  +text-field(settings.defaultTextField)(
-    placeholder=settings.defaultTextField.placeholder
+  +text-field(defaultTextField)(
+    placeholder=defaultTextField.placeholder
   )
-  +text-field(settings.focusedTextField)(
-    value=settings.focusedTextField.value
-    autofocus=settings.focusedTextField.autofocus
-  )
-  //- +dropdown()
-  +text-field(settings.maskedTextField)(
-    placeholder=settings.maskedTextField.placeholder
-  )
-  //- +dropdown(settings.multifieldDateDropdown)
-  //- +dropdown(settings.singlefieldDateDropdown)
-  +text-field(settings.subscriptionTextField)(
-    placeholder=settings.subscriptionTextField.placeholder
-  )
-  +checkbox-list(settings.checkboxList.title, settings.checkboxList.checkboxes, settings.checkboxList.expanded)
-  +radio(settings.radio.name, settings.radio.buttons, settings.radio.checked)
 
-  each toggle in settings.toggles
+  +text-field(focusedTextField)(
+    value=focusedTextField.value
+    autofocus=focusedTextField.autofocus
+  )
+
+  +text-field(maskedTextField)(
+    placeholder=maskedTextField.placeholder
+  )
+
+  +text-field(subscriptionTextField)(
+    placeholder=subscriptionTextField.placeholder
+  )
+
+  +checkbox-list(checkboxList.title, checkboxList.checkboxes, checkboxList.expanded)
+
+  +radio(radio.name, radio.buttons, radio.checked)
+
+  each toggle in toggles
     +toggle(toggle.content)(
       checked=toggle.checked
     )
 
-  each like in settings.likes
+  each like in likes
     +like-button(like.likesNumber, like.liked)
 
-  each rating in settings.ratingList
+  each rating in ratingList
     +rating(rating)
 
-  +range-slider(settings.rangeSlider)
+  +range-slider(rangeSlider)
 
-  each button in settings.buttonList
+  each button in buttonList
     +button(button.type, button.content)(
       disabled=button.disabled
     )
 
-  +pagination(settings.pagination.description, settings.pagination.testMode)
-  +dropdown(settings.roomsDropdown.meta, settings.roomsDropdown.items)
-  +dropdown(settings.guestsDropdown.meta, settings.guestsDropdown.items)
-  +checkbox-list(settings.richCheckboxList.title, settings.richCheckboxList.checkboxes)
-  +checkbox-list(settings.expandableCheckboxList.title, settings.expandableCheckboxList.checkboxes, settings.expandableCheckboxList.expanded)
-  +bullet-list(settings.bulletList.items, settings.bulletList.name)
-  +features(settings.features)
-  +comment(settings.comment)
+  +pagination(pagination.description, pagination.testMode)
+
+  +dropdown(roomsDropdown.meta, roomsDropdown.items)
+
+  +dropdown(guestsDropdown.meta, guestsDropdown.items)
+
+  +checkbox-list(richCheckboxList.title, richCheckboxList.checkboxes)
+
+  +checkbox-list(expandableCheckboxList.title, expandableCheckboxList.checkboxes, expandableCheckboxList.expanded)
+
+  +bullet-list(bulletList.items, bulletList.name)
+
+  +features(features)
+
+  +comment(comment)
