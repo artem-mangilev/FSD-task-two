@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
   }
 
   &__input {
@@ -16,7 +16,7 @@
     margin: 0;
     min-width: 20px;
     height: 20px;
-    border: 1px solid $dark_shade_25_color;
+    border: 1px solid $dark-shade-25;
     border-radius: 10px;
 
     &::before {
@@ -24,12 +24,12 @@
 
       display: none;
       @include size(12px, 12px);
-      background: $primary_gradient;
+      background: $primary-gradient;
       border-radius: 10px;
     }
 
     &:checked {
-      border-color: $primary_color;
+      border-color: $primary-color;
     }
 
     &:checked::before {
@@ -38,7 +38,7 @@
 
     // TODO: find better selector
     &:checked + .radio__text {
-      color: $dark_shade_75_color;
+      color: $dark-shade-75;
     }
 
     &:focus {

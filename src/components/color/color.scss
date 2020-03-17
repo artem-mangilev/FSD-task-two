@@ -18,34 +18,34 @@
   }
 
   &__name {
-    font: $medium_header_font;
+    font: $medium-header-font;
   }
 
-  &__dark_shade_100 {
-    background-color: $dark_shade_100_color;
+  &__dark-shade-100 {
+    background-color: $dark-shade-100;
   }
 
-  &__dark_shade_75 {
-    background-color: $dark_shade_75_color;
+  &__dark-shade-75 {
+    background-color: $dark-shade-75;
   }
 
-  &__dark_shade_50 {
-    background-color: $dark_shade_50_color;
+  &__dark-shade-50 {
+    background-color: $dark-shade-50;
   }
 
-  &__dark_shade_25 {
-    background-color: $dark_shade_25_color;
+  &__dark-shade-25 {
+    background-color: $dark-shade-25;
   }
 
-  &__dark_shade_5 {
-    background-color: $dark_shade_5_color;
+  &__dark-shade-5 {
+    background-color: $dark-shade-5;
   }
 
   &__purple {
-    background-color: $primary_color;
+    background-color: $primary-color;
   }
 
   &__green {
-    background-color: $secondary_color;
+    background-color: $secondary-color;
   }
 }

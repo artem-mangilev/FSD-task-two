@@ -14,14 +14,14 @@
     border: {
       width: 1px;
       style: solid;
-      color: $dark_shade_25_color;
+      color: $dark-shade-25;
       radius: 10px;
     }
 
     background-color: #fff;
 
     &:checked {
-      border-color: $primary_color;
+      border-color: $primary-color;
     }
 
     &::after {
@@ -33,7 +33,7 @@
       left: 3px;
 
       @include size(12px, 12px);
-      background-color: $dark_shade_25_color;
+      background-color: $dark-shade-25;
       border-radius: 10px;
 
       transition: {
@@ -47,7 +47,7 @@
     // so it should be reconsidered in future.
     &:checked::after {
       left: 23px;
-      background: $primary_gradient;
+      background: $primary-gradient;
     }
 
     &:focus {

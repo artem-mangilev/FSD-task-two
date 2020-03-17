@@ -1,6 +1,6 @@
 .range-slider {
   position: relative;
-  width: $medium_input_width;
+  width: $medium-input-width;
 
   &__title {
     position: absolute;
@@ -26,7 +26,7 @@ Build date: 2019-12-19 16:51:02
 
   // new
   margin-top: 3px;
-  font: $body_text_font;
+  font: $body-text-font;
   font-size: 12px;
   text-align: right;
 
@@ -99,7 +99,7 @@ Build date: 2019-12-19 16:51:02
     border: {
       width: 1px;
       style: solid;
-      color: $dark_shade_25_color;
+      color: $dark-shade-25;
       radius: 3px;
     }
   }
@@ -109,7 +109,7 @@ Build date: 2019-12-19 16:51:02
 
     // new
     height: 6px;
-    background-image: $secondary_gradient;
+    background-image: $secondary-gradient;
   }
   &--flat &-handle {
     // old
@@ -117,7 +117,7 @@ Build date: 2019-12-19 16:51:02
 
     // new
     @include size(12px, 12px);
-    background-image: $secondary_gradient;
+    background-image: $secondary-gradient;
     border: {
       width: 1px;
       style: solid;
@@ -136,6 +136,6 @@ Build date: 2019-12-19 16:51:02
     position: absolute;
     top: -6px;
     right: 0px;
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
   }
 }

@@ -7,9 +7,9 @@
   padding: 0;
   border: none;
   border-radius: 22px;
-  font: $small_header_font;
+  font: $small-header-font;
   text-transform: uppercase;
-  color: $primary_color;
+  color: $primary-color;
   cursor: pointer;
 
   &_primary,
@@ -18,7 +18,7 @@
   }
 
   &_primary {
-    background-image: $primary_gradient;
+    background-image: $primary-gradient;
     color: #fff;
 
     &:disabled {
@@ -28,7 +28,7 @@
   }
 
   &_secondary {
-    @include extended_border(2px, 22px, $primary_gradient);
+    @include extended_border(2px, 22px, $primary-gradient);
     background-color: #fff;
 
     &:disabled {
@@ -45,12 +45,12 @@
   }
 
   &_secondary-string {
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
   }
 
   &_action {
-    width: $long_input_width;
-    background-image: $primary_gradient;
+    width: $long-input-width;
+    background-image: $primary-gradient;
     color: #fff;
 
     &::before {

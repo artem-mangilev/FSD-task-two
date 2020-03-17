@@ -47,19 +47,19 @@
 
   & &-page a,
   & &-ellipsis {
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
   }
 
   & &-pages li.active {
     // new
-    background: $primary_gradient;
+    background: $primary-gradient;
     border-radius: 22px;
   }
   & &-pages li.active > a {
     color: #fff;
   }
   & &-next {
-    background: $secondary_gradient;
+    background: $secondary-gradient;
     border-radius: 22px;
   }
 

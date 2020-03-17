@@ -1,27 +1,27 @@
 [
   {
     "name": "Dark Shade 100%",
-    "className": "__dark_shade_100",
+    "className": "__dark-shade-100",
     "code": "#1F2041"
   },
   {
     "name": "Dark Shade 75%",
-    "className": "__dark_shade_75",
+    "className": "__dark-shade-75",
     "code": "#1F2041"
   },
   {
     "name": "Dark Shade 50%",
-    "className": "__dark_shade_50",
+    "className": "__dark-shade-50",
     "code": "#1F2041"
   },
   {
     "name": "Dark Shade 25%",
-    "className": "__dark_shade_25",
+    "className": "__dark-shade-25",
     "code": "#1F2041"
   },
   {
     "name": "Dark Shade 5%",
-    "className": "__dark_shade_5",
+    "className": "__dark-shade-5",
     "code": "#1F2041"
   },
   {

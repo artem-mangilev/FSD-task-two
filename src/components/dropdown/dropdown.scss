@@ -4,17 +4,17 @@
   &__container {
     position: relative;
     box-sizing: border-box;
-    @include size($medium_input_width, 44px);
+    @include size($medium-input-width, 44px);
     border: {
       width: 1px;
       style: solid;
-      color: $dark_shade_50_color;
+      color: $dark-shade-50;
       radius: 2px;
     }
     cursor: pointer;
 
     &_applied {
-      width: $long_input_width;
+      width: $long-input-width;
     }
 
     &_bottom-borderless {
@@ -49,8 +49,8 @@
       box-sizing: border-box;
       display: inline-block;
       @include size(8.5px, 8.5px);
-      border-left: 2px solid $dark_shade_75_color;
-      border-bottom: 2px solid $dark_shade_75_color;
+      border-left: 2px solid $dark-shade-75;
+      border-bottom: 2px solid $dark-shade-75;
       transform: rotate(-45deg);
     }
   }
@@ -92,7 +92,7 @@
   }
 
   &__item-name {
-    color: $dark_shade_100_color;
+    color: $dark-shade-100;
   }
 
   &__control {
@@ -105,13 +105,13 @@
     border: {
       width: 1px;
       style: solid;
-      color: $dark_shade_25_color;
+      color: $dark-shade-25;
       radius: 25px;
     }
     background-color: #fff;
-    font: $body_text_font;
+    font: $body-text-font;
     font-size: 18px;
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
     cursor: pointer;
     outline: none;
 
@@ -125,7 +125,7 @@
     width: 32px;
     text-align: center;
     font-weight: bold;
-    color: $dark_shade_100_color;
+    color: $dark-shade-100;
     font-size: 12px;
   }
 

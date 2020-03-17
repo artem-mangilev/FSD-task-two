@@ -19,12 +19,12 @@
       display: block;
       box-sizing: border-box;
       height: inherit;
-      border: 1px solid $dark_shade_25_color;
+      border: 1px solid $dark-shade-25;
       border-radius: 4px;
     }
 
     &:checked::before {
-      border-color: $primary_color;
+      border-color: $primary-color;
     }
 
     // checkmark styles
@@ -41,7 +41,7 @@
       border: {
         width: 0 2px 2px 0;
         style: solid;
-        image: $primary_gradient;
+        image: $primary-gradient;
         image-slice: 1;
       }
       transform: rotate(45deg);
@@ -59,13 +59,13 @@
 
   &__content {
     padding-left: 10px;
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
   }
 
   &__text {
     &_bold {
       font-weight: bold;
-      color: $dark_shade_75_color;
+      color: $dark-shade-75;
     }
   }
 

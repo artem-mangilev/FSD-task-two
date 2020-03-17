@@ -7,23 +7,23 @@
 
     &::before {
       font-family: 'Montserrat-Regular';
-      color: $dark_shade_25_color;
+      color: $dark-shade-25;
     }
 
     &.text-example__main-header {
-      font: $big_header_font;
+      font: $big-header-font;
     }
 
     &.text-example__mid-header {
-      font: $medium_header_font;
+      font: $medium-header-font;
     }
 
     &.text-example__small-header {
-      font: $small_header_font;
+      font: $small-header-font;
     }
 
     &.text-example__body-text {
-      font: $body_text_font;
+      font: $body-text-font;
     }
 
     &.text-example__main-header::before {

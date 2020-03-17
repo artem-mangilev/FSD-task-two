@@ -10,11 +10,11 @@
 
   &_default,
   &_masked-date {
-    width: $long_input_width;
+    width: $long-input-width;
   }
 
   &_subscription {
-    width: $medium_input_width;
+    width: $medium-input-width;
 
     &::after {
       @extend .material-icons;
@@ -27,7 +27,7 @@
       justify-content: center;
       @include size($input_height, $input_height);
       // thanks to: https://cssgradient.io/blog/css-gradient-text/
-      background: $primary_gradient;
+      background: $primary-gradient;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -42,7 +42,7 @@
   &__uikit-state {
     font-size: 12px;
     text-transform: uppercase;
-    color: $dark_shade_50_color;
+    color: $dark-shade-50;
   }
 
   &__input {
@@ -52,19 +52,19 @@
     height: $input_height;
     padding-left: 15px;
     padding-right: $input_height;
-    border: 1px solid $dark_shade_25_color;
+    border: 1px solid $dark-shade-25;
     border-radius: 4px;
-    color: $dark_shade_75_color;
-    font: $body_text_font;
+    color: $dark-shade-75;
+    font: $body-text-font;
 
     &::placeholder {
-      color: $dark_shade_25_color;
+      color: $dark-shade-25;
     }
 
     &:focus,
     &:hover {
       outline: none;
-      border: 1px solid $dark_shade_50_color;
+      border: 1px solid $dark-shade-50;
     }
   }
 }

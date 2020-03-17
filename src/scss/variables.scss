@@ -3,26 +3,26 @@
   @return rgba(31, 32, 65, $alpha);
 }
 
-$dark_shade_100_color: dark-shade(1);
-$dark_shade_75_color: dark-shade(0.75);
-$dark_shade_50_color: dark-shade(0.5);
-$dark_shade_25_color: dark-shade(0.25);
-$dark_shade_10_color: dark-shade(0.1);
-$dark_shade_5_color: dark-shade(0.05);
+$dark-shade-100: dark-shade(1);
+$dark-shade-75: dark-shade(0.75);
+$dark-shade-50: dark-shade(0.5);
+$dark-shade-25: dark-shade(0.25);
+$dark-shade-10: dark-shade(0.1);
+$dark-shade-5: dark-shade(0.05);
 
-$primary_color: #bc9cff;
-$secondary_color: #6fcf97;
+$primary-color: #bc9cff;
+$secondary-color: #6fcf97;
 
-$primary_gradient: linear-gradient(180deg, $primary_color 0%, #8ba4f9 100%);
-$secondary_gradient: linear-gradient(180deg, $secondary_color 0%, #66d2ea 100%);
+$primary-gradient: linear-gradient(180deg, $primary-color 0%, #8ba4f9 100%);
+$secondary-gradient: linear-gradient(180deg, $secondary-color 0%, #66d2ea 100%);
 
 // fonts
-$big_header_font: bold 24px 'Quicksand-Bold';
-$medium_header_font: bold 19px 'Quicksand-Bold';
-$small_header_font: bold 12px 'Montserrat-Bold';
-$body_text_font: normal 14px 'Montserrat-Regular';
+$big-header-font: bold 24px 'Quicksand-Bold';
+$medium-header-font: bold 19px 'Quicksand-Bold';
+$small-header-font: bold 12px 'Montserrat-Bold';
+$body-text-font: normal 14px 'Montserrat-Regular';
 
 // input
-$long_input_width: 320px;
-$medium_input_width: 266px;
-$short_input_width: 150px;
+$long-input-width: 320px;
+$medium-input-width: 266px;
+$short-input-width: 150px;

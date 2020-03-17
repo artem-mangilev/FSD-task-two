@@ -13,12 +13,12 @@
 
   min-width: 40px;
   height: 20px;
-  font: $body_text_font;
+  font: $body-text-font;
   font-size: 10px;
 
-  @include extended_border(1px, 10px, $dark_shade_25_color);
+  @include extended_border(1px, 10px, $dark-shade-25);
   background-color: #fff;
-  color: $dark_shade_25_color;
+  color: $dark-shade-25;
 
   &::before {
     @extend .material-icons;
@@ -27,8 +27,8 @@
   }
 
   &_active {
-    @include extended_border_color($primary_gradient);
-    color: $primary_color;
+    @include extended_border_color($primary-gradient);
+    color: $primary-color;
 
     &::before {
       content: 'favorite';

@@ -6,7 +6,7 @@
 
     width: 280px;
     padding-bottom: 20px;
-    border-bottom: 1px solid $dark_shade_10_color;
+    border-bottom: 1px solid $dark-shade-10;
     margin-bottom: 20px;
 
     &:last-of-type {
@@ -22,7 +22,7 @@
   &__icon {
     font-size: 48px;
 
-    background: $primary_gradient;
+    background: $primary-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
