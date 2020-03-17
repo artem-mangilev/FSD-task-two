@@ -22,7 +22,7 @@
     border-radius: $radius;
     background-clip: padding-box;
 
-    &::before {
+    &::after {
       content: '';
 
       position: absolute;
@@ -39,18 +39,18 @@
   Could be used to change the color that already set.
 */
 @mixin extended_border_color($color) {
-  &::before {
+  &::after {
     background: $color;
-  } 
+  }
 }
 
 /*
   Could change border
 */
 @mixin extended_border_opaticy($opacity) {
-  &::before {
-      opacity: $opacity;
-  }    
+  &::after {
+    opacity: $opacity;
+  }
 }
 
 /* 
@@ -60,6 +60,6 @@
   @if $pseudo_class == 'checked' {
     &:checked::before {
       background: $color;
-    }    
+    }
   }
 }
