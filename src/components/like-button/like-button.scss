@@ -1,3 +1,5 @@
+@import '../../scss/material-icons.scss';
+
 .like-button {
   text-align: left;
   padding: 0;
@@ -18,13 +20,19 @@
   background-color: #fff;
   color: $dark_shade_25_color;
 
+  &::before {
+    @extend .material-icons;
+    content: 'favorite_border';
+    font-size: 10px;
+  }
+
   &_active {
     @include extended_border_color($primary_gradient);
     color: $primary_color;
-  }
 
-  &__icon {
-    font-size: 10px;
+    &::before {
+      content: 'favorite';
+    }
   }
 
   &:focus {

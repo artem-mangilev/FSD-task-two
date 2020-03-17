@@ -106,20 +106,16 @@
       "content": "Получать спецпредложения"
     }
   ],
-  "likeGroup": {
-    "name": "like button",
-    "type": "like",
-    "group": [
-      {
-        "likesNumber": 2,
-        "isLiked": false
-      },
-      {
-        "likesNumber": 12,
-        "isLiked": true
-      }
-    ]
-  },
+  "likes": [
+    {
+      "likesNumber": 2,
+      "liked": false
+    },
+    {
+      "likesNumber": 12,
+      "liked": true
+    }
+  ],
   "rateGroup": {
     "name": "rate button",
     "type": "rate",

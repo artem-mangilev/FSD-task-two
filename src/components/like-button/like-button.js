@@ -7,7 +7,7 @@ $(document).ready(() => {
     $(button).click(function() {
       const $this = $(this)
 
-      const $likesNumber = $this.find('.like-button__likes_number')
+      const $likesNumber = $this.find('.like-button__likes-number')
 
       $this.toggleClass('like-button_active')
 

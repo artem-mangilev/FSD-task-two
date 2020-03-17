@@ -6,6 +6,7 @@ include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/input-group/input-group
 include ../../components/toggle/toggle
+include ../../components/like-button/like-button
 include ../../components/checkbox-list/checkbox-list
 include ../../components/pagination/pagination
 include ../../components/bullet-list/bullet-list
@@ -44,7 +45,9 @@ block body
     +toggle(toggle.content)(
       checked=toggle.checked
     )
-  +input-group(settings.likeGroup)
+
+  each like in settings.likes
+    +like-button(like.likesNumber, like.liked)
   +input-group(settings.rateGroup)
   +range-slider(settings.rangeSlider)
   +input-group(settings.buttonGroup)
