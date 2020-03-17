@@ -11,19 +11,19 @@
     }
 
     &.text-example__main-header {
-      font: $big-header-font;
+      @include title-text;
     }
 
     &.text-example__mid-header {
-      font: $medium-header-font;
+      @include subtitle-text;
     }
 
     &.text-example__small-header {
-      font: $small-header-font;
+      @include label-text;
     }
 
     &.text-example__body-text {
-      font: $body-text-font;
+      @include body-text;
     }
 
     &.text-example__main-header::before {

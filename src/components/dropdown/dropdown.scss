@@ -109,7 +109,7 @@
       radius: 25px;
     }
     background-color: #fff;
-    font: $body-text-font;
+    @include body-text;
     font-size: 18px;
     color: $dark-shade-50;
     cursor: pointer;

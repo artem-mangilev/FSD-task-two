@@ -16,11 +16,27 @@ $secondary-color: #6fcf97;
 $primary-gradient: linear-gradient(180deg, $primary-color 0%, #8ba4f9 100%);
 $secondary-gradient: linear-gradient(180deg, $secondary-color 0%, #66d2ea 100%);
 
-// fonts
-$big-header-font: bold 24px 'Quicksand';
-$medium-header-font: bold 19px 'Quicksand';
-$small-header-font: bold 12px 'Montserrat';
-$body-text-font: normal 14px 'Montserrat';
+// text
+@mixin title-text {
+  font: bold 24px 'Quicksand';
+  color: $dark-shade-100;
+}
+
+@mixin subtitle-text {
+  font: bold 19px 'Quicksand';
+  color: $dark-shade-100;
+}
+
+@mixin label-text {
+  font: bold 12px 'Montserrat';
+  text-transform: uppercase;
+  color: $dark-shade-100;
+}
+
+@mixin body-text {
+  font: normal 14px 'Montserrat';
+  color: $dark-shade-75;
+}
 
 // input
 $long-input-width: 320px;

@@ -54,8 +54,7 @@
     padding-right: $input_height;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
-    color: $dark-shade-75;
-    font: $body-text-font;
+    @include body-text;
 
     &::placeholder {
       color: $dark-shade-25;

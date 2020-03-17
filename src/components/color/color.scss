@@ -18,7 +18,7 @@
   }
 
   &__name {
-    font: $medium-header-font;
+    @include subtitle-text;
   }
 
   &__dark-shade-100 {

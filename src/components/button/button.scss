@@ -7,8 +7,7 @@
   padding: 0;
   border: none;
   border-radius: 22px;
-  font: $small-header-font;
-  text-transform: uppercase;
+  @include label-text;
   color: $primary-color;
   cursor: pointer;
 

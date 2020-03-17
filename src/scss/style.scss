@@ -3,8 +3,7 @@
 
 body {
   margin: 0;
-  font: $body-text-font;
-  color: $dark-shade-75;
+  @include body-text;
 }
 
 h1,
@@ -14,8 +13,7 @@ h3 {
 }
 
 h3 {
-  font: $small-header-font;
-  text-transform: uppercase;
+  @include label-text;
 }
 
 p {
