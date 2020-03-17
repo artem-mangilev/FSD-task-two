@@ -1,3 +1,5 @@
+@import '../../scss/material-icons.scss';
+
 .button {
   box-sizing: border-box;
   position: relative;
@@ -31,6 +33,7 @@
 
     &:disabled {
       @include extended_border_opaticy(0.5);
+      cursor: default;
     }
   }
 
@@ -49,12 +52,14 @@
     width: $long_input_width;
     background-image: $primary_gradient;
     color: #fff;
-  }
 
-  &__icon {
-    position: absolute;
-    right: 14px;
-    top: 10px;
+    &::before {
+      @extend .material-icons;
+      content: 'arrow_forward';
+      position: absolute;
+      right: 14px;
+      top: 10px;
+    }
   }
 
   &:focus {

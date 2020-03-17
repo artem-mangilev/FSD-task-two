@@ -116,18 +116,7 @@
       "liked": true
     }
   ],
-  "rateGroup": {
-    "name": "rate button",
-    "type": "rate",
-    "group": [
-      {
-        "rating": 4
-      },
-      {
-        "rating": 5
-      }
-    ]
-  },
+  "ratingList": [4, 5],
   "rangeSlider": {
     "title": "range slider",
     "min": 0,
@@ -135,51 +124,41 @@
     "from": 5000,
     "to": 10000
   },
-  "buttonGroup": {
-    "name": "buttons",
-    "type": "button",
-    "group": [
-      {
-        "type": "primary",
-        "content": "click me"
-      },
-      {
-        "type": "primary",
-        "content": "click me",
-        "isDisabled": true
-      },
-      {
-        "type": "secondary",
-        "content": "click me"
-      },
-      {
-        "type": "secondary",
-        "content": "click me",
-        "isDisabled": true
-      },
-      {
-        "type": "primary-string",
-        "content": "click me"
-      },
-      {
-        "type": "secondary-string",
-        "content": "click me"
-      },
-      {
-        "type": "action",
-        "content": "перейти к оплате"
-      }
-    ]
-  },
-  "paginationGroup": {
-    "name": "pagination",
-    "type": "pagination",
-    "group": [
-      {
-        "description": "1 – 12 из 100+ вариантов аренды",
-        "testMode": true
-      }
-    ]
+  "buttonList": [
+    {
+      "type": "primary",
+      "content": "click me"
+    },
+    {
+      "type": "primary",
+      "content": "click me",
+      "disabled": true
+    },
+    {
+      "type": "secondary",
+      "content": "click me"
+    },
+    {
+      "type": "secondary",
+      "content": "click me",
+      "disabled": true
+    },
+    {
+      "type": "primary-string",
+      "content": "click me"
+    },
+    {
+      "type": "secondary-string",
+      "content": "click me"
+    },
+    {
+      "type": "action",
+      "content": "перейти к оплате"
+    }
+  ],
+  "pagination": {
+    "description": "1 – 12 из 100+ вариантов аренды",
+    "testMode": true
   },
   "roomsDropdown": {
     "meta": {

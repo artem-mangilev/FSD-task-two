@@ -5,7 +5,5 @@
 //-   secondary-string
 //-   action
 
-mixin button(type='primary', content)
-  button.button(class=`button_${type}`)&attributes(attributes)= content
-    if (type === 'action')
-      i.button__icon.material-icons arrow_forward
+mixin button(type='primary', text)
+  button.button(class=`button_${type}`)&attributes(attributes)= text

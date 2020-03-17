@@ -1,3 +1,5 @@
+import '../checkbox/checkbox'
+
 import './checkbox-list.scss'
 
 $(document).ready(() => {
