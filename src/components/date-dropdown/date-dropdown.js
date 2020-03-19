@@ -1,7 +1,7 @@
 import './date-dropdown.scss'
 
 import 'air-datepicker/dist/js/datepicker'
-// import 'air-datepicker/dist/css/datepicker.css'
+import 'air-datepicker/dist/css/datepicker.css'
 
 const $date = $('.date-dropdown__input')
 const $fromDate = $('.date-dropdown__input_from')
