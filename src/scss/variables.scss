@@ -23,7 +23,7 @@ $secondary-gradient: linear-gradient(180deg, $secondary-color 0%, #66d2ea 100%);
 }
 
 @mixin subtitle-text {
-  font: bold 19px 'Quicksand';
+  font: bold 19px 'Quicksand', 'Open Sans';
   color: $dark-shade-100;
 }
 
