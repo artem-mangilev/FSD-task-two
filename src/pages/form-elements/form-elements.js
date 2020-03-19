@@ -13,6 +13,7 @@ import '../../components/pagination/pagination'
 import '../../components/bullet-list/bullet-list'
 import '../../components/features/features'
 import '../../components/comment/comment'
+import '../../components/date-dropdown/date-dropdown'
 
 import '../../scss/variables.scss'
 import '../../scss/style.scss'

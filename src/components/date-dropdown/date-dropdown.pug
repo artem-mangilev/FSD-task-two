@@ -1,0 +1,10 @@
+mixin date-dropdown(type = 'multiple', label)
+  .date-dropdown
+    case type
+      when 'multiple'
+        label.date-dropdown__date
+          h3.date-dropdown__label= label[0]
+          input.date-dropdown__input.date-dropdown__input_from.datepicker-here(type='text' data-range='true' data-multiple-dates='2')
+        label.date-dropdown__date
+          h3.date-dropdown__label= label[1]
+          input.date-dropdown__input.date-dropdown__input_to.datepicker-here(type='text' data-range='true' data-multiple-dates='2')
