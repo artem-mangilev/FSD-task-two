@@ -109,10 +109,8 @@
       border: none;
       border-radius: 22px;
 
-      &.-focus- {
-        background: $primary-gradient;
-        color: #fff;
-      }
+      background: $primary-gradient;
+      color: #fff;
     }
 
     &.-range-from- {
