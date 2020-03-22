@@ -14,41 +14,42 @@ $(document).ready(() => {
   $toDate.attr('placeholder', 'ДД.ММ.ГГГГ')
 
   let selected = true
-  $date.datepicker({
-    minDate: new Date(),
-    navTitles: {
-      days: 'MM yyyy'
-    },
-    prevHtml: '<i class="material-icons">arrow_back</i>',
-    nextHtml: '<i class="material-icons">arrow_forward</i>',
-    onSelect: (formattedDate, date, { $el }) => {
-      // if range selected
-      if (date.length === 2) {
-        selected = !selected
+  const datepicker = $date
+    .datepicker({
+      minDate: new Date(),
+      navTitles: {
+        days: 'MM yyyy'
+      },
+      clearButton: true,
+      prevHtml: '<i class="material-icons">arrow_back</i>',
+      nextHtml: '<i class="material-icons">arrow_forward</i>',
+      onSelect: (formattedDate, date, { $el }) => {
+        // if range selected
+        if (date.length === 2) {
+          selected = !selected
 
-        const [fromDate, toDate] = formattedDate.split(',')
+          const [fromDate, toDate] = formattedDate.split(',')
 
-        if ($el.hasClass('date-dropdown__input_from')) {
-          $el.val(fromDate)
-          $toDate.val(toDate)
+          if ($el.hasClass('date-dropdown__input_from')) {
+            $el.val(fromDate)
+            $toDate.val(toDate)
 
-          if (!selected) {
-            $toDate.data('datepicker').selectDate(date)
-          }
-        } else if ($el.hasClass('date-dropdown__input_to')) {
-          $el.val(toDate)
-          $fromDate.val(fromDate)
+            if (!selected) {
+              $toDate.data('datepicker').selectDate(date)
+            }
+          } else if ($el.hasClass('date-dropdown__input_to')) {
+            $el.val(toDate)
+            $fromDate.val(fromDate)
 
-          if (!selected) {
-            $fromDate.data('datepicker').selectDate(date)
+            if (!selected) {
+              $fromDate.data('datepicker').selectDate(date)
+            }
           }
         }
       }
-    }
-  })
+    })
+    .data('datepicker')
 
-  $cells.click(function(e) {
-    const $fromCell = $(e.target)
-    $fromCell.addClass('-range-single-')
-  })
+  const $buttons = $('.datepicker--buttons')
+  $buttons.append('<span class="datepicker--button" data-action="apply">Применить</span>')
 })

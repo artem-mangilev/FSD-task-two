@@ -1,4 +1,5 @@
 @import '../../scss/material-icons.scss';
+@import '../button/button.scss';
 
 .date-dropdown {
   display: flex;
@@ -43,15 +44,15 @@
 }
 
 .datepickers-container .datepicker {
-  left: 0 !important;
-  opacity: 1;
+  // left: 0 !important;
+  // opacity: 1;
 
   box-sizing: border-box;
   width: 320px;
   font: normal 12px 'Montserrat';
   color: $dark-shade-50;
 
-  &--cell {
+  &--cell.datepicker--cell-day {
     @include size(40px, 40px);
     border-radius: 22px;
 
@@ -89,6 +90,7 @@
         transparentize($primary-gradient-to, 0.75) 100%
       );
       color: inherit;
+      border-radius: 0;
 
       &.-focus- {
         background-color: $dark-shade-10;
@@ -216,6 +218,31 @@
 
     &-title {
       @include subtitle-text;
+    }
+  }
+
+  &--buttons {
+    justify-content: space-between;
+    padding: 0;
+    border-top: none;
+  }
+
+  &--button {
+    @extend .button;
+
+    flex: none;
+
+    &:hover {
+      background: none;
+      color: inherit;
+    }
+
+    &[data-action='clear'] {
+      @extend .button_secondary-string;
+    }
+
+    &[data-action='apply'] {
+      @extend .button_primary-string;
     }
   }
 }
