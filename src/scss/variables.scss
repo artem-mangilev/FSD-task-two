@@ -13,13 +13,16 @@ $dark-shade-5: dark-shade(0.05);
 $primary-color: #bc9cff;
 $secondary-color: #6fcf97;
 
-$primary-gradient-from: $primary-color;
-$primary-gradient-to: #8ba4f9;
-$primary-gradient: linear-gradient(
-  180deg,
-  $primary-gradient-from 0%,
-  $primary-gradient-to 100%
-);
+@function primary-gradient($alpha) {
+  @return linear-gradient(
+    180deg,
+    change-color($primary-color, $alpha: $alpha) 0%,
+    change-color(#8ba4f9, $alpha: $alpha) 100%
+  )
+}
+
+$primary-gradient: primary-gradient(1);
+$primary-gradient-25: primary-gradient(0.25);
 
 $secondary-gradient: linear-gradient(180deg, $secondary-color 0%, #66d2ea 100%);
 
