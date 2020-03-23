@@ -50,6 +50,16 @@
   font: normal 12px 'Montserrat';
   color: $dark-shade-50;
 
+  &--cell {
+    &.-focus- {
+      background: none;
+    }
+
+    &.-disabled- {
+      color: $dark-shade-25;
+    }
+  }
+
   &--cell.datepicker--cell-day {
     height: 40px;
     border-radius: 22px;
@@ -62,7 +72,8 @@
       color: inherit;
     }
 
-    &.-other-month- {
+    &.-other-month-,
+    &.-other-month-.-disabled- {
       color: $dark-shade-25;
     }
 
@@ -71,16 +82,12 @@
       color: #fff;
       font-weight: bold;
     }
-    // &.-current-.-focus- {
-    //   color: #fff;
-    // }
 
     &.-current-.-selected- {
       background: $primary-gradient;
     }
 
     &.-current-.-in-range- {
-      // color: inherit;
       font-weight: normal;
     }
 
@@ -103,7 +110,11 @@
     }
 
     &.-range-from-,
-    &.-range-to- {
+    &.-range-to-,
+    &.-range-from.-focus-,
+    &.-range-to.-focus-,
+    &.-range-from-.-focus-.-other-month-,
+    &.-range-to-.-focus-.-other-month- {
       font-weight: bold;
       border: none;
       border-radius: 22px;
@@ -112,7 +123,8 @@
       color: #fff;
     }
 
-    &.-range-from-.-other-month- {
+    &.-range-from-.-other-month-,
+    &.-range-from-.-other-month-.-focus- {
       color: #fff;
     }
 
@@ -149,12 +161,6 @@
         background: $primary-gradient-25;
       }
     }
-
-    &.datepicker--cell-month {
-      &.-current- {
-        @include gradient-text($secondary-gradient);
-      }
-    }
   }
 
   &--days-names {
@@ -180,7 +186,7 @@
 
   &--pointer {
     display: none;
-  }  
+  }
 
   &--content {
     padding: 30px 0 20px;
@@ -218,7 +224,6 @@
 
   &--button {
     @extend .button;
-
     flex: none;
 
     &:hover {
@@ -235,6 +240,25 @@
       &:hover {
         color: $primary-color;
       }
+    }
+  }
+
+  &--cell.datepicker--cell-month,
+  &--cell.datepicker--cell-year {
+    &.-current- {
+      @include gradient-text($secondary-gradient);
+      font-weight: bold;
+    }
+
+    &.-selected-,
+    &.-in-range- {
+      @include gradient-text($primary-gradient);
+      font-weight: bold;
+    }
+
+    &.-disabled-.-focus-,
+    &.-other-decade- {
+      color: $dark-shade-25;
     }
   }
 }
