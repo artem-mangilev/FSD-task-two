@@ -214,10 +214,19 @@
     &-action {
       width: auto;
       border-radius: 0;
+      color: $primary-color;
+
+      &:hover {
+        background-color: inherit;
+      }
     }
 
     &-title {
       @include subtitle-text;
+
+      &:hover {
+        background-color: inherit;
+      }
     }
   }
 
