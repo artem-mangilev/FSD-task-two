@@ -49,19 +49,24 @@
 
   box-sizing: border-box;
   width: 320px;
+  padding: 20px;
   font: normal 12px 'Montserrat';
   color: $dark-shade-50;
 
-  &--cell.datepicker--cell-day {
-    @include size(40px, 40px);
+  &--cell {
+    height: 40px;
     border-radius: 22px;
 
     &.-focus- {
-      background-color: $dark-shade-10;
+      background: none;
     }
 
     &.-disabled- {
       color: inherit;
+    }
+
+    &.-other-month- {
+      color: $dark-shade-25;
     }
 
     &.-current- {
@@ -74,7 +79,7 @@
       }
 
       &.-selected- {
-        background-color: $primary-gradient;
+        background: $primary-gradient;
       }
 
       &.-in-range- {
@@ -93,10 +98,22 @@
       border-radius: 0;
 
       &.-focus- {
-        background-color: $dark-shade-10;
+        background: linear-gradient(
+          180deg,
+          transparentize($primary-gradient-from, 0.75) 0%,
+          transparentize($primary-gradient-to, 0.75) 100%
+        );
       }
 
       &.-other-month- {
+        background: linear-gradient(
+          180deg,
+          transparentize($primary-gradient-from, 0.75) 0%,
+          transparentize($primary-gradient-to, 0.75) 100%
+        );
+      }
+
+      &.-other-month-.-focus- {
         background: linear-gradient(
           180deg,
           transparentize($primary-gradient-from, 0.75) 0%,
@@ -134,11 +151,10 @@
           transparentize($primary-gradient-to, 0.75) 100%
         );
       }
+    }
 
-      &.-focus-.-selected- + .-in-range- {
-        &::after {
-        }
-      }
+    &.-range-from-.-disabled-.-focus- {
+      color: #fff;
     }
 
     &.-range-to- {
@@ -168,6 +184,24 @@
 
     &.-selected-.-focus- {
       background: $primary-gradient;
+    }
+
+    &.-selected-.-other-month- {
+      background: $primary-gradient;
+    }
+
+    &.-selected-.-other-month-.-focus- {
+      background: $primary-gradient;
+    }
+
+    &.datepicker--cell-month {
+      &.-current- {
+        background: $secondary-gradient;
+        background-clip: border-box;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 
@@ -199,8 +233,8 @@
 
   &--content {
     padding: 0;
-    width: min-content;
-    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 
   &--pointer {
@@ -208,7 +242,8 @@
   }
 
   &--nav {
-    padding: 20px;
+    min-height: auto;
+    padding: 0;
     border: none;
 
     &-action {
@@ -243,7 +278,6 @@
 
     &:hover {
       background: none;
-      color: inherit;
     }
 
     &[data-action='clear'] {
@@ -252,6 +286,10 @@
 
     &[data-action='apply'] {
       @extend .button_primary-string;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 }
