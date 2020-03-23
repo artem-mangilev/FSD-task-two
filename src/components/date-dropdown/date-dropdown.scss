@@ -44,16 +44,13 @@
 }
 
 .datepickers-container .datepicker {
-  // left: 0 !important;
-  // opacity: 1;
-
   box-sizing: border-box;
   width: 320px;
   padding: 20px;
   font: normal 12px 'Montserrat';
   color: $dark-shade-50;
 
-  &--cell {
+  &--cell.datepicker--cell-day {
     height: 40px;
     border-radius: 22px;
 
@@ -73,37 +70,36 @@
       background: $secondary-gradient;
       color: #fff;
       font-weight: bold;
+    }
+    // &.-current-.-focus- {
+    //   color: #fff;
+    // }
 
-      &.-focus- {
-        color: #fff;
-      }
+    &.-current-.-selected- {
+      background: $primary-gradient;
+    }
 
-      &.-selected- {
-        background: $primary-gradient;
-      }
+    &.-current-.-in-range- {
+      // color: inherit;
+      font-weight: normal;
+    }
 
-      &.-in-range- {
-        color: inherit;
-        font-weight: normal;
-      }
+    &.-selected- {
+      background: $primary-gradient;
+    }
+
+    &.-other-month-.-selected- {
+      background: $primary-gradient;
     }
 
     &.-in-range- {
       background: $primary-gradient-25;
       color: inherit;
       border-radius: 0;
+    }
 
-      &.-focus- {
-        background: $primary-gradient-25;
-      }
-
-      &.-other-month- {
-        background: $primary-gradient-25;
-      }
-
-      &.-other-month-.-focus- {
-        background: $primary-gradient-25;
-      }
+    &.-in-range-.-other-month- {
+      background: $primary-gradient-25;
     }
 
     &.-range-from-,
@@ -113,6 +109,10 @@
       border-radius: 22px;
 
       background: $primary-gradient;
+      color: #fff;
+    }
+
+    &.-range-from-.-other-month- {
       color: #fff;
     }
 
@@ -133,10 +133,6 @@
       }
     }
 
-    &.-range-from-.-disabled-.-focus- {
-      color: #fff;
-    }
-
     &.-range-to- {
       z-index: auto;
 
@@ -150,48 +146,27 @@
         bottom: 0;
         left: 0;
         z-index: -2;
-        background: $primary-gradient-25
+        background: $primary-gradient-25;
       }
-    }
-
-    &.-selected- {
-      background: $primary-gradient;
-    }
-
-    &.-selected-.-focus- {
-      background: $primary-gradient;
-    }
-
-    &.-selected-.-other-month- {
-      background: $primary-gradient;
-    }
-
-    &.-selected-.-other-month-.-focus- {
-      background: $primary-gradient;
     }
 
     &.datepicker--cell-month {
       &.-current- {
-        @include gradient-text($secondary-gradient)
+        @include gradient-text($secondary-gradient);
       }
     }
   }
 
   &--days-names {
     flex-wrap: nowrap;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
     margin: 0;
   }
 
   &--day-name {
     flex: none;
-    -webkit-flex: none;
-    -ms-flex: none;
-    text-transform: none;
-
     @include size(40px, 40px);
     @include label-text;
+    text-transform: none;
     color: $primary-color;
   }
 
@@ -203,14 +178,12 @@
     transform: none;
   }
 
-  &--content {
-    padding: 0;
-    padding-top: 30px;
-    padding-bottom: 20px;
-  }
-
   &--pointer {
     display: none;
+  }  
+
+  &--content {
+    padding: 30px 0 20px;
   }
 
   &--nav {
