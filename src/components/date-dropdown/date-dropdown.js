@@ -60,7 +60,7 @@ $(document).ready(() => {
   // the first input represents the datepicker
   $fromDate.datepicker(datepickerSettings)
   // the second input just refers to the first input
-  $toDate.click(() => $fromDate.focus())
+  $toDate.click(() => $fromDate.data('datepicker').show())
 
   // add apply button to datepicker
   const $buttons = $('.datepicker--buttons')
