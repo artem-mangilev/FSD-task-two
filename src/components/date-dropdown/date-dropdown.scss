@@ -89,36 +89,20 @@
     }
 
     &.-in-range- {
-      background: linear-gradient(
-        180deg,
-        transparentize($primary-gradient-from, 0.75) 0%,
-        transparentize($primary-gradient-to, 0.75) 100%
-      );
+      background: $primary-gradient-25;
       color: inherit;
       border-radius: 0;
 
       &.-focus- {
-        background: linear-gradient(
-          180deg,
-          transparentize($primary-gradient-from, 0.75) 0%,
-          transparentize($primary-gradient-to, 0.75) 100%
-        );
+        background: $primary-gradient-25;
       }
 
       &.-other-month- {
-        background: linear-gradient(
-          180deg,
-          transparentize($primary-gradient-from, 0.75) 0%,
-          transparentize($primary-gradient-to, 0.75) 100%
-        );
+        background: $primary-gradient-25;
       }
 
       &.-other-month-.-focus- {
-        background: linear-gradient(
-          180deg,
-          transparentize($primary-gradient-from, 0.75) 0%,
-          transparentize($primary-gradient-to, 0.75) 100%
-        );
+        background: $primary-gradient-25;
       }
     }
 
@@ -145,11 +129,7 @@
         bottom: 0;
         left: 0 + 50%;
         z-index: -2;
-        background: linear-gradient(
-          180deg,
-          transparentize($primary-gradient-from, 0.75) 0%,
-          transparentize($primary-gradient-to, 0.75) 100%
-        );
+        background: $primary-gradient-25;
       }
     }
 
@@ -170,11 +150,7 @@
         bottom: 0;
         left: 0;
         z-index: -2;
-        background: linear-gradient(
-          180deg,
-          transparentize($primary-gradient-from, 0.75) 0%,
-          transparentize($primary-gradient-to, 0.75) 100%
-        );
+        background: $primary-gradient-25
       }
     }
 
@@ -196,11 +172,7 @@
 
     &.datepicker--cell-month {
       &.-current- {
-        background: $secondary-gradient;
-        background-clip: border-box;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include gradient-text($secondary-gradient)
       }
     }
   }
