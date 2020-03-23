@@ -65,7 +65,7 @@
 }
 
 @mixin gradient-text($gradient) {
-  background: $secondary-gradient;
+  background: $gradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
