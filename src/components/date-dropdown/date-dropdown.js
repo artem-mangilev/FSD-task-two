@@ -21,6 +21,7 @@ $(document).ready(() => {
       days: 'MM yyyy'
     },
     clearButton: true,
+    offset: 5,
     prevHtml: '<i class="material-icons">arrow_back</i>',
     nextHtml: '<i class="material-icons">arrow_forward</i>',
     onSelect: function(
