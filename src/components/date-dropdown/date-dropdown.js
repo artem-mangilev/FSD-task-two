@@ -10,6 +10,11 @@ $(document).ready(() => {
   $fromDate.attr('placeholder', 'ДД.ММ.ГГГГ')
   $toDate.attr('placeholder', 'ДД.ММ.ГГГГ')
 
+  let state = {
+    fromDate: '',
+    toDate: ''
+  }
+
   const datepickerSettings = {
     minDate: new Date(),
     navTitles: {
@@ -23,8 +28,8 @@ $(document).ready(() => {
       date,
       { $datepicker, $el, opts: { multipleDatesSeparator } }
     ) {
-      // prevent writing selected date in input
-      $el.val('')
+      // on each selecting, show current state of from date
+      $el.val(state.fromDate)
 
       // if it's not a range, just skip
       if (date.length !== 2) return
@@ -38,10 +43,12 @@ $(document).ready(() => {
         // in range, formattedDate is a string of 2 dates divided by multileDatesSeparator
         // extract from & to dates from formattedDate
         const [fromDate, toDate] = formattedDate.split(multipleDatesSeparator)
+        // write new state
+        state = { fromDate, toDate }
         // set fromDate to actual input
-        $el.val(fromDate)
+        $el.val(state.fromDate)
         // set toDate to fake input
-        $toDate.val(toDate)
+        $toDate.val(state.toDate)
       })
 
       // when clear button is pressed, both real and fake inputs have to be cleared.
@@ -51,8 +58,11 @@ $(document).ready(() => {
       )
       // if clear button is pressed
       $clearButton.click(() => {
+        // clear state
+        state.fromDate = ''
+        state.toDate = ''
         // clear fake input
-        $toDate.val('')
+        $toDate.val(state.toDate)
       })
     }
   }
