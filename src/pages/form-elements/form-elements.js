@@ -17,3 +17,12 @@ import '../../components/date-dropdown/date-dropdown'
 
 import '../../scss/variables.scss'
 import '../../scss/style.scss'
+
+import DateDropdown from '../../components/date-dropdown/date-dropdown'
+
+$(document).ready(() => {
+  const $dateDropdowns = $('.date-dropdown')
+  $dateDropdowns.each((index, dropdown) => {
+    new DateDropdown(dropdown)
+  })
+})
