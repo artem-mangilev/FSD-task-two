@@ -26,7 +26,7 @@ class DateDropdown {
 
     // check if this is a date dropdown or filter date dropdown
     this.$filterDateInput = $dropdownComponent.find(
-      'date-dropdown__input_single'
+      '.date-dropdown__input_single'
     )
     if (this.$filterDateInput.length) {
       this._initFilterDateDropdown()
@@ -64,7 +64,7 @@ class DateDropdown {
         // extract from & to dates from formattedDate
         const [fromDate, toDate] = formattedDate.split(multipleDatesSeparator)
         // write new state
-        this.formattedDateState = [ fromDate, toDate ]
+        this.formattedDateState = [fromDate, toDate]
         // set range start date to actual input
         $el.val(this.formattedDateState[0])
         // set range end date to fake input
@@ -105,7 +105,65 @@ class DateDropdown {
   }
 
   _initFilterDateDropdown() {
-    
+    const onSelect = (
+      formattedDate,
+      date,
+      { $datepicker, $el, opts: { multipleDatesSeparator } }
+    ) => {
+      // on each selecting, show current state of from date.
+      // concatenate dates
+      let concatenatedFormattedDateState = this.formattedDateState.join(
+        multipleDatesSeparator
+      )
+      // check if dates are empty
+      // if they are empty, prevent showing only multipleDatesSeparator
+      // if they are not empty, show dates with multipleDatesSeparator
+      concatenatedFormattedDateState =
+        concatenatedFormattedDateState === multipleDatesSeparator
+          ? ''
+          : concatenatedFormattedDateState
+      $el.val(concatenatedFormattedDateState)
+
+      // if it's not a range, just skip
+      if (date.length !== 2) return
+
+      // find apply button in datepicker
+      const $applyButton = $datepicker.find(
+        '.datepicker--button[data-action="apply"]'
+      )
+      $applyButton.click(() => {
+        // set new formattedDateState
+        this.formattedDateState = formattedDate.toLowerCase().split(multipleDatesSeparator)
+        // show new date in input field
+        $el.val(formattedDate.toLowerCase())
+      })
+
+      // clear state when clear button pressed.
+      const $clearButton = $datepicker.find(
+        '.datepicker--button[data-action="clear"]'
+      )
+      $clearButton.click(() => {
+        this.formattedDateState = ['', '']
+      })
+    }
+
+    const filterDateDropdownSettings = {
+      ...this.commonSettings,
+      multipleDatesSeparator: ' - ',
+      dateFormat: 'd M',
+      onSelect
+    }
+
+    // call plugin on input
+    this.$filterDateInput.datepicker(filterDateDropdownSettings)
+
+    // add apply button to datepicker
+    const $buttons = this.$filterDateInput
+      .data('datepicker')
+      .$datepicker.find('.datepicker--buttons')
+    $buttons.append(
+      '<span class="datepicker--button" data-action="apply">Применить</span>'
+    )
   }
 }
 
