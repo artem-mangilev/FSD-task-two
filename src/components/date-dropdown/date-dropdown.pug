@@ -5,8 +5,8 @@ mixin date-dropdown(...labels)
     label.date-dropdown__date
       h3.date-dropdown__label= labels[0]
       - const inputEl = 'date-dropdown__input'
-      input.date-dropdown__input.datepicker-here(type='text' class=`${inputEl}_${single ? 'single' : 'from'}` readonly placeholder='ДД.ММ.ГГГГ' data-range='true' data-multiple-dates='2')
+      input.date-dropdown__input.datepicker-here(type='text' class=`${inputEl}_${single ? 'single' : 'from'}` readonly placeholder!=attributes.placeholder data-range='true' data-multiple-dates='2')
     if (!single)
       label.date-dropdown__date
         h3.date-dropdown__label= labels[1]
-        input.date-dropdown__input.date-dropdown__input_to(type='text' readonly placeholder='ДД.ММ.ГГГГ')
+        input.date-dropdown__input.date-dropdown__input_to(type='text' readonly placeholder!=attributes.placeholder)

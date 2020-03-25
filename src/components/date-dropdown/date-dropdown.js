@@ -133,7 +133,9 @@ class DateDropdown {
       )
       $applyButton.click(() => {
         // set new formattedDateState
-        this.formattedDateState = formattedDate.toLowerCase().split(multipleDatesSeparator)
+        this.formattedDateState = formattedDate
+          .toLowerCase()
+          .split(multipleDatesSeparator)
         // show new date in input field
         $el.val(formattedDate.toLowerCase())
       })
