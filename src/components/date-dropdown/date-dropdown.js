@@ -17,11 +17,9 @@ class DateDropdown {
       nextHtml: '<i class="material-icons">arrow_forward</i>'
     }
 
-    // initialize state for input field/fields
-    this.state = {
-      fromDate: '',
-      toDate: ''
-    }
+    // initialize state for input field/fields.
+    // the first element is range start date, the second is range end date
+    this.formattedDateState = ['', '']
 
     // jquerify DOM element
     const $dropdownComponent = $(dropdownComponent)
@@ -50,8 +48,8 @@ class DateDropdown {
       date,
       { $datepicker, $el, opts: { multipleDatesSeparator } }
     ) => {
-      // on each selecting, show current state of from date
-      $el.val(this.state.fromDate)
+      // on each selecting, show current state of range start date
+      $el.val(this.formattedDateState[0])
 
       // if it's not a range, just skip
       if (date.length !== 2) return
@@ -66,11 +64,11 @@ class DateDropdown {
         // extract from & to dates from formattedDate
         const [fromDate, toDate] = formattedDate.split(multipleDatesSeparator)
         // write new state
-        this.state = { fromDate, toDate }
-        // set fromDate to actual input
-        $el.val(this.state.fromDate)
-        // set toDate to fake input
-        this.$toDateInput.val(this.state.toDate)
+        this.formattedDateState = [ fromDate, toDate ]
+        // set range start date to actual input
+        $el.val(this.formattedDateState[0])
+        // set range end date to fake input
+        this.$toDateInput.val(this.formattedDateState[1])
       })
 
       // when clear button is pressed, both real and fake inputs have to be cleared.
@@ -81,10 +79,9 @@ class DateDropdown {
       // if clear button is pressed
       $clearButton.click(() => {
         // clear state
-        this.state.fromDate = ''
-        this.state.toDate = ''
+        this.formattedDateState = ['', '']
         // clear fake input
-        this.$toDateInput.val(this.state.toDate)
+        this.$toDateInput.val(this.formattedDateState[1])
       })
     }
 
