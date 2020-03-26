@@ -2,6 +2,6 @@ mixin radio(name, buttons, checked)
   .radio
     each button in buttons
       - const { value, text } = button
-      label.radio__button
+      label.radio__button(class!=attributes.class)
         input.radio__input(type='radio' name=name checked=(value === checked) value=value)
         .radio__text= text
