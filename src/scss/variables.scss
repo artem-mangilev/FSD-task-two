@@ -18,7 +18,7 @@ $secondary-color: #6fcf97;
     180deg,
     change-color($primary-color, $alpha: $alpha) 0%,
     change-color(#8ba4f9, $alpha: $alpha) 100%
-  )
+  );
 }
 
 $primary-gradient: primary-gradient(1);
@@ -39,6 +39,7 @@ $secondary-gradient: linear-gradient(180deg, $secondary-color 0%, #66d2ea 100%);
 
 @mixin label-text {
   font: bold 12px 'Montserrat';
+  letter-spacing: 0.012rem;
   text-transform: uppercase;
   color: $dark-shade-100;
 }
