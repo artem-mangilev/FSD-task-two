@@ -1,0 +1,55 @@
+.form-elements {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 140px;
+  margin-top: 65px;
+
+  &__column {
+    width: min-content;
+  }
+
+  &__label {
+    margin-bottom: 16px;
+  }
+
+  &__elements-container {
+    &_small-bottom-margin {
+      margin-bottom: 20px;
+    }
+
+    &_big-bottom-margin {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__radio,
+  &__button,
+  &__rating {
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__toggle {
+    margin-bottom: 14px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__like-button {
+    margin-right: 10px;
+  }
+}

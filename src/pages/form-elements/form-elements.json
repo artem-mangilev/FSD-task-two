@@ -218,6 +218,30 @@
       }
     ]
   },
+  "guestsDropdownClosedEmpty": {
+    "meta": {
+      "type": "item-quantity-applied",
+      "name": "dropdown",
+      "uiKitMode": true,
+      "open": false,
+      "selectionTextForms": ["гость", "гостя", "гостей"],
+      "placeholder": "Сколько гостей"
+    },
+    "items": [
+      {
+        "name": "взрослые",
+        "quantity": 0
+      },
+      {
+        "name": "дети",
+        "quantity": 0
+      },
+      {
+        "name": "младенцы",
+        "quantity": 0
+      }
+    ]
+  },
   "bulletList": {
     "name": "bullet list",
     "items": [
