@@ -16,6 +16,15 @@
     "uikitMode": true,
     "placeholder": "ДД.ММ.ГГГГ"
   },
+  "dateDropdown": {
+    "startLabel": "date dropdown",
+    "endLabel": "date dropdown",
+    "placeholder": "ДД.ММ.ГГГГ"
+  },
+  "filterDateDropdown": {
+    "label": "filter date dropdown",
+    "placeholder": "19 авг - 23 авг"
+  },
   "subscriptionTextField": {
     "label": "subscription text field",
     "type": "subscription",

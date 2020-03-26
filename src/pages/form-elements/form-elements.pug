@@ -27,12 +27,14 @@ block body
     const { 
       expandableCheckboxList,
       subscriptionTextField,
+      filterDateDropdown,
       defaultTextField,
       focusedTextField,
       richCheckboxList,
       maskedTextField,
       guestsDropdown,
       roomsDropdown,
+      dateDropdown,
       checkboxList,
       rangeSlider,
       buttonList,
@@ -59,12 +61,12 @@ block body
     placeholder=maskedTextField.placeholder
   )
 
-  +date-dropdown('date dropdown', 'date dropdown')(
-    placeholder='ДД.MM.ГГГГ'
+  +date-dropdown(dateDropdown.startLabel, dateDropdown.endLabel)(
+    placeholder=dateDropdown.placeholder
   )
 
-  +date-dropdown('filter date dropdown')(
-    placeholder='Choose the dates'
+  +date-dropdown(filterDateDropdown.label)(
+    placeholder=filterDateDropdown.placeholder
   )
 
   +text-field(subscriptionTextField)(
