@@ -10,7 +10,6 @@
 
 // paginationjs styles
 .paginationjs {
-  font-weight: bold;
   font-size: 12px;
   box-sizing: initial;
 
@@ -31,17 +30,17 @@
     float: left;
     border-right: none;
     list-style: none;
-
-    // new
     display: flex;
     width: 40px;
     height: 40px;
+
+    &.active {
+      font-weight: bold;
+    }
   }
   & &-pages li > a {
     display: block;
     text-decoration: none;
-
-    // new
     margin: auto;
   }
 
@@ -51,7 +50,6 @@
   }
 
   & &-pages li.active {
-    // new
     background: $primary-gradient;
     border-radius: 22px;
   }
