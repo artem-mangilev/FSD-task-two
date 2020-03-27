@@ -7,13 +7,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 8px;
 
     &_expanded,
     &_hidden {
       cursor: pointer;
       &::after {
         @extend .material-icons;
+        @include size(44px, 44px);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         color: $dark-shade-50;
       }
     }
@@ -32,7 +35,7 @@
     }
   }
 
-  &__checkboxes {
+  &:not(.checkbox-list_expandable) &__checkboxes {
     margin-top: 16px;
   }
 
