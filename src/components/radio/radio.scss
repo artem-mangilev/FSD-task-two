@@ -1,4 +1,6 @@
 .radio {
+  display: flex;
+
   &__button {
     display: inline-flex;
     align-items: center;
@@ -10,6 +12,9 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     min-width: 20px;
     height: 20px;
@@ -21,12 +26,6 @@
 
       display: none;
       @include size(12px, 12px);
-
-      // TODO: previous solution raises the bug where radio buttons 
-      // was not aligned in one line if they was inlined. This solution
-      // solves this problem, but the vertical margins is hardcoded now.
-      margin: 3px auto;
-
       background: $primary-gradient;
       border-radius: 10px;
     }
