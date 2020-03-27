@@ -1,9 +1,14 @@
 .form-elements {
-  display: flex;
-  justify-content: space-between;
-
   margin: 0 140px;
   margin-top: 65px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    
+  }
 
   &__column {
     width: min-content;

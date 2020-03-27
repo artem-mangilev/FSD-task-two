@@ -59,7 +59,40 @@
       }
     ]
   },
-  "expandableCheckboxList": {
+  "expandableCheckboxListClosed": {
+    "title": "expandable checkbox list",
+    "checkboxes": [
+      {
+        "text": "Завтрак"
+      },
+      {
+        "text": "Письменный стол",
+        "checked": true
+      },
+      {
+        "text": "Стул для кормления",
+        "checked": true
+      },
+      {
+        "text": "Кроватка",
+        "checked": true
+      },
+      {
+        "text": "Телевизор"
+      },
+      {
+        "text": "Шампунь"
+      },
+      {
+        "text": "Телевизор"
+      },
+      {
+        "text": "Шампунь"
+      }
+    ],
+    "expanded": false
+  },
+  "expandableCheckboxListExpanded": {
     "title": "expandable checkbox list",
     "checkboxes": [
       {
@@ -169,11 +202,36 @@
     "description": "1 – 12 из 100+ вариантов аренды",
     "testMode": true
   },
-  "roomsDropdown": {
+  "roomsDropdownClosed": {
     "meta": {
       "type": "item-quantity",
       "name": "dropdown",
       "open": false,
+      "uiKitMode": true
+    },
+    "items": [
+      {
+        "name": "спальни",
+        "nameForms": ["спальня", "спальни", "спален"],
+        "quantity": 2
+      },
+      {
+        "name": "кровати",
+        "nameForms": ["кровать", "кровати", "кроватей"],
+        "quantity": 2
+      },
+      {
+        "name": "ванные комнаты",
+        "nameForms": ["ванная комната", "ванные комнаты", "ванных комнат"],
+        "quantity": 0
+      }
+    ]
+  },
+  "roomsDropdownOpened": {
+    "meta": {
+      "type": "item-quantity",
+      "name": "dropdown",
+      "open": true,
       "uiKitMode": true
     },
     "items": [
@@ -235,6 +293,54 @@
       {
         "name": "дети",
         "quantity": 0
+      },
+      {
+        "name": "младенцы",
+        "quantity": 0
+      }
+    ]
+  },
+  "guestsDropdownOpenedEmpty": {
+    "meta": {
+      "type": "item-quantity-applied",
+      "name": "dropdown",
+      "uiKitMode": false,
+      "open": true,
+      "selectionTextForms": ["гость", "гостя", "гостей"],
+      "placeholder": "Сколько гостей"
+    },
+    "items": [
+      {
+        "name": "взрослые",
+        "quantity": 0
+      },
+      {
+        "name": "дети",
+        "quantity": 0
+      },
+      {
+        "name": "младенцы",
+        "quantity": 0
+      }
+    ]
+  },
+  "guestsDropdownOpenedFilled": {
+    "meta": {
+      "type": "item-quantity-applied",
+      "name": "dropdown",
+      "uiKitMode": false,
+      "open": true,
+      "selectionTextForms": ["гость", "гостя", "гостей"],
+      "placeholder": "Сколько гостей"
+    },
+    "items": [
+      {
+        "name": "взрослые",
+        "quantity": 2
+      },
+      {
+        "name": "дети",
+        "quantity": 1
       },
       {
         "name": "младенцы",

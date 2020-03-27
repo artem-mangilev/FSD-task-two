@@ -25,16 +25,21 @@ block head
 block body
   - 
     const { 
+      expandableCheckboxListExpanded,
+      expandableCheckboxListClosed,
+      guestsDropdownOpenedFilled,
+      guestsDropdownOpenedEmpty,
       guestsDropdownClosedEmpty,
       expandableCheckboxList,
       subscriptionTextField,
+      roomsDropdownClosed,
+      roomsDropdownOpened,
       filterDateDropdown,
       defaultTextField,
       focusedTextField,
       richCheckboxList,
       maskedTextField,
       guestsDropdown,
-      roomsDropdown,
       dateDropdown,
       checkboxList,
       rangeSlider,
@@ -50,101 +55,126 @@ block body
     } = require('./form-elements.json')
 
   .form-elements
-    .form-elements__column
-      .form-elements__elements-container.form-elements__elements-container_small-bottom-margin
-        +text-field(defaultTextField)(
-          placeholder=defaultTextField.placeholder
-        )
-      .form-elements__elements-container.form-elements__elements-container_small-bottom-margin
-        +text-field(focusedTextField)(
-          value=focusedTextField.value
-          autofocus=focusedTextField.autofocus
-        )
-
-      .form-elements__elements-container.form-elements__elements-container_small-bottom-margin
-        +dropdown(guestsDropdownClosedEmpty.meta, guestsDropdownClosedEmpty.items)
-
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        +text-field(maskedTextField)(
-          placeholder=maskedTextField.placeholder
-        )
-
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        +date-dropdown(dateDropdown.startLabel, dateDropdown.endLabel)(
-          placeholder=dateDropdown.placeholder
-        )
-
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        +date-dropdown(filterDateDropdown.label)(
-          placeholder=filterDateDropdown.placeholder
-        )
-
-      .form-elements__elements-container
-        +text-field(subscriptionTextField)(
-          placeholder=subscriptionTextField.placeholder
-        )
-
-    .form-elements__column
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        +checkbox-list(checkboxList.title, checkboxList.checkboxes, checkboxList.expanded)
-
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        h3.form-elements__label radio buttons
-        +radio(radio.name, radio.buttons, radio.checked)(
-          class='form-elements__radio'
-        )
-
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        h3.form-elements__label toggle
-        each toggle in toggles
-          +toggle(toggle.content)(
-            class='form-elements__toggle'
-            checked=toggle.checked
+    .form-elements__row
+      .form-elements__column
+        .form-elements__elements-container.form-elements__elements-container_small-bottom-margin
+          +text-field(defaultTextField)(
+            placeholder=defaultTextField.placeholder
+          )
+        .form-elements__elements-container.form-elements__elements-container_small-bottom-margin
+          +text-field(focusedTextField)(
+            value=focusedTextField.value
+            autofocus=focusedTextField.autofocus
           )
 
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        h3.form-elements__label like button
-        each like in likes
-          +like-button(like.likesNumber, like.liked)(
-            class='form-elements__like-button'
+        .form-elements__elements-container.form-elements__elements-container_small-bottom-margin
+          +dropdown(guestsDropdownClosedEmpty.meta, guestsDropdownClosedEmpty.items)
+
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          +text-field(maskedTextField)(
+            placeholder=maskedTextField.placeholder
           )
 
-
-      .form-elements__elements-container
-      h3.form-elements__label rate button
-      each rating in ratingList
-        +rating(rating)(
-          class='form-elements__rating'
-        )
-
-    .form-elements__column
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        +range-slider(rangeSlider)
-
-      .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
-        h3.form-elements__label buttons
-        each button in buttonList
-          +button(button.type, button.content)(
-            class='form-elements__button'
-            disabled=button.disabled
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          +date-dropdown(dateDropdown.startLabel, dateDropdown.endLabel)(
+            placeholder=dateDropdown.placeholder
           )
 
-      .form-elements__elements-container
-        h3.form-elements__label pagination
-        +pagination(pagination.description, pagination.testMode)
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          +date-dropdown(filterDateDropdown.label)(
+            placeholder=filterDateDropdown.placeholder
+          )
+
+        .form-elements__elements-container
+          +text-field(subscriptionTextField)(
+            placeholder=subscriptionTextField.placeholder
+          )
+
+      .form-elements__column
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          +checkbox-list(checkboxList.title, checkboxList.checkboxes, checkboxList.expanded)
+
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          h3.form-elements__label radio buttons
+          +radio(radio.name, radio.buttons, radio.checked)(
+            class='form-elements__radio'
+          )
+
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          h3.form-elements__label toggle
+          each toggle in toggles
+            +toggle(toggle.content)(
+              class='form-elements__toggle'
+              checked=toggle.checked
+            )
+
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          h3.form-elements__label like button
+          each like in likes
+            +like-button(like.likesNumber, like.liked)(
+              class='form-elements__like-button'
+            )
+
+
+        .form-elements__elements-container
+        h3.form-elements__label rate button
+        each rating in ratingList
+          +rating(rating)(
+            class='form-elements__rating'
+          )
+
+      .form-elements__column
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          +range-slider(rangeSlider)
+
+        .form-elements__elements-container.form-elements__elements-container_big-bottom-margin
+          h3.form-elements__label buttons
+          each button in buttonList
+            +button(button.type, button.content)(
+              class='form-elements__button'
+              disabled=button.disabled
+            )
+
+        .form-elements__elements-container
+          h3.form-elements__label pagination
+          +pagination(pagination.description, pagination.testMode)
+
+    .form-elements__row
+      .form-elements__column
+        .form-elements__elements-container
+          +dropdown(roomsDropdownClosed.meta, roomsDropdownClosed.items)
+
+        .form-elements__elements-container
+          +dropdown(roomsDropdownOpened.meta, roomsDropdownOpened.items)
+
+        .form-elements__elements-container
+          +checkbox-list(expandableCheckboxListClosed.title, expandableCheckboxListClosed.checkboxes, expandableCheckboxListClosed.expanded)
+
+        .form-elements__elements-container
+          +checkbox-list(expandableCheckboxListExpanded.title, expandableCheckboxListExpanded.checkboxes, expandableCheckboxListExpanded.expanded)
+
+        .form-elements__elements-container
+          +features(features)
+
+
+      .form-elements__column
+        .form-elements__elements-container
+          +dropdown(guestsDropdownOpenedEmpty.meta, guestsDropdownOpenedEmpty.items)
+
+        .form-elements__elements-container
+          +checkbox-list(richCheckboxList.title, richCheckboxList.checkboxes)
+
+        .form-elements__elements-container
+          +comment(comment)
+
+      .form-elements__column
+        .form-elements__elements-container
+          +dropdown(guestsDropdownOpenedFilled.meta, guestsDropdownOpenedFilled.items)
+
+        .form-elements__elements-container
+          +bullet-list(bulletList.items, bulletList.name)
 
 
 
-    //- +dropdown(roomsDropdown.meta, roomsDropdown.items)
 
-    //- +dropdown(guestsDropdown.meta, guestsDropdown.items)
 
-    //- +checkbox-list(richCheckboxList.title, richCheckboxList.checkboxes)
-
-    //- +checkbox-list(expandableCheckboxList.title, expandableCheckboxList.checkboxes, expandableCheckboxList.expanded)
-
-    //- +bullet-list(bulletList.items, bulletList.name)
-
-    //- +features(features)
-
-    //- +comment(comment)
