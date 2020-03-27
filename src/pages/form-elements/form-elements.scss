@@ -1,30 +1,42 @@
 .form-elements {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-template-rows: min-content 265px + 40px min-content min-content;
+  justify-content: space-between;
+
   margin: 0 140px;
   margin-top: 65px;
-
-  &__row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-
-    
-  }
-
-  &__column {
-    width: min-content;
-  }
 
   &__label {
     margin-bottom: 16px;
   }
 
   &__elements-container {
+    &_double-spaced {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+  }
+
+  &__element {
     &_small-bottom-margin {
       margin-bottom: 20px;
     }
 
     &_big-bottom-margin {
       margin-bottom: 40px;
+    }
+
+    &_1-2-rows-gap {
+      margin-bottom: 100px;
+    }
+
+    &_2-3-row-gap {
+      margin-bottom: 40px;
+    }
+
+    &_small-top-margin {
+      margin-top: 17px;
     }
   }
 
