@@ -3,22 +3,33 @@ import '../checkbox/checkbox'
 import './checkbox-list.scss'
 
 $(document).ready(() => {
-  const $checkboxList = $('.checkbox-list_expandable')
-  const $title = $checkboxList.find('.checkbox-list__title')
-  const $checkboxes = $checkboxList.find('.checkbox-list__checkboxes')
+  const $checkboxLists = $('.checkbox-list_expandable')
 
-  const expandedClass = 'checkbox-list__title_expanded'
-  const hiddenClass = 'checkbox-list__title_hidden'
+  $checkboxLists.each(function() {
+    const $checkboxList = $(this)
 
-  $title.click(function() {
-    const expanded = $title.hasClass(expandedClass)
+    const $title = $checkboxList.find('.checkbox-list__title')
+    const $checkboxes = $checkboxList.find('.checkbox-list__checkboxes')
 
-    if (expanded) {
-      $title.removeClass(expandedClass).addClass(hiddenClass)
-      $checkboxes.css('display', 'none')
-    } else {
-      $title.removeClass(hiddenClass).addClass(expandedClass)
-      $checkboxes.css('display', 'block')
-    }
+    const expandedClass = 'checkbox-list__title_expanded'
+    const hiddenClass = 'checkbox-list__title_hidden'
+
+    
+    $checkboxes.css(
+      'display',
+      $title.hasClass(expandedClass) ? 'block' : 'none'
+    )
+
+    $title.click(() => {
+      const expanded = $title.hasClass(expandedClass)
+
+      if (expanded) {
+        $title.removeClass(expandedClass).addClass(hiddenClass)
+        $checkboxes.css('display', 'none')
+      } else {
+        $title.removeClass(hiddenClass).addClass(expandedClass)
+        $checkboxes.css('display', 'block')
+      }
+    })
   })
 })
