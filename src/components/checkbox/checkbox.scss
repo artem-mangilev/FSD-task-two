@@ -1,6 +1,7 @@
 .checkbox {
   display: flex;
   position: relative;
+  cursor: pointer;
 
   &__button {
     -webkit-appearance: none;

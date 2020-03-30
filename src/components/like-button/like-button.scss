@@ -19,6 +19,7 @@
   @include extended_border(1px, 10px, $dark-shade-25);
   background-color: #fff;
   color: $dark-shade-25;
+  cursor: pointer;
 
   &::before {
     @extend .material-icons;
