@@ -1,0 +1,36 @@
+{
+  "title": "Найдём номера под ваши пожелания",
+  "dateDropdown": {
+    "startLabel": "прибытие",
+    "endLabel": "выезд",
+    "placeholder": "ДД.ММ.ГГГГ"
+  },
+  "dropdown": {
+    "meta": {
+      "type": "item-quantity-applied",
+      "name": "гости",
+      "uiKitMode": false,
+      "open": false,
+      "selectionTextForms": ["гость", "гостя", "гостей"],
+      "placeholder": "Сколько гостей"
+    },
+    "items": [
+      {
+        "name": "взрослые",
+        "quantity": 0
+      },
+      {
+        "name": "дети",
+        "quantity": 0
+      },
+      {
+        "name": "младенцы",
+        "quantity": 0
+      }
+    ]
+  },
+  "button": {
+    "type": "action",
+    "text": "подобрать номер"
+  }
+}
