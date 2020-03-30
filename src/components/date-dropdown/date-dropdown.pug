@@ -1,7 +1,7 @@
 mixin date-dropdown(...labels)
   - const single = labels.length === 1
 
-  .date-dropdown
+  .date-dropdown(class!=attributes.class)
     label.date-dropdown__date
       h3.date-dropdown__label= labels[0]
       - const inputEl = 'date-dropdown__input'

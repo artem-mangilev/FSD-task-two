@@ -15,7 +15,7 @@ include ../button/button
 //- ]
 
 mixin dropdown(meta, items)
-  .dropdown
+  .dropdown(class!=attributes.class)
     .dropdown__info
       h3.dropdown__name= meta.name
       if meta.uiKitMode
