@@ -70,3 +70,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@mixin rounded-border {
+  border-radius: 50%;
+}
