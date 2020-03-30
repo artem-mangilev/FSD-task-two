@@ -1,0 +1,23 @@
+.registration-card {
+  box-sizing: border-box;
+  width: 380px;
+  padding: 30px;
+  padding-top: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+
+  &__form-block {
+    margin: 20px 0;
+  }
+
+  &__input {
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    // figure out how to merge this margin with sibling's margin
+    margin-top: 4px;
+    margin-bottom: 30px;
+  }
+}

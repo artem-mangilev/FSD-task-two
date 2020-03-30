@@ -1,0 +1,57 @@
+include ../text-field/text-field
+include ../radio/radio
+include ../toggle/toggle
+include ../button/button
+
+mixin registration-card
+  -
+    const {
+      title,
+      firstNameInput,
+      lastNameInput,
+      sexRadioButtons,
+      birthdayInput,
+      loginDataEmailInput,
+      loginDataPasswordInput,
+      specialOffersToggle,
+      nextStepButton,
+      login
+    } = require('../../components/registration-card/registration-card.json')
+
+  .registration-card
+    h1.registration-card__title= title
+    form.registration-card__form
+      .registration-card__form-block
+        +text-field({})(
+          placeholder=firstNameInput.placeholder
+          class="registration-card__input"
+        )
+        +text-field({})(
+          placeholder=lastNameInput.placeholder
+          class="registration-card__input"
+        )
+        +radio(sexRadioButtons.name, sexRadioButtons.buttons, sexRadioButtons.checked)
+
+      .registration-card__form-block
+        +text-field(birthdayInput)(
+          placeholder=birthdayInput.placeholder
+        )
+
+      .registration-card__form-block
+        +text-field(loginDataEmailInput)(
+          placeholder=loginDataEmailInput.placeholder
+          class="registration-card__input"
+        )
+        +text-field({})(
+          placeholder=loginDataPasswordInput.placeholder
+          class="registration-card__input"
+        )
+        +toggle(specialOffersToggle.content)
+
+      +button(nextStepButton.type, nextStepButton.content)(
+        class="registration-card__button"
+      )
+      .registration-card__login
+        span.registration-card__login-text= login.text
+        +button(login.button.type, login.button.content)
+

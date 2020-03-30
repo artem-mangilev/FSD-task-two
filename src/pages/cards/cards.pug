@@ -1,6 +1,7 @@
 extends ../../layout/base
 
 include ../../components/search-card/search-card
+include ../../components/registration-card/registration-card
 
 block settings
   - const dark = true
@@ -12,3 +13,5 @@ block head
 block body
   .cards
     +search-card
+
+    +registration-card
