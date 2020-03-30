@@ -28,7 +28,7 @@ $secondary-gradient: linear-gradient(180deg, $secondary-color 0%, #66d2ea 100%);
 
 // text
 @mixin title-text {
-  font: bold 24px 'Quicksand';
+  font: bold 24px 'Quicksand', 'Open Sans';
   color: $dark-shade-100;
 }
 

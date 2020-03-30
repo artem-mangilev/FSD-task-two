@@ -12,6 +12,10 @@ h3 {
   margin: 0;
 }
 
+h1 {
+  @include title-text;
+}
+
 h3 {
   @include label-text;
 }
