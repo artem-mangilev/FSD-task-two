@@ -174,7 +174,7 @@
     {
       "type": "primary",
       "content": "click me",
-      "disabled": true
+      "hovered": true
     },
     {
       "type": "secondary",
@@ -183,7 +183,7 @@
     {
       "type": "secondary",
       "content": "click me",
-      "disabled": true
+      "hovered": true
     },
     {
       "type": "primary-string",

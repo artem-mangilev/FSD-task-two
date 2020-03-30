@@ -130,9 +130,8 @@ block body
       .form-elements__element.form-elements__element_big-bottom-margin
         h3.form-elements__label buttons
         each button in buttonList
-          +button(button.type, button.content)(
+          +button(button.type, button.content, button.hovered)(
             class='form-elements__button'
-            disabled=button.disabled
           )
 
       .form-elements__element

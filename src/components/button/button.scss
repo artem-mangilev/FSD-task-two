@@ -20,9 +20,9 @@
     background-image: $primary-gradient;
     color: #fff;
 
-    &:disabled {
+    &:hover,
+    &.button_hovered {
       opacity: 0.5;
-      cursor: default;
     }
   }
 
@@ -30,9 +30,9 @@
     @include extended_border(2px, 22px, $primary-gradient);
     background-color: #fff;
 
-    &:disabled {
+    &:hover,
+    &.button_hovered {
       @include extended_border_opaticy(0.5);
-      cursor: default;
     }
   }
 

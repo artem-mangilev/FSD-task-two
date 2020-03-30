@@ -5,5 +5,5 @@
 //-   secondary-string
 //-   action
 
-mixin button(type='primary', text)
-  button.button(class=`button_${type}`)&attributes(attributes)= text
+mixin button(type='primary', text, hovered)
+  button.button(class=`button_${type}` class=hovered && 'button_hovered')&attributes(attributes)= text
