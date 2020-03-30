@@ -1,9 +1,11 @@
+block settings
+
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     block head
-  body
-    img.logo(src='/images/logo.svg')
+  body.base(class=dark && 'base_dark')
+    img.base__logo(src='/images/logo.svg')
     block body
