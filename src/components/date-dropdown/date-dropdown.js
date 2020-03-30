@@ -69,6 +69,8 @@ class DateDropdown {
         $el.val(this.formattedDateState[0])
         // set range end date to fake input
         this.$toDateInput.val(this.formattedDateState[1])
+        // hide dropdown after applying the date
+        $el.data('datepicker').hide()
       })
 
       // when clear button is pressed, both real and fake inputs have to be cleared.
@@ -138,6 +140,8 @@ class DateDropdown {
           .split(multipleDatesSeparator)
         // show new date in input field
         $el.val(formattedDate.toLowerCase())
+        // hide dropdown after applying the date
+        $el.data('datepicker').hide()
       })
 
       // clear state when clear button pressed.
