@@ -1,0 +1,14 @@
+extends ../../layout/base
+
+include ../../components/search-card/search-card
+
+block settings
+  - const dark = true
+
+block head
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  title Cards
+
+block body
+  .cards
+    +search-card
