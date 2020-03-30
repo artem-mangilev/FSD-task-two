@@ -2,7 +2,7 @@ mixin features(features)
   .features
     each feature in features
       .features__feature
-        i.features__icon.material-icons= feature.icon
+        i.features__icon= feature.icon
         .features__text
           span.features__name= feature.name
           br
