@@ -1,0 +1,5 @@
+@import '../card/card.scss';
+
+.booking-card {
+  @extend .card;
+}

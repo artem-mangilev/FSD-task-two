@@ -3,6 +3,7 @@ extends ../../layout/base
 include ../../components/search-card/search-card
 include ../../components/registration-card/registration-card
 include ../../components/login-card/login-card
+include ../../components/booking-card/booking-card
 
 block settings
   - const dark = true
@@ -18,3 +19,9 @@ block body
     +registration-card
 
     +login-card
+
+    +booking-card({
+      roomNumber: 888,
+      price: '9 990',
+      isLuxury: true
+    })

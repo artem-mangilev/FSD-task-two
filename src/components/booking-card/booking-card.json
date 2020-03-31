@@ -1,0 +1,17 @@
+{
+  "bookingDateDropdown": {
+    "startLabel": "прибытие",
+    "endLabel": "выезд",
+    "placeholder": "ДД.ММ.ГГГГ"
+  },
+  "guestsDropdown": {
+    "meta": {
+      "type": "item-quantity-applied",
+      "name": "гости",
+      "uiKitMode": false,
+      "open": false,
+      "selectionTextForms": ["гость", "гостя", "гостей"],
+      "placeholder": "Сколько гостей"
+    }
+  }
+}
