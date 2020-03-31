@@ -1,0 +1,30 @@
+include ../text-field/text-field
+include ../button/button
+
+mixin login-card
+  - 
+    const {
+      title,
+      emailInput,
+      passwordInput,
+      loginButton,
+      register
+    } = require('../../components/login-card/login-card.json')
+
+  .login-card
+    h1.login-card__title= title
+    form.login-card__form
+      .login-card__input-block
+        +text-field({})(
+          placeholder= emailInput.placeholder
+          class="login-card__input"
+        )
+        +text-field({})(
+          placeholder= emailInput.placeholder
+        )
+      +button(loginButton.type, loginButton.content)(
+        class="login-card__button"
+      )
+    .login-card__register
+      span.login-card__register-text= register.text
+      +button(register.button.type, register.button.content)
