@@ -1,13 +1,7 @@
+@import '../card/card.scss';
+
 .login-card {
-  position: relative;
-  z-index: 0;
-  box-sizing: border-box;
-  width: 380px;
-  padding: 30px;
-  padding-top: 40px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
+  @extend .card;
 
   &__input-block {
     margin: 20px 0;
