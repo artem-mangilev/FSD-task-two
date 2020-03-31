@@ -21,7 +21,7 @@ mixin registration-card
   .registration-card
     h1.registration-card__title= title
     form.registration-card__form
-      .registration-card__form-block
+      .registration-card__input-block
         +text-field({})(
           placeholder=firstNameInput.placeholder
           class="registration-card__input"
@@ -35,12 +35,12 @@ mixin registration-card
         )
 
 
-      .registration-card__form-block
+      .registration-card__input-block
         +text-field(birthdayInput)(
           placeholder=birthdayInput.placeholder
         )
 
-      .registration-card__form-block
+      .registration-card__input-block
         +text-field(loginDataEmailInput)(
           placeholder=loginDataEmailInput.placeholder
           class="registration-card__input"
