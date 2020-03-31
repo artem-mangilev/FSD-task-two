@@ -1,0 +1,20 @@
+{
+  "title": "Войти",
+  "emailInput": {
+    "placeholder": "Email"
+  },
+  "passwordInput": {
+    "placeholder": "Пароль"
+  },
+  "loginButton": {
+    "type": "action",
+    "content": "Войти"
+  },
+  "register": {
+    "text": "Нет аккаунта на Toxin?",
+    "button": {
+      "type": "secondary",
+      "content": "Создать"
+    }
+  }
+}
