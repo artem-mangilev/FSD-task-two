@@ -24,4 +24,14 @@
     margin-top: 4px;
     margin-bottom: 30px;
   }
+
+  &__login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__radio {
+    margin-right: 20px;
+  }
 }

@@ -30,7 +30,10 @@ mixin registration-card
           placeholder=lastNameInput.placeholder
           class="registration-card__input"
         )
-        +radio(sexRadioButtons.name, sexRadioButtons.buttons, sexRadioButtons.checked)
+        +radio(sexRadioButtons.name, sexRadioButtons.buttons, sexRadioButtons.checked)(
+          class="registration-card__radio"
+        )
+
 
       .registration-card__form-block
         +text-field(birthdayInput)(
