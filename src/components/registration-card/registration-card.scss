@@ -1,4 +1,8 @@
 .registration-card {
+  // this fixes showing gradient border of button
+  position: relative;
+  z-index: 0;
+
   box-sizing: border-box;
   width: 380px;
   padding: 30px;
