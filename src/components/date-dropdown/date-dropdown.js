@@ -24,6 +24,9 @@ class DateDropdown {
     // jquerify DOM element
     const $dropdownComponent = $(dropdownComponent)
 
+    // get initial range from component
+    this.initialRange = $dropdownComponent.data('initial-range')
+
     // check if this is a date dropdown or filter date dropdown
     this.$filterDateInput = $dropdownComponent.find(
       '.date-dropdown__input_single'
@@ -73,6 +76,20 @@ class DateDropdown {
         $el.data('datepicker').hide()
       })
 
+      if (this.isSelectDateMethodUsed) {
+        // in range, formattedDate is a string of 2 dates divided by multileDatesSeparator
+        // extract from & to dates from formattedDate
+        const [fromDate, toDate] = formattedDate.split(multipleDatesSeparator)
+        // write new state
+        this.formattedDateState = [fromDate, toDate]
+        // set range start date to actual input
+        $el.val(this.formattedDateState[0])
+        // set range end date to fake input
+        this.$toDateInput.val(this.formattedDateState[1])
+        // discard the isSelectDateMethodUsed flag
+        this.isSelectDateMethodUsed = false
+      }
+
       // when clear button is pressed, both real and fake inputs have to be cleared.
       // find clear button in current instance of datepicker
       const $clearButton = $datepicker.find(
@@ -104,6 +121,16 @@ class DateDropdown {
     $buttons.append(
       '<span class="datepicker--button" data-action="apply">Применить</span>'
     )
+
+    // set initial range to dropdown it it presented
+    if (this.initialRange) {
+      // set this flag to check if selecting was triggered from code
+      this.isSelectDateMethodUsed = true
+
+      this.$fromDateInput
+        .data('datepicker')
+        .selectDate(this.initialRange.map(date => new Date(date)))
+    }
   }
 
   _initFilterDateDropdown() {
