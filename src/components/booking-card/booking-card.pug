@@ -1,38 +1,70 @@
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
+include ../button/button
 
-mixin booking-card({ roomNumber, price, discount, additionalServices,  isLuxury, adultsNumber = 0, childsNumber = 0, infantsNumber = 0 })
+mixin booking-card({ roomNumber, price = 0, discount = 0, services = 0, additionalServices = 0,  isLuxury, arrivalDate, departureDate, adultsNumber = 0, childsNumber = 0, infantsNumber = 0 })
   - 
     const {
       bookingDateDropdown,
-      guestsDropdown
+      guestsDropdown,
+      bookButton
     } = require('../../components/booking-card/booking-card.json')
 
-  .booking-card
+  - 
+    const guests = [
+      {
+        "name": "взрослые",
+        "quantity": adultsNumber
+      },
+      {
+        "name": "дети",
+        "quantity": childsNumber
+      },
+      {
+        "name": "младенцы",
+        "quantity": infantsNumber
+      }
+    ] 
+
+  .booking-card(data-price=price
+    data-discount=discount 
+    data-services=services
+    data-additional-services=additionalServices
+    data-arrival-date=arrivalDate
+    data-departure-date=departureDate
+    )
     .booking-card__header
       span.booking-card__room
-        span.booking-card__room-number №#{roomNumber}
+        span.booking-card__number-sign № 
+        span.booking-card__room-number #{roomNumber} 
         span.booking-card__luxury= isLuxury && 'Люкс'
       span.booking-card__price
-        span.booking-card__price-number #{price}₽
-        span.booking-card__period в сутки
+        span.booking-card__price-number
+        span.booking-card__period  в сутки
     +date-dropdown(bookingDateDropdown.startLabel, bookingDateDropdown.endLabel)(
+      class='booking-card__date-dropdown'
       placeholder=bookingDateDropdown.placeholder
+      startDate=arrivalDate
+      endDate=departureDate
     )
-
-    - 
-      const guests = [
-        {
-          "name": "взрослые",
-          "quantity": adultsNumber
-        },
-        {
-          "name": "дети",
-          "quantity": childsNumber
-        },
-        {
-          "name": "младенцы",
-          "quantity": infantsNumber
-        }
-      ] 
     +dropdown(guestsDropdown.meta, guests)
+    .booking-card__price-details
+      p.booking-card__price-per-days
+        span.booking-card__price-per-days-text
+        span.booking-card__price-per-days-total-value
+      p.booking-card__services
+        span.booking-card__services-text Сбор за услуги: 
+          if (discount > 0)
+            span.booking-card__discount
+        span.booking-card__information-symbol
+        span.booking-card__services-value
+      p.booking-card__additional-services
+        span.booking-card__additional-services-text Сбор за дополнительные услуги
+        span.booking-card__information-symbol
+        span.booking-card__additional-services-value
+      p.booking-card__total
+        span.booking-card__total-text Итого
+        span.booking-card__dotes
+        span.booking-card__total-value
+    +button(bookButton.type, bookButton.content)
+

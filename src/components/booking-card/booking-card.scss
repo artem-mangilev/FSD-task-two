@@ -2,4 +2,107 @@
 
 .booking-card {
   @extend .card;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  &__room,
+  &__price {
+    height: min-content;
+  }
+
+  &__number-sign {
+    @include subtitle-text;
+    font-size: 14px;
+  }
+
+  &__room-number {
+    @include subtitle-text;
+  }
+
+  &__luxury {
+    @include label-text;
+    color: $primary-color;
+  }
+
+  &__price {
+    color: $dark-shade-50;
+  }
+
+  &__price-number {
+    font-weight: bold;
+  }
+
+  &__date-dropdown {
+    margin-bottom: 20px;
+  }
+
+  &__price-details {
+    margin: 20px 0;
+  }
+
+  &__price-per-days,
+  &__services,
+  &__additional-services,
+  &__total {
+    display: flex;
+  }
+
+  &__price-per-days-text,
+  &__services-text,
+  &__additional-services-text {
+    width: 217px;
+  }
+
+  &__price-per-days-total-value,
+  &__services-value,
+  &__additional-services-value {
+    margin-left: auto;
+  }
+
+  &__price-per-days,
+  &__services {
+    margin-bottom: 10px;
+  }
+
+  &__additional-services {
+    margin-bottom: 30px;
+  }
+
+  &__information-symbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size(20px, 20px);
+    border: 1px solid $dark-shade-25;
+    @include rounded-border;
+    color: $dark-shade-25;
+
+    &::before {
+      content: 'i';
+      font-weight: bold;
+    }
+  }
+
+  &__total {
+    @include subtitle-text;
+    align-items: baseline;
+  }
+
+  &__dotes {
+    flex-grow: 1;
+    border-bottom: 0.5px dashed $dark-shade-25;
+  }
+
+  &__total-text {
+    margin-right: 5px;
+  }
+
+  &__total-value {
+    margin-left: 5px;
+  }
 }

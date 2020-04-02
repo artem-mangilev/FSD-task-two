@@ -13,5 +13,9 @@
       "selectionTextForms": ["гость", "гостя", "гостей"],
       "placeholder": "Сколько гостей"
     }
+  },
+  "bookButton": {
+    "type": "action",
+    "content": "забронировать"
   }
 }
