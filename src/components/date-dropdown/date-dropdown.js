@@ -74,6 +74,10 @@ class DateDropdown {
         this.$toDateInput.val(this.formattedDateState[1])
         // hide dropdown after applying the date
         $el.data('datepicker').hide()
+        // call onSelect callback
+        if (this.onSelectCallback) {
+          this.onSelectCallback(...date)
+        }
       })
 
       if (this.isSelectDateMethodUsed) {
@@ -86,6 +90,10 @@ class DateDropdown {
         $el.val(this.formattedDateState[0])
         // set range end date to fake input
         this.$toDateInput.val(this.formattedDateState[1])
+        // call onSelect callback
+        if (this.onSelectCallback) {
+          this.onSelectCallback(...date)
+        }
         // discard the isSelectDateMethodUsed flag
         this.isSelectDateMethodUsed = false
       }
@@ -197,6 +205,10 @@ class DateDropdown {
     $buttons.append(
       '<span class="datepicker--button" data-action="apply">Применить</span>'
     )
+  }
+
+  onSelect(callback) {
+    this.onSelectCallback = callback
   }
 }
 
