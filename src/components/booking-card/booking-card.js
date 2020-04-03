@@ -49,7 +49,7 @@ class BookingCard {
     // get discount, format it and put in appropriate element
     this.discount = this._data('discount')
     this.$discount = this._findEl(this.$priceDetails, 'discount').text(
-      `скидка ${this._formatMoney(this.discount)}`
+      `: скидка ${this._formatMoney(this.discount)}`
     )
 
     // get services, format it and put in appropriate element
@@ -104,7 +104,7 @@ class BookingCard {
     const timeDifference = laterDate.getTime() - earlierDate.getTime()
     // 1000 ms in 1 second * 60 sec in 1 minute * 60 min in 1 hour * 24 hours in 1 day
     const oneDayInMs = 1000 * 60 * 60 * 24
-    return timeDifference / oneDayInMs
+    return Math.abs(timeDifference / oneDayInMs)
   }
 
   _data(name) {
@@ -120,6 +120,7 @@ class BookingCard {
     return `${this._formatMoney(this.price)} x ${this.tripDays} ${plural(
       this.tripDays,
       'сутки',
+      'суток',
       'суток'
     )}`
   }
