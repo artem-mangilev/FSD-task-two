@@ -5,6 +5,7 @@ import '../dropdown/dropdown'
 import '../button/button'
 
 import plural from 'plural-ru'
+import DateDropdown from '../date-dropdown/date-dropdown'
 
 class BookingCard {
   constructor(component) {
@@ -84,6 +85,41 @@ class BookingCard {
       this.discount
     this.$totalValue = this.$priceDetails.find('.booking-card__total-value')
     this.$totalValue.text(this._formatMoney(this.total))
+
+    // find date dropdown raw element and initialize date dropdown
+    this.dateDropdownElement = this.$bookingCardComponent.find(
+      '.booking-card__date-dropdown'
+    )[0]
+    this.dateDropdown = new DateDropdown(this.dateDropdownElement)
+
+    // when date is changed, compute number of trip days and recompute values
+    this.dateDropdown.onSelect((fromDate, toDate) => {
+      // compute trip days
+      this.tripDays = this._dateDifference(toDate, fromDate)
+      // update price per days text
+      this.$pricePerDaysText.text(
+        `${this.formattedPrice} x ${this.tripDays} ${plural(
+          this.tripDays,
+          'сутки',
+          'суток'
+        )}`
+      )
+
+      // update price for trip days
+      this.priceForTripDays = this.price * this.tripDays
+      // put updated formatted price in appropriate element
+      this.$pricePerDaysTotalValue.text(
+        this._formatMoney(this.priceForTripDays)
+      )
+
+      // compute total value and put it in total-value element
+      this.total =
+        this.priceForTripDays +
+        this.services +
+        this.additionalServices -
+        this.discount
+      this.$totalValue.text(this._formatMoney(this.total))
+    })
   }
 
   _formatMoney(number) {
