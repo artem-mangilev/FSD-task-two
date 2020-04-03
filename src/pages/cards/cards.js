@@ -1,3 +1,5 @@
+import '../../layout/base'
+import '../../scss/style.scss'
 import './cards.scss'
 
 import '../../components/search-card/search-card'

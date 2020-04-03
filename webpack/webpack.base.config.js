@@ -27,7 +27,8 @@ const createHtmlWebpackPlugins = pagesFolderPath => {
     page =>
       new HtmlWebpackPlugin({
         template: path.join(pagesFolderPath, page.replace('.pug', ''), page),
-        filename: page.replace('.pug', '.html')
+        filename: page.replace('.pug', '.html'),
+        chunks: [ page.replace('.pug', '') ]
       })
   )
 }
@@ -40,7 +41,9 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
 
   entry: {
-    app: `${PATHS.src}/index.js`
+    'cards': `${PATHS.src}/pages/cards/cards.js`,
+    'colors-and-text': `${PATHS.src}/pages/colors-and-text/colors-and-text.js`,
+    'form-elements': `${PATHS.src}/pages/form-elements/form-elements.js`,
   },
 
   output: {
