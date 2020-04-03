@@ -47,10 +47,16 @@
     &_single {
       width: $medium-input-width;
     }
+
+    &_inline {
+      padding: 0;
+      border: none;
+    }
   }
 }
 
-.datepickers-container .datepicker {
+.datepickers-container .datepicker,
+.datepicker-inline .datepicker {
   box-sizing: border-box;
   width: 320px;
   padding: 20px;
@@ -136,7 +142,7 @@
     }
 
     &.-range-from- {
-      z-index: auto;
+      z-index: 1;
 
       &::after {
         content: '';
@@ -147,13 +153,13 @@
         right: 0;
         bottom: 0;
         left: 0 + 50%;
-        z-index: -2;
+        z-index: -1;
         background: $primary-gradient-25;
       }
     }
 
     &.-range-to- {
-      z-index: auto;
+      z-index: 1;
 
       &::before {
         content: '';
@@ -164,7 +170,7 @@
         right: 0 + 50%;
         bottom: 0;
         left: 0;
-        z-index: -2;
+        z-index: -1;
         background: $primary-gradient-25;
       }
     }

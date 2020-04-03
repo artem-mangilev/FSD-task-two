@@ -1,5 +1,6 @@
 extends ../../layout/base
 
+include ../../components/date-dropdown/date-dropdown
 include ../../components/search-card/search-card
 include ../../components/registration-card/registration-card
 include ../../components/login-card/login-card
@@ -32,3 +33,8 @@ block body
       childsNumber: 1,
       infantsNumber: 1
     })
+
+    +date-dropdown()(
+      class='cards__date-dropdown'
+      inline
+    )
