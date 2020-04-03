@@ -117,7 +117,7 @@ class BookingCard {
   }
 
   get formattedPricePerDays() {
-    return `${this.formattedPrice} x ${this.tripDays} ${plural(
+    return `${this._formatMoney(this.price)} x ${this.tripDays} ${plural(
       this.tripDays,
       'сутки',
       'суток'
