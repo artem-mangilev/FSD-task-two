@@ -49,8 +49,14 @@
     }
 
     &_inline {
+      @include size(max-content, max-content);
       padding: 0;
       border: none;
+
+      &:focus,
+      &:hover {
+        border: none;
+      }
     }
   }
 }
