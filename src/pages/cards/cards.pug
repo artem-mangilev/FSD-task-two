@@ -5,6 +5,7 @@ include ../../components/search-card/search-card
 include ../../components/registration-card/registration-card
 include ../../components/login-card/login-card
 include ../../components/booking-card/booking-card
+include ../../components/room-card/room-card
 
 block settings
   - const dark = true
@@ -38,3 +39,17 @@ block body
       class='cards__date-dropdown'
       inline
     )
+
+    +room-card({
+      number: 888,
+      isLuxury: true,
+      price: 9990,
+      rating: 5,
+      reviewsNumber: 145,
+      images: [
+        'room-1-preview.png',
+        'room-1-preview.png',
+        'room-1-preview.png',
+        'room-1-preview.png'
+      ]
+    })

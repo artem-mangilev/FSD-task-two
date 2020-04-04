@@ -20,6 +20,7 @@
     "css-loader": "^3.4.2",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^4.0.0-beta.14",
+    "intl": "^1.2.5",
     "mini-css-extract-plugin": "^0.9.0",
     "pug": "^2.0.4",
     "pug-loader": "^2.4.0",
@@ -37,6 +38,7 @@
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.4.1",
+    "lightslider": "^1.1.6",
     "paginationjs": "^2.1.5",
     "plural-ru": "^2.0.2"
   }

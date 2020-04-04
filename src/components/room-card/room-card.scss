@@ -1,0 +1,61 @@
+.room-card {
+  width: 270px;
+  background-color: #fff;
+  border-radius: 4px;
+  color: $dark-shade-50;
+
+  &__image-container {
+    @include size(inherit, 151px);
+    overflow: hidden;
+  }
+
+  &__image {
+    @include size(100%, 100%);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:nth-of-type(1) {
+      align-items: baseline;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $dark-shade-10;
+    }
+
+    &:nth-of-type(2) {
+      align-items: center;
+      padding-top: 8px;
+    }
+  }
+
+  &__details {
+    padding: 20px;
+    padding-bottom: 19px;
+  }
+
+  &__number-sign {
+    @include subtitle-text;
+    font-size: 14px;
+  }
+
+  &__number {
+    @include subtitle-text;
+  }
+
+  &__luxury {
+    @include label-text;
+    color: $primary-color;
+  }
+
+  &__price {
+    font-size: 12px;
+
+    & b {
+      font-size: 14px;
+    }
+  }
+}

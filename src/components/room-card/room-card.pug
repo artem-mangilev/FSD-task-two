@@ -1,0 +1,25 @@
+include ../rating/rating
+
+mixin room-card({ number, isLuxury, price, rating, reviewsNumber, images })
+  - const plural = require('plural-ru')
+  - const Intl = require('intl')
+  - require('intl/locale-data/jsonp/ru.js')
+
+  - const formatMoney = number => new Intl.NumberFormat('ru', { style: 'currency', currency: 'RUB', minimumFractionDigits: 0 }).format(number).replace(/ (.)$/g, '$1')
+
+  .room-card
+    .room-card__gallery
+      each image in images
+        .room-card__image-container
+          img.room-card__image(src=`/images/${image}`) 
+    .room-card__details
+      .room-card__row
+        span.room-card__room-number
+          span.room-card__number-sign № 
+          span.room-card__number= number
+          if isLuxury
+            span.room-card__luxury  Люкс
+        span.room-card__price <b>#{formatMoney(price)}</b> в сутки
+      .room-card__row
+        +rating(rating)
+        span.room-card__reviews <b>#{reviewsNumber}</b> #{plural(reviewsNumber, 'Отзыв', 'Отзыва', 'Отзывов')}
