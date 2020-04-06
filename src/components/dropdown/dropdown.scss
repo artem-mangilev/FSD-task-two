@@ -1,16 +1,14 @@
+@import '../field/field.scss';
+
 .dropdown {
   width: max-content;
 
   &__container {
+    @extend .field;
+
     position: relative;
     box-sizing: border-box;
-    @include size($medium-input-width, 44px);
-    border: {
-      width: 1px;
-      style: solid;
-      color: $dark-shade-50;
-      radius: 2px;
-    }
+    width: $medium-input-width;
     cursor: pointer;
 
     &_applied {
@@ -30,9 +28,7 @@
   }
 
   &__uikit-state {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 12px;
+    @extend .field__state;
   }
 
   &__selection {
@@ -40,7 +36,6 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding-left: 13px;
     padding-right: 16px;
 
     &::after {
@@ -64,6 +59,7 @@
     box-sizing: border-box;
     position: absolute;
     top: 44px;
+    left: 0;
     margin: -1px 0 0 -1px;
     padding-left: 15px;
     padding-right: 7px;

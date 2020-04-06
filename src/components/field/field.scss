@@ -1,0 +1,18 @@
+.field {
+  height: 44px;
+  padding-left: 15px;
+  border: 1px solid $dark-shade-25;
+  border-radius: 4px;
+  @include body-text;
+
+  &__state {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark-shade-50;
+  }
+
+  &_hovered-focused {
+    outline: none;
+    border: 1px solid $dark-shade-50;
+  }
+}

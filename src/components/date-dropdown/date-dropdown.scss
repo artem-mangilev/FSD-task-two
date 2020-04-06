@@ -1,4 +1,5 @@
 @import '../../scss/material-icons.scss';
+@import '../field/field.scss';
 @import '../button/button.scss';
 
 .date-dropdown {
@@ -27,12 +28,10 @@
   }
 
   &__input {
+    @extend .field;
+
     box-sizing: border-box;
-    @include size(150px, 44px);
-    padding-left: 15px;
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
-    @include body-text;
+    width: 150px;
 
     &::placeholder {
       color: $dark-shade-75;
@@ -40,8 +39,7 @@
 
     &:focus,
     &:hover {
-      outline: none;
-      border: 1px solid $dark-shade-50;
+      @extend .field_hovered-focused;
     }
 
     &_single {

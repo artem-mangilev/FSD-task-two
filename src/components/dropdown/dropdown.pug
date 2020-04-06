@@ -19,7 +19,7 @@ mixin dropdown(meta, items)
     .dropdown__info
       h3.dropdown__name= meta.name
       if meta.uiKitMode
-        p.dropdown__uikit-state= meta.open ? 'expanded' : 'default'
+        span.dropdown__uikit-state= meta.open ? 'expanded' : 'default'
     .dropdown__container(class=(meta.type === 'item-quantity-applied' ? 'dropdown__container_applied' : '') data-meta=meta data-items=items)
       .dropdown__selection
         p.dropdown__selection-text

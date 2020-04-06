@@ -1,4 +1,5 @@
 @import '../../scss/material-icons.scss';
+@import '../field/field.scss';
 
 .text-field {
   $input_height: 44px;
@@ -26,12 +27,8 @@
       align-items: center;
       justify-content: center;
       @include size($input_height, $input_height);
-      // thanks to: https://cssgradient.io/blog/css-gradient-text/
-      background: $primary-gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       cursor: pointer;
+      @include text-gradient($primary-gradient);
     }
   }
 
@@ -41,21 +38,16 @@
   }
 
   &__uikit-state {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: $dark-shade-50;
+    @extend .field__state;
   }
 
   &__input {
+    @extend .field;
+
     position: relative;
     box-sizing: border-box;
     flex-basis: 100%;
-    height: $input_height;
-    padding-left: 15px;
     padding-right: $input_height;
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
-    @include body-text;
 
     &::placeholder {
       color: $dark-shade-25;
@@ -63,8 +55,7 @@
 
     &:focus,
     &:hover {
-      outline: none;
-      border: 1px solid $dark-shade-50;
+      @extend .field_hovered-focused;
     }
   }
 }
