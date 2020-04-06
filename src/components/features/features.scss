@@ -24,11 +24,9 @@
   &__icon {
     @extend .material-icons;
     font-size: 48px;
+    user-select: none;
 
-    background: $primary-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @include text-gradient($primary-gradient)
   }
 
   &__name {
