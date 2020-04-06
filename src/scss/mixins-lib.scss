@@ -74,3 +74,11 @@
 @mixin rounded-border {
   border-radius: 50%;
 }
+
+@mixin text-gradient($gradient) {
+  // thanks to: https://cssgradient.io/blog/css-gradient-text/
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
