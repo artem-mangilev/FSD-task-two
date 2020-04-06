@@ -17,14 +17,14 @@ block head
 block body
   .cards
     .cards__cards-col
-      .cards__card.cards__search-card
+      .cards__card
         +search-card
 
-      .cards__card.cards__registration-card
+      .cards__card
         +registration-card
       
     .cards__cards-col
-      .cards__card.cards__booking-card
+      .cards__card
         +booking-card({
           roomNumber: 888,
           price: 9990,
@@ -38,17 +38,17 @@ block body
           infantsNumber: 1
         })
       
-      .cards__card.cards__login-card
+      .cards__card
         +login-card
 
     .cards__cards-col
-      .cards__card.cards__calendar
+      .cards__card
         +date-dropdown()(
           class='cards__date-dropdown'
           inline
         )
 
-      .cards__card.cards__room-card-1
+      .cards__card
         +room-card({
           number: 888,
           isLuxury: true,
@@ -63,7 +63,7 @@ block body
           ]
         })
 
-      .cards__card.cards__room-card-2
+      .cards__card
         +room-card({
           number: 840,
           price: 9900,
