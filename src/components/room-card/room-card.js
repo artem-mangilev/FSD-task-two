@@ -3,7 +3,6 @@ import './room-card.scss'
 import '../rating/rating'
 
 import 'lightslider'
-import 'lightslider/dist/css/lightslider.css'
 
 class RoomCard {
   constructor(component) {
@@ -15,6 +14,8 @@ class RoomCard {
     this.$slider.lightSlider({
       item: 1,
       adaptiveHeight: true,
+      nextHtml: '<i class="material-icons">expand_more</i>',
+      prevHtml: '<i class="material-icons">expand_more</i>',
     })
   }
 }
