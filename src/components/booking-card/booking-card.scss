@@ -74,7 +74,7 @@
     justify-content: center;
     align-items: center;
     @include size(20px, 20px);
-    border: 1px solid $dark-shade-25;
+    @include border($dark-shade-25);
     @include rounded-border;
     color: $dark-shade-25;
 

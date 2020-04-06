@@ -19,7 +19,7 @@
     margin: 0;
     min-width: 20px;
     height: 20px;
-    border: 1px solid $dark-shade-25;
+    @include border($dark-shade-25);
     border-radius: 10px;
 
     &::before {

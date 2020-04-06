@@ -20,7 +20,7 @@
       display: block;
       box-sizing: border-box;
       height: inherit;
-      border: 1px solid $dark-shade-25;
+      @include border($dark-shade-25);
       border-radius: 4px;
     }
 

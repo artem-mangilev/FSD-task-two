@@ -168,7 +168,7 @@
 
   box-sizing: border-box;
   @include size(7.5px, 7.5px);
-  border: 1px solid #fff;
+  @include border(#fff);
   background-color: rgba($color: #fff, $alpha: 0);
 }
 .lSSlideOuter .lSPager.lSpg > li:hover a,
@@ -238,7 +238,6 @@
 .lSAction > a.disabled {
   pointer-events: none;
 }
-
 
 /* Rtl */
 .lSSlideOuter.lSrtl {
