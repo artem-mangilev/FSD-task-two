@@ -1,6 +1,7 @@
 include ../rating/rating
 
 mixin room-card({ number, isLuxury, price, rating, reviewsNumber, images })
+  - const { luxuryText, priceText, reviewsWordForms } = require('../../components/room-card/room-card.json')
   - const plural = require('plural-ru')
   - const Intl = require('intl')
   - require('intl/locale-data/jsonp/ru.js')
@@ -18,8 +19,8 @@ mixin room-card({ number, isLuxury, price, rating, reviewsNumber, images })
           span.room-card__number-sign № 
           span.room-card__number= number
           if isLuxury
-            span.room-card__luxury  Люкс
-        span.room-card__price <b>#{formatMoney(price)}</b> в сутки
+            span.room-card__luxury  #{luxuryText}
+        span.room-card__price <b>#{formatMoney(price)}</b> #{priceText}
       .room-card__row
         +rating(rating)
-        span.room-card__reviews <b>#{reviewsNumber}</b> #{plural(reviewsNumber, 'Отзыв', 'Отзыва', 'Отзывов')}
+        span.room-card__reviews <b>#{reviewsNumber}</b> #{plural(reviewsNumber, ...reviewsWordForms)}

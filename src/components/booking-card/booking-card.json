@@ -1,4 +1,9 @@
 {
+  "luxuryText": "Люкс",
+  "periodText": "в сутки",
+  "servicesText": "Сбор за услуги",
+  "additionalServicesText":  "Сбор за дополнительные услуги",
+  "totalText": "Итого",
   "bookingDateDropdown": {
     "startLabel": "прибытие",
     "endLabel": "выезд",

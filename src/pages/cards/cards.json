@@ -1,0 +1,37 @@
+{
+  "bookingCard": {
+    "roomNumber": 888,
+    "price": 9990,
+    "discount": 2179,
+    "additionalServices": 300,
+    "isLuxury": true,
+    "arrivalDate": "2020-08-19",
+    "departureDate": "2020-08-23",
+    "adultsNumber": 1,
+    "childsNumber": 1,
+    "infantsNumber": 1
+  },
+  "calendar": {
+    "inline": true
+  },
+  "roomCard1": {
+    "number": 888,
+    "isLuxury": true,
+    "price": 9990,
+    "rating": 5,
+    "reviewsNumber": 145,
+    "images": [
+      "room-1-preview.png",
+      "room-1-preview.png",
+      "room-1-preview.png",
+      "room-1-preview.png"
+    ]
+  },
+  "roomCard2": {
+    "number": 840,
+    "price": 9900,
+    "rating": 4,
+    "reviewsNumber": 65,
+    "images": ["room-840.png", "room-840.png", "room-840.png", "room-840.png"]
+  }
+}

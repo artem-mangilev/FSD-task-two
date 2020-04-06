@@ -15,6 +15,8 @@ block head
   title Cards
 
 block body
+  - const { bookingCard, calendar, roomCard1, roomCard2 } = require('./cards.json')
+
   .cards
     .cards__cards-col
       .cards__card
@@ -22,22 +24,11 @@ block body
 
       .cards__card
         +registration-card
-      
+
     .cards__cards-col
       .cards__card
-        +booking-card({
-          roomNumber: 888,
-          price: 9990,
-          discount: 2179,
-          additionalServices: 300,
-          isLuxury: true,
-          arrivalDate: '2020-08-19',
-          departureDate: '2020-08-23',
-          adultsNumber: 1,
-          childsNumber: 1,
-          infantsNumber: 1
-        })
-      
+        +booking-card(bookingCard)
+
       .cards__card
         +login-card
 
@@ -45,34 +36,11 @@ block body
       .cards__card
         +date-dropdown()(
           class='cards__date-dropdown'
-          inline
+          inline=calendar.inline
         )
 
       .cards__card
-        +room-card({
-          number: 888,
-          isLuxury: true,
-          price: 9990,
-          rating: 5,
-          reviewsNumber: 145,
-          images: [
-            'room-1-preview.png',
-            'room-1-preview.png',
-            'room-1-preview.png',
-            'room-1-preview.png'
-          ]
-        })
+        +room-card(roomCard1)
 
       .cards__card
-        +room-card({
-          number: 840,
-          price: 9900,
-          rating: 4,
-          reviewsNumber: 65,
-          images: [
-            'room-840.png',
-            'room-840.png',
-            'room-840.png',
-            'room-840.png'
-          ]
-        })
+        +room-card(roomCard2)
