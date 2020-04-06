@@ -1,3 +1,18 @@
 .cards {
-  background: #E5E5E5;
+  $gap: 40px;
+  display: flex;
+  width: max-content;
+  margin: 72px auto;
+
+  &__cards-col {
+    margin-right: $gap;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__card {
+    margin-bottom: $gap;
+  }
 }
