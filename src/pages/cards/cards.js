@@ -1,4 +1,4 @@
-import '../../layout/base'
+import '../../layout/base/base'
 import '../../scss/style.scss'
 import './cards.scss'
 

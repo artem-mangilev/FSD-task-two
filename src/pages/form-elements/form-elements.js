@@ -1,4 +1,4 @@
-import '../../layout/base'
+import '../../layout/base/base'
 
 import '../../components/text-field/text-field'
 import '../../components/dropdown/dropdown'
