@@ -1,7 +1,7 @@
-include ../../components/text-field/text-field
-include ../../components/radio/radio
-include ../../components/toggle/toggle
-include ../../components/button/button
+include /components/text-field/text-field
+include /components/radio/radio
+include /components/toggle/toggle
+include /components/button/button
 
 mixin registration-card
   -
@@ -16,7 +16,7 @@ mixin registration-card
       specialOffersToggle,
       nextStepButton,
       login
-    } = require('../../layout/registration-card/registration-card.json')
+    } = require('@layout/registration-card/registration-card.json')
 
   .registration-card
     h1.registration-card__title= title

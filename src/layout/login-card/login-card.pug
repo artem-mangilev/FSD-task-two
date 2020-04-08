@@ -1,5 +1,5 @@
-include ../../components/text-field/text-field
-include ../../components/button/button
+include /components/text-field/text-field
+include /components/button/button
 
 mixin login-card
   - 
@@ -9,7 +9,7 @@ mixin login-card
       passwordInput,
       loginButton,
       register
-    } = require('../../layout/login-card/login-card.json')
+    } = require('@layout/login-card/login-card.json')
 
   .login-card
     h1.login-card__title= title

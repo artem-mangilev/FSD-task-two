@@ -1,11 +1,11 @@
 import './booking-card.scss'
 
-import '../../components/date-dropdown/date-dropdown'
-import '../../components/dropdown/dropdown'
-import '../../components/button/button'
+import '@components/date-dropdown/date-dropdown'
+import '@components/dropdown/dropdown'
+import '@components/button/button'
 
 import plural from 'plural-ru'
-import DateDropdown from '../../components/date-dropdown/date-dropdown'
+import DateDropdown from '@components/date-dropdown/date-dropdown'
 
 class BookingCard {
   constructor(component) {
@@ -94,7 +94,7 @@ class BookingCard {
     return new Intl.NumberFormat('ru', {
       style: 'currency',
       currency: 'RUB',
-      minimumFractionDigits: 0
+      minimumFractionDigits: 0,
     })
       .format(number)
       .replace(/ (.)$/g, '$1') // removes space between number and currency symbol

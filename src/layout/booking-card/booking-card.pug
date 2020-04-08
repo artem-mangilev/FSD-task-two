@@ -1,6 +1,6 @@
-include ../../components/date-dropdown/date-dropdown
-include ../../components/dropdown/dropdown
-include ../../components/button/button
+include /components/date-dropdown/date-dropdown
+include /components/dropdown/dropdown
+include /components/button/button
 
 mixin booking-card({ roomNumber, price = 0, discount = 0, services = 0, additionalServices = 0,  isLuxury, arrivalDate, departureDate, adultsNumber = 0, childsNumber = 0, infantsNumber = 0 })
   - 
@@ -13,7 +13,7 @@ mixin booking-card({ roomNumber, price = 0, discount = 0, services = 0, addition
       luxuryText,
       periodText,
       totalText
-    } = require('../../layout/booking-card/booking-card.json')
+    } = require('@layout/booking-card/booking-card.json')
 
   - 
     const guests = [

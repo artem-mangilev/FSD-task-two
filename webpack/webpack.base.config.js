@@ -38,7 +38,16 @@ module.exports = {
     paths: PATHS,
   },
 
-  context: path.resolve(__dirname, 'src'),
+  resolve: {
+    alias: {
+      '@': PATHS.src,
+      '@components': path.resolve(PATHS.src, 'components'),
+      '@layout': path.resolve(PATHS.src, 'layout'),
+      '@fonts': path.resolve(PATHS.src, 'fonts'),
+    },
+  },
+
+  context: PATHS.src,
 
   entry: {
     cards: `${PATHS.src}/pages/cards/cards.js`,
@@ -57,7 +66,12 @@ module.exports = {
       // pug
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        use: {
+          loader: 'pug-loader',
+          options: {
+            root: PATHS.src,
+          },
+        },
       },
       // babel
       {

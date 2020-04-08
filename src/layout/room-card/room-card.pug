@@ -1,7 +1,7 @@
-include ../../components/rating/rating
+include /components/rating/rating
 
 mixin room-card({ number, isLuxury, price, rating, reviewsNumber, images })
-  - const { luxuryText, priceText, reviewsWordForms } = require('../../layout/room-card/room-card.json')
+  - const { luxuryText, priceText, reviewsWordForms } = require('@/layout/room-card/room-card.json')
   - const plural = require('plural-ru')
   - const Intl = require('intl')
   - require('intl/locale-data/jsonp/ru.js')
