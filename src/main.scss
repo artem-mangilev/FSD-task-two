@@ -2,11 +2,6 @@
 @import 'base/base.scss';
 @import 'base/typography.scss';
 
-@import 'utilities/functions.scss';
-@import 'utilities/mixins.scss';
-@import 'utilities/placeholders.scss';
-@import 'utilities/variables.scss';
-
 .container {
   display: flex;
   justify-content: space-between;
