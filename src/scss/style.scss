@@ -1,33 +1,9 @@
 @import './variables.scss';
 @import './fonts.scss';
 
-body {
-  margin: 0;
-  @include body-text;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
-h1 {
-  @include title-text;
-}
-
-h3 {
-  @include label-text;
-}
-
-p {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.material-icons {
-  user-select: none;
-}
+@import '../base/reset.scss';
+@import '../base/base.scss';
+@import '../base/typography.scss';
 
 .container {
   display: flex;
