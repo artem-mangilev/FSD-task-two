@@ -1,6 +1,6 @@
 import './room-card.scss'
 
-import '../rating/rating'
+import '../../components/rating/rating'
 
 import 'lightslider'
 

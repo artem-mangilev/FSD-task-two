@@ -1,6 +1,6 @@
-include ../date-dropdown/date-dropdown
-include ../dropdown/dropdown
-include ../button/button
+include ../../components/date-dropdown/date-dropdown
+include ../../components/dropdown/dropdown
+include ../../components/button/button
 
 mixin search-card
   - 
@@ -10,7 +10,7 @@ mixin search-card
       dateDropdown,
       dropdown,
       button 
-    } = require(`../../components/search-card/search-card.json`)
+    } = require(`../../layout/search-card/search-card.json`)
 
   .search-card
     h1.search-card__title= title

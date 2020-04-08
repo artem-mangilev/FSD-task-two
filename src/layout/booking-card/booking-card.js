@@ -1,11 +1,11 @@
 import './booking-card.scss'
 
-import '../date-dropdown/date-dropdown'
-import '../dropdown/dropdown'
-import '../button/button'
+import '../../components/date-dropdown/date-dropdown'
+import '../../components/dropdown/dropdown'
+import '../../components/button/button'
 
 import plural from 'plural-ru'
-import DateDropdown from '../date-dropdown/date-dropdown'
+import DateDropdown from '../../components/date-dropdown/date-dropdown'
 
 class BookingCard {
   constructor(component) {
