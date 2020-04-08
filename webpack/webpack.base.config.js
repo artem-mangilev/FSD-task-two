@@ -33,6 +33,8 @@ const createHtmlWebpackPlugins = (pagesFolderPath) => {
   )
 }
 
+const loadersForCSS = ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
+
 module.exports = {
   externals: {
     paths: PATHS,
@@ -50,9 +52,9 @@ module.exports = {
   context: PATHS.src,
 
   entry: {
-    cards: `${PATHS.src}/pages/cards/cards.js`,
-    'colors-and-text': `${PATHS.src}/pages/colors-and-text/colors-and-text.js`,
-    'form-elements': `${PATHS.src}/pages/form-elements/form-elements.js`,
+    cards: './pages/cards/cards.js',
+    'colors-and-text': './pages/colors-and-text/colors-and-text.js',
+    'form-elements': './pages/form-elements/form-elements.js',
   },
 
   output: {
@@ -83,8 +85,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
+          ...loadersForCSS,
+          'sass-loader',
           {
             loader: 'css-loader',
             options: {
