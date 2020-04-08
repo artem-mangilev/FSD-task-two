@@ -16,6 +16,7 @@
 
   Before use this mixin please make sure current element is positioned.
 */
+
 @mixin extended_border($width, $radius, $border-color) {
   & {
     border: $width solid transparent;
@@ -38,6 +39,7 @@
 /* 
   Could be used to change the color that already set.
 */
+
 @mixin extended_border_color($color) {
   &::after {
     background: $color;
@@ -47,6 +49,7 @@
 /*
   Could change border
 */
+
 @mixin extended_border_opaticy($opacity) {
   &::after {
     opacity: $opacity;
@@ -56,23 +59,13 @@
 /* 
   Changes border color when pseudo-class was applied.
 */
+
 @mixin extended_border_color_on($pseudo_class, $color) {
   @if $pseudo_class == 'checked' {
     &:checked::before {
       background: $color;
     }
   }
-}
-
-@mixin gradient-text($gradient) {
-  background: $gradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@mixin rounded-border {
-  border-radius: 50%;
 }
 
 @mixin text-gradient($gradient) {

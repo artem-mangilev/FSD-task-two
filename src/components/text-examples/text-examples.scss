@@ -11,19 +11,19 @@
     }
 
     &.text-example__main-header {
-      @include title-text;
+      @extend %title-text;
     }
 
     &.text-example__mid-header {
-      @include subtitle-text;
+      @extend %subtitle-text;
     }
 
     &.text-example__small-header {
-      @include label-text;
+      @extend %label-text;
     }
 
     &.text-example__body-text {
-      @include body-text;
+      @extend %body-text;
     }
 
     &.text-example__main-header::before {

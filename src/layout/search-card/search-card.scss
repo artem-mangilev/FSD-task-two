@@ -1,7 +1,5 @@
-@import '../card/card.scss';
-
 .search-card {
-  @extend .card;
+  @extend %card;
 
   &__title {
     margin-bottom: 20px;

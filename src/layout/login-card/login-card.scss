@@ -1,7 +1,5 @@
-@import '../card/card.scss';
-
 .login-card {
-  @extend .card;
+  @extend %card;
 
   &__input-block {
     margin: 20px 0;

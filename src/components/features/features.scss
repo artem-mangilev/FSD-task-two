@@ -1,5 +1,3 @@
-@import '../../scss/material-icons.scss';
-
 .features {
   &__feature {
     box-sizing: border-box;
@@ -22,11 +20,11 @@
   }
 
   &__icon {
-    @extend .material-icons;
+    @extend %material-icons;
     font-size: 48px;
     user-select: none;
 
-    @include text-gradient($primary-gradient)
+    @include text-gradient($primary-gradient);
   }
 
   &__name {

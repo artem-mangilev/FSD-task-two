@@ -1,10 +1,8 @@
-@import '../field/field.scss';
-
 .dropdown {
   width: max-content;
 
   &__container {
-    @extend .field;
+    @extend %field;
 
     position: relative;
     box-sizing: border-box;
@@ -28,7 +26,7 @@
   }
 
   &__uikit-state {
-    @extend .field__state;
+    @extend %field__state;
   }
 
   &__selection {
@@ -84,7 +82,7 @@
   }
 
   &__item-name {
-    color: $dark-shade-100;
+    color: $dark-shade;
   }
 
   &__control {
@@ -101,7 +99,7 @@
       radius: 25px;
     }
     background-color: #fff;
-    @include body-text;
+    @extend %body-text;
     font-size: 18px;
     color: $dark-shade-50;
     cursor: pointer;
@@ -117,7 +115,7 @@
     width: 32px;
     text-align: center;
     font-weight: bold;
-    color: $dark-shade-100;
+    color: $dark-shade;
     font-size: 12px;
   }
 

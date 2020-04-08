@@ -1,5 +1,5 @@
 import '../../layout/base/base'
-import '../../scss/style.scss'
+import '../../main.scss'
 import './cards.scss'
 
 import '../../components/date-dropdown/date-dropdown'

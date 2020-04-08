@@ -1,0 +1,27 @@
+@import './functions.scss';
+
+/* Colors */
+
+$dark-shade: #1f2041;
+
+$dark-shade-75: change-color($dark-shade, $alpha: 0.75);
+$dark-shade-50: change-color($dark-shade, $alpha: 0.5);
+$dark-shade-25: change-color($dark-shade, $alpha: 0.25);
+$dark-shade-10: change-color($dark-shade, $alpha: 0.1);
+$dark-shade-5: change-color($dark-shade, $alpha: 0.05);
+
+$primary-color: #bc9cff;
+$secondary-color: #6fcf97;
+
+/* Gradients */
+
+$primary-gradient: linear-vertical-gradient($primary-color, #8ba4f9);
+$primary-gradient-25: linear-vertical-gradient($primary-color, #8ba4f9, 0.25);
+
+$secondary-gradient: linear-vertical-gradient($secondary-color, #66d2ea);
+
+/* Variables for different input width */
+
+$long-input-width: 320px;
+$medium-input-width: 266px;
+$short-input-width: 150px;

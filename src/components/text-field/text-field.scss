@@ -1,6 +1,3 @@
-@import '../../scss/material-icons.scss';
-@import '../field/field.scss';
-
 .text-field {
   $input_height: 44px;
 
@@ -18,7 +15,7 @@
     width: $medium-input-width;
 
     &::after {
-      @extend .material-icons;
+      @extend %material-icons;
       content: 'arrow_forward';
       position: absolute;
       right: 0;
@@ -38,11 +35,11 @@
   }
 
   &__uikit-state {
-    @extend .field__state;
+    @extend %field__state;
   }
 
   &__input {
-    @extend .field;
+    @extend %field;
 
     position: relative;
     box-sizing: border-box;
@@ -55,7 +52,7 @@
 
     &:focus,
     &:hover {
-      @extend .field_hovered-focused;
+      @extend %field_hovered-focused;
     }
   }
 }

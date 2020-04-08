@@ -1,5 +1,3 @@
-@import '../../scss/material-icons.scss';
-
 .button {
   box-sizing: border-box;
   position: relative;
@@ -7,7 +5,7 @@
   padding: 0;
   border: none;
   border-radius: 22px;
-  @include label-text;
+  @extend %label-text;
   color: $primary-color;
   cursor: pointer;
 
@@ -53,7 +51,7 @@
     color: #fff;
 
     &::before {
-      @extend .material-icons;
+      @extend %material-icons;
       content: 'arrow_forward';
       position: absolute;
       right: 14px;

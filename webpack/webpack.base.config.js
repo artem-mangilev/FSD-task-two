@@ -7,41 +7,41 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist')
+  dist: path.join(__dirname, '../dist'),
 }
 
 const PAGES_FOLDER = path.join(PATHS.src, '/pages')
 
-const createHtmlWebpackPlugins = pagesFolderPath => {
+const createHtmlWebpackPlugins = (pagesFolderPath) => {
   const pugFilesRegex = /\.pug$/
   const pagesFolder = fs.readdirSync(pagesFolderPath)
   const pages = pagesFolder
-    .map(pageFolder => {
+    .map((pageFolder) => {
       const pageFolderPath = path.join(pagesFolderPath, pageFolder)
       return fs.readdirSync(pageFolderPath)
     })
     .flat()
-    .filter(file => pugFilesRegex.test(file))
+    .filter((file) => pugFilesRegex.test(file))
 
   return pages.map(
-    page =>
+    (page) =>
       new HtmlWebpackPlugin({
         template: path.join(pagesFolderPath, page.replace('.pug', ''), page),
         filename: page.replace('.pug', '.html'),
-        chunks: [ page.replace('.pug', '') ]
+        chunks: [page.replace('.pug', '')],
       })
   )
 }
 
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
 
   context: path.resolve(__dirname, 'src'),
 
   entry: {
-    'cards': `${PATHS.src}/pages/cards/cards.js`,
+    cards: `${PATHS.src}/pages/cards/cards.js`,
     'colors-and-text': `${PATHS.src}/pages/colors-and-text/colors-and-text.js`,
     'form-elements': `${PATHS.src}/pages/form-elements/form-elements.js`,
   },
@@ -49,7 +49,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: '/',
   },
 
   module: {
@@ -57,13 +57,13 @@ module.exports = {
       // pug
       {
         test: /\.pug$/,
-        loader: 'pug-loader'
+        loader: 'pug-loader',
       },
       // babel
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
       },
       // scss
       {
@@ -74,25 +74,22 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: [
-                PATHS.src + '/scss/mixins-lib.scss',
-                PATHS.src + '/scss/variables.scss'
-              ]
-            }
-          }
-        ]
+              resources: PATHS.src + '/utilities/*.scss',
+            },
+          },
+        ],
       },
       // css
       {
@@ -103,10 +100,10 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
+              sourceMap: true,
+            },
+          },
+        ],
       },
       // fonts
       {
@@ -115,32 +112,32 @@ module.exports = {
         options: {
           name: '[name].[ext]',
           context: 'fonts/',
-          outputPath: 'fonts'
-        }
-      }
-    ]
+          outputPath: 'fonts',
+        },
+      },
+    ],
   },
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.$': 'jquery',
-      'window.jQuery': 'jquery'
+      'window.jQuery': 'jquery',
     }),
     new CopyWebpackPlugin([
       {
         from: path.join(PATHS.src, '/images'),
-        to: path.join(PATHS.dist, '/images')
+        to: path.join(PATHS.dist, '/images'),
       },
       {
         from: path.join(PATHS.src, '/uploads'),
-        to: path.join(PATHS.dist, '/images')
-      }
+        to: path.join(PATHS.dist, '/images'),
+      },
     ]),
-    ...createHtmlWebpackPlugins(PAGES_FOLDER)
-  ]
+    ...createHtmlWebpackPlugins(PAGES_FOLDER),
+  ],
 }

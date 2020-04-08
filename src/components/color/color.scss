@@ -18,11 +18,11 @@
   }
 
   &__name {
-    @include subtitle-text;
+    @extend %subtitle-text;
   }
 
   &__dark-shade-100 {
-    background-color: $dark-shade-100;
+    background-color: $dark-shade;
   }
 
   &__dark-shade-75 {

@@ -15,8 +15,7 @@ import '../../components/features/features'
 import '../../components/comment/comment'
 import '../../components/date-dropdown/date-dropdown'
 
-import '../../scss/variables.scss'
-import '../../scss/style.scss'
+import '../../main.scss'
 import './form-elements.scss'
 
 import DateDropdown from '../../components/date-dropdown/date-dropdown'

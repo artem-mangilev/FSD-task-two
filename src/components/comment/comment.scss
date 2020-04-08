@@ -10,10 +10,11 @@
   }
 
   &__avatar {
+    @extend %rounded-border;
+
     box-sizing: border-box;
     @include size(48px, 48px);
     border: 2px solid #fff;
-    @include rounded-border;
     box-shadow: 0px 10px 20px $dark-shade-10;
   }
 

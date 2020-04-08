@@ -1,0 +1,76 @@
+@import './variables.scss';
+
+%rounded-border {
+  border-radius: 50%;
+}
+
+%field {
+  height: 44px;
+  padding-left: 15px;
+  @include border($dark-shade-25);
+  border-radius: 4px;
+  @extend %body-text;
+
+  &__state {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark-shade-50;
+  }
+
+  &_hovered-focused {
+    outline: none;
+    @include border($dark-shade-50);
+  }
+}
+
+%card {
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  width: 380px;
+  padding: 30px;
+  padding-top: 40px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+%title-text {
+  font: bold 24px 'Quicksand', 'Open Sans';
+  color: $dark-shade;
+}
+
+%subtitle-text {
+  font: bold 19px 'Quicksand', 'Open Sans';
+  color: $dark-shade;
+}
+
+%label-text {
+  font: bold 12px 'Montserrat';
+  letter-spacing: 0.012rem;
+  text-transform: uppercase;
+  color: $dark-shade;
+}
+
+%body-text {
+  font: normal 14px 'Montserrat';
+  color: $dark-shade-75;
+}
+
+%material-icons {
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+
+  user-select: none;
+}

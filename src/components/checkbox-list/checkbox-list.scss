@@ -1,5 +1,3 @@
-@import '../../scss/material-icons.scss';
-
 .checkbox-list {
   &__title {
     width: $medium-input-width;
@@ -12,7 +10,7 @@
     &_hidden {
       cursor: pointer;
       &::after {
-        @extend .material-icons;
+        @extend %material-icons;
         @include size(44px, 44px);
         display: inline-flex;
         align-items: center;

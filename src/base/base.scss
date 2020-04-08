@@ -1,5 +1,5 @@
 body {
-  @include body-text;
+  @extend %body-text;
 }
 
 h1,
@@ -9,11 +9,11 @@ h3 {
 }
 
 h1 {
-  @include title-text;
+  @extend %title-text;
 }
 
 h3 {
-  @include label-text;
+  @extend %label-text;
 }
 
 p {

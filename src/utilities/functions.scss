@@ -1,0 +1,7 @@
+@function linear-vertical-gradient($from-color, $to-color, $alpha: 1) {
+  @return linear-gradient(
+    180deg,
+    change-color($from-color, $alpha: $alpha) 0%,
+    change-color($to-color, $alpha: $alpha) 100%
+  );
+}

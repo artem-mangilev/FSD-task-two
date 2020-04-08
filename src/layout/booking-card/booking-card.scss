@@ -1,7 +1,5 @@
-@import '../card/card.scss';
-
 .booking-card {
-  @extend .card;
+  @extend %card;
 
   &__header {
     display: flex;
@@ -16,16 +14,16 @@
   }
 
   &__number-sign {
-    @include subtitle-text;
+    @extend %subtitle-text;
     font-size: 14px;
   }
 
   &__room-number {
-    @include subtitle-text;
+    @extend %subtitle-text;
   }
 
   &__luxury {
-    @include label-text;
+    @extend %label-text;
     color: $primary-color;
   }
 
@@ -70,12 +68,13 @@
   }
 
   &__information-symbol {
+    @extend %rounded-border;
+
     display: flex;
     justify-content: center;
     align-items: center;
     @include size(20px, 20px);
     @include border($dark-shade-25);
-    @include rounded-border;
     color: $dark-shade-25;
 
     &::before {
@@ -85,7 +84,7 @@
   }
 
   &__total {
-    @include subtitle-text;
+    @extend %subtitle-text;
     align-items: baseline;
   }
 

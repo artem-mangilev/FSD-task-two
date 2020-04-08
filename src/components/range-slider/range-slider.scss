@@ -26,7 +26,7 @@ Build date: 2019-12-19 16:51:02
 
   // new
   margin-top: 3px;
-  @include body-text;
+  @extend %body-text;
   font-size: 12px;
   text-align: right;
 
