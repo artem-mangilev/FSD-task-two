@@ -1,24 +1,24 @@
-const path = require('path')
-const fs = require('fs')
+const { resolve, join } = require('path')
+const { readdirSync } = require('fs')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PATHS = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
+  src: join(__dirname, '../src'),
+  dist: join(__dirname, '../dist'),
 }
 
-const PAGES_FOLDER = path.join(PATHS.src, '/pages')
+const PAGES_FOLDER = join(PATHS.src, '/pages')
 
 const createHtmlWebpackPlugins = (pagesFolderPath) => {
   const pugFilesRegex = /\.pug$/
-  const pagesFolder = fs.readdirSync(pagesFolderPath)
+  const pagesFolder = readdirSync(pagesFolderPath)
   const pages = pagesFolder
     .map((pageFolder) => {
-      const pageFolderPath = path.join(pagesFolderPath, pageFolder)
-      return fs.readdirSync(pageFolderPath)
+      const pageFolderPath = join(pagesFolderPath, pageFolder)
+      return readdirSync(pageFolderPath)
     })
     .flat()
     .filter((file) => pugFilesRegex.test(file))
@@ -26,7 +26,7 @@ const createHtmlWebpackPlugins = (pagesFolderPath) => {
   return pages.map(
     (page) =>
       new HtmlWebpackPlugin({
-        template: path.join(pagesFolderPath, page.replace('.pug', ''), page),
+        template: join(pagesFolderPath, page.replace('.pug', ''), page),
         filename: page.replace('.pug', '.html'),
         chunks: [page.replace('.pug', '')],
       })
@@ -43,9 +43,9 @@ module.exports = {
   resolve: {
     alias: {
       '@': PATHS.src,
-      '@components': path.resolve(PATHS.src, 'components'),
-      '@layout': path.resolve(PATHS.src, 'layout'),
-      '@fonts': path.resolve(PATHS.src, 'fonts'),
+      '@components': resolve(PATHS.src, 'components'),
+      '@layout': resolve(PATHS.src, 'layout'),
+      '@fonts': resolve(PATHS.src, 'fonts'),
     },
   },
 
@@ -124,12 +124,12 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: path.join(PATHS.src, '/images'),
-        to: path.join(PATHS.dist, '/images'),
+        from: join(PATHS.src, '/images'),
+        to: join(PATHS.dist, '/images'),
       },
       {
-        from: path.join(PATHS.src, '/uploads'),
-        to: path.join(PATHS.dist, '/images'),
+        from: join(PATHS.src, '/uploads'),
+        to: join(PATHS.dist, '/images'),
       },
     ]),
     ...createHtmlWebpackPlugins(PAGES_FOLDER),
