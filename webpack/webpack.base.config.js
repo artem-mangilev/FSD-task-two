@@ -12,28 +12,22 @@ const PATHS = {
 
 const PAGES_FOLDER = join(PATHS.src, '/pages')
 
-const createHtmlWebpackPlugins = (pagesFolderPath) => {
-  const pugFilesRegex = /\.pug$/
-  const pagesFolder = readdirSync(pagesFolderPath)
-  const pages = pagesFolder
-    .map((pageFolder) => {
-      const pageFolderPath = join(pagesFolderPath, pageFolder)
-      return readdirSync(pageFolderPath)
-    })
-    .flat()
-    .filter((file) => pugFilesRegex.test(file))
-
-  return pages.map(
-    (page) =>
+// this code assumes that the page file has the same name as containing folder
+const createHtmlWebpackPlugins = (pagesFolderPath) =>
+  readdirSync(pagesFolderPath).map(
+    (pageFolder) =>
       new HtmlWebpackPlugin({
-        template: join(pagesFolderPath, page.replace('.pug', ''), page),
-        filename: page.replace('.pug', '.html'),
-        chunks: [page.replace('.pug', '')],
+        template: join(pagesFolderPath, pageFolder, `${pageFolder}.pug`),
+        filename: `${pageFolder}.html`,
+        chunks: [pageFolder],
       })
   )
-}
 
-const loadersForCSS = ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
+const loadersForCSS = [
+  'style-loader',
+  MiniCssExtractPlugin.loader,
+  'css-loader',
+]
 
 module.exports = {
   externals: {
