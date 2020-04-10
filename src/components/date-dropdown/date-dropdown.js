@@ -1,7 +1,6 @@
 import './date-dropdown.scss'
 
 import 'air-datepicker/dist/js/datepicker'
-import 'air-datepicker/dist/css/datepicker.css'
 
 class DateDropdown {
   constructor(dropdownComponent) {

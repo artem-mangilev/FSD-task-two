@@ -1,0 +1,266 @@
+@import '../../vendors/air-datepicker/datepicker-config';
+
+$datepickerDayCellSize: 40px;
+$datepickerWidth: 320px;
+$datepickerPadding: 30px 0 20px;
+
+$datepickerFontFamily: 'Montserrat';
+$datepickerFontSize: 12px;
+
+$datepickerTextColor: (
+  button: $dark-shade-50,
+  otherMonth: $dark-shade-25,
+  otherMonthInRange: $dark-shade-50,
+  disabled: $dark-shade-50,
+  currentDate: #fff,
+  common: $dark-shade-50,
+  dayNames: $primary-color,
+  navArrows: #9c9c9c,
+);
+
+$datepickerBG: (
+  selected: #5cc4ef,
+  selectedHover: darken(#5cc4ef, 5),
+  inRange: rgba(#5cc4ef, 0.1),
+  hover: #f0f0f0,
+);
+
+$datepickerNavigationHeight: auto;
+
+%otherMonth {
+  color: map_get($datepickerTextColor, otherMonth);
+
+  &.-disabled- {
+    color: map_get($datepickerTextColor, otherMonth);
+  }
+
+  &.-selected- {
+    color: #fff;
+    background: $primary-gradient;
+
+    &.-focus- {
+      background: $primary-gradient;
+    }
+  }
+
+  &.-in-range- {
+    background: $primary-gradient-25;
+    color: map_get($datepickerTextColor, otherMonth);
+
+    &.-focus- {
+      background: $primary-gradient-25;
+    }
+  }
+
+  &:empty {
+    background: none;
+    border: none;
+  }
+}
+
+@import '../../vendors/air-datepicker/datepicker.scss';
+
+.datepicker {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+@import '../../vendors/air-datepicker/cell.scss';
+
+/* Datepicker cells */
+
+.datepicker--cell-day {
+  // this didn't work for some reason
+  // @extend %rounded-border;
+
+  border-radius: 50%;
+
+  &.-current- {
+    background: $secondary-gradient;
+    font-weight: bold;
+
+    &.-focus- {
+      color: map_get($datepickerTextColor, currentDate);
+    }
+
+    &.-in-range- {
+      color: map_get($datepickerTextColor, common);
+      font-weight: normal;
+    }
+  }
+
+  &.-in-range- {
+    background: $primary-gradient-25;
+
+    &.-focus- {
+      background: $primary-gradient-25;
+      font-weight: normal;
+      color: map_get($datepickerTextColor, common);
+      border-radius: 0;
+    }
+  }
+
+  &.-disabled- {
+    &.-focus- {
+      color: #fff;
+    }
+  }
+
+  &.-range-from-,
+  &.-range-to-,
+  &.-selected-,
+  &.-focus- {
+    background: $primary-gradient;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  &.-range-from- {
+    z-index: 1;
+
+    &::after {
+      content: '';
+
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0 + 50%;
+      z-index: -1;
+      background: $primary-gradient-25;
+    }
+  }
+
+  &.-range-to- {
+    z-index: 1;
+
+    &::before {
+      content: '';
+
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0 + 50%;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: $primary-gradient-25;
+    }
+  }
+
+  &.-selected- {
+    &.-current- {
+      background: $primary-gradient;
+    }
+
+    &.-focus- {
+      background: $primary-gradient;
+    }
+  }
+}
+
+.datepicker--days-names {
+  flex-wrap: nowrap;
+  margin: 0;
+}
+
+.datepicker--day-name {
+  height: $datepickerDayCellSize;
+  font-weight: bold;
+  text-transform: none;
+  font-size: $datepickerFontSize;
+}
+
+.datepicker--cell-month,
+.datepicker--cell-year {
+  &.-focus- {
+    background: none;
+  }
+
+  &.-current- {
+    background: none;
+    color: $secondary-color;
+    font-weight: bold;
+
+    &.-focus- {
+      color: $secondary-color;
+    }
+  }
+
+  &.-selected- {
+    background: none;
+    color: $primary-color;
+    font-weight: bold;
+
+    &.-current- {
+      background: none;
+      color: $primary-color;
+    }
+
+    &.-focus- {
+      background: none;
+    }
+  }
+}
+
+.datepicker--cell-year {
+  &.-disabled-.-focus- {
+    color: map_get($datepickerTextColor, otherMonth);
+  }
+}
+
+@import '../../vendors/air-datepicker/navigation.scss';
+
+.datepicker--nav {
+  padding: 0;
+  border: none;
+}
+
+.datepicker--nav-action {
+  width: auto;
+  border-radius: 0;
+  color: $primary-color;
+
+  &:hover {
+    background: inherit;
+  }
+}
+
+.datepicker--nav-title {
+  @extend %subtitle-text;
+
+  &:hover {
+    background-color: inherit;
+  }
+}
+
+.datepicker--buttons {
+  justify-content: space-between;
+  padding: 0;
+  border: none;
+}
+
+.datepicker--button {
+  @extend .button;
+
+  flex: none;
+
+  &:hover {
+    background: none;
+  }
+
+  &[data-action='clear'] {
+    @extend .button_secondary-string;
+  }
+
+  &[data-action='apply'] {
+    @extend .button_primary-string;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
