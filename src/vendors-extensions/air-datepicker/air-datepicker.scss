@@ -15,14 +15,6 @@ $datepickerTextColor: (
   currentDate: #fff,
   common: $dark-shade-50,
   dayNames: $primary-color,
-  navArrows: #9c9c9c,
-);
-
-$datepickerBG: (
-  selected: #5cc4ef,
-  selectedHover: darken(#5cc4ef, 5),
-  inRange: rgba(#5cc4ef, 0.1),
-  hover: #f0f0f0,
 );
 
 $datepickerNavigationHeight: auto;
@@ -117,45 +109,30 @@ $datepickerNavigationHeight: auto;
     font-weight: bold;
   }
 
-  &.-range-from- {
-    z-index: 1;
-
-    &::after {
-      content: '';
-
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0 + 50%;
-      z-index: -1;
-      background: $primary-gradient-25;
-    }
-  }
-
+  &.-range-from-,
   &.-range-to- {
     z-index: 1;
 
     &::before {
       content: '';
-
       display: block;
       position: absolute;
-      top: 0;
-      right: 0 + 50%;
-      bottom: 0;
-      left: 0;
+      @include size(50%, 100%);
       z-index: -1;
       background: $primary-gradient-25;
     }
   }
 
-  &.-selected- {
-    &.-current- {
-      background: $primary-gradient;
-    }
+  &.-range-from-::before {
+    right: 0;
+  }
 
+  &.-range-to-::before {
+    left: 0;
+  }
+
+  &.-selected- {
+    &.-current-,
     &.-focus- {
       background: $primary-gradient;
     }

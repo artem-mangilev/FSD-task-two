@@ -46,39 +46,39 @@ $datepickerTransitionEase: ease !default;
 $datepickerTransitionOffset: 8px !default;
 
 // Objects
-// %otherMonth {
-//   color: map_get($datepickerTextColor, otherMonth);
+/* %otherMonth {
+  color: map_get($datepickerTextColor, otherMonth);
 
-//   &:hover {
-//     color: darken(map_get($datepickerTextColor, otherMonth), 10);
-//   }
+  &:hover {
+    color: darken(map_get($datepickerTextColor, otherMonth), 10);
+  }
 
-//   &.-disabled- {
-//     &.-focus- {
-//       color: map_get($datepickerTextColor, otherMonth);
-//     }
-//   }
+  &.-disabled- {
+    &.-focus- {
+      color: map_get($datepickerTextColor, otherMonth);
+    }
+  }
 
-//   &.-selected- {
-//     color: #fff;
-//     background: lighten(map_get($datepickerBG, selected), 15);
-//     &.-focus- {
-//       background: lighten(map_get($datepickerBG, selected), 10);
-//     }
-//   }
+  &.-selected- {
+    color: #fff;
+    background: lighten(map_get($datepickerBG, selected), 15);
+    &.-focus- {
+      background: lighten(map_get($datepickerBG, selected), 10);
+    }
+  }
   
-//   &.-in-range- {
-//     background-color: map_get($datepickerBG, inRange);
-//     color: darken(map_get($datepickerTextColor, otherMonth), 7);
+  &.-in-range- {
+    background-color: map_get($datepickerBG, inRange);
+    color: darken(map_get($datepickerTextColor, otherMonth), 7);
 
-//     &.-focus- {
-//       background-color: rgba(map_get($datepickerBG, inRange), .2);
-//     }
-//   }
+    &.-focus- {
+      background-color: rgba(map_get($datepickerBG, inRange), .2);
+    }
+  }
 
 
-//   &:empty {
-//     background: none;
-//     border: none;
-//   }
-// }
+  &:empty {
+    background: none;
+    border: none;
+  }
+} */
