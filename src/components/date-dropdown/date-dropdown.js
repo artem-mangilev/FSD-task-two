@@ -31,17 +31,17 @@ class DateDropdown {
     // find input element for date dropdown, figure out which dropdown's type it represents
     // and call apropriate initializer
     this.$datepickerContainer = this.$dropdownComponent.find(
-      '.date-dropdown__datepicker-container'
+      '.js-date-dropdown__datepicker-container'
     )
 
-    if (this.$datepickerContainer.hasClass('date-dropdown__single-input')) {
+    if (this.$datepickerContainer.hasClass('js-date-dropdown__single-input')) {
       this._initFilterDateDropdown()
     } else if (
-      this.$datepickerContainer.hasClass('date-dropdown__start-date-input')
+      this.$datepickerContainer.hasClass('js-date-dropdown__start-date-input')
     ) {
       this._initDateDropdown()
     } else if (
-      this.$datepickerContainer.hasClass('date-dropdown__inline-datepicker')
+      this.$datepickerContainer.hasClass('js-date-dropdown__inline-datepicker')
     ) {
       this._initInlineDatepicker()
     }
@@ -50,7 +50,7 @@ class DateDropdown {
   _initDateDropdown() {
     const $startDateInput = this.$datepickerContainer
     const $endDateInput = this.$dropdownComponent.find(
-      '.date-dropdown__end-date-input'
+      '.js-date-dropdown__end-date-input'
     )
 
     const handleSelection = (formattedDate, separator, date) => {
