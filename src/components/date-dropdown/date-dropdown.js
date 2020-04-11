@@ -51,14 +51,32 @@ class DateDropdown {
       '.date-dropdown__end-date-input'
     )
 
+    const handleSelection = (formattedDate, separator, date) => {
+      // in range, formattedDate is a string of 2 dates divided by multileDatesSeparator
+      // extract from & to dates from formattedDate
+      const [fromDate, toDate] = formattedDate.split(separator)
+      // write new state
+      this.formattedDateState = [fromDate, toDate]
+      // set range start date to actual input
+      this.$datepickerContainer.val(this.formattedDateState[0])
+      // set range end date to fake input
+      $endDateInput.val(this.formattedDateState[1])
+      // hide dropdown after applying the date
+      this.$datepickerContainer.data('datepicker').hide()
+      // call onSelect callback
+      if (this.onSelectCallback) {
+        this.onSelectCallback(...date)
+      }
+    }
+
     // use arrow function in order to use component's context
     const onSelect = (
       formattedDate,
       date,
-      { $datepicker, $el, opts: { multipleDatesSeparator } }
+      { $datepicker, opts: { multipleDatesSeparator } }
     ) => {
       // on each selecting, show current state of range start date
-      $el.val(this.formattedDateState[0])
+      this.$datepickerContainer.val(this.formattedDateState[0])
 
       // if it's not a range, just skip
       if (date.length !== 2) return
@@ -68,38 +86,12 @@ class DateDropdown {
         '.datepicker--button[data-action="apply"]'
       )
       // if apply button was clicked
-      $applyButton.click(() => {
-        // in range, formattedDate is a string of 2 dates divided by multileDatesSeparator
-        // extract from & to dates from formattedDate
-        const [fromDate, toDate] = formattedDate.split(multipleDatesSeparator)
-        // write new state
-        this.formattedDateState = [fromDate, toDate]
-        // set range start date to actual input
-        $el.val(this.formattedDateState[0])
-        // set range end date to fake input
-        $endDateInput.val(this.formattedDateState[1])
-        // hide dropdown after applying the date
-        $el.data('datepicker').hide()
-        // call onSelect callback
-        if (this.onSelectCallback) {
-          this.onSelectCallback(...date)
-        }
-      })
+      $applyButton.click(() =>
+        handleSelection(formattedDate, multipleDatesSeparator, date)
+      )
 
       if (this.isSelectDateMethodUsed) {
-        // in range, formattedDate is a string of 2 dates divided by multileDatesSeparator
-        // extract from & to dates from formattedDate
-        const [fromDate, toDate] = formattedDate.split(multipleDatesSeparator)
-        // write new state
-        this.formattedDateState = [fromDate, toDate]
-        // set range start date to actual input
-        $el.val(this.formattedDateState[0])
-        // set range end date to fake input
-        $endDateInput.val(this.formattedDateState[1])
-        // call onSelect callback
-        if (this.onSelectCallback) {
-          this.onSelectCallback(...date)
-        }
+        handleSelection(formattedDate, multipleDatesSeparator, date)
         // discard the isSelectDateMethodUsed flag
         this.isSelectDateMethodUsed = false
       }
