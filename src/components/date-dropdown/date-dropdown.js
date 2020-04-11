@@ -58,11 +58,11 @@ class DateDropdown {
       // write new state
       this.formattedDateState = [fromDate, toDate]
       // set range start date to actual input
-      this.$datepickerContainer.val(this.formattedDateState[0])
+      $startDateInput.val(this.formattedDateState[0])
       // set range end date to fake input
       $endDateInput.val(this.formattedDateState[1])
       // hide dropdown after applying the date
-      this.$datepickerContainer.data('datepicker').hide()
+      this.datepicker.hide()
       // call onSelect callback
       if (this.onSelectCallback) {
         this.onSelectCallback(...date)
@@ -118,7 +118,7 @@ class DateDropdown {
     // the first input represents the datepicker
     $startDateInput.datepicker(dateDropdownSettings)
     // the second input just refers to the first input
-    $endDateInput.click(() => $startDateInput.data('datepicker').show())
+    $endDateInput.click(() => this.datepicker.show())
 
     // add apply button to datepicker
     this._addButtons($startDateInput)
@@ -138,7 +138,7 @@ class DateDropdown {
     const onSelect = (
       formattedDate,
       date,
-      { $datepicker, $el, opts: { multipleDatesSeparator } }
+      { $datepicker, opts: { multipleDatesSeparator } }
     ) => {
       // on each selecting, show current state of from date.
       // concatenate dates
@@ -152,7 +152,7 @@ class DateDropdown {
         concatenatedFormattedDateState === multipleDatesSeparator
           ? ''
           : concatenatedFormattedDateState
-      $el.val(concatenatedFormattedDateState)
+      $filterDateInput.val(concatenatedFormattedDateState)
 
       // if it's not a range, just skip
       if (date.length !== 2) return
@@ -167,9 +167,9 @@ class DateDropdown {
           .toLowerCase()
           .split(multipleDatesSeparator)
         // show new date in input field
-        $el.val(formattedDate.toLowerCase())
+        $filterDateInput.val(formattedDate.toLowerCase())
         // hide dropdown after applying the date
-        $el.data('datepicker').hide()
+        this.datepicker.hide()
       })
 
       // clear state when clear button pressed.
@@ -222,6 +222,10 @@ class DateDropdown {
     this.$datepickerContainer
       .data('datepicker')
       .selectDate(this.initialRange.map((date) => new Date(date)))
+  }
+
+  get datepicker() {
+    return this.$datepickerContainer.data('datepicker')
   }
 
   onSelect(callback) {
