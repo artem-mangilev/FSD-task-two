@@ -41,6 +41,7 @@ class DateDropdown {
     } else if (
       this.$datepickerContainer.hasClass('date-dropdown__inline-datepicker')
     ) {
+      this._initInlineDatepicker()
     }
   }
 
@@ -135,9 +136,7 @@ class DateDropdown {
       // set this flag to check if selecting was triggered from code
       this.isSelectDateMethodUsed = true
 
-      $startDateInput
-        .data('datepicker')
-        .selectDate(this.initialRange.map((date) => new Date(date)))
+      this._setIninialRange()
     }
   }
 
@@ -204,6 +203,19 @@ class DateDropdown {
     this._addButtons($filterDateInput)
   }
 
+  _initInlineDatepicker() {
+    const $inlineDatepicker = this.$datepickerContainer
+
+    // call plugin on datepicker container
+    $inlineDatepicker.datepicker(this.commonSettings)
+
+    // set initial date
+    this.initialRange && this._setIninialRange()
+
+    // add apply button to datepicker
+    this._addButtons($inlineDatepicker)
+  }
+
   _addButtons($datepickerInput) {
     const applyButtonHtml =
       '<span class="datepicker--button" data-action="apply">Применить</span>'
@@ -212,6 +224,12 @@ class DateDropdown {
       .data('datepicker')
       .$datepicker.find('.datepicker--buttons')
     $buttons.append(applyButtonHtml)
+  }
+
+  _setIninialRange() {
+    this.$datepickerContainer
+      .data('datepicker')
+      .selectDate(this.initialRange.map((date) => new Date(date)))
   }
 
   onSelect(callback) {

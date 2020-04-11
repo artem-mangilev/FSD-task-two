@@ -12,7 +12,9 @@
     "infantsNumber": 1
   },
   "calendar": {
-    "inline": true
+    "inline": true,
+    "startDate": "2020-08-19",
+    "endDate": "2020-08-23"
   },
   "roomCard1": {
     "number": 888,
