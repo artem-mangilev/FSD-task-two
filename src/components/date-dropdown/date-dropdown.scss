@@ -27,11 +27,12 @@
     margin-bottom: 5px;
   }
 
-  &__input {
+  &__start-date-input,
+  &__end-date-input,
+  &__single-input {
     @extend %field;
 
     box-sizing: border-box;
-    width: 150px;
 
     &::placeholder {
       color: $dark-shade-75;
@@ -41,20 +42,25 @@
     &:hover {
       @extend %field_hovered-focused;
     }
+  }
 
-    &_single {
-      width: $medium-input-width;
-    }
+  &__start-date-input,
+  &__end-date-input {
+    width: $short-input-width;
+  }
 
-    &_inline {
-      @include size(max-content, max-content);
-      padding: 0;
+  &__single-input {
+    width: $medium-input-width;
+  }
+
+  &__inline-datepicker {
+    @include size(max-content, max-content);
+    padding: 0;
+    border: none;
+
+    &:focus,
+    &:hover {
       border: none;
-
-      &:focus,
-      &:hover {
-        border: none;
-      }
     }
   }
 }

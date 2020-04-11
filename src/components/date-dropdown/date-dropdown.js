@@ -8,12 +8,12 @@ class DateDropdown {
     this.commonSettings = {
       minDate: new Date(),
       navTitles: {
-        days: 'MM yyyy'
+        days: 'MM yyyy',
       },
       clearButton: true,
       offset: 5,
       prevHtml: '<i class="material-icons">arrow_back</i>',
-      nextHtml: '<i class="material-icons">arrow_forward</i>'
+      nextHtml: '<i class="material-icons">arrow_forward</i>',
     }
 
     // initialize state for input field/fields.
@@ -21,29 +21,35 @@ class DateDropdown {
     this.formattedDateState = ['', '']
 
     // jquerify DOM element
-    const $dropdownComponent = $(dropdownComponent)
+    this.$dropdownComponent = $(dropdownComponent)
 
     // get initial range from component
-    this.initialRange = $dropdownComponent.data('initial-range')
+    this.initialRange = this.$dropdownComponent.data('initial-range')
 
-    // check if this is a date dropdown or filter date dropdown
-    this.$filterDateInput = $dropdownComponent.find(
-      '.date-dropdown__input_single'
+    // find input element for date dropdown, figure out which dropdown's type it represents
+    // and call apropriate initializer
+    this.$datepickerContainer = this.$dropdownComponent.find(
+      '.date-dropdown__datepicker-container'
     )
-    if (this.$filterDateInput.length) {
-      this._initFilterDateDropdown()
-    } else {
-      // if there is no filter date input, then the component has from & to inputs
-      this.$fromDateInput = $dropdownComponent.find(
-        '.date-dropdown__input_from'
-      )
-      this.$toDateInput = $dropdownComponent.find('.date-dropdown__input_to')
 
+    if (this.$datepickerContainer.hasClass('date-dropdown__single-input')) {
+      this._initFilterDateDropdown()
+    } else if (
+      this.$datepickerContainer.hasClass('date-dropdown__start-date-input')
+    ) {
       this._initDateDropdown()
+    } else if (
+      this.$datepickerContainer.hasClass('date-dropdown__inline-datepicker')
+    ) {
     }
   }
 
   _initDateDropdown() {
+    const $startDateInput = this.$datepickerContainer
+    const $endDateInput = this.$dropdownComponent.find(
+      '.date-dropdown__end-date-input'
+    )
+
     // use arrow function in order to use component's context
     const onSelect = (
       formattedDate,
@@ -70,7 +76,7 @@ class DateDropdown {
         // set range start date to actual input
         $el.val(this.formattedDateState[0])
         // set range end date to fake input
-        this.$toDateInput.val(this.formattedDateState[1])
+        $endDateInput.val(this.formattedDateState[1])
         // hide dropdown after applying the date
         $el.data('datepicker').hide()
         // call onSelect callback
@@ -88,7 +94,7 @@ class DateDropdown {
         // set range start date to actual input
         $el.val(this.formattedDateState[0])
         // set range end date to fake input
-        this.$toDateInput.val(this.formattedDateState[1])
+        $endDateInput.val(this.formattedDateState[1])
         // call onSelect callback
         if (this.onSelectCallback) {
           this.onSelectCallback(...date)
@@ -107,40 +113,37 @@ class DateDropdown {
         // clear state
         this.formattedDateState = ['', '']
         // clear fake input
-        this.$toDateInput.val(this.formattedDateState[1])
+        $endDateInput.val(this.formattedDateState[1])
       })
     }
 
     const dateDropdownSettings = {
       ...this.commonSettings,
-      onSelect
+      onSelect,
     }
 
     // the first input represents the datepicker
-    this.$fromDateInput.datepicker(dateDropdownSettings)
+    $startDateInput.datepicker(dateDropdownSettings)
     // the second input just refers to the first input
-    this.$toDateInput.click(() => this.$fromDateInput.data('datepicker').show())
+    $endDateInput.click(() => $startDateInput.data('datepicker').show())
 
     // add apply button to datepicker
-    const $buttons = this.$fromDateInput
-      .data('datepicker')
-      .$datepicker.find('.datepicker--buttons')
-    $buttons.append(
-      '<span class="datepicker--button" data-action="apply">Применить</span>'
-    )
+    this._addButtons($startDateInput)
 
     // set initial range to dropdown it it presented
     if (this.initialRange) {
       // set this flag to check if selecting was triggered from code
       this.isSelectDateMethodUsed = true
 
-      this.$fromDateInput
+      $startDateInput
         .data('datepicker')
-        .selectDate(this.initialRange.map(date => new Date(date)))
+        .selectDate(this.initialRange.map((date) => new Date(date)))
     }
   }
 
   _initFilterDateDropdown() {
+    const $filterDateInput = this.$datepickerContainer
+
     const onSelect = (
       formattedDate,
       date,
@@ -191,19 +194,24 @@ class DateDropdown {
       ...this.commonSettings,
       multipleDatesSeparator: ' - ',
       dateFormat: 'd M',
-      onSelect
+      onSelect,
     }
 
     // call plugin on input
-    this.$filterDateInput.datepicker(filterDateDropdownSettings)
+    $filterDateInput.datepicker(filterDateDropdownSettings)
 
     // add apply button to datepicker
-    const $buttons = this.$filterDateInput
+    this._addButtons($filterDateInput)
+  }
+
+  _addButtons($datepickerInput) {
+    const applyButtonHtml =
+      '<span class="datepicker--button" data-action="apply">Применить</span>'
+
+    const $buttons = $datepickerInput
       .data('datepicker')
       .$datepicker.find('.datepicker--buttons')
-    $buttons.append(
-      '<span class="datepicker--button" data-action="apply">Применить</span>'
-    )
+    $buttons.append(applyButtonHtml)
   }
 
   onSelect(callback) {
