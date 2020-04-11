@@ -12,6 +12,8 @@ class DateDropdown {
       },
       clearButton: true,
       offset: 5,
+      range: true,
+      multipleDates: 2,
       prevHtml: '<i class="material-icons">arrow_back</i>',
       nextHtml: '<i class="material-icons">arrow_forward</i>',
     }

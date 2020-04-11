@@ -1,16 +1,24 @@
 mixin date-dropdown(...labels)
   - const hasTwoInputs = labels.length === 2
   - const [ startLabel, endLabel ] = labels
-  - const initialRange = (attributes.startDate && attributes.endDate) ? [ attributes.startDate, attributes.endDate ] : undefined
+  - const initialRange = (attributes.startDate && attributes.endDate) && [ attributes.startDate, attributes.endDate ]
 
   .date-dropdown(class!=attributes.class data-initial-range=initialRange)
     if (attributes.inline)
-      .date-dropdown__datepicker-container.date-dropdown__inline-datepicker(class='datepicker-here' data-range='true' data-multiple-dates='2')
+      .date-dropdown__datepicker-container.date-dropdown__inline-datepicker(class='datepicker-here')
     else
       label.date-dropdown__date
         h3.date-dropdown__label= startLabel
-        input.date-dropdown__datepicker-container(type='text' class='datepicker-here' class=`date-dropdown__${hasTwoInputs ? 'start-date-input' : 'single-input'}` readonly placeholder!=attributes.placeholder data-range='true' data-multiple-dates='2')
+        input.date-dropdown__datepicker-container(
+          type='text' 
+          class='datepicker-here' 
+          class=`date-dropdown__${hasTwoInputs ? 'start-date-input' : 'single-input'}` 
+          readonly 
+          placeholder!=attributes.placeholder)
       if hasTwoInputs
         label.date-dropdown__date
           h3.date-dropdown__label= endLabel
-          input.date-dropdown__end-date-input(type='text' readonly placeholder!=attributes.placeholder)
+          input.date-dropdown__end-date-input(
+            type='text' 
+            readonly 
+            placeholder!=attributes.placeholder)
