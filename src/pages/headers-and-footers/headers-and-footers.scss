@@ -1,0 +1,14 @@
+.headers-and-footers {
+  margin-top: 72px;
+  margin-bottom: 130px;
+
+  &__layout-component {
+    margin-bottom: 40px;
+    box-shadow: 0px 10px 20px $dark-shade-5;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+}

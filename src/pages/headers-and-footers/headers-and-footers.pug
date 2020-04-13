@@ -153,7 +153,7 @@ block body
     const simpleFooterText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'
 
   .headers-and-footers
-    +header(headerAuth)
-    +header(headerNonAuth)
-    +complex-footer(complexFooter)
-    +simple-footer(simpleFooterText)
+    +header(headerAuth).headers-and-footers__layout-component
+    +header(headerNonAuth).headers-and-footers__layout-component
+    +complex-footer(complexFooter).headers-and-footers__layout-component
+    +simple-footer(simpleFooterText).headers-and-footers__layout-component
