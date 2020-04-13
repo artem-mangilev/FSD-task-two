@@ -1,11 +1,14 @@
 extends /layout/base/base
+
 include /layout/header/header
+include /layout/complex-footer/complex-footer
 
 block settings
   - const dark = true
 
 block head 
   link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  link(href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet")
   title Headers And Footers
 
 block body
@@ -75,6 +78,78 @@ block body
       username: 'Cosmin Negoita'
     }
 
+    const complexFooter = {
+      aboutText: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+      categories: [
+        {
+          name: 'Navigation',
+          links: [
+            {
+              url: '#about',
+              text: 'About Us'
+            },
+            {
+              url: '#news',
+              text: 'News'
+            },
+            {
+              url: '#support',
+              text: 'Support'
+            },
+            {
+              url: '#products',
+              text: 'Products'
+            }
+          ]
+        },
+        {
+          name: 'About us',
+          links: [
+            {
+              url: '#who-we-are',
+              text: 'Who we are'              
+            },
+            {
+              url: '#our-team',
+              text: 'Our team'              
+            },
+            {
+              url: '#careers',
+              text: 'Careers'              
+            },
+            {
+              url: '#investors',
+              text: 'Investors'              
+            },
+          ]
+        },
+        {
+          name: 'Support',
+          links: [
+            {
+              url: '#doc',
+              text: 'Documentation'              
+            },
+            {
+              url: '#community',
+              text: 'Community'              
+            },
+            {
+              url: '#community',
+              text: 'Community'              
+            },                        
+          ]
+        }
+      ],
+      subscription: {
+        title: 'Subscribe to our newsletter',
+        text: 'Receive our latest news and promotions in your inbox!',
+        inputPlaceholder: 'Your email address'
+      },
+      copyrightText: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'
+    }
+
   .headers-and-footers
     +header(headerAuth)
     +header(headerNonAuth)
+    +complex-footer(complexFooter)
