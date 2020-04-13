@@ -1,0 +1,80 @@
+extends /layout/base/base
+include /layout/header/header
+
+block settings
+  - const dark = true
+
+block head 
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  title Headers And Footers
+
+block body
+  - 
+    const headerAuth = {
+      navigationLinks: [
+        {
+          url: '#home',
+          text: 'Home',
+          active: true          
+        },
+        {
+          url: '#about',
+          text: 'About Us',          
+        },
+        {
+          url: '#services',
+          text: 'Services',
+          expandable: true
+        },
+        {
+          url: '#careers',
+          text: 'Careers',          
+        },
+        {
+          url: '#news',
+          text: 'News',          
+        },
+        {
+          url: '#doc',
+          text: 'Documentation',          
+        },
+      ],
+      loginButtonText: 'Login',
+      registerButtonText: 'Register'
+    }
+
+    const headerNonAuth = {
+      navigationLinks: [
+        {
+          url: '#home',
+          text: 'Home',
+          active: true          
+        },
+        {
+          url: '#about',
+          text: 'About Us',          
+        },
+        {
+          url: '#services',
+          text: 'Services',
+          expandable: true
+        },
+        {
+          url: '#careers',
+          text: 'Careers',          
+        },
+        {
+          url: '#news',
+          text: 'News',          
+        },
+        {
+          url: '#doc',
+          text: 'Documentation',          
+        },
+      ],
+      username: 'Cosmin Negoita'
+    }
+
+  .headers-and-footers
+    +header(headerAuth)
+    +header(headerNonAuth)

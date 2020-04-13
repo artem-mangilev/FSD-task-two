@@ -49,6 +49,7 @@ module.exports = {
     cards: './pages/cards/cards.js',
     'colors-and-text': './pages/colors-and-text/colors-and-text.js',
     'form-elements': './pages/form-elements/form-elements.js',
+    'headers-and-footers': './pages/headers-and-footers/headers-and-footers.js',
   },
 
   output: {
