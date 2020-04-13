@@ -1,0 +1,55 @@
+.header {
+  // this is for correct displaying buttons with gradient rounded border.
+  // TODO: find better solution
+  position: relative;
+  z-index: 0;
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  @include size(100%, 70px);
+  padding: 0 140px;
+  background-color: #fff;
+
+  &__navigation {
+    margin-left: auto;
+  }
+
+  &__nav-link {
+    margin-right: 30px;
+
+    &_active:link {
+      color: $dark-shade-75;
+      font-weight: bold;
+    }
+
+    &_expandable {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 20px;
+
+      &::after {
+        @extend %material-icons;
+        content: 'expand_more';
+      }
+    }
+  }
+
+  &__username {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    height: 30px;
+    color: $dark-shade-50;
+    border-left: 1px solid $dark-shade-10;
+  }
+
+  &__btn {
+    height: 34px;
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

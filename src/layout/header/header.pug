@@ -1,0 +1,19 @@
+include /components/logo/logo
+include /components/link/link
+include /components/button/button
+
+mixin header({ navigationLinks, loginButtonText, registerButtonText, username })
+  .header
+    +logo(true).header__logo
+    .header__navigation
+      each link in navigationLinks
+        +link(link.url)(
+          class=link.active ? 'header__nav-link_active' : ''
+          class=link.expandable ? 'header__nav-link_expandable' : ''
+        ).header__nav-link= link.text
+    if username
+      span.header__username= username
+    else
+      .header__buttons
+        +button('secondary', loginButtonText).header__btn
+        +button('primary', registerButtonText).header__btn
