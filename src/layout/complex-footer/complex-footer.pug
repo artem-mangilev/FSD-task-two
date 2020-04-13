@@ -5,7 +5,7 @@ include /components/link/link
 include /components/text-field/text-field
 
 mixin complex-footer({ aboutText, categories, subscription, copyrightText })
-  .complex-footer
+  .complex-footer&attributes(attributes)
     .complex-footer__main-content
       .complex-footer__about
         +logo(true).complex-footer__logo

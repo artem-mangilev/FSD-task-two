@@ -3,7 +3,7 @@ include /components/link/link
 include /components/button/button
 
 mixin header({ navigationLinks, loginButtonText, registerButtonText, username })
-  .header
+  .header&attributes(attributes)
     +logo(true).header__logo
     .header__navigation
       each link in navigationLinks

@@ -3,7 +3,7 @@ include /components/text/text
 include /components/social-buttons/social-buttons
 
 mixin simple-footer(text)
-  .simple-footer
+  .simple-footer&attributes(attributes)
     .simple-footer__content
       +logo(true).simple-footer__logo
       +text.simple-footer__text= text
