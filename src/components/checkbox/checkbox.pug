@@ -1,6 +1,7 @@
 mixin checkbox(text, description)
   label.checkbox(class!=attributes.class)
-    input.checkbox__button(type='checkbox')(
+    input.checkbox__button(
+      type='checkbox'
       id!=attributes.id
       name!=attributes.name
       value!=attributes.value
