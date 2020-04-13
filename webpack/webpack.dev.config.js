@@ -13,7 +13,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     overlay: {
       warnings: true,
       errors: true
-    }
+    },
+    stats: 'errors-warnings'
   },
   
   plugins: [
