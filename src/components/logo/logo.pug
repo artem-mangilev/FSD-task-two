@@ -1,0 +1,7 @@
+mixin logo(colored = false)
+  .logo&attributes(attributes)
+    if colored
+      img.logo__image(src='/images/logo-colored.svg')
+      img.logo__text(src='/images/logo-text.svg')
+    else
+      img.logo__image(src='/images/logo-gray.svg')

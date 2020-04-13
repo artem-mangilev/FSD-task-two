@@ -1,3 +1,5 @@
+include /components/logo/logo
+
 block settings
 
 doctype html
@@ -7,5 +9,5 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     block head
   body.base(class=dark && 'base_dark')
-    img.base__logo(src='/images/logo.svg')
+    +logo(class='base__logo')
     block body

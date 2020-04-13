@@ -1,0 +1,9 @@
+.logo {
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  &__text {
+    margin-left: 12.5px;
+  }
+}
