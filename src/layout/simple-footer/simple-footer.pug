@@ -1,0 +1,10 @@
+include /components/logo/logo
+include /components/text/text
+include /components/social-buttons/social-buttons
+
+mixin simple-footer(text)
+  .simple-footer
+    .simple-footer__content
+      +logo(true).simple-footer__logo
+      +text.simple-footer__text= text
+      +social-buttons.simple-footer__social-buttons

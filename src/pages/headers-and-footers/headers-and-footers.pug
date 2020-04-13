@@ -2,6 +2,7 @@ extends /layout/base/base
 
 include /layout/header/header
 include /layout/complex-footer/complex-footer
+include /layout/simple-footer/simple-footer
 
 block settings
   - const dark = true
@@ -149,7 +150,10 @@ block body
       copyrightText: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'
     }
 
+    const simpleFooterText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'
+
   .headers-and-footers
     +header(headerAuth)
     +header(headerNonAuth)
     +complex-footer(complexFooter)
+    +simple-footer(simpleFooterText)
