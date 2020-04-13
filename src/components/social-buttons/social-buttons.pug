@@ -1,0 +1,10 @@
+include /components/link/link
+
+mixin social-buttons
+  .social-buttons&attributes(attributes)
+    +link('#twitter').social-buttons__btn
+      i.fab.fa-twitter.social-buttons__icon
+    +link('#facebook').social-buttons__btn
+      i.fab.fa-facebook-square.social-buttons__icon
+    +link('#instagram').social-buttons__btn
+      i.fab.fa-instagram.social-buttons__icon
