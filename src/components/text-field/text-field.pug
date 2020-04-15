@@ -1,3 +1,5 @@
+include /components/label/label
+
 //- types:
 //-   - default
 //-   - masked-date
@@ -6,7 +8,7 @@
 mixin text-field({ label = null, type = 'default', uikitMode = null })
   label.text-field(class=`text-field_${type}`)
     if label
-      h3.text-field__label= label
+      +label.text-field__label= label
     if uikitMode
       span.text-field__uikit-state= attributes.autofocus ? 'hover / focus' : 'default'
     input.text-field__input(type='text' data-mask-placeholder= (type === 'masked-date' && attributes.placeholder))&attributes(attributes)

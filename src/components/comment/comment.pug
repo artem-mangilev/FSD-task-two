@@ -1,4 +1,5 @@
 include ../like-button/like-button
+include ../text/text
 
 mixin comment({ authorName, publishedDate, avatarUrl, likes, isLiked, commentText })
   .comment
@@ -9,4 +10,4 @@ mixin comment({ authorName, publishedDate, avatarUrl, likes, isLiked, commentTex
         time.comment__published-date= publishedDate
     .comment__comment-info
       +like-button(likes, isLiked).comment__like-button
-      p.comment__text= commentText
+      +text.comment__text= commentText

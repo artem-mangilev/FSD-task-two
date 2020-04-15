@@ -1,5 +1,7 @@
 import './pagination.scss'
 
+import '@components/text/text'
+
 import 'paginationjs/dist/pagination'
 
 $(document).ready(() => {

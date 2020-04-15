@@ -96,21 +96,21 @@ block body
         +checkbox-list(checkboxList.title, checkboxList.checkboxes, checkboxList.expanded)
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label= radio.title
+        +label.form-elements__label= radio.title
         +radio(radio.name, radio.buttons, radio.checked).form-elements__radio
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label= toggle.title
+        +label.form-elements__label= toggle.title
         each toggleBtn in toggle.items
           +toggle(toggleBtn.content)(checked=toggleBtn.checked).form-elements__toggle
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label= like.title
+        +label.form-elements__label= like.title
         each likeBtn in like.items
           +like-button(likeBtn.likesNumber, likeBtn.liked).form-elements__like-button
 
       .form-elements__element
-        h3.form-elements__label= rating.title
+        +label.form-elements__label= rating.title
         each rate in rating.items
           +rating(rate).form-elements__rating
 
@@ -119,12 +119,12 @@ block body
         +range-slider(rangeSlider)
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label= button.title
+        +label.form-elements__label= button.title
         each btn in button.items
           +button(btn.type, btn.content, btn.hovered).form-elements__button
 
       .form-elements__element
-        h3.form-elements__label= pagination.title
+        +label.form-elements__label= pagination.title
         +pagination(pagination.description, pagination.testMode)
 
     .form-elements__elements-container

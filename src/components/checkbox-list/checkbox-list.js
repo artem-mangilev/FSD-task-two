@@ -1,5 +1,6 @@
 import '../checkbox/checkbox'
 
+import '@components/label/label'
 import './checkbox-list.scss'
 
 $(document).ready(() => {

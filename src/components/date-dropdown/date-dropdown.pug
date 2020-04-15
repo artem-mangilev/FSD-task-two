@@ -1,3 +1,5 @@
+include ../label/label
+
 mixin date-dropdown(...labels)
   - const hasTwoInputs = labels.length === 2
   - const [ startLabel, endLabel ] = labels
@@ -11,7 +13,7 @@ mixin date-dropdown(...labels)
         class='datepicker-here')
     else
       label.date-dropdown__date
-        h3.date-dropdown__label= startLabel
+        +label.date-dropdown__label= startLabel
         input.date-dropdown__datepicker-container(
           type='text' 
           class='datepicker-here' 
@@ -22,7 +24,7 @@ mixin date-dropdown(...labels)
           placeholder!=attributes.placeholder)
       if hasTwoInputs
         label.date-dropdown__date
-          h3.date-dropdown__label= endLabel
+          +label.date-dropdown__label= endLabel
           input.date-dropdown__end-date-input(
             type='text' 
             readonly 
