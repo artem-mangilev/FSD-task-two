@@ -3,6 +3,7 @@ include /components/text/text
 include /components/label/label
 include /components/link/link
 include /components/text-field/text-field
+include /components/social-buttons/social-buttons
 
 mixin complex-footer({ aboutText, categories, subscription, copyrightText })
   .complex-footer&attributes(attributes)
@@ -23,10 +24,4 @@ mixin complex-footer({ aboutText, categories, subscription, copyrightText })
         +text-field({ type: 'subscription' })(placeholder=subscription.inputPlaceholder)
     .complex-footer__footer
       +text.complex-footer__copyright= copyrightText
-      .complex-footer__social-buttons
-        +link('#twitter').complex-footer__icon-link
-          i.fab.fa-twitter.complex-footer__icon
-        +link('#facebook').complex-footer__icon-link
-          i.fab.fa-facebook-square.complex-footer__icon
-        +link('#instagram').complex-footer__icon-link
-          i.fab.fa-instagram.complex-footer__icon
+      +social-buttons.complex-footer__social-buttons
