@@ -48,11 +48,10 @@ mixin booking-card({ roomNumber, price = 0, discount = 0, services = 0, addition
         b.booking-card__price-number
         span.booking-card__period  #{periodText}
     +date-dropdown(bookingDateDropdown.startLabel, bookingDateDropdown.endLabel)(
-      class='booking-card__date-dropdown'
       placeholder=bookingDateDropdown.placeholder
       startDate=arrivalDate
       endDate=departureDate
-    )
+    ).booking-card__date-dropdown
     +dropdown(guestsDropdown.meta, guests)
     .booking-card__price-details
       p.booking-card__price-per-days

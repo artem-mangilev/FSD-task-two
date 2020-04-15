@@ -35,11 +35,10 @@ block body
     .cards__cards-col
       .cards__card
         +date-dropdown()(
-          class='cards__date-dropdown'
           inline=calendar.inline
           startDate=calendar.startDate
           endDate=calendar.endDate
-        )
+        ).cards__date-dropdown
 
       .cards__card
         +room-card(roomCard1)

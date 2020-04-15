@@ -8,7 +8,5 @@ mixin comment({ authorName, publishedDate, avatarUrl, likes, isLiked, commentTex
         span.comment__author-name= authorName
         time.comment__published-date= publishedDate
     .comment__comment-info
-      +like-button(likes, isLiked)(
-        class='comment__like-button'
-      )
+      +like-button(likes, isLiked).comment__like-button
       p.comment__text= commentText

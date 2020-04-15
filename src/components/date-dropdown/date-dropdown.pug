@@ -3,7 +3,7 @@ mixin date-dropdown(...labels)
   - const [ startLabel, endLabel ] = labels
   - const initialRange = (attributes.startDate && attributes.endDate) && [ attributes.startDate, attributes.endDate ]
 
-  .date-dropdown(class='js-date-dropdown' class!=attributes.class data-initial-range=initialRange)
+  .date-dropdown.js-date-dropdown(class!=attributes.class data-initial-range=initialRange)
     if (attributes.inline)
       .date-dropdown__datepicker-container.date-dropdown__inline-datepicker(
         class='js-date-dropdown__datepicker-container' 

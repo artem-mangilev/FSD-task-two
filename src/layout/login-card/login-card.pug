@@ -17,14 +17,11 @@ mixin login-card
       .login-card__input-block
         +text-field({})(
           placeholder= emailInput.placeholder
-          class="login-card__input"
-        )
+        ).login-card__input
         +text-field({})(
           placeholder= passwordInput.placeholder
         )
-      +button(loginButton.type, loginButton.content)(
-        class="login-card__button"
-      )
+      +button(loginButton.type, loginButton.content).login-card__button
     .login-card__register
       span.login-card__register-text= register.text
       +button(register.button.type, register.button.content)

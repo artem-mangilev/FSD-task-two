@@ -24,16 +24,11 @@ mixin registration-card
       .registration-card__input-block
         +text-field({})(
           placeholder=firstNameInput.placeholder
-          class="registration-card__input"
-        )
+        ).registration-card__input
         +text-field({})(
           placeholder=lastNameInput.placeholder
-          class="registration-card__input"
-        )
-        +radio(sexRadioButtons.name, sexRadioButtons.buttons, sexRadioButtons.checked)(
-          class="registration-card__radio"
-        )
-
+        ).registration-card__input
+        +radio(sexRadioButtons.name, sexRadioButtons.buttons, sexRadioButtons.checked).registration-card__radio
 
       .registration-card__input-block
         +text-field(birthdayInput)(
@@ -43,17 +38,13 @@ mixin registration-card
       .registration-card__input-block
         +text-field(loginDataEmailInput)(
           placeholder=loginDataEmailInput.placeholder
-          class="registration-card__input"
-        )
+        ).registration-card__input
         +text-field({})(
           placeholder=loginDataPasswordInput.placeholder
-          class="registration-card__input"
-        )
+        ).registration-card__input
         +toggle(specialOffersToggle.content)
 
-      +button(nextStepButton.type, nextStepButton.content)(
-        class="registration-card__button"
-      )
+      +button(nextStepButton.type, nextStepButton.content).registration-card__button
       .registration-card__login
         span.registration-card__login-text= login.text
         +button(login.button.type, login.button.content)

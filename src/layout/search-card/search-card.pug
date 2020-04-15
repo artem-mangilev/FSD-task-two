@@ -15,9 +15,6 @@ mixin search-card
     h1.search-card__title= title
     +date-dropdown(dateDropdown.startLabel, dateDropdown.endLabel)(
       placeholder=dateDropdown.placeholder
-      class='search-card__date-dropdown'
-    )
-    +dropdown(dropdown.meta, dropdown.items)(
-      class='search-card__dropdown'
-    )
+    ).search-card__date-dropdown
+    +dropdown(dropdown.meta, dropdown.items).search-card__dropdown
     +button(button.type, button.text)

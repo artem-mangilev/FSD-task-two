@@ -34,9 +34,5 @@ mixin dropdown(meta, items)
                 button.dropdown__button.dropdown__increment-button +
         if meta.type === 'item-quantity-applied'      
           .dropdown__menu-buttons
-            +button('secondary-string', 'очистить')(
-              class='dropdown__clear-button'
-            )
-            +button('primary-string', 'применить')(
-              class='dropdown__apply-button'
-            )
+            +button('secondary-string', 'очистить').dropdown__clear-button
+            +button('primary-string', 'применить').dropdown__apply-button
