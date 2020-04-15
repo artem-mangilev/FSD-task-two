@@ -121,7 +121,7 @@ block body
       .form-elements__element.form-elements__element_big-bottom-margin
         +label.form-elements__label= button.title
         each btn in button.items
-          +button(btn.type, btn.content, btn.hovered).form-elements__button
+          +button(btn.type, btn.hovered).form-elements__button= btn.content
 
       .form-elements__element
         +label.form-elements__label= pagination.title

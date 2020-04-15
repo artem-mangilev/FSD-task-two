@@ -15,5 +15,5 @@ mixin header({ navigationLinks, loginButtonText, registerButtonText, username })
       span.header__username= username
     else
       .header__buttons
-        +button('secondary', loginButtonText).header__btn
-        +button('primary', registerButtonText).header__btn
+        +button('secondary').header__btn= loginButtonText
+        +button('primary').header__btn= registerButtonText

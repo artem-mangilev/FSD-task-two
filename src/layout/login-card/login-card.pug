@@ -21,7 +21,7 @@ mixin login-card
         +text-field({})(
           placeholder= passwordInput.placeholder
         )
-      +button(loginButton.type, loginButton.content).login-card__button
+      +button(loginButton.type).login-card__button= loginButton.content
     .login-card__register
       span.login-card__register-text= register.text
-      +button(register.button.type, register.button.content)
+      +button(register.button.type)= register.button.content
