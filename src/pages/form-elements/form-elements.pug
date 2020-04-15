@@ -43,15 +43,15 @@ block body
       dateDropdown,
       checkboxList,
       rangeSlider,
-      buttonList,
+      button,
       pagination,
       bulletList,
-      ratingList,
+      rating,
       features,
-      toggles,
+      toggle,
       comment,
       radio,
-      likes  
+      like
     } = require('./form-elements.json')
 
   .form-elements
@@ -96,30 +96,30 @@ block body
         +checkbox-list(checkboxList.title, checkboxList.checkboxes, checkboxList.expanded)
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label radio buttons
+        h3.form-elements__label= radio.title
         +radio(radio.name, radio.buttons, radio.checked)(
           class='form-elements__radio'
         )
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label toggle
-        each toggle in toggles
-          +toggle(toggle.content)(
+        h3.form-elements__label= toggle.title
+        each toggleBtn in toggle.items
+          +toggle(toggleBtn.content)(
             class='form-elements__toggle'
-            checked=toggle.checked
+            checked=toggleBtn.checked
           )
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label like button
-        each like in likes
-          +like-button(like.likesNumber, like.liked)(
+        h3.form-elements__label= like.title
+        each likeBtn in like.items
+          +like-button(likeBtn.likesNumber, likeBtn.liked)(
             class='form-elements__like-button'
           )
 
       .form-elements__element
-        h3.form-elements__label rate button
-        each rating in ratingList
-          +rating(rating)(
+        h3.form-elements__label= rating.title
+        each rate in rating.items
+          +rating(rate)(
             class='form-elements__rating'
           )
 
@@ -128,14 +128,14 @@ block body
         +range-slider(rangeSlider)
 
       .form-elements__element.form-elements__element_big-bottom-margin
-        h3.form-elements__label buttons
-        each button in buttonList
-          +button(button.type, button.content, button.hovered)(
+        h3.form-elements__label= button.title
+        each btn in button.items
+          +button(btn.type, btn.content, btn.hovered)(
             class='form-elements__button'
           )
 
       .form-elements__element
-        h3.form-elements__label pagination
+        h3.form-elements__label= pagination.title
         +pagination(pagination.description, pagination.testMode)
 
     .form-elements__elements-container

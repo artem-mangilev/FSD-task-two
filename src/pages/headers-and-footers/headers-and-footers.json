@@ -1,0 +1,137 @@
+{
+  "headerAuth": {
+    "navigationLinks": [
+      {
+        "url": "#home",
+        "text": "Home",
+        "active": true
+      },
+      {
+        "url": "#about",
+        "text": "About Us"
+      },
+      {
+        "url": "#services",
+        "text": "Services",
+        "expandable": true
+      },
+      {
+        "url": "#careers",
+        "text": "Careers"
+      },
+      {
+        "url": "#news",
+        "text": "News"
+      },
+      {
+        "url": "#doc",
+        "text": "Documentation"
+      }
+    ],
+    "loginButtonText": "Login",
+    "registerButtonText": "Register"
+  },
+  "headerNonAuth": {
+    "navigationLinks": [
+      {
+        "url": "#home",
+        "text": "Home",
+        "active": true
+      },
+      {
+        "url": "#about",
+        "text": "About Us"
+      },
+      {
+        "url": "#services",
+        "text": "Services",
+        "expandable": true
+      },
+      {
+        "url": "#careers",
+        "text": "Careers"
+      },
+      {
+        "url": "#news",
+        "text": "News"
+      },
+      {
+        "url": "#doc",
+        "text": "Documentation"
+      }
+    ],
+    "username": "Cosmin Negoita"
+  },
+  "complexFooter": {
+    "aboutText": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+    "categories": [
+      {
+        "name": "Navigation",
+        "links": [
+          {
+            "url": "#about",
+            "text": "About Us"
+          },
+          {
+            "url": "#news",
+            "text": "News"
+          },
+          {
+            "url": "#support",
+            "text": "Support"
+          },
+          {
+            "url": "#products",
+            "text": "Products"
+          }
+        ]
+      },
+      {
+        "name": "About us",
+        "links": [
+          {
+            "url": "#who-we-are",
+            "text": "Who we are"
+          },
+          {
+            "url": "#our-team",
+            "text": "Our team"
+          },
+          {
+            "url": "#careers",
+            "text": "Careers"
+          },
+          {
+            "url": "#investors",
+            "text": "Investors"
+          }
+        ]
+      },
+      {
+        "name": "Support",
+        "links": [
+          {
+            "url": "#doc",
+            "text": "Documentation"
+          },
+          {
+            "url": "#community",
+            "text": "Community"
+          },
+          {
+            "url": "#community",
+            "text": "Community"
+          }
+        ]
+      }
+    ],
+    "subscription": {
+      "title": "Subscribe to our newsletter",
+      "text": "Receive our latest news and promotions in your inbox!",
+      "inputPlaceholder": "Your email address"
+    },
+    "copyrightText": "Copyright © 2018 Toxin UI Kit. All rights reserved."
+  },
+
+  "simpleFooterText": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
+}

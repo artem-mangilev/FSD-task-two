@@ -126,6 +126,7 @@
     "expanded": true
   },
   "radio": {
+    "title": "radio buttons",
     "name": "sex",
     "buttons": [
       {
@@ -139,26 +140,35 @@
     ],
     "checked": "woman"
   },
-  "toggles": [
-    {
-      "content": "Получать спецпредложения",
-      "checked": true
-    },
-    {
-      "content": "Получать спецпредложения"
-    }
-  ],
-  "likes": [
-    {
-      "likesNumber": 2,
-      "liked": false
-    },
-    {
-      "likesNumber": 12,
-      "liked": true
-    }
-  ],
-  "ratingList": [4, 5],
+  "toggle": {
+    "title": "toggle",
+    "items": [
+      {
+        "content": "Получать спецпредложения",
+        "checked": true
+      },
+      {
+        "content": "Получать спецпредложения"
+      }
+    ]
+  },
+  "like": {
+    "title": "like button",
+    "items": [
+      {
+        "likesNumber": 2,
+        "liked": false
+      },
+      {
+        "likesNumber": 12,
+        "liked": true
+      }
+    ]
+  },
+  "rating": {
+    "title": "rate button",
+    "items": [4, 5]
+  },
   "rangeSlider": {
     "title": "range slider",
     "min": 0,
@@ -166,39 +176,43 @@
     "from": 5000,
     "to": 10000
   },
-  "buttonList": [
-    {
-      "type": "primary",
-      "content": "click me"
-    },
-    {
-      "type": "primary",
-      "content": "click me",
-      "hovered": true
-    },
-    {
-      "type": "secondary",
-      "content": "click me"
-    },
-    {
-      "type": "secondary",
-      "content": "click me",
-      "hovered": true
-    },
-    {
-      "type": "primary-string",
-      "content": "click me"
-    },
-    {
-      "type": "secondary-string",
-      "content": "click me"
-    },
-    {
-      "type": "action",
-      "content": "перейти к оплате"
-    }
-  ],
+  "button": {
+    "title": "buttons",
+    "items": [
+      {
+        "type": "primary",
+        "content": "click me"
+      },
+      {
+        "type": "primary",
+        "content": "click me",
+        "hovered": true
+      },
+      {
+        "type": "secondary",
+        "content": "click me"
+      },
+      {
+        "type": "secondary",
+        "content": "click me",
+        "hovered": true
+      },
+      {
+        "type": "primary-string",
+        "content": "click me"
+      },
+      {
+        "type": "secondary-string",
+        "content": "click me"
+      },
+      {
+        "type": "action",
+        "content": "перейти к оплате"
+      }
+    ]
+  },
   "pagination": {
+    "title": "pagination",
     "description": "1 – 12 из 100+ вариантов аренды",
     "testMode": true
   },
