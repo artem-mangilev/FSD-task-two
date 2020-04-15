@@ -1,5 +1,6 @@
 extends /layout/base/base
 
+include /components/label/label
 include /components/text-field/text-field
 include /components/dropdown/dropdown
 include /components/range-slider/range-slider
@@ -154,7 +155,8 @@ block body
 
     .form-elements__elements-container
       .form-elements__element.form-elements__element_small-top-margin
-        +bullet-list(bulletList.items, bulletList.name)
+        +label.form-elements__label= bulletList.name
+        +bullet-list(bulletList.items)
 
     .form-elements__elements-container
       .form-elements__element

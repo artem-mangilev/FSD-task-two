@@ -1,5 +1,6 @@
 import '@layout/base/base'
 
+import '@components/label/label'
 import '@components/text-field/text-field'
 import '@components/dropdown/dropdown'
 import '@components/like-button/like-button'
