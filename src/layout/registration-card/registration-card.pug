@@ -3,49 +3,49 @@ include /components/radio/radio
 include /components/toggle/toggle
 include /components/button/button
 
-mixin registration-card
+mixin registration-card({ title, firstNameInputPlaceholder, lastNameInputPlaceholder, birthdayInputLabel, loginDataEmailInputPlaceholder, loginDataPasswordInputPlaceholder, specialOffersToggleText, nextStepButtonText, loginText, loginButtonText } = {})
   -
     const {
-      title,
-      firstNameInput,
-      lastNameInput,
+      title: titleDefault,
+      firstNameInput: firstNameInputDefault,
+      lastNameInput: lastNameInputDefault,
       sexRadioButtons,
-      birthdayInput,
-      loginDataEmailInput,
-      loginDataPasswordInput,
-      specialOffersToggle,
-      nextStepButton,
-      login
+      birthdayInput: birthdayInputDefault,
+      loginDataEmailInput: loginDataEmailInputDefault,
+      loginDataPasswordInput: loginDataPasswordInputDefault,
+      specialOffersToggle: specialOffersToggleDefault,
+      nextStepButton: nextStepButtonDefault,
+      login: loginDefault
     } = require('@layout/registration-card/registration-card.json')
 
   .registration-card
-    h1.registration-card__title= title
+    h1.registration-card__title= title ? title : titleDefault
     form.registration-card__form
       .registration-card__input-block
         +text-field({})(
-          placeholder=firstNameInput.placeholder
+          placeholder=firstNameInputPlaceholder ? firstNameInputPlaceholder : firstNameInputDefault.placeholder
         ).registration-card__input
         +text-field({})(
-          placeholder=lastNameInput.placeholder
+          placeholder=lastNameInputPlaceholder ? lastNameInputPlaceholder : lastNameInputDefault.placeholder
         ).registration-card__input
         +radio(sexRadioButtons.name, sexRadioButtons.buttons, sexRadioButtons.checked).registration-card__radio
 
       .registration-card__input-block
-        +text-field(birthdayInput)(
-          placeholder=birthdayInput.placeholder
+        +text-field({ label: (birthdayInputLabel ? birthdayInputLabel : birthdayInputDefault.label), type: birthdayInputDefault.type })(
+          placeholder=birthdayInputDefault.placeholder
         )
 
       .registration-card__input-block
-        +text-field(loginDataEmailInput)(
-          placeholder=loginDataEmailInput.placeholder
+        +text-field({ label: loginDataEmailInput ? loginDataEmailInput.label : loginDataEmailInputDefault.label })(
+          placeholder=loginDataEmailInputPlaceholder ? loginDataEmailInputPlaceholder : loginDataEmailInputDefault.placeholder
         ).registration-card__input
         +text-field({})(
-          placeholder=loginDataPasswordInput.placeholder
+          placeholder=loginDataPasswordInputPlaceholder ? loginDataPasswordInputPlaceholder : loginDataEmailInputDefault.placeholder
         ).registration-card__input
-        +toggle(specialOffersToggle.content)
+        +toggle(specialOffersToggleText ? specialOffersToggleText : specialOffersToggleDefault.content)
 
-      +button(nextStepButton.type).registration-card__button= nextStepButton.content
+      +button(nextStepButtonDefault.type).registration-card__button= nextStepButtonText ? nextStepButtonText : nextStepButtonDefault.content
       .registration-card__login
-        span.registration-card__login-text= login.text
-        +button(login.button.type)= login.button.content
+        span.registration-card__login-text= loginText ? loginText : loginDefault.text
+        +button(loginDefault.button.type)= loginButtonText ? loginButtonText : loginDefault.button.content
 

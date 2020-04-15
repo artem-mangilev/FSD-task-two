@@ -1,27 +1,27 @@
 include /components/text-field/text-field
 include /components/button/button
 
-mixin login-card
+mixin login-card({ title, emailInputPlaceholder, passwordInputPlaceholder, loginButtonText, registerText, registerButtonText } = {})
   - 
     const {
-      title,
-      emailInput,
-      passwordInput,
-      loginButton,
-      register
+      title: titleDefault,
+      emailInput: emailInputDefault,
+      passwordInput: passwordInputDefault,
+      loginButton: loginButtonDefault,
+      register: registerDefault
     } = require('@layout/login-card/login-card.json')
 
   .login-card
-    h1.login-card__title= title
+    h1.login-card__title= title ? title : titleDefault
     form.login-card__form
       .login-card__input-block
         +text-field({})(
-          placeholder= emailInput.placeholder
+          placeholder= emailInputPlaceholder ? emailInputPlaceholder : emailInputDefault.placeholder
         ).login-card__input
         +text-field({})(
-          placeholder= passwordInput.placeholder
+          placeholder= passwordInputPlaceholder ? passwordInputPlaceholder : passwordInputDefault.placeholder
         )
-      +button(loginButton.type).login-card__button= loginButton.content
+      +button(loginButtonDefault.type).login-card__button= loginButtonText ? loginButtonText : loginButtonDefault.content
     .login-card__register
-      span.login-card__register-text= register.text
-      +button(register.button.type)= register.button.content
+      span.login-card__register-text= registerText ? registerText : registerDefault.text
+      +button(registerDefault.button.type)= registerButtonText ? registerButtonText : registerDefault.button.content

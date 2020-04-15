@@ -2,19 +2,20 @@ include /components/date-dropdown/date-dropdown
 include /components/dropdown/dropdown
 include /components/button/button
 
-mixin search-card
+mixin search-card({ title, dateDropdownStartLabel, dateDropdownEndLabel, buttonText } = {})
   - 
     const {
-      title,
-      dateDropdown,
+      title: titleDefault,
+      dateDropdown: dateDropdownDefault,
       dropdown,
-      button 
+      button: buttonDefault
     } = require('@layout/search-card/search-card.json')
 
   .search-card
-    h1.search-card__title= title
-    +date-dropdown(dateDropdown.startLabel, dateDropdown.endLabel)(
-      placeholder=dateDropdown.placeholder
+    h1.search-card__title= title ? title : titleDefault
+    +date-dropdown((dateDropdownStartLabel ? dateDropdownStartLabel : dateDropdownDefault.startLabel), 
+                   (dateDropdownEndLabel ? dateDropdownEndLabel : dateDropdownDefault.endLabel))(
+      placeholder=dateDropdownDefault.placeholder
     ).search-card__date-dropdown
     +dropdown(dropdown.meta, dropdown.items).search-card__dropdown
-    +button(button.type)= button.text
+    +button(buttonDefault.type)= buttonText ? buttonText : buttonDefault.text
