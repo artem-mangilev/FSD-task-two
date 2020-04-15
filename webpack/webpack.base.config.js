@@ -1,5 +1,5 @@
 const { resolve, join } = require('path')
-const { readdirSync } = require('fs')
+const { readdirSync, readdir } = require('fs')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -23,6 +23,18 @@ const createHtmlWebpackPlugins = (pagesFolderPath) =>
       })
   )
 
+const createEntryPoints = () => {
+  const entryPoints = {}
+
+  const pageNames = readdirSync(PAGES_FOLDER)
+
+  pageNames.forEach(
+    (page) => (entryPoints[page] = join(PAGES_FOLDER, page, `${page}.js`))
+  )
+
+  return entryPoints
+}
+
 const loadersForCSS = [
   'style-loader',
   MiniCssExtractPlugin.loader,
@@ -45,12 +57,7 @@ module.exports = {
 
   context: PATHS.src,
 
-  entry: {
-    cards: './pages/cards/cards.js',
-    'colors-and-text': './pages/colors-and-text/colors-and-text.js',
-    'form-elements': './pages/form-elements/form-elements.js',
-    'headers-and-footers': './pages/headers-and-footers/headers-and-footers.js',
-  },
+  entry: createEntryPoints(),
 
   output: {
     filename: '[name].js',
