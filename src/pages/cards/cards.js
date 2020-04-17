@@ -1,4 +1,4 @@
-import '@layout/base/base'
+import '@layout/uikit-base/uikit-base'
 import '@/main.scss'
 import './cards.scss'
 

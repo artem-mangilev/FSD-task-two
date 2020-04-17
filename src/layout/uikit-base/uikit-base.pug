@@ -1,0 +1,13 @@
+include /components/logo/logo
+
+block settings
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    block head
+  body.uikit-base(class=dark && 'uikit-base_dark')
+    +logo.uikit-base__logo
+    block body

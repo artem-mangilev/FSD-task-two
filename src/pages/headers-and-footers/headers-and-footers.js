@@ -1,4 +1,4 @@
-import '@layout/base/base'
+import '@layout/uikit-base/uikit-base'
 import '@layout/header/header'
 import '@layout/complex-footer/complex-footer'
 import '@layout/simple-footer/simple-footer'

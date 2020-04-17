@@ -1,3 +1,3 @@
-import './base.scss'
+import './uikit-base.scss'
 
 import '@components/logo/logo.js'
