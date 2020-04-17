@@ -1,0 +1,15 @@
+extends /layout/app-base/app-base
+
+include /layout/header/header
+
+block head
+  title Landing page
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  link(href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet")
+
+block body
+  - const { header } = require('./landing-page.json')
+  .landing-page
+    +header(header)
+    main.landing-page__main
+      

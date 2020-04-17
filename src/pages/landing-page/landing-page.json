@@ -1,0 +1,30 @@
+{
+  "header": {
+    "navigationLinks": [
+      {
+        "url": "#about",
+        "text": "О нас"
+      },
+      {
+        "url": "#services",
+        "text": "Услуги",
+        "expandable": true
+      },
+      {
+        "url": "#careers",
+        "text": "Вакансии"
+      },
+      {
+        "url": "#news",
+        "text": "Новости"
+      },
+      {
+        "url": "#agreements",
+        "text": "Соглашения",
+        "expandable": true
+      }
+    ],
+    "loginButtonText": "Войти",
+    "registerButtonText": "Зарегистрироваться"
+  }
+}
