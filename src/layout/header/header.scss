@@ -12,6 +12,8 @@
   background-color: #fff;
 
   &__navigation {
+    display: flex;
+    align-items: center;
     margin-left: auto;
   }
 
@@ -42,6 +44,10 @@
     height: 30px;
     color: $dark-shade-50;
     border-left: 1px solid $dark-shade-10;
+  }
+
+  &__buttons {
+    display: flex;
   }
 
   &__btn {
