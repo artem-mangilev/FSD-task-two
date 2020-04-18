@@ -8,7 +8,7 @@ mixin room-card({ number, isLuxury, price, rating, reviewsNumber, images })
 
   - const formatMoney = number => new Intl.NumberFormat('ru', { style: 'currency', currency: 'RUB', minimumFractionDigits: 0 }).format(number).replace(/ (.)$/g, '$1')
 
-  .room-card
+  .room-card&attributes(attributes)
     .room-card__gallery
       each image in images
         .room-card__image-container
