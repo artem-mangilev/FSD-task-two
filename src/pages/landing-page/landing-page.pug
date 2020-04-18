@@ -13,13 +13,12 @@ block head
 
 block body
   - const { header, mainText, complexFooter } = require('./landing-page.json')
-  
+
   .landing-page
     +header(header)
     main.landing-page__main
-      +search-card.landing-page__search-card
+      +search-card.landing-page__search-card.js-landing-page__search-card
       +text.landing-page__main-text= mainText
     +complex-footer(complexFooter)
 
 
-      
