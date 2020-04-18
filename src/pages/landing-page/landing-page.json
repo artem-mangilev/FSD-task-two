@@ -26,5 +26,78 @@
     ],
     "loginButtonText": "Войти",
     "registerButtonText": "Зарегистрироваться"
+  },
+
+  "mainText": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
+
+  "complexFooter": {
+    "aboutText": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+    "categories": [
+      {
+        "name": "Навигация",
+        "links": [
+          {
+            "url": "#about",
+            "text": "О нас"
+          },
+          {
+            "url": "#news",
+            "text": "Новости"
+          },
+          {
+            "url": "#support",
+            "text": "Служба поддержки"
+          },
+          {
+            "url": "#services",
+            "text": "Услуги"
+          }
+        ]
+      },
+      {
+        "name": "О нас",
+        "links": [
+          {
+            "url": "#who-we-are",
+            "text": "О сервисе"
+          },
+          {
+            "url": "#our-team",
+            "text": "Наша команда"
+          },
+          {
+            "url": "#careers",
+            "text": "Вакансии"
+          },
+          {
+            "url": "#investors",
+            "text": "Инвесторы"
+          }
+        ]
+      },
+      {
+        "name": "Служба поддержки",
+        "links": [
+          {
+            "url": "#doc",
+            "text": "Соглашения"
+          },
+          {
+            "url": "#community",
+            "text": "Сообщества"
+          },
+          {
+            "url": "#communication",
+            "text": "Связь с нами"
+          }
+        ]
+      }
+    ],
+    "subscription": {
+      "title": "Подписка",
+      "text": "Получайте специальные предложения и новости сервиса",
+      "inputPlaceholder": "Email"
+    },
+    "copyrightText": "Copyright © 2018 Toxin отель. Все права зачищены."
   }
 }
