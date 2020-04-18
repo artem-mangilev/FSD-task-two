@@ -100,4 +100,8 @@
   &__total-value {
     margin-left: 5px;
   }
+
+  &__btn {
+    @extend %card__button;
+  }
 }

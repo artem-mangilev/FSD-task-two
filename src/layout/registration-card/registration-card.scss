@@ -10,9 +10,13 @@
   }
 
   &__button {
-    // figure out how to merge this margin with sibling's margin
-    margin-top: 4px;
-    margin-bottom: 30px;
+    @extend %card__button;
+
+    &_next-step {
+      // figure out how to merge this margin with sibling's margin
+      margin-top: 4px;
+      margin-bottom: 30px;      
+    }
   }
 
   &__login {

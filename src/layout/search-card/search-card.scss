@@ -12,4 +12,8 @@
   &__dropdown {
     margin-bottom: 31px;
   }
+
+  &__button {
+    @extend %card__button;
+  }
 }

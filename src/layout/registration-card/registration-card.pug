@@ -44,8 +44,8 @@ mixin registration-card
         ).registration-card__input
         +toggle(specialOffersToggle.content)
 
-      +button(nextStepButton.type).registration-card__button= nextStepButton.content
+      +button(nextStepButton.type).registration-card__button.registration-card__button_next-step= nextStepButton.content
       .registration-card__login
         span.registration-card__login-text= login.text
-        +button(login.button.type)= login.button.content
+        +button(login.button.type).registration-card__button= login.button.content
 

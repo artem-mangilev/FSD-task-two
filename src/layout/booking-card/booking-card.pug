@@ -71,5 +71,5 @@ mixin booking-card({ roomNumber, price = 0, discount = 0, services = 0, addition
         span.booking-card__total-text= totalText
         span.booking-card__dotes
         span.booking-card__total-value
-    +button(bookButton.type)= bookButton.content
+    +button(bookButton.type).booking-card__btn= bookButton.content
 

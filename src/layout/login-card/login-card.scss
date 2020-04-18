@@ -10,7 +10,11 @@
   }
 
   &__button {
-    margin-bottom: 30px;
+    @extend %card__button;
+
+    &_login {
+      margin-bottom: 30px;
+    }
   }
 
   &__register {
