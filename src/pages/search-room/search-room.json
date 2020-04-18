@@ -1,0 +1,393 @@
+{
+  "header": {
+    "navigationLinks": [
+      {
+        "url": "#about",
+        "text": "О нас"
+      },
+      {
+        "url": "#services",
+        "text": "Услуги",
+        "expandable": true
+      },
+      {
+        "url": "#careers",
+        "text": "Вакансии"
+      },
+      {
+        "url": "#news",
+        "text": "Новости"
+      },
+      {
+        "url": "#agreements",
+        "text": "Соглашения",
+        "expandable": true
+      }
+    ],
+    "loginButtonText": "Войти",
+    "registerButtonText": "Зарегистрироваться"
+  },
+
+  "filterDateDropdown": {
+    "label": "Даты пребывания в отеле",
+    "startDate": "2020-08-19",
+    "endDate": "2020-08-23"
+  },
+
+  "guestsDropdown": {
+    "meta": {
+      "type": "item-quantity",
+      "name": "Гости",
+      "open": false,
+      "uiKitMode": false
+    },
+    "items": [
+      {
+        "name": "гости",
+        "nameForms": ["гость", "гостя", "гостей"],
+        "quantity": 3
+      },
+      {
+        "name": "младенцы",
+        "nameForms": ["младенец", "младенца", "младенцев"],
+        "quantity": 1
+      }
+    ]
+  },
+
+  "priceRangeSlider": {
+    "title": "Диапазон цены",
+    "min": 0,
+    "max": 15000,
+    "from": 5000,
+    "to": 10000
+  },
+
+  "checkboxList": {
+    "title": "Checkbox buttons",
+    "checkboxes": [
+      {
+        "text": "Можно курить"
+      },
+      {
+        "text": "Можно с питомцами",
+        "checked": true
+      },
+      {
+        "text": "Можно пригласить гостей (до 10 человек)",
+        "checked": true
+      }
+    ]
+  },
+
+  "richCheckboxList": {
+    "title": "Доступность",
+    "checkboxes": [
+      {
+        "text": "Широкий коридор",
+        "description": "Ширина коридоров в номере не менее 91 см."
+      },
+      {
+        "text": "Помощник для инвалидов",
+        "description": "На 1 этаже вас встретит специалист и проводит до номера."
+      }
+    ]
+  },
+
+  "comfortsDropdown": {
+    "meta": {
+      "type": "item-quantity",
+      "name": "Удобства номера",
+      "open": false,
+      "uiKitMode": false
+    },
+    "items": [
+      {
+        "name": "спальни",
+        "nameForms": ["спальня", "спальни", "спален"],
+        "quantity": 2
+      },
+      {
+        "name": "кровати",
+        "nameForms": ["кровать", "кровати", "кроватей"],
+        "quantity": 2
+      },
+      {
+        "name": "ванные комнаты",
+        "nameForms": ["ванная комната", "ванные комнаты", "ванных комнат"],
+        "quantity": 0
+      }
+    ]
+  },
+
+  "additionalComfortsCheckboxList": {
+    "title": "Дополнительные удобства",
+    "checkboxes": [
+      {
+        "text": "Завтрак"
+      },
+      {
+        "text": "Письменный стол",
+        "checked": true
+      },
+      {
+        "text": "Стул для кормления",
+        "checked": true
+      },
+      {
+        "text": "Кроватка",
+        "checked": true
+      },
+      {
+        "text": "Телевизор"
+      },
+      {
+        "text": "Шампунь"
+      },
+      {
+        "text": "Телевизор"
+      },
+      {
+        "text": "Шампунь"
+      }
+    ],
+    "expanded": false
+  },
+
+  "roomsTitle": "Номера, которые мы для вас подобрали",
+
+  "roomPreviews": [
+    {
+      "number": 888,
+      "isLuxury": true,
+      "price": 9990,
+      "rating": 5,
+      "reviewsNumber": 145,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 840,
+      "isLuxury": false,
+      "price": 9900,
+      "rating": 4,
+      "reviewsNumber": 65,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 980,
+      "isLuxury": true,
+      "price": 8500,
+      "rating": 3,
+      "reviewsNumber": 35,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 856,
+      "isLuxury": false,
+      "price": 7300,
+      "rating": 5,
+      "reviewsNumber": 19,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 740,
+      "isLuxury": false,
+      "price": 6000,
+      "rating": 4,
+      "reviewsNumber": 44,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 982,
+      "isLuxury": false,
+      "price": 5800,
+      "rating": 3,
+      "reviewsNumber": 56,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 678,
+      "isLuxury": false,
+      "price": 5500,
+      "rating": 5,
+      "reviewsNumber": 45,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 450,
+      "isLuxury": false,
+      "price": 5300,
+      "rating": 4,
+      "reviewsNumber": 39,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 350,
+      "isLuxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviewsNumber": 77,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 666,
+      "isLuxury": false,
+      "price": 5000,
+      "rating": 5,
+      "reviewsNumber": 25,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 444,
+      "isLuxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviewsNumber": 15,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    },
+    {
+      "number": 352,
+      "isLuxury": false,
+      "price": 500,
+      "rating": 3,
+      "reviewsNumber": 55,
+      "images": [
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png",
+        "room-1-preview.png"
+      ]
+    }
+  ],
+
+  "pagination": {
+    "description": "1 – 12 из 100+ вариантов аренды",
+    "testMode": true
+  },
+
+  "complexFooter": {
+    "aboutText": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+    "categories": [
+      {
+        "name": "Навигация",
+        "links": [
+          {
+            "url": "#about",
+            "text": "О нас"
+          },
+          {
+            "url": "#news",
+            "text": "Новости"
+          },
+          {
+            "url": "#support",
+            "text": "Служба поддержки"
+          },
+          {
+            "url": "#services",
+            "text": "Услуги"
+          }
+        ]
+      },
+      {
+        "name": "О нас",
+        "links": [
+          {
+            "url": "#who-we-are",
+            "text": "О сервисе"
+          },
+          {
+            "url": "#our-team",
+            "text": "Наша команда"
+          },
+          {
+            "url": "#careers",
+            "text": "Вакансии"
+          },
+          {
+            "url": "#investors",
+            "text": "Инвесторы"
+          }
+        ]
+      },
+      {
+        "name": "Служба поддержки",
+        "links": [
+          {
+            "url": "#doc",
+            "text": "Соглашения"
+          },
+          {
+            "url": "#community",
+            "text": "Сообщества"
+          },
+          {
+            "url": "#communication",
+            "text": "Связь с нами"
+          }
+        ]
+      }
+    ],
+    "subscription": {
+      "title": "Подписка",
+      "text": "Получайте специальные предложения и новости сервиса",
+      "inputPlaceholder": "Email"
+    },
+    "copyrightText": "Copyright © 2018 Toxin отель. Все права зачищены."
+  }
+}
