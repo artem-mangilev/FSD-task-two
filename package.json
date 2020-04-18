@@ -41,6 +41,7 @@
     "lightslider": "^1.1.6",
     "normalize.css": "^8.0.1",
     "paginationjs": "^2.1.5",
-    "plural-ru": "^2.0.2"
+    "plural-ru": "^2.0.2",
+    "scsslider": "^1.1.0"
   }
 }
