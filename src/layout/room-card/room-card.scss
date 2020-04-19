@@ -3,6 +3,7 @@
   background-color: #fff;
   border-radius: 4px;
   color: $dark-shade-50;
+  box-shadow: 0px 10px 20px $dark-shade-5;
 
   &__image-container {
     @include size(inherit, 151px);
