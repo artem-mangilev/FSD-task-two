@@ -1,6 +1,6 @@
 include ../text/text
 
 mixin pagination(description, testMode)
-  .pagination
+  .pagination&attributes(attributes)
     .pagination__container(data-test-mode=testMode.toString())
     +text.pagination__description= description

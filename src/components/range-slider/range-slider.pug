@@ -1,6 +1,6 @@
 include /components/label/label
 
 mixin range-slider({ title, min, max, from, to })
-  .range-slider
+  .range-slider&attributes(attributes)
     +label.range-slider__title= title
     input.range-slider__slider(type='text' value='' data-max=max data-min=min data-from=from, data-to=to)

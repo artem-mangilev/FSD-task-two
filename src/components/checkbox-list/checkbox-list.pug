@@ -2,7 +2,7 @@ include ../checkbox/checkbox
 include ../label/label
 
 mixin checkbox-list(title, checkboxes, expanded)
-  .checkbox-list(class=(expanded !== undefined) && 'checkbox-list_expandable')
+  .checkbox-list(class=(expanded !== undefined) && 'checkbox-list_expandable')&attributes(attributes)
     - const titleCl = 'checkbox-list__title'
     +label.checkbox-list__title(class=((expanded !== undefined) && (expanded ? `${titleCl}_expanded` : `${titleCl}_hidden`)))= title
     .checkbox-list__checkboxes
