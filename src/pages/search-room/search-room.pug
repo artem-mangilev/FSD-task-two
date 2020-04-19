@@ -29,7 +29,8 @@ block body
       additionalComfortsCheckboxList,
       pagination,
       complexFooter,
-      roomPreviews
+      roomPreviews,
+      roomsTitle
     } = require('./search-room.json')
 
   .search-room.js-search-room
@@ -39,19 +40,19 @@ block body
         +date-dropdown(filterDateDropdown.label)(
           startDate=filterDateDropdown.startDate
           endDate=filterDateDropdown.endDate
-        ).js-search-room__filter-date-dropdown
-        +dropdown(guestsDropdown.meta, guestsDropdown.items)
-        +range-slider(priceRangeSlider)
-        +checkbox-list(checkboxList.title, checkboxList.checkboxes)
-        +checkbox-list(richCheckboxList.title, richCheckboxList.checkboxes)
-        +dropdown(comfortsDropdown.meta, comfortsDropdown.items)
+        ).search-room__filter.search-room__filter-date-dropdown.js-search-room__filter-date-dropdown
+        +dropdown(guestsDropdown.meta, guestsDropdown.items).search-room__filter
+        +range-slider(priceRangeSlider).search-room__filter
+        +checkbox-list(checkboxList.title, checkboxList.checkboxes).search-room__filter
+        +checkbox-list(richCheckboxList.title, richCheckboxList.checkboxes).search-room__filter
+        +dropdown(comfortsDropdown.meta, comfortsDropdown.items).search-room__filter
         +checkbox-list(additionalComfortsCheckboxList.title, additionalComfortsCheckboxList.checkboxes, additionalComfortsCheckboxList.expanded)
       .search-room__rooms
-        +title.search-rooms__rooms-title
+        +title.search-room__rooms-title= roomsTitle
         .search-room__room-previews
           each room in roomPreviews
             +room-card(room).search-room__room-preview
-        +pagination(pagination.description, pagination.testMode)
-    +complex-footer(complexFooter)
+        +pagination(pagination.description, pagination.testMode).search-room__pagination
+    +complex-footer(complexFooter).search-room__footer
 
 
