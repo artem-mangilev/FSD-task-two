@@ -1,0 +1,32 @@
+.pie-chart {
+  &__container {
+    @include size(100px, 100px);
+    position: relative;
+  }
+
+  &__inner-content {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__total {
+    text-align: center;
+  }
+
+  &__total-number,
+  &__total-text {
+    color: $primary-color;
+  }
+
+  &__total-number {
+    @extend %title-text;
+  }
+
+  &__total-text {
+    @extend %label-text;
+  }
+}

@@ -1,0 +1,8 @@
+mixin pie-chart(data, dataNameForms)
+  .pie-chart&attributes(attributes)
+    .pie-chart__container(data-chart-data=data data-data-name-forms=dataNameForms)
+      .pie-chart__inner-content
+        .pie-chart__total
+          span.pie-chart__total-number
+          | 
+          span.pie-chart__total-text

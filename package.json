@@ -34,6 +34,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@svgdotjs/svg.js": "^3.0.16",
     "air-datepicker": "^2.2.3",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
