@@ -1,0 +1,58 @@
+extends /layout/app-base/app-base
+
+include /layout/header/header
+include /layout/booking-card/booking-card
+include /layout/complex-footer/complex-footer
+
+include /components/features/features
+include /components/comment/comment
+include /components/bullet-list/bullet-list
+include /components/text/text
+include /components/pie-chart/pie-chart
+
+block head
+  title Room details
+  link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+  link(href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet")
+
+block body
+  .room-details
+    - 
+      const chartData = [
+        {
+          value: 50,
+          text: 'Великолепно',
+          gradient: {
+            from: '#FFE39C',
+            to: '#FFBA9C',
+          }
+        },
+        {
+          value: 25,
+          text: 'Хорошо',
+          gradient: {
+            from: '#6FCF97',
+            to: '#66D2EA',
+          },
+        },
+        {
+          value: 25,
+          text: 'Удовлетворительно',
+          gradient: {
+            from: '#BC9CFF',
+            to: '#8BA4F9',
+          },
+        },
+        {
+          value: 0,
+          text: 'Разачарован',
+          gradient: {
+            from: '#919191',
+            to: '#3D4975',
+          },
+        },
+      ]
+
+  - const nameForms = ['голос', 'голоса', 'голосов']
+
+  +pie-chart(chartData, nameForms).js-room-details__pie-chart
