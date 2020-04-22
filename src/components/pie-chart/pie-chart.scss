@@ -29,4 +29,16 @@
   &__total-text {
     @extend %label-text;
   }
+
+  &__portion {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__color {
+    @extend %rounded-border;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+  }
 }

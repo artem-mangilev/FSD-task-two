@@ -1,3 +1,5 @@
+include /components/text/text
+
 mixin pie-chart(data, dataNameForms)
   .pie-chart&attributes(attributes)
     .pie-chart__container(data-chart-data=data data-data-name-forms=dataNameForms)
@@ -6,3 +8,9 @@ mixin pie-chart(data, dataNameForms)
           span.pie-chart__total-number
           | 
           span.pie-chart__total-text
+    .pie-chart__portions
+      each portion in data
+        - const gradient = `linear-gradient(180deg, ${portion.gradient.from} 0%, ${portion.gradient.to} 100%)`
+        .pie-chart__portion
+          .pie-chart__color(style=`background: ${gradient}`)
+          +text.pie-chart__portion-name= portion.text
