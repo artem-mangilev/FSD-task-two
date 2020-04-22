@@ -31,6 +31,8 @@ class PieChart {
     const gap = 0.005 // percentage from 0 to 1
     const gapColor = '#ffffff00'
 
+    this.chartData = this.chartData.filter((portion) => portion.value > 0)
+
     const portionValues = this.chartData.map((portion) => portion.value)
 
     const total = portionValues.reduce((acc, cur) => acc + cur)
@@ -90,6 +92,10 @@ class PieChart {
 
       currentCoord = [arcEndX, arcEndY]
     })
+
+    // flip chart
+    draw.scale(-1, 1)
+    draw.translate(-chartWidth, 0)
 
     // put total number of data to chart
     const $total = this.$chart.find('.pie-chart__total')
