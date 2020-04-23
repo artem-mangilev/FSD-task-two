@@ -2,7 +2,7 @@ include ../like-button/like-button
 include ../text/text
 
 mixin comment({ authorName, publishedDate, avatarUrl, likes, isLiked, commentText })
-  .comment
+  .comment&attributes(attributes)
     .comment__author
       img(src=avatarUrl).comment__avatar
       p.comment__author-info

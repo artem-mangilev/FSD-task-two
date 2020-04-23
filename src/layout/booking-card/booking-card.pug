@@ -37,7 +37,7 @@ mixin booking-card({ roomNumber, price = 0, discount = 0, services = 0, addition
     data-additional-services=additionalServices
     data-arrival-date=arrivalDate
     data-departure-date=departureDate
-    )
+    )&attributes(attributes)
     .booking-card__header
       span.booking-card__room
         span.booking-card__number-sign № 
