@@ -1,0 +1,195 @@
+{
+  "header": {
+    "navigationLinks": [
+      {
+        "url": "#about",
+        "text": "О нас"
+      },
+      {
+        "url": "#services",
+        "text": "Услуги",
+        "expandable": true
+      },
+      {
+        "url": "#careers",
+        "text": "Вакансии"
+      },
+      {
+        "url": "#news",
+        "text": "Новости"
+      },
+      {
+        "url": "#agreements",
+        "text": "Соглашения",
+        "expandable": true
+      }
+    ],
+    "loginButtonText": "Войти",
+    "registerButtonText": "Зарегистрироваться"
+  },
+
+  "pieChart": {
+    "data": [
+      {
+        "value": 25,
+        "text": "Великолепно",
+        "gradient": {
+          "from": "#FFE39C",
+          "to": "#FFBA9C"
+        }
+      },
+      {
+        "value": 25,
+        "text": "Хорошо",
+        "gradient": {
+          "from": "#6FCF97",
+          "to": "#66D2EA"
+        }
+      },
+      {
+        "value": 25,
+        "text": "Удовлетворительно",
+        "gradient": {
+          "from": "#BC9CFF",
+          "to": "#8BA4F9"
+        }
+      },
+      {
+        "value": 26,
+        "text": "Разочарован",
+        "gradient": {
+          "from": "#919191",
+          "to": "#3D4975"
+        }
+      }
+    ],
+    "nameForms": ["голос", "голоса", "голосов"]
+  },
+
+  "features": [
+    {
+      "name": "Комфорт",
+      "description": "Шумопоглощающие стены",
+      "icon": "insert_emoticon"
+    },
+    {
+      "name": "Удобство",
+      "description": "Окно в каждой из спален",
+      "icon": "location_city"
+    },
+    {
+      "name": "Уют",
+      "description": "Номер оснащён камином",
+      "icon": "whatshot"
+    }
+  ],
+
+  "comments": [
+    {
+      "authorName": "Мурад Сарафанов",
+      "publishedDate": "5 дней назад",
+      "avatarUrl": "/images/avatar.png",
+      "likes": 12,
+      "isLiked": true,
+      "commentText": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+    },
+    {
+      "authorName": "Патрисия Стёклышкова",
+      "publishedDate": "Неделю назад",
+      "avatarUrl": "/images/avatar-2.png",
+      "likes": 2,
+      "isLiked": false,
+      "commentText": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+    }
+  ],
+
+  "rules": [
+    "Нельзя с питомцами",
+    "Без вечеринок и мероприятий",
+    "Время прибытия — после 13:00, а выезд до 12:00"
+  ],
+
+  "bookingCard": {
+    "roomNumber": 888,
+    "price": 9990,
+    "discount": 2179,
+    "additionalServices": 300,
+    "isLuxury": true,
+    "arrivalDate": "2020-08-19",
+    "departureDate": "2020-08-23",
+    "adultsNumber": 1,
+    "childsNumber": 1,
+    "infantsNumber": 1
+  },
+
+  "complexFooter": {
+    "aboutText": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+    "categories": [
+      {
+        "name": "Navigation",
+        "links": [
+          {
+            "url": "#about",
+            "text": "About Us"
+          },
+          {
+            "url": "#news",
+            "text": "News"
+          },
+          {
+            "url": "#support",
+            "text": "Support"
+          },
+          {
+            "url": "#products",
+            "text": "Products"
+          }
+        ]
+      },
+      {
+        "name": "About us",
+        "links": [
+          {
+            "url": "#who-we-are",
+            "text": "Who we are"
+          },
+          {
+            "url": "#our-team",
+            "text": "Our team"
+          },
+          {
+            "url": "#careers",
+            "text": "Careers"
+          },
+          {
+            "url": "#investors",
+            "text": "Investors"
+          }
+        ]
+      },
+      {
+        "name": "Support",
+        "links": [
+          {
+            "url": "#doc",
+            "text": "Documentation"
+          },
+          {
+            "url": "#community",
+            "text": "Community"
+          },
+          {
+            "url": "#community",
+            "text": "Community"
+          }
+        ]
+      }
+    ],
+    "subscription": {
+      "title": "Subscribe to our newsletter",
+      "text": "Receive our latest news and promotions in your inbox!",
+      "inputPlaceholder": "Your email address"
+    },
+    "copyrightText": "Copyright © 2018 Toxin UI Kit. All rights reserved."
+  }
+}

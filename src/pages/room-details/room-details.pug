@@ -9,6 +9,7 @@ include /components/comment/comment
 include /components/bullet-list/bullet-list
 include /components/text/text
 include /components/pie-chart/pie-chart
+include /components/subtitle/subtitle
 
 block head
   title Room details
@@ -16,43 +17,34 @@ block head
   link(href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet")
 
 block body
+  - const { header, pieChart, features, comments, rules, bookingCard, complexFooter } = require('./room-details.json') 
+
   .room-details
-    - 
-      const chartData = [
-        {
-          value: 25,
-          text: 'Великолепно',
-          gradient: {
-            from: '#FFE39C',
-            to: '#FFBA9C',
-          }
-        },
-        {
-          value: 25,
-          text: 'Хорошо',
-          gradient: {
-            from: '#6FCF97',
-            to: '#66D2EA',
-          },
-        },
-        {
-          value: 25,
-          text: 'Удовлетворительно',
-          gradient: {
-            from: '#BC9CFF',
-            to: '#8BA4F9',
-          },
-        },
-        {
-          value: 26,
-          text: 'Разочарован',
-          gradient: {
-            from: '#919191',
-            to: '#3D4975',
-          },
-        },
-      ]
+    +header(header)
+    .room-details__gallery
+      img.room-details__gallery-image.room-details__gallery-image_main(src='/images/room-details-1.png')
+      img.room-details__gallery-image.room-details__gallery-image_secondary(src='/images/room-details-2.png')
+      img.room-details__gallery-image.room-details__gallery-image_secondary(src='/images/room-details-3.png')
+    .room-details__details
+      .room-details__content
+        .room-details__features
+          +subtitle.room-details__subtitle Сведения о номере
+          +features(features)
+        .room-details__impresisons
+          +subtitle.room-details__subtitle Впечатления от номера
+          +pie-chart(pieChart.data, pieChart.nameForms).js-room-details__pie-chart
+        .room-details__comments
+          +subtitle.room-details__subtitle Отзывы посетителей номера
+          each comment in comments 
+            +comment(comment).room-details__comment
+        .room-details__rules
+          +subtitle.room-details__subtitle.room-details__subtitle_padded Правила
+          +bullet-list(rules)
+        .room-details__cancel
+          +subtitle.room-details__subtitle Отмена
+          +text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.  
+      +booking-card(bookingCard).room-details__booking-card.js-room-details__booking-card
+    +complex-footer(complexFooter).room-details__footer
 
-  - const nameForms = ['голос', 'голоса', 'голосов']
 
-  +pie-chart(chartData, nameForms).js-room-details__pie-chart
+

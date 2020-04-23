@@ -1,0 +1,69 @@
+.room-details {
+  &__gallery {
+    width: 100vw;
+    height: 485px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &__details {
+    width: 1160px;
+    margin: 70px auto;
+    display: flex;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__comment {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__gallery-image {
+    &_secondary {
+      height: 50%;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    &_padded {
+      padding-left: 20px;
+    }
+  }
+
+  &__features,
+  &__impressions,
+  &__rules,
+  &__cancel {
+    flex-basis: 50%;
+  }
+
+  &__features, 
+  &__impressions,
+  &__comments {
+    margin-bottom: 30px;
+  }
+
+  &__rules {
+    box-sizing: border-box;
+    padding-right: 92px;
+  }
+
+  &__booking-card {
+    height: max-content;
+    margin-left: 70px;
+  }
+
+  &__footer {
+    border-top: 1px solid $dark-shade-10;
+  }
+}
