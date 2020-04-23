@@ -1,6 +1,9 @@
 .pie-chart {
+  display: flex;
+  align-items: flex-end;
+
   &__container {
-    @include size(100px, 100px);
+    @include size(120px, 120px);
     position: relative;
   }
 
@@ -28,6 +31,10 @@
 
   &__total-text {
     @extend %label-text;
+  }
+
+  &__portions {
+    margin-left: 30px;
   }
 
   &__portion {
