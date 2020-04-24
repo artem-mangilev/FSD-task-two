@@ -1,7 +1,7 @@
-mixin features(features)
+mixin features(features, lastSeparator=false)
   .features
     each feature in features
-      .features__feature
+      .features__feature(class=lastSeparator ? 'features__feature_with-last-separator' : 'features__feature_without-last-separator')
         i.features__icon= feature.icon
         .features__text
           span.features__name= feature.name

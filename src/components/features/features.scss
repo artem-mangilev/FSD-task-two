@@ -9,6 +9,14 @@
     border-bottom: 1px solid $dark-shade-10;
     margin-bottom: 20px;
 
+    &_with-last-separator:last-child {
+      border-bottom: 1px solid $dark-shade-10;
+    }
+
+    &_without-last-separator:last-child {
+      border-bottom: none;
+    }
+
     &:last-of-type {
       margin: 0;
     }
