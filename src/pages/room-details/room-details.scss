@@ -18,6 +18,12 @@
     flex-wrap: wrap;
   }
 
+  &__comments-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
   &__comment {
     margin-bottom: 20px;
 
@@ -47,7 +53,7 @@
     flex-basis: 50%;
   }
 
-  &__features, 
+  &__features,
   &__impressions,
   &__comments {
     margin-bottom: 30px;

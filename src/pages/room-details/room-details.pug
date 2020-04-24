@@ -18,6 +18,7 @@ block head
 
 block body
   - const { header, pieChart, features, comments, rules, bookingCard, complexFooter } = require('./room-details.json') 
+  - const plural = require('plural-ru')
 
   .room-details
     +header(header)
@@ -34,7 +35,9 @@ block body
           +subtitle.room-details__subtitle Впечатления от номера
           +pie-chart(pieChart.data, pieChart.nameForms).js-room-details__pie-chart
         .room-details__comments
-          +subtitle.room-details__subtitle Отзывы посетителей номера
+          header.room-details__comments-header
+            +subtitle.room-details__subtitle Отзывы посетителей номера
+            +text #{`${comments.length} ${plural(comments.length, 'отзыв', 'отзыва', 'отзывов')}`}
           each comment in comments 
             +comment(comment).room-details__comment
         .room-details__rules
