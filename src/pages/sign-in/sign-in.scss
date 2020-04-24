@@ -1,0 +1,11 @@
+.sign-in {
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include size(100%, 772px);
+    background-image: url('../../uploads/registration-1.png');
+    background-repeat: no-repeat;
+  }
+}
