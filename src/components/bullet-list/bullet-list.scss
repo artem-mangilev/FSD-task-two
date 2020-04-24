@@ -7,6 +7,9 @@
   padding-left: $container-left-padding;
 
   &__item {
+    @extend %body-text;
+    line-height: 24px;
+
     position: relative;
     margin-bottom: 10px;
 
