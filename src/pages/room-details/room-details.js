@@ -4,7 +4,7 @@ import '@/main.scss'
 import '@layout/header/header'
 import '@layout/booking-card/booking-card'
 import BookingCard from '@layout/booking-card/booking-card'
-import '@layout/complex-footer/complex-footer'
+import '@layout/footer/footer'
 
 import '@components/features/features'
 import '@components/comment/comment'

@@ -1,7 +1,7 @@
 import '@layout/header/header'
 import '@layout/room-card/room-card'
 import RoomCard from '@layout/room-card/room-card'
-import '@layout/complex-footer/complex-footer'
+import '@layout/footer/footer'
 
 import '@components/date-dropdown/date-dropdown'
 import DateDropdown from '@components/date-dropdown/date-dropdown'
@@ -16,10 +16,10 @@ import '@/main.scss'
 
 const $page = $('.js-search-room')
 
-const filterDateDropdown = $page.find('.js-search-room__filter-date-dropdown')[0]
+const filterDateDropdown = $page.find(
+  '.js-search-room__filter-date-dropdown'
+)[0]
 new DateDropdown(filterDateDropdown)
 
 const $roomCards = $page.find('.search-room__room-preview')
 $roomCards.each((i, roomCard) => new RoomCard(roomCard))
-
-

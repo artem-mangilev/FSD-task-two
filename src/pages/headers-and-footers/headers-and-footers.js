@@ -1,6 +1,6 @@
 import '@layout/uikit-base/uikit-base'
 import '@layout/header/header'
-import '@layout/complex-footer/complex-footer'
+import '@layout/footer/footer'
 import '@layout/simple-footer/simple-footer'
 
 import '@/main.scss'

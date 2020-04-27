@@ -1,7 +1,7 @@
 extends /layout/uikit-base/uikit-base
 
 include /layout/header/header
-include /layout/complex-footer/complex-footer
+include /layout/footer/footer
 include /layout/simple-footer/simple-footer
 
 block settings
@@ -14,9 +14,9 @@ block head
 
 block body
   - const { headerAuth, headerNonAuth, complexFooter, simpleFooterText } = require('./headers-and-footers.json')
-  
+
   .headers-and-footers
     +header(headerAuth).headers-and-footers__layout-component
     +header(headerNonAuth).headers-and-footers__layout-component
-    +complex-footer(complexFooter).headers-and-footers__layout-component
+    +footer(complexFooter).headers-and-footers__layout-component
     +simple-footer(simpleFooterText).headers-and-footers__layout-component

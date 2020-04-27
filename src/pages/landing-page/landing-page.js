@@ -2,7 +2,7 @@ import '@layout/app-base/app-base'
 import '@layout/header/header'
 import '@layout/search-card/search-card'
 import SearchCard from '@layout/search-card/search-card'
-import '@layout/complex-footer/complex-footer'
+import '@layout/footer/footer'
 
 import '@components/text/text'
 

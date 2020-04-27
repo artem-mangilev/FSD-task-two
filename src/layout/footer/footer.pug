@@ -1,0 +1,29 @@
+include /components/logo/logo
+include /components/text/text
+include /components/label/label
+include /components/link/link
+include /components/text-field/text-field
+include /components/social-buttons/social-buttons
+include /components/separator/separator
+
+mixin footer({ aboutText, categories, subscription, copyrightText })
+  .footer&attributes(attributes)
+    .footer__main-content
+      .footer__about
+        +logo(true).footer__logo
+        +text.footer__about-text= aboutText
+      .footer__categories
+        each category in categories
+          .footer__category
+            +label.footer__category-name= category.name
+            .footer__category-links
+              each link in category.links
+                +link(link.url).footer__category-link= link.text
+      .footer__subscription
+        +label.footer__subscription-title= subscription.title
+        +text.footer__subscription-text= subscription.text
+        +text-field({ type: 'subscription' })(placeholder=subscription.inputPlaceholder)
+    +separator.footer__separator
+    .footer__footer
+      +text.footer__copyright= copyrightText
+      +social-buttons.footer__social-buttons

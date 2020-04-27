@@ -2,7 +2,7 @@ extends /layout/app-base/app-base
 
 include /layout/header/header
 include /layout/room-card/room-card
-include /layout/complex-footer/complex-footer
+include /layout/footer/footer
 
 include /components/date-dropdown/date-dropdown
 include /components/dropdown/dropdown
@@ -53,6 +53,6 @@ block body
           each room in roomPreviews
             +room-card(room).search-room__room-preview
         +pagination(pagination.description, pagination.testMode).search-room__pagination
-    +complex-footer(complexFooter).search-room__footer
+    +footer(complexFooter).search-room__footer
 
 
