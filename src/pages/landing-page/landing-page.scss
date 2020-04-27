@@ -8,15 +8,16 @@
       '../../uploads/bg-slide-3.png'
     );
     @include scsslider($slides, 2, 3);
-    will-change: background-image;
-    background-repeat: no-repeat;
 
     box-sizing: border-box;
     @include size(100%, 831px);
     padding: 70px 140px 10px;
+  }
+
+  &__slider-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;    
   }
 
   &__main-text {
