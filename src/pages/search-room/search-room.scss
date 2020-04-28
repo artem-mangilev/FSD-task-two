@@ -1,7 +1,9 @@
 .search-room {
   &__main {
+    @extend %container;
+
     display: flex;
-    width: min-content;
+    justify-content: space-between;
     margin: 0 auto;
     margin-top: 30px;
     padding-bottom: 70px;
@@ -17,10 +19,6 @@
 
   &__filter-date-dropdown {
     margin-bottom: 20px;
-  }
-
-  &__rooms {
-    margin-left: 60px;
   }
 
   &__room-previews {
@@ -41,5 +39,31 @@
 
   &__footer {
     border-top: 1px solid $dark-shade-25;
+  }
+
+  @media screen and (max-width: $wb-chrome-laptop) {
+    &__main {
+      justify-content: space-evenly;
+    }
+
+    &__room-previews {
+      grid-template-columns: repeat(2, min-content);
+    }
+  }
+
+  @media screen and (max-width: $wb-chrome-tablet) {
+    &__rooms {
+      width: min-content;
+    }
+
+    &__room-previews {
+      grid-template-columns: repeat(1, min-content);
+    }
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-l) {
+    &__filters {
+      display: none;
+    }
   }
 }
