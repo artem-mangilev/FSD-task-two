@@ -45,7 +45,8 @@
 
   &__start-date-input,
   &__end-date-input {
-    width: $short-input-width;
+    width: 100%;
+    max-width: $short-input-width;
   }
 
   &__single-input {
