@@ -79,3 +79,27 @@
 @mixin border($color) {
   border: 1px solid $color;
 }
+
+/* Horizontal gap between items */
+
+@mixin h-gap($gap-size) {
+  & {
+    margin-right: $gap-size;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* Vertical gap between items */
+
+@mixin v-gap($gap-size) {
+  & {
+    margin-bottom: $gap-size;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
