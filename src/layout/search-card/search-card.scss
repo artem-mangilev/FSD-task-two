@@ -16,4 +16,14 @@
   &__button {
     @extend %card__button;
   }
+
+  /* Have no clue why this card didn't resize automatically after changing the viewport */
+
+  @media screen and (max-width: $wb-chrome-mobile-m) {
+    width: 375px;
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    width: 320px;
+  }
 }
