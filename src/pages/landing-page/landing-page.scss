@@ -10,19 +10,47 @@
     @include scsslider($slides, 2, 3);
 
     box-sizing: border-box;
-    @include size(100%, 831px);
-    padding: 70px 140px 10px;
+    max-width: 100%;
+    height: 831px;
   }
 
   &__slider-content {
+    @extend %container;
+
+    box-sizing: border-box;
+    margin: auto;
+    padding: 70px 0 10px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;    
+    justify-content: space-between;
+  }
+
+  &__slide {
+    background-size: cover;
+    background-position: center center;
   }
 
   &__main-text {
     align-self: flex-end;
     width: 297px;
     text-align: right;
+  }
+
+  @media screen and (max-width: $wb-chrome-laptop) {
+    &__main {
+      height: auto;
+    }
+
+    &__slider-content {
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__main-text {
+      align-self: auto;
+      text-align: center;
+      margin-top: 20px;
+    }
   }
 }
