@@ -1,21 +1,41 @@
 .room-details {
   &__gallery {
-    width: 100vw;
+    max-width: 100%;
     height: 485px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
   }
 
+  &__gallery-image {
+    object-fit: cover;
+    object-position: center center;
+
+    &_main {
+      width: 68.125%;
+      // flex-basis: 68.125%;
+      height: 100%;
+    }
+
+    &_secondary {
+      width: 31.875%;
+      // flex-basis: 31.875%;
+      height: 50%;
+    }
+  }
+
   &__details {
-    width: 1160px;
+    @extend %container;
+
     margin: 70px auto;
     display: flex;
+    justify-content: space-between;
   }
 
   &__content {
     display: flex;
     flex-wrap: wrap;
+    max-width: 712px;
   }
 
   &__comments-header {
@@ -29,12 +49,6 @@
 
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-
-  &__gallery-image {
-    &_secondary {
-      height: 50%;
     }
   }
 
@@ -65,11 +79,73 @@
   }
 
   &__booking-card {
-    height: max-content;
-    margin-left: 70px;
+    align-self: flex-start;
   }
 
   &__footer {
     border-top: 1px solid $dark-shade-10;
+  }
+
+  @media screen and (max-width: $wb-chrome-laptop) {
+    &__details {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__booking-card {
+      margin-top: 70px;
+    }
+  }
+
+  @media screen and (max-width: $wb-chrome-tablet) {
+    &__gallery {
+      height: auto;
+    }
+
+    &__gallery-image {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-l) {
+    &__details {
+      margin: 35px 15px;
+    }
+
+    &__content {
+      justify-content: center;
+    }
+
+    &__impressions,
+    &__rules {
+      margin-bottom: 30px;
+    }
+
+    &__features,
+    &__impressions,
+    &__rules,
+    &__cancel {
+      flex-basis: auto;
+    }
+
+    &__rules {
+      flex-basis: 100%;
+      padding: 0;
+    }
+
+    &__subtitle {
+      text-align: center;
+
+      &_padded {
+        padding-left: 0px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    &__details {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 }
