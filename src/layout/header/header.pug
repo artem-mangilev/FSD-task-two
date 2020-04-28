@@ -2,7 +2,7 @@ include /components/logo/logo
 include /components/link/link
 include /components/button/button
 
-mixin header({ navigationLinks, loginButtonText, registerButtonText, username })
+mixin header({ navigationLinks, loginButtonText, registerButtonText, username }, bigLinksMargin = false)
   .header&attributes(attributes)
     +logo(true).header__logo
     .header__navigation
@@ -10,6 +10,7 @@ mixin header({ navigationLinks, loginButtonText, registerButtonText, username })
         +link(link.url)(
           class=link.active ? 'header__nav-link_active' : ''
           class=link.expandable ? 'header__nav-link_expandable' : ''
+          class=`header__nav-link_${bigLinksMargin ? 'big' : 'small'}-margin`
         ).header__nav-link= link.text
     if username
       span.header__username= username
