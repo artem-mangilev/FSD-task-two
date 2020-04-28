@@ -8,7 +8,8 @@
 
   &_default,
   &_masked-date {
-    width: $long-input-width;
+    width: 100%;
+    max-width: $long-input-width;
   }
 
   &_subscription {

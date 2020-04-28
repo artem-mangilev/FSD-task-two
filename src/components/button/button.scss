@@ -1,7 +1,6 @@
 .button {
   box-sizing: border-box;
   position: relative;
-  // height: 44px;
   padding: 0;
   border: none;
   border-radius: 22px;
@@ -46,7 +45,8 @@
   }
 
   &_action {
-    width: $long-input-width;
+    width: 100%;
+    max-width: $long-input-width;
     background-image: $primary-gradient;
     color: #fff;
 
