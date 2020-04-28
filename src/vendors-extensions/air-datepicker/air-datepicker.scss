@@ -1,4 +1,5 @@
 @import '../../vendors/air-datepicker/datepicker-config';
+@import '../../utilities/variables.scss';
 
 $datepickerDayCellSize: 40px;
 $datepickerWidth: 320px;
@@ -55,6 +56,11 @@ $datepickerNavigationHeight: auto;
 .datepicker {
   box-sizing: border-box;
   padding: 20px;
+
+  // TODO: find the way to avoid this hack
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    transform: translateX(-15px) !important;
+  }
 }
 
 @import '../../vendors/air-datepicker/cell.scss';
