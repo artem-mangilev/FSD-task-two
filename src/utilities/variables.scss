@@ -25,3 +25,15 @@ $secondary-gradient: linear-vertical-gradient($secondary-color, #66d2ea);
 $long-input-width: 320px;
 $medium-input-width: 266px;
 $short-input-width: 150px;
+
+/* Width breakpoints with chrome naming scheme */
+
+$wb-chrome-laptop: 1024px;
+$wb-chrome-tablet: 768px;
+$wb-chrome-mobile-l: 425px;
+$wb-chrome-mobile-m: 375px;
+$wb-chrome-mobile-s: 320px;
+
+/* Custom width breakpoints */
+
+$wb-custom-mobile-l: 450px;
