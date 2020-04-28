@@ -15,7 +15,7 @@
     &_next-step {
       // figure out how to merge this margin with sibling's margin
       margin-top: 4px;
-      margin-bottom: 30px;      
+      margin-bottom: 30px;
     }
   }
 
@@ -27,5 +27,15 @@
 
   &__radio {
     margin-right: 20px;
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    &__login {
+      flex-direction: column;
+    }
+
+    &__login-text {
+      margin-bottom: 15px;
+    }
   }
 }
