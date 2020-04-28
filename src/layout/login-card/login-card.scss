@@ -22,4 +22,14 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    &__register {
+      flex-direction: column;
+    }
+
+    &__register-text {
+      margin-bottom: 15px;
+    }
+  }
 }

@@ -37,6 +37,14 @@
   &__button {
     height: 44px;
   }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    padding: 15px;
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-m) {
+    border-radius: 0;
+  }
 }
 
 %title-text {
@@ -77,4 +85,8 @@
   -webkit-font-smoothing: antialiased;
 
   user-select: none;
+}
+
+%container {
+  max-width: 1160px;
 }

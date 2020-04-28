@@ -1,4 +1,6 @@
 .header {
+  @extend %container;
+
   // this is for correct displaying buttons with gradient rounded border.
   // TODO: find better solution
   position: relative;
@@ -7,20 +9,19 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  @include size(100%, 70px);
-  padding: 0 140px;
+  margin: 0 auto;
+  padding: 15px 0;
   background-color: #fff;
   box-shadow: 0px 10px 20px $dark-shade-5;
 
   &__navigation {
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    margin-left: auto;
+    justify-content: flex-end;
   }
 
   &__nav-link {
-    margin-right: 30px;
-
     &_active:link {
       color: $dark-shade-75;
       font-weight: bold;
@@ -36,6 +37,14 @@
         content: 'expand_more';
       }
     }
+
+    &_big-margin {
+      margin-right: 30px;
+    }
+
+    &_small-margin {
+      margin-right: 20px;
+    }
   }
 
   &__username {
@@ -48,6 +57,7 @@
   }
 
   &__buttons {
+    align-self: flex-end;
     display: flex;
   }
 
@@ -57,6 +67,40 @@
 
     &:last-of-type {
       margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: $wb-chrome-laptop) {
+    & {
+      flex-direction: column;
+    }
+
+    &__nav-link:last-child {
+      margin-right: 0;
+    }
+
+    &__logo {
+      margin-bottom: 20px;
+    }
+
+    &__buttons {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $wb-custom-mobile-l) {
+    &__navigation {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__nav-link {
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
