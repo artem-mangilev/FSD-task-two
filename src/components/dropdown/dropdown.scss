@@ -1,18 +1,20 @@
 .dropdown {
   // width: max-content;
 
+  width: 100%;
+  max-width: $medium-input-width;
+
+  &_applied {
+    max-width: $long-input-width;
+  }
+
   &__container {
     @extend %field;
 
     position: relative;
     box-sizing: border-box;
-    width: 100%;
-    max-width: $medium-input-width;
-    cursor: pointer;
 
-    &_applied {
-      max-width: $long-input-width;
-    }
+    cursor: pointer;
 
     &_bottom-borderless {
       border-bottom-left-radius: 0;

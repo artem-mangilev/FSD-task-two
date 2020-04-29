@@ -1,10 +1,12 @@
 .form-elements {
+  @extend %container;
+
   display: grid;
-  grid-template-columns: repeat(3, min-content);
+  grid-template-columns: repeat(3, $long-input-width);
   grid-template-rows: min-content 265px + 40px min-content min-content;
   justify-content: space-between;
 
-  margin: 0 140px;
+  margin: 0 auto;
   margin-top: 65px;
 
   &__label {

@@ -17,12 +17,12 @@ include ../text/text
 //- ]
 
 mixin dropdown(meta, items)
-  .dropdown(class!=attributes.class)
+  .dropdown(class!=attributes.class class=(meta.type === 'item-quantity-applied' ? 'dropdown_applied' : ''))
     .dropdown__info
       +label.dropdown__name= meta.name
       if meta.uiKitMode
         span.dropdown__uikit-state= meta.open ? 'expanded' : 'default'
-    .dropdown__container(class=(meta.type === 'item-quantity-applied' ? 'dropdown__container_applied' : '') data-meta=meta data-items=items)
+    .dropdown__container(data-meta=meta data-items=items)
       .dropdown__selection
         +text.dropdown__selection-text
       .dropdown__menu(class=meta.open ? '' : 'dropdown__menu_hide')
