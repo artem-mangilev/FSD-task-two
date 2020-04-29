@@ -1,5 +1,7 @@
 import './text-field.scss'
 
+import '@components/label/label'
+
 import 'inputmask/dist/jquery.inputmask'
 
 $(document).ready(() => {

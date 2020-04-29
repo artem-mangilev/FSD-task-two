@@ -1,5 +1,9 @@
 import './dropdown.scss'
 
+import '@components/button/button'
+import '@components/label/label'
+import '@components/text/text'
+
 import plural from 'plural-ru'
 
 $(document).ready(() => {

@@ -1,5 +1,7 @@
 import './pie-chart.scss'
 
+import '@components/text/text'
+
 import { SVG, on } from '@svgdotjs/svg.js'
 import plural from 'plural-ru'
 

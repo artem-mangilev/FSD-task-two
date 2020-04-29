@@ -1,5 +1,7 @@
 import './range-slider.scss'
 
+import '@components/label/label'
+
 import 'ion-rangeslider/js/ion.rangeSlider'
 
 $(document).ready(function() {

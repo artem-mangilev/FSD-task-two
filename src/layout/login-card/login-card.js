@@ -1,4 +1,5 @@
 import './login-card.scss'
 
-import '../login-card/login-card'
 import '@components/button/button'
+import '@components/title/title'
+import '@components/text-field/text-field'
