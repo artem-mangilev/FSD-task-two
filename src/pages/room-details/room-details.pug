@@ -37,7 +37,7 @@ block body
         .room-details__comments
           header.room-details__comments-header
             +subtitle.room-details__subtitle Отзывы посетителей номера
-            +text #{`${comments.length} ${plural(comments.length, 'отзыв', 'отзыва', 'отзывов')}`}
+            +text.room-details__reviews-number #{`${comments.length} ${plural(comments.length, 'отзыв', 'отзыва', 'отзывов')}`}
           each comment in comments 
             +comment(comment).room-details__comment
         .room-details__rules
