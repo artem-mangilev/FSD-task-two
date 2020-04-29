@@ -48,24 +48,44 @@
 }
 
 %title-text {
-  font: bold 24px 'Quicksand', 'Open Sans';
+  font: bold $fs-title 'Quicksand', 'Open Sans';
   color: $dark-shade;
+
+  @media screen and (max-width: $wb-chrome-tablet) {
+    font-size: $fs-title-tablet;
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-l) {
+    font-size: $fs-title-mobile-l;
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    font-size: $fs-title-mobile-s;
+  }
 }
 
 %subtitle-text {
-  font: bold 19px 'Quicksand', 'Open Sans';
+  font: bold $fs-subtitle 'Quicksand', 'Open Sans';
   color: $dark-shade;
+
+  @media screen and (max-width: $wb-chrome-mobile-l) {
+    font-size: $fs-subtitle-mobile-l;
+  }
+
+  @media screen and (max-width: $wb-chrome-mobile-s) {
+    font-size: $fs-subtitle-mobile-s;
+  }
 }
 
 %label-text {
-  font: bold 12px 'Montserrat';
+  font: bold $fs-label 'Montserrat';
   letter-spacing: 0.012rem;
   text-transform: uppercase;
   color: $dark-shade;
 }
 
 %body-text {
-  font: normal 14px 'Montserrat';
+  font: normal $fs-body 'Montserrat';
   color: $dark-shade-75;
 }
 
