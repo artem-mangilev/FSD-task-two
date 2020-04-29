@@ -2,6 +2,7 @@ import './search-card.scss'
 
 import '@components/date-dropdown/date-dropdown'
 import '@components/dropdown/dropdown'
+import '@components/title/title'
 import '@components/button/button'
 import DateDropdown from '@components/date-dropdown/date-dropdown'
 

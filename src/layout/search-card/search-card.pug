@@ -1,6 +1,7 @@
 include /components/date-dropdown/date-dropdown
 include /components/dropdown/dropdown
 include /components/button/button
+include /components/title/title
 
 mixin search-card
   - 
@@ -12,7 +13,7 @@ mixin search-card
     } = require('@layout/search-card/search-card.json')
 
   .search-card&attributes(attributes)
-    h1.search-card__title= title
+    +title.search-card__title= title
     +date-dropdown(dateDropdown.startLabel, dateDropdown.endLabel)(
       placeholder=dateDropdown.placeholder
     ).search-card__date-dropdown

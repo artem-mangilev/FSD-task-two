@@ -2,6 +2,7 @@ include /components/text-field/text-field
 include /components/radio/radio
 include /components/toggle/toggle
 include /components/button/button
+include /components/title/title
 
 mixin registration-card
   -
@@ -19,7 +20,7 @@ mixin registration-card
     } = require('@layout/registration-card/registration-card.json')
 
   .registration-card
-    h1.registration-card__title= title
+    +title.registration-card__title= title
     form.registration-card__form
       .registration-card__input-block
         +text-field({})(
