@@ -16,7 +16,11 @@ block body
   - const { headerAuth, headerNonAuth, complexFooter, simpleFooterText } = require('./headers-and-footers.json')
 
   .headers-and-footers
-    +header(headerAuth).headers-and-footers__layout-component
-    +header(headerNonAuth).headers-and-footers__layout-component
-    +footer(complexFooter).headers-and-footers__layout-component
-    +simple-footer(simpleFooterText).headers-and-footers__layout-component
+    .headers-and-footers__layout-component
+      +header(headerAuth)
+    .headers-and-footers__layout-component
+      +header(headerNonAuth)
+    .headers-and-footers__layout-component
+      +footer(complexFooter)
+    .headers-and-footers__layout-component
+      +simple-footer(simpleFooterText)
