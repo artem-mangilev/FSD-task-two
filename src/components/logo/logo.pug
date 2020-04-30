@@ -1,7 +1,7 @@
 mixin logo(colored = false)
   .logo&attributes(attributes)
     if colored
-      img.logo__image(src='/images/logo-colored.svg')
-      img.logo__text(src='/images/logo-text.svg')
+      img.logo__image(src=require('@images/logo-colored.svg').default)
+      img.logo__text(src=require('@images/logo-text.svg').default)
     else
-      img.logo__image(src='/images/logo-gray.svg')
+      img.logo__image(src=require('@images/logo-gray.svg').default)

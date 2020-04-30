@@ -12,7 +12,7 @@ mixin room-card({ number, isLuxury, price, rating, reviewsNumber, images })
     .room-card__gallery
       each image in images
         .room-card__image-container
-          img.room-card__image(src=`/images/${image}`) 
+          img.room-card__image(src=require(`@uploads/${image}`).default) 
     .room-card__details
       .room-card__row
         span.room-card__room-number

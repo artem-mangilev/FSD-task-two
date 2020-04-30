@@ -23,9 +23,9 @@ block body
   .room-details
     +header(header)
     .room-details__gallery
-      img.room-details__gallery-image.room-details__gallery-image_main(src='/images/room-details-1.png')
-      img.room-details__gallery-image.room-details__gallery-image_secondary(src='/images/room-details-2.png')
-      img.room-details__gallery-image.room-details__gallery-image_secondary(src='/images/room-details-3.png')
+      img.room-details__gallery-image.room-details__gallery-image_main(src=require('@uploads/room-details-1.png').default)
+      img.room-details__gallery-image.room-details__gallery-image_secondary(src=require('@uploads/room-details-2.png').default)
+      img.room-details__gallery-image.room-details__gallery-image_secondary(src=require('@uploads/room-details-3.png').default)
     .room-details__details
       .room-details__content
         .room-details__features

@@ -3,7 +3,6 @@ const { readdirSync, readdir } = require('fs')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PATHS = {
   src: join(__dirname, '../src'),
@@ -11,6 +10,9 @@ const PATHS = {
 }
 
 const PAGES_FOLDER = join(PATHS.src, '/pages')
+const IMAGES_FOLDER = join(PATHS.src, '/images')
+const UPLOADS_FOLDER = join(PATHS.src, '/uploads')
+const FONTS_FOLDER = join(PATHS.src, '/fonts')
 
 // this code assumes that the page file has the same name as containing folder
 const createHtmlWebpackPlugins = (pagesFolderPath) =>
@@ -52,6 +54,8 @@ module.exports = {
       '@components': resolve(PATHS.src, 'components'),
       '@layout': resolve(PATHS.src, 'layout'),
       '@fonts': resolve(PATHS.src, 'fonts'),
+      '@images': resolve(PATHS.src, 'images'),
+      '@uploads': resolve(PATHS.src, 'uploads'),
     },
   },
 
@@ -104,7 +108,8 @@ module.exports = {
       },
       // fonts
       {
-        test: /\.woff|ttf|svg$/,
+        test: /\.(woff|ttf|svg)$/,
+        exclude: [IMAGES_FOLDER, UPLOADS_FOLDER],
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -113,13 +118,14 @@ module.exports = {
       },
       // images
       {
-        test: /.(png|jpg|gif)$/,
+        test: /.(png|jpg|gif|svg)$/,
+        exclude: FONTS_FOLDER,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'images'
-        }
-      }
+          outputPath: 'images',
+        },
+      },
     ],
   },
 
@@ -133,16 +139,6 @@ module.exports = {
       'window.$': 'jquery',
       'window.jQuery': 'jquery',
     }),
-    new CopyWebpackPlugin([
-      {
-        from: join(PATHS.src, '/images'),
-        to: join(PATHS.dist, '/images'),
-      },
-      {
-        from: join(PATHS.src, '/uploads'),
-        to: join(PATHS.dist, '/images'),
-      },
-    ]),
     ...createHtmlWebpackPlugins(PAGES_FOLDER),
   ],
 }

@@ -1,10 +1,10 @@
 include ../like-button/like-button
 include ../text/text
 
-mixin comment({ authorName, publishedDate, avatarUrl, likes, isLiked, commentText })
+mixin comment({ authorName, publishedDate, avatarFile, likes, isLiked, commentText })
   .comment&attributes(attributes)
     .comment__author
-      img(src=avatarUrl).comment__avatar
+      img(src=require(`@uploads/${avatarFile}`).default).comment__avatar
       p.comment__author-info
         span.comment__author-name= authorName
         time.comment__published-date= publishedDate
