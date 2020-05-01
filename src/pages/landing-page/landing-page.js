@@ -9,5 +9,7 @@ import '@components/text/text'
 import './landing-page.scss'
 import '@/main.scss'
 
-const searchCard = $('.js-landing-page__search-card')[0]
-new SearchCard(searchCard)
+$(document).ready(() => {
+  const searchCard = $('.js-landing-page__search-card')[0]
+  new SearchCard(searchCard)
+})
