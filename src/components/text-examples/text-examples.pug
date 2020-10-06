@@ -1,10 +1,18 @@
+include /components/title/title
+include /components/subtitle/subtitle
+include /components/label/label
+include /components/text/text
+
 mixin text-examples
   .text-examples
-    h1.text-example.text-example__main-header
-      span.text-example_content This one is the sub-section or widget title
-    h2.text-example.text-example__mid-header
-      span.text-example_content Next one is the item title inside widgets
-    h3.text-example.text-example__small-header
-      span.text-example_content This is a label or CTA text
-    p.text-example.text-example__body-text
-      span.text-example_content This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    h1.text-examples__tag.text-examples__tag_h1 H1
+    +title This one is the sub-section or widget title
+
+    h2.text-examples__tag.text-examples__tag_h2 H2
+    +subtitle Next one is the item title inside widgets
+
+    h3.text-examples__tag.text-examples__tag_h3 H3
+    +label This is a label or CTA text
+
+    p.text-examples__tag.text-examples__tag_body Body
+    +text This is the body text which is used for most of the design, like paragraphs, lists, etc.

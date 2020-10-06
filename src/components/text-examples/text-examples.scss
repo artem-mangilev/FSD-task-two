@@ -1,53 +1,35 @@
 .text-examples {
-  width: 336px;
+  display: grid;
 
-  .text-example {
-    position: relative;
-    margin-bottom: 50px;
+  // ? maybe there is a way to avoid this hardcoded number?
+  grid-template-columns: min-content 336px;
 
-    &::before {
-      font-family: 'Montserrat-Regular';
-      color: $dark-shade-25;
+  grid-gap: 50px 30px;
+
+  &__tag {
+    font-family: 'Montserrat';
+    
+    // ? how to avoid using this priperty and draw normal font weight by default? (if I remove this, text became bold)
+    font-weight: normal;
+
+    text-align: right;
+    color: $dark-shade-25;
+
+    // ? needs a variables? these values same as in neightbor components
+    &_h1 {
+      font-size: 24px;
     }
 
-    &.text-example__main-header {
-      @extend %title-text;
+    &_h2 {
+      font-size: 19px;
     }
 
-    &.text-example__mid-header {
-      @extend %subtitle-text;
+    &_h3 {
+      font-size: 12px;
     }
 
-    &.text-example__small-header {
-      @extend %label-text;
-    }
-
-    &.text-example__body-text {
-      @extend %body-text;
-    }
-
-    &.text-example__main-header::before {
-      position: absolute;
-      left: -55px;
-      content: 'H1';
-    }
-
-    &.text-example__mid-header::before {
-      position: absolute;
-      left: -55px;
-      content: 'H2';
-    }
-
-    &.text-example__small-header::before {
-      position: absolute;
-      left: -54px;
-      content: 'H3';
-    }
-
-    &.text-example__body-text::before {
-      position: absolute;
-      left: -65px;
-      content: 'Body';
+    &_body {
+      line-height: 24px;
     }
   }
 }
