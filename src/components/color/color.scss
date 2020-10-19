@@ -1,51 +1,51 @@
 .color {
-  width: 270px;
+  // TODO: remove it from here
   margin-bottom: 20px;
+
   display: flex;
   align-items: center;
-  font-family: 'Quicksand-Regular';
+  font: 19px Quicksand, Arial, sans-serif;
+  color: $dark-shade;
 
   &__preview {
-    height: 70px;
-    width: 70px;
-    margin-right: 40px;
+    min-width: 70px;
+    min-height: 70px;
     border-radius: 6px;
-  }
+    margin-right: 40px;
 
-  &__info {
-    font-size: 19px;
-    line-height: 29px;
+    &_color {
+      &_dark-shade-100 {
+        background-color: $dark-shade;
+      }
+
+      &_dark-shade-75 {
+        background-color: $dark-shade-75;
+      }
+
+      &_dark-shade-50 {
+        background-color: $dark-shade-50;
+      }
+
+      &_dark-shade-25 {
+        background-color: $dark-shade-25;
+      }
+
+      &_dark-shade-5 {
+        background-color: $dark-shade-5;
+      }
+
+      &_purple {
+        background-color: $primary-color;
+      }
+
+      &_green {
+        background-color: $secondary-color;
+      }
+    }
   }
 
   &__name {
-    @extend %subtitle-text;
-  }
-
-  &__dark-shade-100 {
-    background-color: $dark-shade;
-  }
-
-  &__dark-shade-75 {
-    background-color: $dark-shade-75;
-  }
-
-  &__dark-shade-50 {
-    background-color: $dark-shade-50;
-  }
-
-  &__dark-shade-25 {
-    background-color: $dark-shade-25;
-  }
-
-  &__dark-shade-5 {
-    background-color: $dark-shade-5;
-  }
-
-  &__purple {
-    background-color: $primary-color;
-  }
-
-  &__green {
-    background-color: $secondary-color;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 }

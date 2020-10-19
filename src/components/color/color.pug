@@ -1,6 +1,6 @@
-mixin color(name, code, className)
+mixin color(name, code, color)
   .color
-    .color__preview(class='color' + className)
+    .color__preview(class=`color__preview_color_${color}`)
     .color__info
       .color__name= name
       .color__code= code
