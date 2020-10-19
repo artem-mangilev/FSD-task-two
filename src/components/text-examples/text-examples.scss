@@ -1,13 +1,10 @@
 .text-examples {
   display: grid;
-
   grid-template-columns: auto auto;
-
   grid-gap: 50px 31px;
 
   &__tag {
-    font-family: 'Montserrat';
-
+    font-family: Montserrat, Arial, sans-serif;
     // ? how to avoid using this priperty and draw normal font weight by default? (if I remove this, text became bold)
     font-weight: normal;
 
@@ -15,20 +12,22 @@
     color: $dark-shade-25;
 
     // ? needs a variables? these values same as in neightbor components
-    &_h1 {
-      font-size: 24px;
-    }
+    &_name {
+      &_h1 {
+        font-size: 24px;
+      }
 
-    &_h2 {
-      font-size: 19px;
-    }
+      &_h2 {
+        font-size: 19px;
+      }
 
-    &_h3 {
-      font-size: 12px;
-    }
+      &_h3 {
+        font-size: 12px;
+      }
 
-    &_body {
-      line-height: 24px;
+      &_body {
+        line-height: 24px;
+      }
     }
   }
 }
