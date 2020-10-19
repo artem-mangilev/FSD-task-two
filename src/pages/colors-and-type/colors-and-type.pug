@@ -9,9 +9,9 @@ block head
 block body
   - const colors = require('./colors-and-type.json')
 
-  .container
-    .container__content
+  .colors-and-type
+    .colors-and-type__colors-list
       each color in colors
         +color(color.name, color.code, color.color)
-    .container__content
+    .colors-and-type__text
       +text-examples

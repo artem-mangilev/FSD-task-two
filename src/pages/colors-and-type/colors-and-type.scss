@@ -1,0 +1,13 @@
+.colors-and-type {
+  display: grid;
+  grid-template-columns: max-content 403px;
+  justify-content: space-between;
+
+  width: 1099px;
+  margin: 67px auto 0;
+
+  &__colors-list {
+    display: grid;
+    row-gap: 20px;
+  }
+}

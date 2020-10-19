@@ -1,14 +1,13 @@
 .text-examples {
   display: grid;
 
-  // ? maybe there is a way to avoid this hardcoded number?
-  grid-template-columns: min-content 336px;
+  grid-template-columns: auto auto;
 
-  grid-gap: 50px 30px;
+  grid-gap: 50px 31px;
 
   &__tag {
     font-family: 'Montserrat';
-    
+
     // ? how to avoid using this priperty and draw normal font weight by default? (if I remove this, text became bold)
     font-weight: normal;
 

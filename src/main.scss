@@ -5,15 +5,3 @@
 html {
   font-size: $fs-root;
 }
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-content: space-around;
-  flex-wrap: wrap;
-
-  padding-top: 145px;
-  padding-left: 150px;
-  padding-right: 191px;
-  padding-bottom: 145px;
-}
