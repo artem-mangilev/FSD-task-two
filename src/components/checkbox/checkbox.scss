@@ -7,7 +7,6 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    box-sizing: border-box;
     margin: 0;
     min-width: 20px;
     height: 20px;
@@ -18,7 +17,6 @@
       content: '';
 
       display: block;
-      box-sizing: border-box;
       height: inherit;
       @include border($dark-shade-25);
       border-radius: 4px;
@@ -33,7 +31,6 @@
       content: '';
 
       display: none;
-      box-sizing: border-box;
       position: absolute;
       top: 5px;
       left: 7px;

@@ -47,7 +47,6 @@ Build date: 2019-12-19 16:51:02
   &-handle {
     position: absolute;
     display: block;
-    box-sizing: border-box;
     cursor: default;
     z-index: 1;
   }
@@ -93,7 +92,6 @@ Build date: 2019-12-19 16:51:02
     top: 25px;
 
     // new
-    box-sizing: border-box;
     height: 6px;
     background-color: #fff;
     border: {

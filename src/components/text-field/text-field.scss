@@ -42,8 +42,6 @@
   &__input {
     @extend %field;
 
-    position: relative;
-    box-sizing: border-box;
     flex-basis: 100%;
     padding-right: $input_height;
 

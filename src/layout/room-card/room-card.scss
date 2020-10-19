@@ -167,7 +167,6 @@
   -webkit-transition: all 0.5s linear 0s;
   transition: all 0.5s linear 0s;
 
-  box-sizing: border-box;
   @include size(7.5px, 7.5px);
   @include border(#fff);
   background-color: rgba($color: #fff, $alpha: 0);

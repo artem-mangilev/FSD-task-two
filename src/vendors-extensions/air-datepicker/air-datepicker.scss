@@ -54,7 +54,6 @@ $datepickerNavigationHeight: auto;
 @import '../../vendors/air-datepicker/datepicker.scss';
 
 .datepicker {
-  box-sizing: border-box;
   padding: 20px;
 
   // TODO: find the way to avoid this hack

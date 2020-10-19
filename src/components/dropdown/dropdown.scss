@@ -12,8 +12,6 @@
     @extend %field;
 
     position: relative;
-    box-sizing: border-box;
-
     cursor: pointer;
 
     &_bottom-borderless {
@@ -42,7 +40,6 @@
     &::after {
       content: '';
 
-      box-sizing: border-box;
       display: inline-block;
       @include size(8.5px, 8.5px);
       border-left: 2px solid $dark-shade-75;
@@ -57,7 +54,6 @@
 
   &__menu {
     z-index: 2;
-    box-sizing: border-box;
     position: absolute;
     top: 44px;
     left: 0;

@@ -31,8 +31,6 @@
   &__single-input {
     @extend %field;
 
-    box-sizing: border-box;
-
     &::placeholder {
       color: $dark-shade-75;
     }
