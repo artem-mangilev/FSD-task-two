@@ -18,5 +18,6 @@ $(document).ready(() => {
   $('.booking-card').each((i, card) => new BookingCard(card))
   $('.search-card').each((i, card) => new SearchCard(card))
   $('.cards__date-dropdown').each((i, dropdown) => new DateDropdown(dropdown))
-  $('.room-card').each((i, card) => new RoomCard(card))
 })
+
+$('.room-card').each((i, card) => new RoomCard(card))

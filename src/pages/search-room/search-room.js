@@ -14,14 +14,12 @@ import '@components/title/title'
 import './search-room.scss'
 import '@/main.scss'
 
-$(document).ready(() => {
-  const $page = $('.js-search-room')
+const $page = $('.js-search-room')
 
-  const filterDateDropdown = $page.find(
-    '.js-search-room__filter-date-dropdown'
-  )[0]
-  new DateDropdown(filterDateDropdown)
+const filterDateDropdown = $page.find(
+  '.js-search-room__filter-date-dropdown'
+)[0]
+new DateDropdown(filterDateDropdown)
 
-  const $roomCards = $page.find('.search-room__room-preview')
-  $roomCards.each((i, roomCard) => new RoomCard(roomCard))
-})
+const $roomCards = $page.find('.search-room__room-preview')
+$roomCards.each((i, roomCard) => new RoomCard(roomCard))
