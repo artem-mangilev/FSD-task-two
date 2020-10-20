@@ -42,7 +42,7 @@ $(document).ready(() => {
       itemsState.reduce((accum, currentItem) => accum + currentItem.quantity, 0)
 
     const resetItems = () => {
-      itemsState.forEach(item => (item.quantity = 0))
+      itemsState.forEach((item) => (item.quantity = 0))
     }
 
     const updateMenuBottomBorderRadius = () => {
@@ -67,9 +67,12 @@ $(document).ready(() => {
           .map(({ quantity, nameForms }) => {
             return `${quantity} ${plural(quantity, ...nameForms)}`
           })
-          .slice(0, itemsState.length >= 2 ? 2 : undefined)
+          .slice(0, 2)
           .join(', ')
-          .concat('...')
+          
+        if (itemsState.length > 2) {
+          selectionText = `${selectionText}...`
+        }
       } else if (type === 'item-quantity-applied') {
         const { selectionTextForms, placeholder } = $dropdown.data('meta')
         const total = totalItems()
@@ -113,7 +116,7 @@ $(document).ready(() => {
 
     init()
 
-    $options.click(function({ target: { classList } }) {
+    $options.click(function ({ target: { classList } }) {
       const optionId = $(this).data('id')
 
       const targetItem = itemsState[optionId]
