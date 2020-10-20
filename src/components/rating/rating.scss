@@ -1,5 +1,6 @@
 .rating {
   display: inline-block;
+  user-select: none;
 
   &__icon {
     @include text-gradient($primary-gradient)
