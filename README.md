@@ -2,7 +2,7 @@
 
 # Pages
 
-- https://artem-mangilev.github.io/FSD-task-two/colors-and-text.html
+- https://artem-mangilev.github.io/FSD-task-two/colors-and-type.html
 - https://artem-mangilev.github.io/FSD-task-two/form-elements.html
 - https://artem-mangilev.github.io/FSD-task-two/cards.html
 
