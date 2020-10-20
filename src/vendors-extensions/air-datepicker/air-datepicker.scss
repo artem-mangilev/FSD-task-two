@@ -55,6 +55,7 @@ $datepickerNavigationHeight: auto;
 
 .datepicker {
   padding: 20px;
+  box-sizing: border-box;
 
   // TODO: find the way to avoid this hack
   @media screen and (max-width: $wb-chrome-mobile-s) {
