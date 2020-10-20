@@ -1,12 +1,16 @@
 .toggle {
   display: flex;
   align-items: flex-start;
-  cursor: pointer;
 
+  &,
+  &__button {
+    cursor: pointer;
+  }
 
   &__button {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     margin: 0;
 
     position: relative;

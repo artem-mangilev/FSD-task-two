@@ -12,6 +12,10 @@
     height: 20px;
     background-color: #fff;
 
+    &::before, &::after {
+      cursor: pointer;
+    }
+
     // checkbox border styles
     &::before {
       content: '';
@@ -45,7 +49,6 @@
       transform: rotate(45deg);
     }
 
-    // show checkmark when checkbox is checked
     &:checked::after {
       display: inline-block;
     }

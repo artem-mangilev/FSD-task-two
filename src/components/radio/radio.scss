@@ -4,14 +4,17 @@
   &__button {
     display: inline-flex;
     align-items: center;
-    position: relative;
     color: $dark-shade-50;
+  }
+
+  &__button, &__input, &__input::before {
     cursor: pointer;
   }
 
   &__input {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +41,6 @@
       display: block;
     }
 
-    // TODO: find better selector
     &:checked + .radio__text {
       color: $dark-shade-75;
     }
