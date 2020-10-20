@@ -3,7 +3,7 @@ import './like-button.scss'
 $(document).ready(() => {
   const $likeButtons = $('.like-button')
 
-  $likeButtons.each((index, button) => {
+  $likeButtons.each((_, button) => {
     $(button).click(function() {
       const $this = $(this)
 

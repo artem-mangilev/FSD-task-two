@@ -1,4 +1,3 @@
-mixin like-button(liked)
+mixin like-button(liked, likesNumber)
   button.like-button(data-likes=likesNumber class= liked && 'like-button_active' class!=attributes.class)
     span.like-button__likes-number= likesNumber
-      block

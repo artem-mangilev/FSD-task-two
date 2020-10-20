@@ -107,7 +107,7 @@ block body
       .form-elements__element.form-elements__element_big-bottom-margin
         +label.form-elements__label= like.title
         each likeBtn in like.items
-          +like-button(likeBtn.liked).form-elements__like-button= likeBtn.likesNumber
+          +like-button(likeBtn.liked, likeBtn.likesNumber).form-elements__like-button
 
       .form-elements__element
         +label.form-elements__label= rating.title
