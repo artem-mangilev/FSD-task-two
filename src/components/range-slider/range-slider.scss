@@ -14,7 +14,6 @@ Ion.RangeSlider, 2.3.1
 Build date: 2019-12-19 16:51:02
 */
 .irs {
-  // old
   position: relative;
   display: block;
   -webkit-touch-callout: none;
@@ -24,7 +23,6 @@ Build date: 2019-12-19 16:51:02
   -ms-user-select: none;
   user-select: none;
 
-  // new
   margin-top: 3px;
   @extend %body-text;
   font-size: 12px;
@@ -52,16 +50,13 @@ Build date: 2019-12-19 16:51:02
   }
 
   &-single {
-    // old
     display: block;
     top: 0;
-    left: 0;
+    left: 0 !important;
     cursor: default;
     white-space: nowrap;
 
-    // new
     visibility: visible !important;
-    // https://github.com/IonDen/ion.rangeSlider/issues/517
     pointer-events: none;
   }
 
@@ -88,10 +83,8 @@ Build date: 2019-12-19 16:51:02
     height: 40px;
   }
   &--flat &-line {
-    // old
     top: 25px;
 
-    // new
     height: 6px;
     background-color: #fff;
     border: {
@@ -102,18 +95,14 @@ Build date: 2019-12-19 16:51:02
     }
   }
   &--flat &-bar {
-    // old
     top: 25px;
 
-    // new
     height: 6px;
     background-image: $secondary-gradient;
   }
   &--flat &-handle {
-    // old
     top: 22px;
 
-    // new
     @include size(12px, 12px);
     background-image: $secondary-gradient;
     border: {
@@ -123,14 +112,13 @@ Build date: 2019-12-19 16:51:02
       radius: 10px;
     }
   }
-  // new
+
   &--flat &-from,
   &--flat &-to {
     display: none;
   }
 
   &--flat &-single {
-    // new
     position: absolute;
     top: -6px;
     right: 0px;
